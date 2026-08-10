@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap - I Info Vision | A Yasmeen Group Company</title>
+  <meta name="description" content="Sitemap of I Info Vision. Easily navigate through our website." />
+  <meta name="author" content="I Info Vision" />
+  <link rel="canonical" href="https://www.iinfovision.com/sitemap.html" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="styles.css?v=2.0" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .legal-page {
+      padding: 120px 20px 80px;
+      background: var(--bg-primary);
+      min-height: 100vh;
+    }
+    .legal-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 60px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+    .legal-header {
+      margin-bottom: 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 30px;
+    }
+    .legal-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .sitemap-content {
+      color: var(--text-secondary);
+    }
+    .sitemap-group {
+      margin-bottom: 32px;
+    }
+    .sitemap-group h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue-900);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--blue-100);
+      padding-bottom: 8px;
+    }
+    .sitemap-group ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .sitemap-group li a {
+      color: var(--blue-600);
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .sitemap-group li a:hover {
+      color: var(--blue-800);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-600);
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: all 0.2s ease;
+    }
+    .back-btn:hover {
+      color: var(--blue-700);
+      transform: translateX(-4px);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .legal-page {
+        padding: 100px 15px 60px;
+      }
+      .legal-container {
+        padding: 30px 20px;
+      }
+      .legal-title {
+        font-size: 28px;
+      }
+      .sitemap-group ul {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="legal-page">
+    <div class="container">
+      
+      <a href="index.html" class="back-btn">
+        <i class="ph ph-arrow-left"></i> Back to Home
+      </a>
+
+      <div class="legal-container">
+        <div class="legal-header">
+          <h1 class="legal-title">Sitemap</h1>
+        </div>
+
+        <div class="sitemap-content">
+          <div class="sitemap-group">
+            <h2>Main Pages</h2>
+            <ul>
+              <li><a href="index.html"><i class="ph ph-caret-right"></i> Home</a></li>
+              <li><a href="index.html#services"><i class="ph ph-caret-right"></i> Services</a></li>
+              <li><a href="index.html#about"><i class="ph ph-caret-right"></i> About Us</a></li>
+              <li><a href="index.html#contact"><i class="ph ph-caret-right"></i> Contact Us</a></li>
+            </ul>
+          </div>
+          
+          <div class="sitemap-group">
+            <h2>Legal Pages</h2>
+            <ul>
+              <li><a href="privacy.html"><i class="ph ph-caret-right"></i> Privacy Policy</a></li>
+              <li><a href="terms.html"><i class="ph ph-caret-right"></i> Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
