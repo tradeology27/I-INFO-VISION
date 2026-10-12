@@ -2194,6 +2194,27 @@ button {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+a.tech-card {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tech-card-action {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.tech-card:hover .tech-card-action {
+  color: var(--white);
+  transform: translateX(3px);
+}
+
 /* ===================================================
    TEXT REVEAL WORD-BY-WORD ANIMATION
    =================================================== */

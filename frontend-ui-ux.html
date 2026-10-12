@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend &amp; UI/UX Development | React, Next.js, Vue - I Info Vision Salem</title>
+  <meta name="description" content="Premier Frontend Development and UI/UX Design services in Salem. We engineer fast, responsive web applications using React.js, Next.js, Vue.js, Tailwind CSS, and Figma." />
+  <meta name="keywords" content="frontend development salem, ui ux design salem, react js development salem, next js web applications, vue js developer salem, tailwind css responsive design, website designer salem, I Info Vision" />
+  <meta name="author" content="I Info Vision" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.iinfovision.com/frontend-ui-ux.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.iinfovision.com/frontend-ui-ux.html" />
+  <meta property="og:title" content="Frontend &amp; UI/UX Development | I Info Vision" />
+  <meta property="og:description" content="Engineering responsive, pixel-perfect, and ultra-fast user interfaces with modern React, Next.js, Vue, and Tailwind CSS." />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/tech_frontend.webp" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.iinfovision.com/frontend-ui-ux.html" />
+  <meta property="twitter:title" content="Frontend &amp; UI/UX Development | I Info Vision" />
+  <meta property="twitter:description" content="Engineering responsive, pixel-perfect, and ultra-fast user interfaces with modern React, Next.js, Vue, and Tailwind CSS." />
+  <meta property="twitter:image" content="https://www.iinfovision.com/assets/images/tech_frontend.webp" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.iinfovision.com/frontend-ui-ux.html#service",
+        "name": "Frontend & UI/UX Development",
+        "serviceType": "Frontend Web Application Engineering and UI/UX Design",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "I Info Vision",
+          "url": "https://www.iinfovision.com/"
+        },
+        "url": "https://www.iinfovision.com/frontend-ui-ux.html",
+        "description": "High-performance frontend architecture and user experience design utilizing React, Next.js, Vue, and modern design systems."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <!-- Google Fonts Preconnect & Optimized Load (Non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  <!-- Phosphor Icons (Non-render-blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════ -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+          <div class="logo-text-wrapper">
+            <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+            <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
+          </div>
+        </a>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="clients.html" class="nav-link">Clients</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+       ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <a href="index.html#about">Tech Stack</a>
+          <i class="ph ph-caret-right"></i>
+          <span>Frontend &amp; UI/UX</span>
+        </div>
+        <h1 class="page-hero-title">
+          Modern <span class="highlight">Frontend &amp; UI/UX</span> Engineering
+        </h1>
+        <p class="page-hero-desc">
+          We blend award-winning interface aesthetics with high-performance reactive architectures. From scalable Next.js enterprise portals to micro-interactions and Figma design systems, we build web experiences that captivate users and convert visitors.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="service-hero-stats-row">
+          <div class="service-hero-stat">
+            <i class="ph ph-lightning"></i> Sub-Second Core Web Vitals
+          </div>
+          <div class="service-hero-stat">
+            <i class="ph ph-device-mobile"></i> 100% Mobile &amp; Tablet Responsive
+          </div>
+          <div class="service-hero-stat">
+            <i class="ph ph-wheelchair"></i> WCAG 2.1 AA Accessibility Standards
+          </div>
+          <div class="service-hero-stat">
+            <i class="ph ph-figma-logo"></i> Pixel-Perfect Figma-to-Code Delivery
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: CORE CAPABILITIES
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Engineering Capabilities
+        </span>
+        <h2 class="service-section-title">Comprehensive Frontend Architecture</h2>
+        <p class="service-section-subtitle">We build modular, maintainable, and type-safe frontends tailored to handle enterprise scale and high concurrent user traffic.</p>
+      </div>
+
+      <div class="capabilities-grid">
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #0284c7, #06b6d4);"><i class="ph ph-atom"></i></div>
+          <h3 class="capability-title">React.js &amp; Next.js 14 Apps</h3>
+          <p class="capability-desc">High-performance Single Page Applications (SPA) and Server-Side Rendered (SSR/SSG) portals leveraging React 18 concurrent mode, React Server Components, and Next.js App Router.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Blazing fast initial page loads &amp; zero layout shift</li>
+            <li><i class="ph ph-check-circle"></i> Built-in SEO meta rendering for search dominance</li>
+            <li><i class="ph ph-check-circle"></i> Edge caching &amp; incremental static regeneration (ISR)</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #10b981, #059669);"><i class="ph ph-palette"></i></div>
+          <h3 class="capability-title">UI/UX Design Systems in Figma</h3>
+          <p class="capability-desc">Human-centered UI/UX design from user research and wireframing to high-fidelity interactive Figma prototypes and scalable multi-brand component libraries.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Comprehensive design tokens, colors &amp; typography</li>
+            <li><i class="ph ph-check-circle"></i> Interactive clickable wireframes &amp; user journey maps</li>
+            <li><i class="ph ph-check-circle"></i> 1:1 parity between Figma components and production code</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);"><i class="ph ph-paint-brush"></i></div>
+          <h3 class="capability-title">Tailwind CSS &amp; Modern Styling</h3>
+          <p class="capability-desc">Clean, utility-first CSS architecture that delivers lightweight bundles, dark/light theme support, glassmorphism aesthetics, and zero runtime CSS overhead.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Purged CSS under 15KB for instant rendering</li>
+            <li><i class="ph ph-check-circle"></i> Dark mode and fluid typography across all breakpoints</li>
+            <li><i class="ph ph-check-circle"></i> Reusable atomic components with Radix UI &amp; Shadcn</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="ph ph-sparkle"></i></div>
+          <h3 class="capability-title">Dynamic Micro-Interactions</h3>
+          <p class="capability-desc">Engage users with silky 60fps micro-animations, scroll-driven visual transitions, SVG morphs, and interactive dashboards engineered with Framer Motion and GSAP.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Hardware-accelerated GPU animations</li>
+            <li><i class="ph ph-check-circle"></i> Interactive data charts (Recharts, Chart.js, D3.js)</li>
+            <li><i class="ph ph-check-circle"></i> Smooth page transitions with zero stutter</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #ef4444, #b91c1c);"><i class="ph ph-tree-structure"></i></div>
+          <h3 class="capability-title">State Management &amp; Architecture</h3>
+          <p class="capability-desc">Robust enterprise state management ensuring predictable data flow using Redux Toolkit, Zustand, Pinia, and TanStack React Query for real-time cache synchronization.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Optimistic UI updates with offline rollback</li>
+            <li><i class="ph ph-check-circle"></i> Automatic background data refetching &amp; caching</li>
+            <li><i class="ph ph-check-circle"></i> Type-safe API integrations with TypeScript</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);"><i class="ph ph-speedometer"></i></div>
+          <h3 class="capability-title">Core Web Vitals &amp; A11y Audit</h3>
+          <p class="capability-desc">We optimize your frontend for perfect 95+ PageSpeed scores, sub-second LCP (Largest Contentful Paint), zero CLS (Cumulative Layout Shift), and WCAG accessibility compliance.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Next-Gen WebP/AVIF image loading &amp; lazy hydration</li>
+            <li><i class="ph ph-check-circle"></i> ARIA landmarks, keyboard navigation &amp; screen reader tags</li>
+            <li><i class="ph ph-check-circle"></i> Tree-shaking and aggressive code splitting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: TECH STACK SHOWCASE
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section alt-bg">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Tech Ecosystem
+        </span>
+        <h2 class="service-section-title">The Frontend Stack We Master</h2>
+        <p class="service-section-subtitle">We select the right tools for your specific workload to maximize reliability, performance, and developer velocity.</p>
+      </div>
+
+      <div class="tech-tier-grid">
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-browsers"></i></div>
+            <h3 class="tech-tier-title">Core Frameworks &amp; Languages</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">React.js 18</span>
+            <span class="tech-tier-badge">Next.js 14</span>
+            <span class="tech-tier-badge">Vue.js 3</span>
+            <span class="tech-tier-badge">Nuxt.js</span>
+            <span class="tech-tier-badge">TypeScript</span>
+            <span class="tech-tier-badge">JavaScript (ES2024)</span>
+            <span class="tech-tier-badge">HTML5 / Semantic</span>
+          </div>
+        </div>
+
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-paint-roller"></i></div>
+            <h3 class="tech-tier-title">UI Libraries &amp; Design Systems</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">Tailwind CSS</span>
+            <span class="tech-tier-badge">Figma to Code</span>
+            <span class="tech-tier-badge">Shadcn UI</span>
+            <span class="tech-tier-badge">Radix Primitives</span>
+            <span class="tech-tier-badge">SCSS / SASS</span>
+            <span class="tech-tier-badge">CSS Modules</span>
+            <span class="tech-tier-badge">Lucide &amp; Phosphor Icons</span>
+          </div>
+        </div>
+
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-cpu"></i></div>
+            <h3 class="tech-tier-title">State Management &amp; Data Fetching</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">TanStack Query</span>
+            <span class="tech-tier-badge">Zustand</span>
+            <span class="tech-tier-badge">Redux Toolkit</span>
+            <span class="tech-tier-badge">Pinia</span>
+            <span class="tech-tier-badge">Axios</span>
+            <span class="tech-tier-badge">GraphQL / Apollo Client</span>
+            <span class="tech-tier-badge">WebSocket Stomp</span>
+          </div>
+        </div>
+
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-wrench"></i></div>
+            <h3 class="tech-tier-title">Build Tools, Testing &amp; Quality</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">Vite</span>
+            <span class="tech-tier-badge">Webpack</span>
+            <span class="tech-tier-badge">Turbopack</span>
+            <span class="tech-tier-badge">Vitest / Jest</span>
+            <span class="tech-tier-badge">Playwright</span>
+            <span class="tech-tier-badge">ESLint / Prettier</span>
+            <span class="tech-tier-badge">Lighthouse CI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: WORKFLOW PROCESS
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Execution Workflow
+        </span>
+        <h2 class="service-section-title">From Concept to Pixel-Perfect Reality</h2>
+        <p class="service-section-subtitle">Our structured frontend engineering roadmap ensures quality, speed, and continuous client alignment.</p>
+      </div>
+
+      <div class="service-process-grid">
+        <div class="process-step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">UX Discovery &amp; Wireframing</h3>
+          <p class="step-desc">We map user personas, information architecture, navigation flows, and interactive low-fidelity wireframes.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Figma UI Prototyping</h3>
+          <p class="step-desc">Visual design with bespoke branding, glassmorphism accents, design tokens, and clickable client approval prototypes.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Component Engineering</h3>
+          <p class="step-desc">Coding modular React/Vue components with TypeScript, strict linting, responsive breakpoints, and unit test coverage.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Performance &amp; Launch</h3>
+          <p class="step-desc">Rigorous cross-browser testing, Core Web Vitals optimization, accessibility audit, and CI/CD production deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ SECTION
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section alt-bg">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Clarifications
+        </span>
+        <h2 class="service-section-title">Frequently Asked Questions</h2>
+        <p class="service-section-subtitle">Got questions regarding our frontend engineering and UI/UX design capabilities? Find your answers here.</p>
+      </div>
+
+      <div class="service-faq-container">
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> Why choose React.js / Next.js for our web application?
+          </div>
+          <div class="service-faq-a">
+            React and Next.js are the industry benchmarks for enterprise web development. Next.js offers automatic server-side rendering (SSR) and static generation (SSG), ensuring lightning-fast page loading, outstanding Google search visibility (SEO), and a seamless app-like browsing experience for users across any device.
+          </div>
+        </div>
+
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> Can you convert our existing Figma / Adobe XD designs into code?
+          </div>
+          <div class="service-faq-a">
+            Yes! We specialize in pixel-perfect Figma-to-React/Tailwind conversions. We preserve typography, spacing, responsive flexbox/grid layouts, micro-animations, and hover states down to the exact pixel.
+          </div>
+        </div>
+
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> How do you ensure our web application loads fast on mobile?
+          </div>
+          <div class="service-faq-a">
+            We implement aggressive bundle splitting, convert assets to modern WebP/AVIF formats, optimize critical CSS delivery, and configure preconnect/lazy loading so your mobile users experience sub-second load times even on 4G networks.
+          </div>
+        </div>
+
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> Do you provide frontend support for existing backend systems?
+          </div>
+          <div class="service-faq-a">
+            Absolutely. Whether your backend is built on Node.js, Python, Laravel, Java, or legacy systems, we build modern frontends that integrate seamlessly via REST APIs, GraphQL endpoints, or WebSockets.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA SECTION
+       ═══════════════════════════════════════════ -->
+  <section class="section section-dark cta-section">
+    <div class="container">
+      <div class="service-cta-card">
+        <h2 class="service-cta-title">Ready to Build a High-Converting Frontend?</h2>
+        <p class="service-cta-desc">
+          Partner with Salem's premier technology company to design and engineer a world-class user interface that elevates your digital presence and drives measurable business growth.
+        </p>
+        <div class="service-cta-actions">
+          <a href="index.html#contact" class="btn btn-primary">Request Free Consultation <span class="btn-arrow">→</span></a>
+          <a href="https://wa.me/919894480585" target="_blank" class="btn btn-outline"><i class="ph ph-whatsapp-logo"></i> Chat with Our Lead Architect</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" loading="lazy" decoding="async" />
+            <div class="logo-text-wrapper">
+              <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+              <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and
+            excellence. Your trusted partner for end-to-end technology solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="web-development.html">Web Development &amp; Apps</a></li>
+            <li><a href="frontend-ui-ux.html">Frontend &amp; UI/UX</a></li>
+            <li><a href="crm-erp-software.html">CRM &amp; ERP Software</a></li>
+            <li><a href="ecommerce-solutions.html">E-Commerce Solutions</a></li>
+            <li><a href="billing-software.html">Billing &amp; POS Software</a></li>
+            <li><a href="algo-trading.html">Algo Trading Bots</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#services">Our Services</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blogs.html">Blogs &amp; Insights</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Address</span>
+              <span>#9/136, No.1, First Floor, <br> Trichy Main Road,<br>Chinnaiyapuram,<br>Dasanaickenpatti,<br>Salem – 636201</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-phone"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Phone</span>
+              <a href="tel:+919894480585">+91 98944 80585</a><br />
+              <a href="tel:+917540059087">+91 75400 59087</a>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-envelope"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Email</span>
+              <a href="mailto:support@iinfovision.com">support@iinfovision.com</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>

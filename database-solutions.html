@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Engineering &amp; Architecture | SQL, NoSQL, Vector - I Info Vision Salem</title>
+  <meta name="description" content="Expert database design, architecture, optimization, and management in Salem. PostgreSQL, MySQL, MongoDB, Redis, Firebase, and vector databases for high-load systems." />
+  <meta name="keywords" content="database design salem, postgresql developer salem, mysql optimization salem, mongodb database engineering, redis caching salem, firebase database developers, data architecture salem, I Info Vision" />
+  <meta name="author" content="I Info Vision" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.iinfovision.com/database-solutions.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.iinfovision.com/database-solutions.html" />
+  <meta property="og:title" content="Database Engineering &amp; Architecture | I Info Vision" />
+  <meta property="og:description" content="Scalable SQL, NoSQL, and vector database architectures with sub-millisecond query execution and zero-downtime replication." />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/tech_database.webp" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.iinfovision.com/database-solutions.html" />
+  <meta property="twitter:title" content="Database Engineering &amp; Architecture | I Info Vision" />
+  <meta property="twitter:description" content="Scalable SQL, NoSQL, and vector database architectures with sub-millisecond query execution and zero-downtime replication." />
+  <meta property="twitter:image" content="https://www.iinfovision.com/assets/images/tech_database.webp" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.iinfovision.com/database-solutions.html#service",
+        "name": "Database Engineering & Architecture",
+        "serviceType": "Database Optimization, Schema Design and High-Availability Engineering",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "I Info Vision",
+          "url": "https://www.iinfovision.com/"
+        },
+        "url": "https://www.iinfovision.com/database-solutions.html",
+        "description": "High-performance database design, query optimization, indexing strategies, automated backups, and vector database engineering."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <!-- Google Fonts Preconnect & Optimized Load (Non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  <!-- Phosphor Icons (Non-render-blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════ -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+          <div class="logo-text-wrapper">
+            <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+            <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
+          </div>
+        </a>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="clients.html" class="nav-link">Clients</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+       ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <a href="index.html#about">Tech Stack</a>
+          <i class="ph ph-caret-right"></i>
+          <span>Database Engineering</span>
+        </div>
+        <h1 class="page-hero-title">
+          Enterprise <span class="highlight">Database Architecture</span> &amp; Optimization
+        </h1>
+        <p class="page-hero-desc">
+          We design, tune, and maintain mission-critical database systems that preserve transactional integrity, scale to terabytes of relational and document data, and deliver sub-millisecond query performance for demanding enterprise applications.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="service-hero-stats-row">
+          <div class="service-hero-stat">
+            <i class="ph ph-shield-check"></i> 100% ACID Transaction Guarantee
+          </div>
+          <div class="service-hero-stat">
+            <i class="ph ph-clock"></i> Sub-Millisecond In-Memory Query Latency
+          </div>
+          <div class="service-hero-stat">
+            <i class="ph ph-arrows-clockwise"></i> Automated Zero-Loss Backup Pipelines
+          </div>
+          <div class="service-hero-stat">
+            <i class="ph ph-chart-line-up"></i> Up to 10x Query Speedup via Index Tuning
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: CORE CAPABILITIES
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Data Engineering
+        </span>
+        <h2 class="service-section-title">Comprehensive Database Solutions</h2>
+        <p class="service-section-subtitle">From normalized SQL schemas to distributed NoSQL clusters and vector similarity search, we engineer storage layers designed for durability.</p>
+      </div>
+
+      <div class="capabilities-grid">
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #0284c7, #0369a1);"><i class="ph ph-database"></i></div>
+          <h3 class="capability-title">Relational SQL (PostgreSQL &amp; MySQL)</h3>
+          <p class="capability-desc">High-integrity relational schema design, foreign key constraints, composite indexing, stored procedures, and partitioned tables built for complex ERP and billing software.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Strict third normal form (3NF) relational integrity</li>
+            <li><i class="ph ph-check-circle"></i> High-volume transaction processing (OLTP)</li>
+            <li><i class="ph ph-check-circle"></i> Zero data duplication &amp; automated cascade handling</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #10b981, #047857);"><i class="ph ph-leaf"></i></div>
+          <h3 class="capability-title">Scalable NoSQL (MongoDB &amp; Firestore)</h3>
+          <p class="capability-desc">Flexible document-oriented data stores capable of ingesting semi-structured catalogs, activity feeds, real-time device logs, and rapidly evolving data models.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Horizontal auto-sharding across cluster nodes</li>
+            <li><i class="ph ph-check-circle"></i> Real-time document change streams &amp; live sync</li>
+            <li><i class="ph ph-check-circle"></i> High-throughput write performance for IoT &amp; logs</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #ef4444, #b91c1c);"><i class="ph ph-lightning"></i></div>
+          <h3 class="capability-title">Ultra-Fast Caching (Redis &amp; KeyDB)</h3>
+          <p class="capability-desc">Sub-millisecond in-memory caching layers that slash primary database loads by up to 85%, store session tokens, manage distributed locks, and power live leaderboards.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Intelligent TTL expiration policies &amp; LRU eviction</li>
+            <li><i class="ph ph-check-circle"></i> Atomic operations for inventory &amp; billing counters</li>
+            <li><i class="ph ph-check-circle"></i> Pub/Sub messaging for real-time WebSocket events</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #b45309);"><i class="ph ph-gauge"></i></div>
+          <h3 class="capability-title">Query Profiling &amp; Index Tuning</h3>
+          <p class="capability-desc">Eliminate slow queries that lock tables. We analyze EXPLAIN ANALYZE execution plans, optimize B-Tree and GIN indexes, tune buffer pools, and resolve lock contention.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Elimination of sequential full-table scans</li>
+            <li><i class="ph ph-check-circle"></i> Connection pool optimization (PgBouncer, HikariCP)</li>
+            <li><i class="ph ph-check-circle"></i> Automated slow-query log alerts &amp; APM integration</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6, #5b21b6);"><i class="ph ph-shield-check"></i></div>
+          <h3 class="capability-title">Replication &amp; Disaster Recovery</h3>
+          <p class="capability-desc">High-availability architectures with automated multi-zone read/write replica failover, continuous write-ahead logging (WAL), point-in-time recovery (PITR), and encrypted backups.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Zero Recovery Point Objective (RPO) strategies</li>
+            <li><i class="ph ph-check-circle"></i> Cross-region asynchronous replication pipelines</li>
+            <li><i class="ph ph-check-circle"></i> Scheduled automated daily snapshots to cold storage</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon-wrap" style="background: linear-gradient(135deg, #06b6d4, #0e7490);"><i class="ph ph-brain"></i></div>
+          <h3 class="capability-title">Vector Databases for AI Embeddings</h3>
+          <p class="capability-desc">Store, index, and query high-dimensional text and image vector embeddings using Pinecone, ChromaDB, and pgvector for generative AI search, semantic matching, and RAG agents.</p>
+          <ul class="capability-points">
+            <li><i class="ph ph-check-circle"></i> Cosine similarity &amp; HNSW index acceleration</li>
+            <li><i class="ph ph-check-circle"></i> Hybrid search combining full-text and vector search</li>
+            <li><i class="ph ph-check-circle"></i> Ultra-fast context retrieval for LLM prompt augmentations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: TECH STACK SHOWCASE
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section alt-bg">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Database Technologies
+        </span>
+        <h2 class="service-section-title">Engines &amp; Data Infrastructure</h2>
+        <p class="service-section-subtitle">We deploy, tune, and manage all major enterprise database engines across cloud and on-premise servers.</p>
+      </div>
+
+      <div class="tech-tier-grid">
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-table"></i></div>
+            <h3 class="tech-tier-title">Relational SQL Engines</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">PostgreSQL 16</span>
+            <span class="tech-tier-badge">MySQL 8.0</span>
+            <span class="tech-tier-badge">MariaDB</span>
+            <span class="tech-tier-badge">Supabase</span>
+            <span class="tech-tier-badge">SQLite (Embedded)</span>
+            <span class="tech-tier-badge">AWS Aurora (PostgreSQL/MySQL)</span>
+            <span class="tech-tier-badge">Google Cloud SQL</span>
+          </div>
+        </div>
+
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-file-code"></i></div>
+            <h3 class="tech-tier-title">NoSQL &amp; Document Stores</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">MongoDB Atlas</span>
+            <span class="tech-tier-badge">Firebase Firestore</span>
+            <span class="tech-tier-badge">Firebase Realtime DB</span>
+            <span class="tech-tier-badge">AWS DynamoDB</span>
+            <span class="tech-tier-badge">CouchDB</span>
+          </div>
+        </div>
+
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-lightning"></i></div>
+            <h3 class="tech-tier-title">In-Memory, Cache &amp; Search</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">Redis Enterprise</span>
+            <span class="tech-tier-badge">KeyDB</span>
+            <span class="tech-tier-badge">Elasticsearch</span>
+            <span class="tech-tier-badge">Meilisearch</span>
+            <span class="tech-tier-badge">Memcached</span>
+          </div>
+        </div>
+
+        <div class="tech-tier-card">
+          <div class="tech-tier-header">
+            <div class="tech-tier-icon"><i class="ph ph-atom"></i></div>
+            <h3 class="tech-tier-title">AI Vector &amp; Analytics Stores</h3>
+          </div>
+          <div class="tech-tier-badges">
+            <span class="tech-tier-badge">pgvector</span>
+            <span class="tech-tier-badge">Pinecone</span>
+            <span class="tech-tier-badge">ChromaDB</span>
+            <span class="tech-tier-badge">Qdrant</span>
+            <span class="tech-tier-badge">Google BigQuery</span>
+            <span class="tech-tier-badge">ClickHouse (OLAP)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: WORKFLOW PROCESS
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Architecture Process
+        </span>
+        <h2 class="service-section-title">Data Lifecycle &amp; Optimization Roadmap</h2>
+        <p class="service-section-subtitle">How we structure database systems for maximum longevity, auditability, and speed.</p>
+      </div>
+
+      <div class="service-process-grid">
+        <div class="process-step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Entity Relationship Modeling</h3>
+          <p class="step-desc">Design normalized schemas, cardinalities, primary keys, and data types to prevent redundancy and locks.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Indexing &amp; Performance Tuning</h3>
+          <p class="step-desc">Benchmark typical read/write query patterns and construct targeted B-Tree, partial, or full-text indexes.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Caching &amp; Connection Pooling</h3>
+          <p class="step-desc">Configure Redis layer caching, PgBouncer pooling, and read-replica routing to insulate master databases.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Disaster Recovery &amp; APM</h3>
+          <p class="step-desc">Establish automated encrypted daily backups, replica lag monitoring, and 24/7 database anomaly alerting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ SECTION
+       ═══════════════════════════════════════════ -->
+  <section class="service-detail-section alt-bg">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Common Inquiries
+        </span>
+        <h2 class="service-section-title">Frequently Asked Questions</h2>
+        <p class="service-section-subtitle">Find clarity regarding database selection, migration, and performance tuning.</p>
+      </div>
+
+      <div class="service-faq-container">
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> When should we use PostgreSQL instead of MongoDB?
+          </div>
+          <div class="service-faq-a">
+            Use <strong>PostgreSQL</strong> when your data has structured relationships, requires strict ACID transaction safety, financial calculations, billing tables, or complex JOIN queries. Use <strong>MongoDB</strong> when your data structure changes frequently, requires high write throughput, or stores dynamic JSON documents like product catalogs and event logs.
+          </div>
+        </div>
+
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> Our database is currently slow during peak hours. Can you fix it?
+          </div>
+          <div class="service-faq-a">
+            Yes! We perform comprehensive query audits, analyze EXPLAIN execution plans, remove redundant table locks, implement intelligent multi-column indexing, and add Redis in-memory caching to reduce server CPU spikes and restore instant page loading.
+          </div>
+        </div>
+
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> Can you migrate our on-premise database to cloud SQL without downtime?
+          </div>
+          <div class="service-faq-a">
+            Yes. We utilize continuous change data capture (CDC) and replication to synchronize your on-premise database with Google Cloud SQL or AWS RDS in real-time, enabling an instant, zero-data-loss cutover during a scheduled maintenance window.
+          </div>
+        </div>
+
+        <div class="service-faq-card">
+          <div class="service-faq-q">
+            <i class="ph ph-question"></i> How do you protect our database from ransomware or loss?
+          </div>
+          <div class="service-faq-a">
+            We configure automated, encrypted daily and hourly snapshots stored in isolated, immutable cloud buckets. We also enable Point-in-Time Recovery (PITR), allowing your system to be restored down to the exact second in the unlikely event of data corruption.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA SECTION
+       ═══════════════════════════════════════════ -->
+  <section class="section section-dark cta-section">
+    <div class="container">
+      <div class="service-cta-card">
+        <h2 class="service-cta-title">Scale Your Database for Peak Performance</h2>
+        <p class="service-cta-desc">
+          Ensure zero downtime, sub-second queries, and bulletproof data security. Talk with our lead database engineers in Salem today.
+        </p>
+        <div class="service-cta-actions">
+          <a href="index.html#contact" class="btn btn-primary">Request Database Architecture Review <span class="btn-arrow">→</span></a>
+          <a href="https://wa.me/919894480585" target="_blank" class="btn btn-outline"><i class="ph ph-whatsapp-logo"></i> Consult Database Specialist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" loading="lazy" decoding="async" />
+            <div class="logo-text-wrapper">
+              <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+              <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and
+            excellence. Your trusted partner for end-to-end technology solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain;"></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="web-development.html">Web Development &amp; Apps</a></li>
+            <li><a href="database-solutions.html">Database Engineering</a></li>
+            <li><a href="backend-api.html">Backend &amp; API</a></li>
+            <li><a href="frontend-ui-ux.html">Frontend &amp; UI/UX</a></li>
+            <li><a href="crm-erp-software.html">CRM &amp; ERP Software</a></li>
+            <li><a href="ecommerce-solutions.html">E-Commerce Solutions</a></li>
+            <li><a href="billing-software.html">Billing &amp; POS Software</a></li>
+            <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#services">Our Services</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blogs.html">Blogs &amp; Insights</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Address</span>
+              <span>#9/136, No.1, First Floor, <br> Trichy Main Road,<br>Chinnaiyapuram,<br>Dasanaickenpatti,<br>Salem – 636201</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-phone"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Phone</span>
+              <a href="tel:+919894480585">+91 98944 80585</a><br />
+              <a href="tel:+917540059087">+91 75400 59087</a>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-envelope"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Email</span>
+              <a href="mailto:support@iinfovision.com">support@iinfovision.com</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
