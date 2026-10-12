@@ -37,6 +37,7 @@ function initCarousel() {
   const dots = document.querySelectorAll('.carousel-dot');
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
+  if (!slides.length || !prevBtn || !nextBtn) return;
   let current = 0;
   let interval;
   const DURATION = 6000;
@@ -125,6 +126,7 @@ function initMobileNav() {
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('nav-menu');
   const overlay = document.getElementById('mobile-overlay');
+  if (!toggle || !menu || !overlay) return;
   const links = menu.querySelectorAll('.nav-link, .nav-cta');
 
   function closeMenu() {
@@ -164,6 +166,7 @@ function initMobileNav() {
 function initServiceTabs() {
   const tabs = document.querySelectorAll('.services-tab');
   const panels = document.querySelectorAll('.services-panel');
+  if (!tabs.length || !panels.length) return;
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -288,6 +291,7 @@ function initStatCounters() {
    ─────────────────────────────────────────── */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
+  if (!btn) return;
 
   window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 500);
@@ -325,6 +329,9 @@ function initSmoothScroll() {
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
+  // If not on single-page section scrolling layout (e.g. standalone blogs or clients page), don't override active class
+  if (!document.getElementById('hero')) return;
   let isClickScrolling = false;
 
   function updateActiveState() {

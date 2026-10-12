@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs & Insights | I Info Vision — Technology, Software & Digital Transformation</title>
+  <meta name="description" content="Read insightful tech articles, software engineering trends, digital marketing strategies, algorithmic trading innovations, and enterprise insights from I Info Vision." />
+  <meta name="keywords" content="Technology Blog, Software Engineering, Custom CRM, Web Development, Algorithmic Trading, Digital Marketing, I Info Vision" />
+  <meta name="author" content="I Info Vision" />
+  <link rel="canonical" href="https://www.iinfovision.com/blogs.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.iinfovision.com/blogs.html" />
+  <meta property="og:title" content="Blogs & Insights | I Info Vision" />
+  <meta property="og:description" content="Explore actionable insights and engineering trends from I Info Vision." />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/logo.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Blogs & Insights | I Info Vision" />
+  <meta property="twitter:description" content="Explore actionable insights and engineering trends from I Info Vision." />
+  <meta property="twitter:image" content="https://www.iinfovision.com/assets/images/logo.png" />
+
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="styles.css?v=2.0" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════ -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="I Info Vision Logo" class="logo-img" />
+          <div class="logo-text-wrapper">
+            <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+            <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
+          </div>
+        </a>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="clients.html" class="nav-link">Clients</a></li>
+          <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+       ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <span>Blogs &amp; Insights</span>
+        </div>
+        <h1 class="page-hero-title">
+          Explore Our Latest Tech <span class="highlight">Insights &amp; Ideas</span>
+        </h1>
+        <p class="page-hero-desc">
+          Thought leadership, architectural blueprints, digital growth strategies, and hands-on perspectives curated by the engineers and strategists at I Info Vision.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BLOGS CONTENT
+       ═══════════════════════════════════════════ -->
+  <main class="page-content-section">
+    <div class="container">
+
+      <!-- Controls: Search & Category Filter Pills -->
+      <div class="blog-controls-wrap">
+        <div class="blog-search-bar">
+          <i class="ph ph-magnifying-glass"></i>
+          <input type="text" id="blog-search-input" class="blog-search-input" placeholder="Search by topic, keyword, or author..." aria-label="Search articles" />
+        </div>
+
+        <div class="blog-filter-tabs">
+          <button class="filter-pill active" data-filter="all">All Articles</button>
+          <button class="filter-pill" data-filter="enterprise">Enterprise SaaS</button>
+          <button class="filter-pill" data-filter="web">Web &amp; Mobile</button>
+          <button class="filter-pill" data-filter="marketing">Digital Marketing</button>
+          <button class="filter-pill" data-filter="trading">Trading Tech</button>
+          <button class="filter-pill" data-filter="cloud">Cloud &amp; AI</button>
+          <button class="filter-pill" data-filter="career">IT Training</button>
+        </div>
+      </div>
+
+      <!-- Featured Story Banner -->
+      <article class="featured-blog-card" id="featured-article" data-category="enterprise">
+        <div class="featured-img-wrap">
+          <img src="assets/images/about_corporate.png" alt="Featured Article Graphic" loading="lazy" />
+        </div>
+        <div class="featured-content">
+          <span class="post-badge badge-featured">
+            <i class="ph ph-sparkle"></i> Featured Story
+          </span>
+          <div class="post-meta-row">
+            <span><i class="ph ph-calendar-blank"></i> Oct 10, 2026</span>
+            <span><i class="ph ph-clock"></i> 7 min read</span>
+            <span><i class="ph ph-tag"></i> Enterprise Architecture</span>
+          </div>
+          <h2 class="featured-title" onclick="openBlogModal('featured')">
+            Architecting Resilient Enterprise SaaS: From Monolithic Clutter to Event-Driven Systems
+          </h2>
+          <p class="featured-excerpt">
+            Modern enterprises can no longer afford brittle monoliths with cascading failures. Learn how modern modular services, asynchronous message brokers, and distributed data pipelines unlock uninterrupted uptime and 10x scalability.
+          </p>
+          <div class="post-author-row">
+            <div class="author-info">
+              <div class="author-avatar">IV</div>
+              <div>
+                <div class="author-name">I Info Vision Engineering Team</div>
+                <div class="author-role">Enterprise Architecture Desk</div>
+              </div>
+            </div>
+            <button class="read-btn" onclick="openBlogModal('featured')">
+              Read Full Article <i class="ph ph-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Grid (6 Interactive Articles) -->
+      <div class="blog-grid" id="blog-grid">
+
+        <!-- Card 1: Web Development -->
+        <article class="blog-card" data-category="web" data-title="Building Blazing-Fast Modern Web Applications: Core Web Vitals in 2026" data-author="Front-End Guild">
+          <div class="blog-card-media">
+            <img src="assets/images/tech_frontend.png" alt="Web Development Insights" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="post-badge badge-web">Web &amp; Mobile</span>
+            <div class="post-meta-row">
+              <span><i class="ph ph-calendar-blank"></i> Oct 05, 2026</span>
+              <span><i class="ph ph-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="blog-card-title" onclick="openBlogModal('card-1')">
+              Building Blazing-Fast Web Apps: Dominating Core Web Vitals
+            </h3>
+            <p class="blog-card-excerpt">
+              Sub-second page speeds directly correlate with lower bounce rates and higher sales. Discover practical bundling tricks, SSR hydrations, and edge caching techniques.
+            </p>
+            <div class="blog-card-footer">
+              <div class="author-info">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #2563eb, #38bdf8);">FE</div>
+                <div>
+                  <div class="author-name">Front-End Guild</div>
+                  <div class="author-role">Web Team</div>
+                </div>
+              </div>
+              <button class="read-btn" onclick="openBlogModal('card-1')">Read <i class="ph ph-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Enterprise CRM -->
+        <article class="blog-card" data-category="enterprise" data-title="Custom CRM vs Off-the-Shelf SaaS: The Hidden Total Cost of Ownership" data-author="Business Systems Team">
+          <div class="blog-card-media">
+            <img src="assets/images/tech_backend.png" alt="CRM Software Engineering" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="post-badge badge-enterprise">Enterprise SaaS</span>
+            <div class="post-meta-row">
+              <span><i class="ph ph-calendar-blank"></i> Sep 28, 2026</span>
+              <span><i class="ph ph-clock"></i> 6 min read</span>
+            </div>
+            <h3 class="blog-card-title" onclick="openBlogModal('card-2')">
+              Custom CRM vs Off-The-Shelf SaaS: The Hidden True Cost
+            </h3>
+            <p class="blog-card-excerpt">
+              Subscription fatigue and rigid vendor lock-in hurt scaling businesses. Here is how custom CRM workflows pay for themselves within 12 months.
+            </p>
+            <div class="blog-card-footer">
+              <div class="author-info">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #16a34a, #10b981);">BS</div>
+                <div>
+                  <div class="author-name">Solutions Team</div>
+                  <div class="author-role">Enterprise Strategy</div>
+                </div>
+              </div>
+              <button class="read-btn" onclick="openBlogModal('card-2')">Read <i class="ph ph-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Digital Marketing -->
+        <article class="blog-card" data-category="marketing" data-title="AI-Powered Performance Marketing: Turning Clicks into Qualified Revenue" data-author="Growth & Analytics">
+          <div class="blog-card-media">
+            <img src="assets/images/hero-slide-4.png" alt="Digital Marketing ROI" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="post-badge badge-marketing">Digital Marketing</span>
+            <div class="post-meta-row">
+              <span><i class="ph ph-calendar-blank"></i> Sep 21, 2026</span>
+              <span><i class="ph ph-clock"></i> 4 min read</span>
+            </div>
+            <h3 class="blog-card-title" onclick="openBlogModal('card-3')">
+              AI-Powered Performance Marketing: Turning Clicks into Revenue
+            </h3>
+            <p class="blog-card-excerpt">
+              Beyond vanity impressions: how predictive audience segmentation, dynamic creative testing, and multi-touch attribution drive 3.5x ROI.
+            </p>
+            <div class="blog-card-footer">
+              <div class="author-info">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #dc2626, #f87171);">GA</div>
+                <div>
+                  <div class="author-name">Growth &amp; Analytics</div>
+                  <div class="author-role">Marketing Desk</div>
+                </div>
+              </div>
+              <button class="read-btn" onclick="openBlogModal('card-3')">Read <i class="ph ph-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Algorithmic Trading -->
+        <article class="blog-card" data-category="trading" data-title="Designing Low-Latency Algorithmic Execution and Automated Risk Safeguards" data-author="FinTech Engineering">
+          <div class="blog-card-media">
+            <img src="assets/images/hero-slide-3.png" alt="Fintech and Trading Tech" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="post-badge badge-trading">Trading Tech</span>
+            <div class="post-meta-row">
+              <span><i class="ph ph-calendar-blank"></i> Sep 14, 2026</span>
+              <span><i class="ph ph-clock"></i> 8 min read</span>
+            </div>
+            <h3 class="blog-card-title" onclick="openBlogModal('card-4')">
+              Low-Latency Algorithmic Execution &amp; Automated Risk Safeguards
+            </h3>
+            <p class="blog-card-excerpt">
+              A comprehensive blueprint for WebSocket streaming APIs, order routing latency optimization, fail-safes, and real-time capital safety guards.
+            </p>
+            <div class="blog-card-footer">
+              <div class="author-info">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">FT</div>
+                <div>
+                  <div class="author-name">FinTech Guild</div>
+                  <div class="author-role">Trading Systems</div>
+                </div>
+              </div>
+              <button class="read-btn" onclick="openBlogModal('card-4')">Read <i class="ph ph-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Cloud & AI -->
+        <article class="blog-card" data-category="cloud" data-title="Cloud Modernization & Zero-Downtime Database Migration Tactics" data-author="Cloud & DevOps">
+          <div class="blog-card-media">
+            <img src="assets/images/tech_cloud.png" alt="Cloud Infrastructure Architecture" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="post-badge badge-cloud">Cloud &amp; AI</span>
+            <div class="post-meta-row">
+              <span><i class="ph ph-calendar-blank"></i> Aug 30, 2026</span>
+              <span><i class="ph ph-clock"></i> 6 min read</span>
+            </div>
+            <h3 class="blog-card-title" onclick="openBlogModal('card-5')">
+              Zero-Downtime Cloud Migration: Lessons from the Field
+            </h3>
+            <p class="blog-card-excerpt">
+              Migrating live transactional relational databases to containerized cloud nodes without dropping a single write packet. Best practices and fallbacks.
+            </p>
+            <div class="blog-card-footer">
+              <div class="author-info">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #0891b2, #22d3ee);">CD</div>
+                <div>
+                  <div class="author-name">Cloud &amp; DevOps</div>
+                  <div class="author-role">Infrastructure</div>
+                </div>
+              </div>
+              <button class="read-btn" onclick="openBlogModal('card-5')">Read <i class="ph ph-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: IT Education -->
+        <article class="blog-card" data-category="career" data-title="Bridging the Industry-Academia Gap with Real-World Project Internships" data-author="Academy Mentors">
+          <div class="blog-card-media">
+            <img src="assets/images/hero-slide-1.png" alt="Education and Training" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="post-badge badge-career">IT Training</span>
+            <div class="post-meta-row">
+              <span><i class="ph ph-calendar-blank"></i> Aug 18, 2026</span>
+              <span><i class="ph ph-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="blog-card-title" onclick="openBlogModal('card-6')">
+              Bridging the Tech Gap: Hands-On Internships vs Theory
+            </h3>
+            <p class="blog-card-excerpt">
+              Why working on real production Git repos, CI/CD pipelines, and client briefs prepares engineering students for top-tier careers far better than rote tutorials.
+            </p>
+            <div class="blog-card-footer">
+              <div class="author-info">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #d97706, #fbbf24);">AM</div>
+                <div>
+                  <div class="author-name">Academy Mentors</div>
+                  <div class="author-role">Education Wing</div>
+                </div>
+              </div>
+              <button class="read-btn" onclick="openBlogModal('card-6')">Read <i class="ph ph-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No results fallback container -->
+      <div id="no-results-msg" style="display: none; text-align: center; padding: 60px 20px; background: var(--white); border-radius: var(--radius-lg); margin-top: 30px; border: 1px dashed var(--border-medium);">
+        <i class="ph ph-magnifying-glass" style="font-size: 48px; color: var(--gray-400); margin-bottom: 16px;"></i>
+        <h3 style="font-size: 20px; font-weight: 700; color: var(--gray-800); margin-bottom: 8px;">No matching articles found</h3>
+        <p style="color: var(--gray-600); font-size: 15px;">Try refining your search keyword or clearing category filters.</p>
+        <button class="btn btn-outline" style="margin-top: 20px;" onclick="resetBlogFilters()">Reset Filters</button>
+      </div>
+
+      <!-- Newsletter Subscription Card -->
+      <section class="newsletter-card">
+        <h3 class="newsletter-title">Stay Ahead in Tech &amp; Business</h3>
+        <p class="newsletter-desc">
+          Subscribe to the monthly I Info Vision Dispatch for engineering deep-dives, industry benchmarks, and product strategy tips delivered directly to your inbox.
+        </p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your business email address..." required />
+          <button type="submit" class="btn btn-primary" style="white-space: nowrap;">
+            Subscribe Free <span class="btn-arrow">→</span>
+          </button>
+        </form>
+        <div id="newsletter-feedback" style="display: none; margin-top: 16px; font-size: 14px; color: var(--accent-cyan); font-weight: 600;"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE BLOG MODAL
+       ═══════════════════════════════════════════ -->
+  <div class="blog-modal" id="article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-article-title">
+    <div class="blog-modal-dialog">
+      <div class="blog-modal-header">
+        <button class="blog-modal-close" onclick="closeBlogModal()" aria-label="Close dialog">
+          <i class="ph ph-x"></i>
+        </button>
+        <div id="modal-article-badge" style="margin-bottom: 10px;"></div>
+        <h2 id="modal-article-title" style="font-size: 24px; font-weight: 800; color: var(--text-primary); line-height: 1.3; margin-bottom: 12px;"></h2>
+        <div id="modal-article-meta" class="post-meta-row" style="margin-bottom: 0;"></div>
+      </div>
+      <div class="blog-modal-body" id="modal-article-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="I Info Vision Logo" class="logo-img" />
+            <div class="logo-text-wrapper">
+              <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+              <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and excellence. Your trusted partner for end-to-end technology solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.png" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.png" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.png" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.png" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain;"></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Software as a Service (SaaS)</a></li>
+            <li><a href="index.html#services">Web Development &amp; Applications</a></li>
+            <li><a href="index.html#services">App Development</a></li>
+            <li><a href="index.html#services">Digital Marketing</a></li>
+            <li><a href="index.html#services">CRM &amp; ERP Software</a></li>
+            <li><a href="index.html#services">Online Trading</a></li>
+            <li><a href="index.html#services">Education</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#services">Our Services</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blogs.html">Blogs &amp; Insights</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Address</span>
+              <span>#9/136, No.1, First Floor, <br> Trichy Main Road,<br>Chinnaiyapuram,<br>Dasanaickenpatti,<br>Salem – 636201</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-phone"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Phone</span>
+              <a href="tel:+919894480585">+91 98944 80585</a><br />
+              <a href="tel:+917540059087">+91 75400 59087</a>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-envelope"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Email</span>
+              <a href="mailto:support@iinfovision.com">support@iinfovision.com</a>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-clock"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Business Hours</span>
+              <span>Monday – Saturday<br />9:30 AM – 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.<br>
+          <span style="display: block; margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Designed &amp; Developed by <a href="index.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">I Info Vision</a></span>
+        </p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+
+  <!-- Interactive Blogs Engine -->
+  <script>
+    // Blog articles database for the interactive modal
+    const blogArticles = {
+      'featured': {
+        badge: '<span class="post-badge badge-featured"><i class="ph ph-sparkle"></i> Featured Architecture</span>',
+        title: 'Architecting Resilient Enterprise SaaS: From Monolithic Clutter to Event-Driven Systems',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Oct 10, 2026</span><span><i class="ph ph-clock"></i> 7 min read</span><span><i class="ph ph-user"></i> I Info Vision Architecture Desk</span>',
+        body: `
+          <p class="lead" style="font-size: 18px; font-weight: 500; color: var(--blue-900);">
+            As business software portfolios grow, traditional monolithic codebases inevitably struggle under concurrency spikes, uncoordinated database transactions, and high deployment risks.
+          </p>
+
+          <div class="blog-key-takeaways">
+            <h4>Executive Takeaways:</h4>
+            <ul>
+              <li>Decoupling modules via event-driven messaging (Kafka, RabbitMQ, or Cloud Pub/Sub) isolates failures and guarantees data consistency.</li>
+              <li>Database per service pattern eliminates locking contention on core tables.</li>
+              <li>Gradual strangler-fig pattern refactoring preserves revenue operations while transitioning architecture safely.</li>
+            </ul>
+          </div>
+
+          <h3>1. The Scalability Bottleneck in Traditional SaaS</h3>
+          <p>
+            When customer onboarding grows from hundreds to tens of thousands of active tenants, shared database connections become the primary choke point. At I Info Vision, our engineering teams recommend migrating high-frequency domains—such as notification services, billing reconciliations, and reporting pipelines—into independently scalable event listeners.
+          </p>
+
+          <h3>2. Asynchronous Event-Driven Messaging</h3>
+          <p>
+            Instead of synchronous HTTP requests tying up front-end threads, business transactions emit immutable events. Consumer workers process these events asynchronously, buffering sudden traffic surges seamlessly without cascading timeout failures.
+          </p>
+
+          <h3>3. Zero-Downtime Migration Strategy</h3>
+          <p>
+            Through automated continuous integration, feature flags, and parallel dual-writing protocols, organizations can achieve true zero-downtime upgrades and resilient global software delivery.
+          </p>
+        `
+      },
+      'card-1': {
+        badge: '<span class="post-badge badge-web">Web & Mobile</span>',
+        title: 'Building Blazing-Fast Modern Web Applications: Core Web Vitals in 2026',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Oct 05, 2026</span><span><i class="ph ph-clock"></i> 5 min read</span><span><i class="ph ph-user"></i> Front-End Guild</span>',
+        body: `
+          <p>Google Core Web Vitals (INP, LCP, CLS) are no longer just SEO ranking signals—they directly dictate user retention, transaction conversions, and customer lifetime value.</p>
+          <div class="blog-key-takeaways">
+            <h4>Key Optimizations:</h4>
+            <ul>
+              <li>Replace bloated multi-megabyte JavaScript libraries with native browser APIs.</li>
+              <li>Implement modern image formats (AVIF / WebP) with explicit dimensional aspect ratios to eliminate cumulative layout shift.</li>
+              <li>Leverage edge server-side rendering for instant First Contentful Paint.</li>
+            </ul>
+          </div>
+          <h3>Optimizing Interaction to Next Paint (INP)</h3>
+          <p>Heavy script evaluation blocks the browser main thread. By breaking up long-running tasks into micro-yields and utilizing web workers for complex data sorting, client apps stay butter-smooth at 60fps even on mid-tier mobile hardware.</p>
+        `
+      },
+      'card-2': {
+        badge: '<span class="post-badge badge-enterprise">Enterprise SaaS</span>',
+        title: 'Custom CRM vs Off-The-Shelf SaaS: The Hidden True Cost',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Sep 28, 2026</span><span><i class="ph ph-clock"></i> 6 min read</span><span><i class="ph ph-user"></i> Solutions Team</span>',
+        body: `
+          <p>Commercial CRM solutions often advertise low starter pricing, but quickly escalate with per-seat licensing fees, custom integration fees, and expensive tier upgrades for fundamental features.</p>
+          <div class="blog-key-takeaways">
+            <h4>Why Custom CRM Outperforms:</h4>
+            <ul>
+              <li>100% intellectual property ownership and zero recurring user seat taxes.</li>
+              <li>Workflows match your exact operational procedures, avoiding cumbersome user retraining.</li>
+              <li>Native integration with existing inventory, billing, and logistics platforms.</li>
+            </ul>
+          </div>
+          <h3>Long-Term ROI Realization</h3>
+          <p>For mid-sized and growing companies with 20+ operators, custom software engineering typically achieves complete break-even within 10 to 14 months while delivering unmatched organizational agility.</p>
+        `
+      },
+      'card-3': {
+        badge: '<span class="post-badge badge-marketing">Digital Marketing</span>',
+        title: 'AI-Powered Performance Marketing: Turning Clicks into Revenue',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Sep 21, 2026</span><span><i class="ph ph-clock"></i> 4 min read</span><span><i class="ph ph-user"></i> Growth & Analytics</span>',
+        body: `
+          <p>Relying solely on generic ad campaigns in today's crowded digital marketplace burns capital quickly. Predictive audience segmentation and algorithmic bidding help brands maximize every marketing dollar.</p>
+          <div class="blog-key-takeaways">
+            <h4>Key Growth Strategies:</h4>
+            <ul>
+              <li>Multi-touch attribution models to identify truly high-converting customer touchpoints.</li>
+              <li>Automated creative testing to optimize click-through and conversion rates continuously.</li>
+              <li>Hyper-localized search marketing (SEO) tailored for high-intent regional buyers.</li>
+            </ul>
+          </div>
+          <p>I Info Vision crafts comprehensive digital marketing funnels that bridge technical tracking accuracy with creative storytelling to produce repeatable, sustainable commercial growth.</p>
+        `
+      },
+      'card-4': {
+        badge: '<span class="post-badge badge-trading">Trading Tech</span>',
+        title: 'Low-Latency Algorithmic Execution & Automated Risk Safeguards',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Sep 14, 2026</span><span><i class="ph ph-clock"></i> 8 min read</span><span><i class="ph ph-user"></i> FinTech Guild</span>',
+        body: `
+          <p>In electronic financial markets, milliseconds represent the difference between capturing an alpha opportunity or suffering negative execution slippage.</p>
+          <div class="blog-key-takeaways">
+            <h4>System Architecture Principles:</h4>
+            <ul>
+              <li>Sub-50ms execution pipelines built with optimized network serialization and binary data protocols.</li>
+              <li>Strict pre-trade risk checks: Max drawdowns, single-order size limits, and circuit breaker tripwires.</li>
+              <li>Real-time telemetry and automated failover recovery across primary and secondary exchange brokers.</li>
+            </ul>
+          </div>
+          <p>Our trading technology specialists build proprietary bots, custom algorithmic indicators, and strategy automation platforms that adhere to institutional risk management standards.</p>
+        `
+      },
+      'card-5': {
+        badge: '<span class="post-badge badge-cloud">Cloud & AI</span>',
+        title: 'Zero-Downtime Cloud Migration: Lessons from the Field',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Aug 30, 2026</span><span><i class="ph ph-clock"></i> 6 min read</span><span><i class="ph ph-user"></i> Cloud & DevOps</span>',
+        body: `
+          <p>Transitioning mission-critical transactional platforms from legacy on-premises servers to modern cloud infrastructure requires flawless preparation and meticulous execution.</p>
+          <div class="blog-key-takeaways">
+            <h4>Migration Protocols:</h4>
+            <ul>
+              <li>Continuous replication streams running in parallel before the final DNS switchover.</li>
+              <li>Infrastructure as Code (Terraform) ensuring identical development, testing, and production states.</li>
+              <li>Automated rollbacks configured to trigger instantaneously if health metrics deviate by even 0.1%.</li>
+            </ul>
+          </div>
+          <p>By pairing modern cloud architectures with automated CI/CD pipelines, enterprises achieve virtually uninterrupted reliability and elastic autoscaling.</p>
+        `
+      },
+      'card-6': {
+        badge: '<span class="post-badge badge-career">IT Training</span>',
+        title: 'Bridging the Tech Gap: Hands-On Internships vs Theory',
+        meta: '<span><i class="ph ph-calendar-blank"></i> Aug 18, 2026</span><span><i class="ph ph-clock"></i> 5 min read</span><span><i class="ph ph-user"></i> Academy Mentors</span>',
+        body: `
+          <p>Academic syllabi frequently lag behind real-world engineering practices. The most successful developers are forged through practical experience working on active codebases.</p>
+          <div class="blog-key-takeaways">
+            <h4>Core Academy Focus Areas:</h4>
+            <ul>
+              <li>Git pull request workflows, peer code reviews, and automated linting standards.</li>
+              <li>Real API integrations, cloud deployments, and production database debugging.</li>
+              <li>Mentorship directly provided by senior software engineers actively building client systems.</li>
+            </ul>
+          </div>
+          <p>At I Info Vision Education, students and aspiring technologists gain the tangible skills and confidence needed to excel in competitive software development roles.</p>
+        `
+      }
+    };
+
+    // Filter Functionality
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const featuredCard = document.getElementById('featured-article');
+    const searchInput = document.getElementById('blog-search-input');
+    const noResults = document.getElementById('no-results-msg');
+
+    let currentFilter = 'all';
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', () => {
+      applyFilters();
+    });
+
+    function applyFilters() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      // Filter featured card
+      const featuredCategory = featuredCard.dataset.category;
+      const featuredText = featuredCard.innerText.toLowerCase();
+      const featuredMatchesFilter = currentFilter === 'all' || featuredCategory === currentFilter;
+      const featuredMatchesQuery = !query || featuredText.includes(query);
+
+      if (featuredMatchesFilter && featuredMatchesQuery) {
+        featuredCard.style.display = 'grid';
+        visibleCount++;
+      } else {
+        featuredCard.style.display = 'none';
+      }
+
+      // Filter regular cards
+      blogCards.forEach(card => {
+        const category = card.dataset.category;
+        const text = card.innerText.toLowerCase();
+        const matchesFilter = currentFilter === 'all' || category === currentFilter;
+        const matchesQuery = !query || text.includes(query);
+
+        if (matchesFilter && matchesQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Handle empty state
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    function resetBlogFilters() {
+      searchInput.value = '';
+      currentFilter = 'all';
+      filterButtons.forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+      applyFilters();
+    }
+
+    // Modal Opening & Closing
+    const modal = document.getElementById('article-modal');
+    const modalBadge = document.getElementById('modal-article-badge');
+    const modalTitle = document.getElementById('modal-article-title');
+    const modalMeta = document.getElementById('modal-article-meta');
+    const modalContent = document.getElementById('modal-article-content');
+
+    function openBlogModal(id) {
+      const article = blogArticles[id];
+      if (!article) return;
+
+      modalBadge.innerHTML = article.badge;
+      modalTitle.innerText = article.title;
+      modalMeta.innerHTML = article.meta;
+      modalContent.innerHTML = article.body;
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlogModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeBlogModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeBlogModal();
+      }
+    });
+
+    // Newsletter Feedback Simulation
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      const feedback = document.getElementById('newsletter-feedback');
+      feedback.style.display = 'block';
+      feedback.innerHTML = '<i class="ph ph-check-circle"></i> Thank you! ' + email + ' has been added to our tech insights list.';
+      document.getElementById('newsletter-form').reset();
+      setTimeout(() => {
+        feedback.style.display = 'none';
+      }, 6000);
+    }
+  </script>
+</body>
+</html>
