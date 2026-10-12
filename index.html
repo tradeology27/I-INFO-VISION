@@ -432,7 +432,7 @@
         <!-- 1 -->
         <a href="web-development.html" class="premium-card reveal">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-web-dev.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -446,7 +446,7 @@
         <!-- 2 -->
         <a href="crm-erp-software.html" class="premium-card reveal reveal-delay-1">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-crm-erp.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -460,7 +460,7 @@
         <!-- 3 -->
         <a href="ecommerce-solutions.html" class="premium-card reveal reveal-delay-2">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-ecommerce.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -474,7 +474,7 @@
         <!-- 4 -->
         <a href="billing-software.html" class="premium-card reveal">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-billing.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -488,7 +488,7 @@
         <!-- 5 -->
         <a href="algo-trading.html" class="premium-card reveal reveal-delay-1">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-algo-trading.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -502,7 +502,7 @@
         <!-- 6 -->
         <a href="digital-marketing.html" class="premium-card reveal reveal-delay-2">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-digital-marketing.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -516,7 +516,7 @@
         <!-- 7 -->
         <a href="mobile-app-development.html" class="premium-card reveal">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-mobile-app.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -529,7 +529,7 @@
         <!-- 8 -->
         <a href="education-technology.html" class="premium-card reveal reveal-delay-1">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-education.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -543,7 +543,7 @@
         <!-- 9 -->
         <a href="saas-custom-software.html" class="premium-card reveal reveal-delay-2">
           <div class="premium-card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80');">
+            style="background-image: url('assets/images/services/service-saas.webp');">
           </div>
           <div class="premium-card-overlay"></div>
           <div class="premium-card-content glass-effect">
@@ -824,39 +824,41 @@
       </div>
 
       <div class="contact-wrapper reveal">
-        <!-- Web3Forms Form (Sends direct to Email) -->
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-
-          <!-- Web3Forms Access Key: You must replace YOUR_ACCESS_KEY_HERE with a key from web3forms.com -->
+        <!-- Web3Forms Form (Sends direct to Email via AJAX) -->
+        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="d3dd6836-20ac-42f8-adcd-dc08bda41e97">
+          <input type="hidden" name="subject" value="New Inquiry from I INFO VISION Website">
+          <input type="hidden" name="from_name" value="I Info Vision Contact Portal">
+          <!-- Honeypot Spam Protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
           <div class="form-grid contact-field-group">
             <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <label for="name">Your Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@gmail.com" required>
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
             </div>
           </div>
 
           <div class="form-group contact-field-group">
             <label for="phone">Phone Number (Optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 98944 80585">
+            <input type="tel" id="phone" name="phone" placeholder="+91 98944 80585" autocomplete="tel">
           </div>
 
           <div class="form-group contact-field-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+            <label for="message">Your Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or software requirements in Salem..." required></textarea>
           </div>
 
-          <!-- Web3Forms Customizations -->
-          <input type="hidden" name="subject" value="New Contact Form Submission from I INFO VISION">
-          <input type="hidden" name="redirect" value="https://web3forms.com/success">
+          <!-- In-Page AJAX Feedback -->
+          <div id="form-status" class="form-status" aria-live="polite"></div>
 
-          <button type="submit" class="btn btn-primary submit-btn">
-            Send Message <i class="ph ph-paper-plane-tilt"></i>
+          <button type="submit" id="submit-btn" class="btn btn-primary submit-btn">
+            <span class="btn-text">Send Message</span>
+            <i class="ph ph-paper-plane-tilt btn-icon"></i>
           </button>
         </form>
       </div>
@@ -1010,6 +1012,18 @@
     </div>
   </footer>
 
+
+  <!-- Sticky Mobile Quick-Action Bar -->
+  <nav class="mobile-quick-actions" aria-label="Quick Actions">
+    <a href="tel:+919894480585" class="quick-action-btn quick-call-btn">
+      <i class="ph ph-phone-call"></i>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/919894480585" class="quick-action-btn quick-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <i class="ph ph-whatsapp-logo"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
 
   <!-- WhatsApp Float -->
   <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">

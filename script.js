@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceCardAnimations();
   // ── CONTACT FORM ANIMATION ──
   initContactFormAnimation();
+  // ── CONTACT FORM AJAX ──
+  initContactForm();
 });
 
 
@@ -449,3 +451,87 @@ function initContactFormAnimation() {
 
   observer.observe(contactSection);
 }
+
+/* ───────────────────────────────────────────
+   CONTACT FORM — Asynchronous AJAX Submission
+   ─────────────────────────────────────────── */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const submitBtn = document.getElementById('submit-btn');
+  const statusDiv = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nameInput = form.querySelector('#name');
+    const senderName = nameInput ? nameInput.value.trim() : 'Valued Client';
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.innerHTML = `
+      <i class="ph ph-spinner ph-spin btn-icon"></i>
+      <span class="btn-text">Sending Message...</span>
+    `;
+    statusDiv.innerHTML = '';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        statusDiv.innerHTML = `
+          <div class="form-feedback-card success">
+            <div class="feedback-icon"><i class="ph-fill ph-check-circle"></i></div>
+            <div class="feedback-body">
+              <h4>Inquiry Received Successfully!</h4>
+              <p>Thank you, <strong>${senderName}</strong>. Our senior consultant in Salem has received your message and will contact you within 2 hours.</p>
+            </div>
+          </div>
+        `;
+        form.reset();
+        submitBtn.innerHTML = `
+          <i class="ph-fill ph-check btn-icon"></i>
+          <span class="btn-text">Sent Successfully!</span>
+        `;
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          submitBtn.innerHTML = `
+            <span class="btn-text">Send Another Message</span>
+            <i class="ph ph-paper-plane-tilt btn-icon"></i>
+          `;
+        }, 4000);
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      statusDiv.innerHTML = `
+        <div class="form-feedback-card error">
+          <div class="feedback-icon"><i class="ph-fill ph-warning-circle"></i></div>
+          <div class="feedback-body">
+            <h4>Unable to send message</h4>
+            <p>${err.message || 'Please check your internet connection and try again.'} Or call our Salem office directly at <a href="tel:+919894480585">+91 98944 80585</a>.</p>
+          </div>
+        </div>
+      `;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      submitBtn.innerHTML = `
+        <span class="btn-text">Try Again</span>
+        <i class="ph ph-arrow-counter-clockwise btn-icon"></i>
+      `;
+    }
+  });
+}
+
