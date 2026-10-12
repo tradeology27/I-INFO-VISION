@@ -3702,6 +3702,13 @@ button {
   }
 }
 
+@media (max-width: 900px) {
+  .contact-map-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
 @media (max-width: 640px) {
   .capabilities-grid {
     grid-template-columns: 1fr;
