@@ -4256,17 +4256,10 @@ a.tech-card {
   .contact-channels-grid {
     grid-template-columns: 1fr;
   }
-  .about-story-wrapper {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .milestones-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ===================================================
-   ABOUT PAGE & DARK CARD FIXES
+   ABOUT PAGE & DARK CARD STYLING
    =================================================== */
 .about-story-wrapper {
   display: grid;
@@ -4435,6 +4428,114 @@ a.tech-card {
 
 .section-dark .capability-card .capability-points li {
   color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS: ABOUT & MILESTONES (MOBILE FIX)
+   =================================================== */
+@media (max-width: 1024px) {
+  .about-story-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-main-image {
+    height: 380px;
+  }
+  .milestones-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-story-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .about-title {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 14px;
+  }
+  .about-description {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+  .about-values-list {
+    margin-top: 18px;
+    gap: 12px;
+  }
+  .about-value-item {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    gap: 10px;
+  }
+  .about-value-item i {
+    font-size: 18px;
+    margin-top: 2px;
+  }
+  .about-image-wrapper {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  }
+  .about-main-image {
+    height: 270px !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
+  .service-showcase-badge-top {
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+    gap: 6px;
+  }
+  .service-showcase-badge-bottom {
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+    gap: 6px;
+    border-radius: var(--radius-md);
+  }
+  .milestones-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .milestone-card {
+    padding: 22px 18px !important;
+    border-radius: var(--radius-lg);
+  }
+  .milestone-year-badge {
+    font-size: 11.5px;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+  }
+  .milestone-title {
+    font-size: 18px !important;
+    margin-bottom: 8px;
+  }
+  .milestone-desc {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 23px !important;
+  }
+  .about-main-image {
+    height: 220px !important;
+  }
+  .service-showcase-badge-top,
+  .service-showcase-badge-bottom {
+    font-size: 10.5px;
+    padding: 4px 10px;
+  }
+  .milestone-card {
+    padding: 18px 15px !important;
+  }
 }
 
 /* Clean transition between hero and stats bar */
