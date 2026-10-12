@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://www.iinfovision.com/web-development.html" />
   <meta property="og:title" content="Web Development &amp; Applications | I Info Vision" />
   <meta property="og:description" content="Custom web development, enterprise web apps, Next.js, React, Node.js, and high-performance full-stack architectures." />
-  <meta property="og:image" content="https://www.iinfovision.com/assets/images/logo.png" />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/logo.webp" />
 
   <!-- Schema.org Breadcrumb & Service JSON-LD for Google Rich Results -->
   <script type="application/ld+json">
@@ -46,9 +46,15 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="stylesheet" href="styles.css?v=2.0" />
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <!-- Google Fonts Preconnect & Optimized Load (Non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  <!-- Phosphor Icons (Non-render-blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
 </head>
 
 <body>
@@ -60,7 +66,7 @@
     <div class="container">
       <nav class="nav-wrapper">
         <a href="index.html" class="logo">
-          <img src="assets/images/logo.png" alt="I Info Vision Logo" class="logo-img" />
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
           <div class="logo-text-wrapper">
             <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
             <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
@@ -571,7 +577,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="assets/images/logo.png" alt="I Info Vision Logo" class="logo-img" />
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
             <div class="logo-text-wrapper">
               <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
               <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
@@ -581,10 +587,10 @@
             A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and excellence. Your trusted partner for end-to-end technology solutions.
           </p>
           <div class="footer-socials">
-            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.png" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;"></a>
-            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.png" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></a>
-            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.png" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></a>
-            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.png" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain;"></a>
           </div>
         </div>
 
@@ -705,6 +711,6 @@
     <i class="ph ph-caret-up"></i>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

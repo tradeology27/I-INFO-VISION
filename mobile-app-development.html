@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://www.iinfovision.com/mobile-app-development.html" />
   <meta property="og:title" content="Mobile App Development (iOS &amp; Android) | I Info Vision" />
   <meta property="og:description" content="Custom mobile app development, Flutter, React Native, iOS, and Android applications." />
-  <meta property="og:image" content="https://www.iinfovision.com/assets/images/logo.png" />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/logo.webp" />
 
   <!-- Schema.org Breadcrumb & Service JSON-LD for Google Rich Results -->
   <script type="application/ld+json">
@@ -45,9 +45,15 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="stylesheet" href="styles.css?v=2.0" />
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <!-- Google Fonts Preconnect & Optimized Load (Non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  <!-- Phosphor Icons (Non-render-blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
 </head>
 
 <body>
@@ -56,7 +62,7 @@
     <div class="container">
       <nav class="nav-wrapper">
         <a href="index.html" class="logo">
-          <img src="assets/images/logo.png" alt="I Info Vision Logo" class="logo-img" />
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
           <div class="logo-text-wrapper">
             <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
             <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
@@ -268,7 +274,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="assets/images/logo.png" alt="I Info Vision Logo" class="logo-img" />
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
             <div class="logo-text-wrapper">
               <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
               <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
@@ -357,6 +363,6 @@
 
   <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
   <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="ph ph-caret-up"></i></button>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

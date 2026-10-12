@@ -212,9 +212,20 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/images/logo.png" />
   <link rel="icon" type="image/png" sizes="144x144" href="assets/images/logo.png" />
   <link rel="apple-touch-icon" href="assets/images/logo.png" />
-  <link rel="stylesheet" href="styles.css?v=2.0" />
-  <!-- Phosphor Icons -->
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  
+  <!-- Google Fonts Preconnect & Optimized Load (Non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  
+  <!-- High-priority Preload for LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/hero-slide-1.webp" fetchpriority="high" type="image/webp" />
+  
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  
+  <!-- Phosphor Icons (Non-render-blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
 </head>
 
 <body>
@@ -226,7 +237,7 @@
     <div class="container">
       <nav class="nav-wrapper">
         <a href="#" class="logo">
-          <img src="assets/images/logo.png" alt="I Info Vision - Best Software &amp; Web Development Company in Salem" class="logo-img" />
+          <img src="assets/images/logo.webp" alt="I Info Vision - Best Software &amp; Web Development Company in Salem" class="logo-img" width="68" height="48" />
           <div class="logo-text-wrapper">
             <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
             <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
@@ -263,7 +274,7 @@
 
         <!-- Slide 1 -->
         <div class="carousel-slide active" data-slide="0">
-          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-1.png')"></div>
+          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-1.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <div class="slide-tag">
@@ -286,16 +297,16 @@
 
         <!-- Slide 2 -->
         <div class="carousel-slide" data-slide="1">
-          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-2.png')"></div>
+          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-2.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <div class="slide-tag">
               <span class="slide-tag-dot"></span>
               Software Solutions
             </div>
-            <h1 class="slide-headline">
+            <h2 class="slide-headline">
               Enterprise Software <span class="highlight">Built to Scale</span>
-            </h1>
+            </h2>
             <p class="slide-subtext">
               From custom web applications to CRM platforms and e-commerce stores — we engineer software that drives
               measurable growth.
@@ -309,16 +320,16 @@
 
         <!-- Slide 3 -->
         <div class="carousel-slide" data-slide="2">
-          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-3.png')"></div>
+          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-3.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <div class="slide-tag">
               <span class="slide-tag-dot"></span>
               Digital Marketing
             </div>
-            <h1 class="slide-headline">
+            <h2 class="slide-headline">
               Dominate the <span class="highlight">Digital Landscape</span>
-            </h1>
+            </h2>
             <p class="slide-subtext">
               SEO, social media, PPC, and brand promotion strategies that amplify your online presence and deliver real
               ROI.
@@ -332,16 +343,16 @@
 
         <!-- Slide 4 -->
         <div class="carousel-slide" data-slide="3">
-          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-4.png')"></div>
+          <div class="slide-bg" style="background-image: url('assets/images/hero-slide-4.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <div class="slide-tag">
               <span class="slide-tag-dot"></span>
               Education &amp; Growth
             </div>
-            <h1 class="slide-headline">
+            <h2 class="slide-headline">
               Empowering the <span class="highlight">Next Generation</span>
-            </h1>
+            </h2>
             <p class="slide-subtext">
               Empowering tomorrow's tech leaders through Internship Programs, Expert Webinars, Stock Market Analysis,
               Forex Trading, Technical Training, and Career Development Workshops.
@@ -593,7 +604,7 @@
         </div>
         <div class="about-image-col">
           <div class="about-image-wrapper">
-            <img src="assets/images/about_corporate.png" alt="I Info Vision Corporate Team" class="about-main-image">
+            <img src="assets/images/about_corporate.webp" alt="I Info Vision Corporate Team" class="about-main-image" width="800" height="800" loading="lazy" decoding="async">
             <div class="about-image-accent"></div>
           </div>
         </div>
@@ -614,7 +625,7 @@
       <div class="tech-grid">
         <!-- Frontend -->
         <div class="tech-card reveal">
-          <img src="assets/images/tech_frontend.png" alt="Frontend & UI/UX" class="tech-card-image">
+          <img src="assets/images/tech_frontend.webp" alt="Frontend & UI/UX" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
           <h3 class="tech-card-title">Frontend & UI/UX</h3>
           <div class="tech-tags">
             <span class="tech-tag">React.js</span>
@@ -626,7 +637,7 @@
         
         <!-- Mobile -->
         <div class="tech-card reveal reveal-delay-1">
-          <img src="assets/images/tech_mobile.png" alt="Mobile App" class="tech-card-image">
+          <img src="assets/images/tech_mobile.webp" alt="Mobile App" class="tech-card-image" width="1024" height="1024" loading="lazy" decoding="async">
           <h3 class="tech-card-title">Mobile App</h3>
           <div class="tech-tags">
             <span class="tech-tag">Flutter</span>
@@ -638,7 +649,7 @@
 
         <!-- Backend -->
         <div class="tech-card reveal reveal-delay-2">
-          <img src="assets/images/tech_backend.png" alt="Backend & API" class="tech-card-image">
+          <img src="assets/images/tech_backend.webp" alt="Backend & API" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
           <h3 class="tech-card-title">Backend & API</h3>
           <div class="tech-tags">
             <span class="tech-tag">Node.js</span>
@@ -650,7 +661,7 @@
         
         <!-- Database -->
         <div class="tech-card reveal">
-          <img src="assets/images/tech_database.png" alt="Database" class="tech-card-image">
+          <img src="assets/images/tech_database.webp" alt="Database" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
           <h3 class="tech-card-title">Database</h3>
           <div class="tech-tags">
             <span class="tech-tag">MySQL</span>
@@ -662,7 +673,7 @@
         
         <!-- Cloud -->
         <div class="tech-card reveal reveal-delay-1">
-          <img src="assets/images/tech_cloud.png" alt="Cloud & DevOps" class="tech-card-image">
+          <img src="assets/images/tech_cloud.webp" alt="Cloud & DevOps" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
           <h3 class="tech-card-title">Cloud & DevOps</h3>
           <div class="tech-tags">
             <span class="tech-tag">GCP</span>
@@ -674,7 +685,7 @@
         
         <!-- AI Solutions -->
         <div class="tech-card reveal reveal-delay-2">
-          <img src="assets/images/tech_ai.png" alt="AI Solutions" class="tech-card-image">
+          <img src="assets/images/tech_ai.webp" alt="AI Solutions" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
           <h3 class="tech-card-title">AI Solutions</h3>
           <div class="tech-tags">
             <span class="tech-tag">OpenAI</span>
@@ -862,9 +873,9 @@
 
         <!-- Areas We Serve in Salem & Tamil Nadu -->
         <div style="padding: 28px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: center;">
-          <h4 style="font-size: 15px; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+          <h3 style="font-size: 15px; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
             <i class="ph ph-map-pin"></i> Serving Salem &amp; Surrounding Districts
-          </h4>
+          </h3>
           <p style="font-size: 13.5px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 14px;">
             <strong style="color: #fff;">Salem Core Areas:</strong> Fairlands &bull; Hastampatti &bull; Alagapuram &bull; Suramangalam &bull; Ammapet &bull; Gugai &bull; Meyyanur &bull; Seelanaickenpatti &bull; Dasanaickenpatti &bull; Attur &bull; Mettur &bull; Omalur &bull; Sankagiri
           </p>
@@ -887,7 +898,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="assets/images/logo.png" alt="I Info Vision - Best Software &amp; Web Development Company in Salem" class="logo-img" />
+            <img src="assets/images/logo.webp" alt="I Info Vision - Best Software &amp; Web Development Company in Salem" class="logo-img" width="68" height="48" loading="lazy" decoding="async" />
             <div class="logo-text-wrapper">
               <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
               <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
@@ -898,16 +909,16 @@
             excellence. Your trusted partner for end-to-end technology solutions.
           </p>
           <div class="footer-socials">
-            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.png" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
-            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.png" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
-            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.png" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
-            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.png" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" width="24" height="24" loading="lazy" decoding="async" style="width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); transition: transform 0.2s;"></a>
           </div>
         </div>
 
         <!-- Quick Links -->
         <div>
-          <h4 class="footer-heading">Services</h4>
+          <h3 class="footer-heading">Services</h3>
           <ul class="footer-links">
             <li><a href="web-development.html">Web Development &amp; Apps</a></li>
             <li><a href="crm-erp-software.html">CRM &amp; ERP Software</a></li>
@@ -923,7 +934,7 @@
 
         <!-- Company -->
         <div>
-          <h4 class="footer-heading">Company</h4>
+          <h3 class="footer-heading">Company</h3>
           <ul class="footer-links">
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Our Services</a></li>
@@ -937,7 +948,7 @@
 
         <!-- Contact Info -->
         <div>
-          <h4 class="footer-heading">Contact Us</h4>
+          <h3 class="footer-heading">Contact Us</h3>
 
           <div class="footer-contact-item">
             <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
@@ -1028,7 +1039,7 @@
   </button>
 
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
