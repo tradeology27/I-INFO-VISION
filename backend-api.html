@@ -102,7 +102,7 @@
         <div class="page-breadcrumb">
           <a href="index.html">Home</a>
           <i class="ph ph-caret-right"></i>
-          <a href="about.html">Tech Stack</a>
+          <a href="services.html">Services</a>
           <i class="ph ph-caret-right"></i>
           <span>Backend &amp; API</span>
         </div>
@@ -112,31 +112,79 @@
         <p class="page-hero-desc">
           We architect resilient, high-throughput server backends, microservices, and enterprise API gateways built to handle millions of requests with sub-100ms latency, banking-grade security, and 99.99% uptime guarantees.
         </p>
-
-        <!-- Stats Bar -->
-        <div class="service-hero-stats-row">
-          <div class="service-hero-stat">
-            <i class="ph ph-cpu"></i> 10,000+ Concurrent Requests per Second
-          </div>
-          <div class="service-hero-stat">
-            <i class="ph ph-shield-check"></i> OWASP Top 10 Enterprise Compliance
-          </div>
-          <div class="service-hero-stat">
-            <i class="ph ph-plugs"></i> RESTful, GraphQL &amp; gRPC Architecture
-          </div>
-          <div class="service-hero-stat">
-            <i class="ph ph-timer"></i> Sub-100ms API Response Latency
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-       SECTION 1: CORE CAPABILITIES
+       SECTION 1: CORE CAPABILITIES & SHOWCASE
        ═══════════════════════════════════════════ -->
   <section class="service-detail-section">
     <div class="container">
+
+      <!-- Trust Stats Bar -->
+      <div class="client-stats-bar">
+        <div class="client-stat-card">
+          <div class="client-stat-num">10k+ req/s</div>
+          <div class="client-stat-label">High-Concurrency Throughput</div>
+        </div>
+        <div class="client-stat-card">
+          <div class="client-stat-num">99.99%</div>
+          <div class="client-stat-label">Enterprise Uptime SLA</div>
+        </div>
+        <div class="client-stat-card">
+          <div class="client-stat-num">&lt; 50ms</div>
+          <div class="client-stat-label">Optimized P99 Latency</div>
+        </div>
+        <div class="client-stat-card">
+          <div class="client-stat-num">OWASP Top 10</div>
+          <div class="client-stat-label">Banking-Grade Security</div>
+        </div>
+      </div>
+
+      <!-- Visual Feature Showcase Split -->
+      <div class="service-showcase-split reveal">
+        <div class="service-showcase-content">
+          <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 0 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200); width: fit-content;">
+            <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Server &amp; API Architecture
+          </span>
+          <h2 class="service-showcase-title">
+            Enterprise-Scale Microservices &amp; <span class="highlight">High-Throughput APIs</span>
+          </h2>
+          <p class="service-showcase-desc">
+            We engineer bulletproof backend foundations that power critical business operations. Whether processing high-frequency financial webhooks, managing complex relational transactions, or distributing load across microservices, our backends deliver predictable latency and ironclad stability.
+          </p>
+          <ul class="service-feature-checklist">
+            <li class="service-feature-item">
+              <i class="ph-fill ph-check-circle"></i>
+              <span><strong>Asynchronous Event-Driven Architecture:</strong> Message queues (Kafka, RabbitMQ, Redis Pub/Sub) for real-time order processing, notification fanouts, and background workers.</span>
+            </li>
+            <li class="service-feature-item">
+              <i class="ph-fill ph-check-circle"></i>
+              <span><strong>RESTful, GraphQL &amp; gRPC Endpoints:</strong> Type-safe schema contracts, automated OpenAPI documentation, granular caching headers, and rate-limited API gateways.</span>
+            </li>
+            <li class="service-feature-item">
+              <i class="ph-fill ph-check-circle"></i>
+              <span><strong>Zero-Trust Security &amp; Compliance:</strong> Role-Based Access Control (RBAC), JWT authentication, end-to-end data encryption, and OWASP-hardened validation pipelines.</span>
+            </li>
+          </ul>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Architect Your Backend <span class="btn-arrow">→</span></a>
+            <a href="tel:+919894480585" class="btn btn-outline"><i class="ph ph-phone"></i> Call +91 98944 80585</a>
+          </div>
+        </div>
+
+        <div class="service-showcase-visual">
+          <div class="service-showcase-badge-top">
+            <i class="ph ph-cpu"></i> Node.js, Python &amp; Go
+          </div>
+          <img src="assets/images/tech_backend.webp" alt="Robust Backend and API Architecture" loading="lazy" decoding="async">
+          <div class="service-showcase-badge-bottom">
+            <i class="ph ph-shield-check"></i> 99.99% Uptime &amp; Rate-Limiting
+          </div>
+        </div>
+      </div>
+
       <div class="service-section-header">
         <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
           <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Engineering Capabilities

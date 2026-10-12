@@ -119,187 +119,341 @@
        ═══════════════════════════════════════════ -->
   <section class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="ph ph-caret-right"></i>
-        <span>Services</span>
-      </nav>
-
-      <div class="service-hero-content">
-        <div class="service-badge">
-          <i class="ph ph-sparkle"></i>
-          <span>Enterprise Engineering &bull; Salem Headquarters</span>
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <span>Services &amp; Solutions</span>
         </div>
-        <h1 class="page-title">Comprehensive Technology &amp; Software Solutions</h1>
-        <p class="page-subtitle">
-          From custom business web applications and mobile apps to ERP automation, POS billing, algorithmic trading, and AI integration — we build mission-critical digital products that propel businesses forward.
+        <h1 class="page-hero-title">
+          Engineering Scalable, High-Impact <span class="highlight">Digital Solutions</span>
+        </h1>
+        <p class="page-hero-desc">
+          From custom business web applications and enterprise ERP automation to high-frequency algorithmic trading, mobile apps, and generative AI — we craft modern technology systems built to scale.
         </p>
-
-        <div class="service-hero-stats-row">
-          <div class="hero-stat-pill">
-            <span class="stat-number">150+</span>
-            <span class="stat-text">Projects Delivered</span>
-          </div>
-          <div class="hero-stat-pill">
-            <span class="stat-number">99.8%</span>
-            <span class="stat-text">Uptime &amp; SLA</span>
-          </div>
-          <div class="hero-stat-pill">
-            <span class="stat-number">100+</span>
-            <span class="stat-text">Enterprise Clients</span>
-          </div>
-          <div class="hero-stat-pill">
-            <span class="stat-number">12+</span>
-            <span class="stat-text">Years Experience</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-       ALL SERVICES DIRECTORY
+       SERVICES DIRECTORY & PORTFOLIO
+       ═══════════════════════════════════════════ -->
+  <main class="page-content-section">
+    <div class="container">
+
+      <!-- Trust Stats Bar -->
+      <div class="client-stats-bar">
+        <div class="client-stat-card">
+          <div class="client-stat-num">150+</div>
+          <div class="client-stat-label">Projects Delivered</div>
+        </div>
+        <div class="client-stat-card">
+          <div class="client-stat-num">99.8%</div>
+          <div class="client-stat-label">Uptime &amp; SLA Guarantee</div>
+        </div>
+        <div class="client-stat-card">
+          <div class="client-stat-num">120+</div>
+          <div class="client-stat-label">Enterprise Clients</div>
+        </div>
+        <div class="client-stat-card">
+          <div class="client-stat-num">12+</div>
+          <div class="client-stat-label">Years of Innovation</div>
+        </div>
+      </div>
+
+      <!-- Section Title & Eyebrow -->
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 32px;">
+        <span class="slide-tag" style="opacity: 1; transform: none; margin: 0 auto 12px; color: var(--blue-600); background: var(--blue-50); border-color: var(--blue-200);">
+          <span class="slide-tag-dot" style="background: var(--blue-600);"></span> Engineering Portfolio
+        </span>
+        <h2 style="font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+          Our Comprehensive Service Offerings
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 16px;">
+          Filter by technical domain to explore how our specialized software engineering, mobile development, algorithmic trading, and cloud infrastructure solve complex operational challenges.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="client-filter-bar" id="services-filter-bar">
+        <button class="client-filter-btn active" data-filter="all">All Solutions (12)</button>
+        <button class="client-filter-btn" data-filter="enterprise">Enterprise &amp; ERP</button>
+        <button class="client-filter-btn" data-filter="web-mobile">Web &amp; Mobile</button>
+        <button class="client-filter-btn" data-filter="fintech">Fintech &amp; Trading</button>
+        <button class="client-filter-btn" data-filter="cloud-ai">Cloud, AI &amp; Data</button>
+        <button class="client-filter-btn" data-filter="growth">Digital Growth</button>
+      </div>
+
+      <!-- Premium Services Grid (Glassmorphism & Rich Imagery) -->
+      <div class="premium-services-grid" id="services-grid" style="margin-bottom: 70px;">
+        <!-- 1. Web Development -->
+        <a href="web-development.html" class="premium-card" data-category="web-mobile">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-web-dev.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-globe"></i></div>
+            <h3 class="premium-card-title">Web Development &amp; Cloud Apps</h3>
+            <p class="premium-card-desc">Custom, responsive, SEO-optimized business websites and high-concurrency cloud portals engineered with React &amp; Next.js.</p>
+            <span class="card-explore-btn">Explore Web Dev <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 2. CRM & ERP Software -->
+        <a href="crm-erp-software.html" class="premium-card" data-category="enterprise">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-crm-erp.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-users-three"></i></div>
+            <h3 class="premium-card-title">Custom CRM &amp; Enterprise ERP</h3>
+            <p class="premium-card-desc">End-to-end workflow automation for Textile mills, Manufacturing, Logistics, and Construction firms across Salem &amp; Tamil Nadu.</p>
+            <span class="card-explore-btn">Explore CRM &amp; ERP <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 3. E-Commerce Platforms -->
+        <a href="ecommerce-solutions.html" class="premium-card" data-category="web-mobile">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-ecommerce.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-shopping-cart"></i></div>
+            <h3 class="premium-card-title">E-Commerce Platforms &amp; Stores</h3>
+            <p class="premium-card-desc">Feature-rich online storefronts with seamless Razorpay/Stripe checkout, automated inventory sync, and conversion-optimized UX.</p>
+            <span class="card-explore-btn">Explore E-Commerce <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 4. POS Billing Software -->
+        <a href="billing-software.html" class="premium-card" data-category="enterprise">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-billing.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-receipt"></i></div>
+            <h3 class="premium-card-title">Smart POS &amp; GST Billing Software</h3>
+            <p class="premium-card-desc">Barcode-ready, offline-first billing machines and cloud POS software with automated GST filing, thermal printing, and multi-counter control.</p>
+            <span class="card-explore-btn">Explore Billing <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 5. Algo Trading Bots -->
+        <a href="algo-trading.html" class="premium-card" data-category="fintech">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-algo-trading.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-robot"></i></div>
+            <h3 class="premium-card-title">Algorithmic Trading &amp; Quant Bots</h3>
+            <p class="premium-card-desc">Low-latency automated order execution bots for NSE, BSE, MCX &amp; Crypto with real-time multi-broker APIs, backtesting engines &amp; risk controls.</p>
+            <span class="card-explore-btn">Explore Algo Trading <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 6. Digital Marketing & SEO -->
+        <a href="digital-marketing.html" class="premium-card" data-category="growth">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-digital-marketing.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-megaphone"></i></div>
+            <h3 class="premium-card-title">Digital Marketing &amp; Local Salem SEO</h3>
+            <p class="premium-card-desc">Rank-driving search engine optimization, Google Ads PPC management, social media brand promotion, and high-ROI lead generation engines.</p>
+            <span class="card-explore-btn">Explore Marketing <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 7. Mobile App Development -->
+        <a href="mobile-app-development.html" class="premium-card" data-category="web-mobile">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-mobile-app.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-device-mobile"></i></div>
+            <h3 class="premium-card-title">iOS &amp; Android Mobile Apps</h3>
+            <p class="premium-card-desc">Intuitive, buttery-smooth native and cross-platform Flutter and React Native mobile applications engineered for high engagement and store success.</p>
+            <span class="card-explore-btn">Explore Mobile Apps <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 8. Education Technology -->
+        <a href="education-technology.html" class="premium-card" data-category="enterprise">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-education.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-graduation-cap"></i></div>
+            <h3 class="premium-card-title">EdTech, LMS &amp; Student Portals</h3>
+            <p class="premium-card-desc">Comprehensive Learning Management Systems for schools, colleges, and training academies with student portals, online testing, and tech workshops.</p>
+            <span class="card-explore-btn">Explore EdTech <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 9. SaaS & Custom Enterprise Platforms -->
+        <a href="saas-custom-software.html" class="premium-card" data-category="enterprise">
+          <div class="premium-card-bg" style="background-image: url('assets/images/services/service-saas.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-cloud-arrow-up"></i></div>
+            <h3 class="premium-card-title">SaaS Products &amp; Custom Software</h3>
+            <p class="premium-card-desc">Multi-tenant Cloud SaaS architectures, subscription billing pipelines, custom enterprise APIs, and bespoke software systems built from the ground up.</p>
+            <span class="card-explore-btn">Explore Custom SaaS <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 10. AI & Machine Learning -->
+        <a href="ai-solutions.html" class="premium-card" data-category="cloud-ai">
+          <div class="premium-card-bg" style="background-image: url('assets/images/tech_ai.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-brain"></i></div>
+            <h3 class="premium-card-title">Enterprise AI &amp; Custom LLMs</h3>
+            <p class="premium-card-desc">Generative AI assistants, Gemini &amp; OpenAI workflows, computer vision, OCR document processing, and predictive analytics models.</p>
+            <span class="card-explore-btn">Explore AI Solutions <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 11. Cloud Architecture & DevOps -->
+        <a href="cloud-devops.html" class="premium-card" data-category="cloud-ai">
+          <div class="premium-card-bg" style="background-image: url('assets/images/tech_cloud.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-cloud"></i></div>
+            <h3 class="premium-card-title">Cloud Infrastructure &amp; DevOps</h3>
+            <p class="premium-card-desc">AWS &amp; GCP cloud migrations, Docker &amp; Kubernetes containerization, CI/CD automated deployment pipelines, and zero-downtime reliability.</p>
+            <span class="card-explore-btn">Explore Cloud &amp; DevOps <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 12. Database Architecture -->
+        <a href="database-solutions.html" class="premium-card" data-category="cloud-ai">
+          <div class="premium-card-bg" style="background-image: url('assets/images/tech_database.webp');"></div>
+          <div class="premium-card-overlay"></div>
+          <div class="premium-card-content glass-effect">
+            <div class="premium-card-icon"><i class="ph ph-database"></i></div>
+            <h3 class="premium-card-title">Database Engineering &amp; Big Data</h3>
+            <p class="premium-card-desc">PostgreSQL, MongoDB, and Redis optimization, data sharding, replication clusters, and sub-millisecond query performance tuning.</p>
+            <span class="card-explore-btn">Explore Databases <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Live Category Filter Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const filterBtns = document.querySelectorAll('#services-filter-bar .client-filter-btn');
+          const cards = document.querySelectorAll('#services-grid .premium-card');
+
+          filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+              filterBtns.forEach(b => b.classList.remove('active'));
+              this.classList.add('active');
+
+              const filterValue = this.getAttribute('data-filter');
+              cards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                  card.classList.remove('is-hidden');
+                  card.style.opacity = '1';
+                } else {
+                  card.classList.add('is-hidden');
+                }
+              });
+            });
+          });
+        });
+      </script>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       TECHNOLOGY ECOSYSTEM & STACK
        ═══════════════════════════════════════════ -->
   <section class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-eyebrow">
           <span class="section-eyebrow-line"></span>
-          Core Solutions
+          Technology Ecosystem
           <span class="section-eyebrow-line"></span>
         </div>
-        <h2 class="section-title">What We Build &amp; Deliver</h2>
+        <h2 class="section-title">Engineered with Advanced Technologies</h2>
         <p class="section-subtitle">
-          Tailor-made software engineering built specifically for your industry, scaling seamlessly from regional businesses in Salem to global enterprises.
+          We leverage a battle-tested, modern technology ecosystem to deliver high-performance digital products that scale reliably from day one.
         </p>
       </div>
 
-      <div class="capabilities-grid reveal">
-        <!-- 1. Web Development -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-globe"></i></div>
-          <h3 class="capability-title">Web Development &amp; Cloud Apps</h3>
-          <p class="capability-desc">High-speed, SEO-optimized business websites, custom web portals, and scalable cloud applications built with React, Next.js, and modern backends.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
+      <div class="tech-grid">
+        <!-- Frontend -->
+        <a href="frontend-ui-ux.html" class="tech-card reveal" title="Frontend &amp; UI/UX Development">
+          <img src="assets/images/tech_frontend.webp" alt="Frontend &amp; UI/UX" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="tech-card-title">Frontend &amp; UI/UX</h3>
+          <div class="tech-tags">
             <span class="tech-tag">React.js</span>
             <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">SEO Optimized</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Tailwind CSS</span>
           </div>
-          <a href="web-development.html" class="btn btn-outline btn-sm">Explore Web Dev &rarr;</a>
-        </div>
+          <span class="tech-card-action">Explore Tech <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-        <!-- 2. CRM & ERP Software -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-users-three"></i></div>
-          <h3 class="capability-title">Custom CRM &amp; Enterprise ERP</h3>
-          <p class="capability-desc">End-to-end workflow automation for Textile mills, Manufacturing plants, Travel Agencies, and Construction firms in Salem and Tamil Nadu.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">Textile ERP</span>
-            <span class="tech-tag">Lead CRM</span>
-            <span class="tech-tag">Inventory</span>
-            <span class="tech-tag">Multi-Branch</span>
-          </div>
-          <a href="crm-erp-software.html" class="btn btn-outline btn-sm">Explore CRM &amp; ERP &rarr;</a>
-        </div>
-
-        <!-- 3. E-Commerce Solutions -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-shopping-cart"></i></div>
-          <h3 class="capability-title">E-Commerce Platforms &amp; Stores</h3>
-          <p class="capability-desc">High-converting online storefronts with seamless Razorpay/Stripe payment gateways, automated inventory management, and fast mobile checkouts.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">Custom Stores</span>
-            <span class="tech-tag">Payment Gateway</span>
-            <span class="tech-tag">Order Tracking</span>
-            <span class="tech-tag">Mobile Ready</span>
-          </div>
-          <a href="ecommerce-solutions.html" class="btn btn-outline btn-sm">Explore E-Commerce &rarr;</a>
-        </div>
-
-        <!-- 4. Billing Software -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-receipt"></i></div>
-          <h3 class="capability-title">Smart POS &amp; GST Billing Software</h3>
-          <p class="capability-desc">Barcode-ready, offline-first billing machines and cloud POS software with automated GST filing, thermal printing, and multi-counter control.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">GST Invoicing</span>
-            <span class="tech-tag">Barcode Scan</span>
-            <span class="tech-tag">Thermal Print</span>
-            <span class="tech-tag">Audit Reports</span>
-          </div>
-          <a href="billing-software.html" class="btn btn-outline btn-sm">Explore Billing &rarr;</a>
-        </div>
-
-        <!-- 5. Algo Trading Bots -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-robot"></i></div>
-          <h3 class="capability-title">Algorithmic Trading &amp; Quant Bots</h3>
-          <p class="capability-desc">Low-latency automated order execution bots for NSE, BSE, MCX, and Crypto with real-time multi-broker APIs, backtesting engines, and risk management.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">Zerodha Kite</span>
-            <span class="tech-tag">Angel One</span>
-            <span class="tech-tag">Pine Script</span>
-            <span class="tech-tag">Python Quant</span>
-          </div>
-          <a href="algo-trading.html" class="btn btn-outline btn-sm">Explore Algo Trading &rarr;</a>
-        </div>
-
-        <!-- 6. Digital Marketing & SEO -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-megaphone"></i></div>
-          <h3 class="capability-title">Digital Marketing &amp; Local Salem SEO</h3>
-          <p class="capability-desc">Proven rank-driving search engine optimization, Google Ads PPC management, social media brand promotion, and revenue-focused lead generation.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">Salem Local SEO</span>
-            <span class="tech-tag">Google Ads</span>
-            <span class="tech-tag">Meta Ads</span>
-            <span class="tech-tag">Conversion Rate</span>
-          </div>
-          <a href="digital-marketing.html" class="btn btn-outline btn-sm">Explore Marketing &rarr;</a>
-        </div>
-
-        <!-- 7. Mobile App Development -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-device-mobile"></i></div>
-          <h3 class="capability-title">iOS &amp; Android Mobile Apps</h3>
-          <p class="capability-desc">Intuitive, smooth native and cross-platform Flutter and React Native mobile applications engineered for maximum user engagement and store approval.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
+        <!-- Mobile -->
+        <a href="mobile-app-development.html" class="tech-card reveal reveal-delay-1" title="Mobile App Development">
+          <img src="assets/images/tech_mobile.webp" alt="Mobile App Development" class="tech-card-image" width="1024" height="1024" loading="lazy" decoding="async">
+          <h3 class="tech-card-title">Mobile Apps</h3>
+          <div class="tech-tags">
             <span class="tech-tag">Flutter</span>
             <span class="tech-tag">React Native</span>
-            <span class="tech-tag">iOS &bull; Android</span>
-            <span class="tech-tag">Push Notifications</span>
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">Kotlin</span>
           </div>
-          <a href="mobile-app-development.html" class="btn btn-outline btn-sm">Explore Mobile Apps &rarr;</a>
-        </div>
+          <span class="tech-card-action">Explore Tech <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-        <!-- 8. Education Technology -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-graduation-cap"></i></div>
-          <h3 class="capability-title">EdTech, LMS &amp; Student Training</h3>
-          <p class="capability-desc">Custom Learning Management Systems for schools, colleges, and training academies, complete with student portals, online exams, and technical workshops.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">College ERP</span>
-            <span class="tech-tag">Student LMS</span>
-            <span class="tech-tag">Online Testing</span>
-            <span class="tech-tag">Internships</span>
-          </div>
-          <a href="education-technology.html" class="btn btn-outline btn-sm">Explore EdTech &rarr;</a>
-        </div>
-
-        <!-- 9. SaaS & Custom Software -->
-        <div class="capability-card">
-          <div class="capability-icon"><i class="ph ph-cloud-arrow-up"></i></div>
-          <h3 class="capability-title">SaaS Products &amp; Custom Engineering</h3>
-          <p class="capability-desc">Multi-tenant Cloud SaaS architectures, subscription billing pipelines, custom enterprise APIs, and bespoke software solutions built from scratch.</p>
-          <div class="tech-tags" style="margin-bottom: 18px;">
-            <span class="tech-tag">Multi-Tenant</span>
+        <!-- Backend -->
+        <a href="backend-api.html" class="tech-card reveal reveal-delay-2" title="Backend &amp; API Development">
+          <img src="assets/images/tech_backend.webp" alt="Backend &amp; API" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="tech-card-title">Backend &amp; Cloud APIs</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Python (FastAPI)</span>
+            <span class="tech-tag">Laravel</span>
             <span class="tech-tag">Microservices</span>
-            <span class="tech-tag">Cloud Native</span>
-            <span class="tech-tag">AWS &bull; Docker</span>
           </div>
-          <a href="saas-custom-software.html" class="btn btn-outline btn-sm">Explore Custom SaaS &rarr;</a>
-        </div>
+          <span class="tech-card-action">Explore Tech <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Database -->
+        <a href="database-solutions.html" class="tech-card reveal" title="Database Engineering">
+          <img src="assets/images/tech_database.webp" alt="Database" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="tech-card-title">Databases &amp; Caching</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+          <span class="tech-card-action">Explore Tech <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Cloud -->
+        <a href="cloud-devops.html" class="tech-card reveal reveal-delay-1" title="Cloud &amp; DevOps">
+          <img src="assets/images/tech_cloud.webp" alt="Cloud &amp; DevOps" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="tech-card-title">Cloud &amp; DevOps</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">AWS Cloud</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">CI/CD Pipelines</span>
+          </div>
+          <span class="tech-card-action">Explore Tech <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- AI -->
+        <a href="ai-solutions.html" class="tech-card reveal reveal-delay-2" title="Artificial Intelligence &amp; ML">
+          <img src="assets/images/tech_ai.webp" alt="Artificial Intelligence" class="tech-card-image" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="tech-card-title">AI &amp; Machine Learning</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Google Gemini</span>
+            <span class="tech-tag">OpenAI</span>
+            <span class="tech-tag">Custom LLMs</span>
+            <span class="tech-tag">RAG Systems</span>
+          </div>
+          <span class="tech-card-action">Explore Tech <i class="ph ph-arrow-right"></i></span>
+        </a>
       </div>
     </div>
   </section>
