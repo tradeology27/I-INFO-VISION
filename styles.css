@@ -3960,11 +3960,14 @@ a.tech-card {
     font-size: 18px;
   }
 
-  /* Reposition floating widgets so they never overlap the bottom bar */
+  /* Hide duplicate floating WhatsApp button on mobile since sticky bar already has a prominent WhatsApp action */
   .whatsapp-float {
-    bottom: 74px !important;
+    display: none !important;
   }
+
+  /* Back to top button sits cleanly above the sticky bar without overlapping anything */
   .back-to-top {
-    bottom: 74px !important;
+    bottom: 76px !important;
+    right: 18px !important;
   }
 }
