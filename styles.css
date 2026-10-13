@@ -3571,7 +3571,7 @@ a.tech-card {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 12px;
+  padding: 12px 14px;
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
   transition: background 0.2s;
@@ -3579,6 +3579,18 @@ a.tech-card {
 
 .tech-badge-row:hover {
   background: var(--blue-50);
+}
+
+.tech-badge-row > div:not(.tech-pill-name) {
+  flex: 1;
+  min-width: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+
+.tech-badge-row > div:not(.tech-pill-name) strong {
+  color: var(--gray-900);
 }
 
 .tech-pill-name {
@@ -4181,6 +4193,67 @@ a.tech-card {
 }
 
 
+@media (max-width: 768px) {
+  .tech-tier-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tech-tier-card {
+    padding: 24px 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .tech-tier-header {
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+  }
+
+  .tech-tier-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .tech-tier-title {
+    font-size: 18px;
+  }
+
+  .tech-tier-subtitle {
+    font-size: 12.5px;
+  }
+
+  .tech-badge-list {
+    gap: 12px;
+  }
+
+  .tech-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 14px;
+  }
+
+  .tech-pill-name {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12.5px;
+    padding: 4px 11px;
+    white-space: normal;
+    word-break: break-word;
+    margin-bottom: 2px;
+  }
+
+  .tech-badge-row > div:not(.tech-pill-name) {
+    width: 100%;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--gray-700);
+  }
+}
+
 @media (max-width: 640px) {
   .capabilities-grid {
     grid-template-columns: 1fr;
@@ -4191,6 +4264,47 @@ a.tech-card {
   .service-hero-stats-row {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-tier-card {
+    padding: 18px 14px;
+  }
+
+  .tech-tier-header {
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+  }
+
+  .tech-tier-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .tech-tier-title {
+    font-size: 16.5px;
+  }
+
+  .tech-tier-subtitle {
+    font-size: 12px;
+  }
+
+  .tech-badge-row {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .tech-pill-name {
+    font-size: 11.5px;
+    padding: 3px 9px;
+  }
+
+  .tech-badge-row > div:not(.tech-pill-name) {
+    font-size: 13px;
+    line-height: 1.5;
   }
 }
 
