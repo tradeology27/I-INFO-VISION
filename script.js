@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactFormAnimation();
   // ── CONTACT FORM AJAX ──
   initContactForm();
+  // ── METHODOLOGY CARDS INTERACTION ──
+  initMethodologyCards();
 });
 
 
@@ -532,6 +534,37 @@ function initContactForm() {
         <i class="ph ph-arrow-counter-clockwise btn-icon"></i>
       `;
     }
+  });
+}
+
+/* ───────────────────────────────────────────
+   METHODOLOGY CARDS — Interactive Spotlight & Subtle 3D Tilt
+   ─────────────────────────────────────────── */
+function initMethodologyCards() {
+  const cards = document.querySelectorAll('.methodology-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+
+      // Subtle 3D tilt
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -3.5;
+      const rotateY = ((x - centerX) / centerX) * 3.5;
+      card.style.setProperty('--tilt-rx', `${rotateX.toFixed(2)}deg`);
+      card.style.setProperty('--tilt-ry', `${rotateY.toFixed(2)}deg`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--tilt-rx', '0deg');
+      card.style.setProperty('--tilt-ry', '0deg');
+    });
   });
 }
 
