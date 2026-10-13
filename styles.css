@@ -1149,9 +1149,13 @@ button {
   margin-bottom: 24px;
 }
 
-.footer-socials {
+.footer-socials,
+.footer-social-links {
   display: flex;
-  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .footer-social-link {
@@ -2816,6 +2820,17 @@ a.tech-card {
   margin-bottom: 60px;
 }
 
+/* Page Hero Stats Bar Modifier (Hero Integration) */
+.page-hero .client-stats-bar,
+.page-hero-stats-bar {
+  width: 100%;
+  max-width: 100%;
+  margin: 44px auto 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
 .client-stat-card {
   background: var(--white);
   padding: 30px 24px;
@@ -3274,6 +3289,18 @@ a.tech-card {
 }
 
 /* Responsive Rules for Subpages */
+@media (max-width: 1200px) {
+  .client-stat-card {
+    padding: 24px 16px;
+  }
+  .client-stat-num {
+    font-size: 32px;
+  }
+  .client-stat-label {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 1024px) {
   .featured-blog-card {
     grid-template-columns: 1fr;
