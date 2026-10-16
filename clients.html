@@ -168,202 +168,474 @@
       <!-- Industry Filter Bar -->
       <div class="client-filter-bar">
         <button class="client-filter-btn active" data-filter="all">All Sectors</button>
+        <button class="client-filter-btn" data-filter="healthcare">Healthcare</button>
         <button class="client-filter-btn" data-filter="logistics">Logistics &amp; Supply</button>
         <button class="client-filter-btn" data-filter="fintech">Finance &amp; Trading</button>
         <button class="client-filter-btn" data-filter="retail">Retail &amp; E-Commerce</button>
-        <button class="client-filter-btn" data-filter="healthcare">Healthcare</button>
         <button class="client-filter-btn" data-filter="manufacturing">Manufacturing</button>
         <button class="client-filter-btn" data-filter="education">Education</button>
       </div>
 
-      <!-- Client Cards Grid (8 Diverse Clients) -->
-      <div class="clients-grid" id="clients-grid">
-
-        <!-- Client 1 -->
-        <div class="client-card" data-sector="logistics">
-          <div class="client-card-top">
-            <div class="client-logo-icon">
-              <i class="ph ph-truck"></i>
-            </div>
-            <span class="client-tag">Logistics</span>
-          </div>
-          <h3 class="client-name">Apex Global Logistics</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Chennai &amp; Singapore
-          </div>
-          <p class="client-scope-desc">
-            End-to-end cloud dispatch portal, real-time vehicle GPS telemetry, automated consignment tracking, and vendor billing automation.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">React</span>
-            <span class="tech-chip">Node.js</span>
-            <span class="tech-chip">PostgreSQL</span>
-            <span class="tech-chip">Maps API</span>
-          </div>
+      <!-- View Mode & Swipe Controls Bar -->
+      <div class="client-view-toggle-bar">
+        <div class="view-toggle-group">
+          <button class="view-toggle-btn active" id="view-mode-swipe" type="button">
+            <i class="ph ph-hand-swipe-left"></i> Swipe View
+          </button>
+          <button class="view-toggle-btn" id="view-mode-grid" type="button">
+            <i class="ph ph-grid-four"></i> 2-Column Grid
+          </button>
         </div>
 
-        <!-- Client 2 -->
-        <div class="client-card" data-sector="fintech">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #9333ea; background: #faf5ff; border-color: #e9d5ff;">
-              <i class="ph ph-chart-line-up"></i>
-            </div>
-            <span class="client-tag">FinTech</span>
-          </div>
-          <h3 class="client-name">Zenith Wealth &amp; Capital</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Mumbai, Maharashtra
-          </div>
-          <p class="client-scope-desc">
-            Ultra-fast algorithmic trading infrastructure, multi-broker order routing engine, live portfolio risk dashboard, and backtesting suite.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">Python</span>
-            <span class="tech-chip">WebSockets</span>
-            <span class="tech-chip">Redis</span>
-            <span class="tech-chip">Trading APIs</span>
-          </div>
+        <div class="swipe-hint-pill" id="swipe-hint">
+          <i class="ph ph-arrows-left-right"></i>
+          <span>Swipe or Drag Cards</span>
         </div>
 
-        <!-- Client 3 -->
-        <div class="client-card" data-sector="retail">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #16a34a; background: #f0fdf4; border-color: #bbf7d0;">
-              <i class="ph ph-shopping-bag"></i>
-            </div>
-            <span class="client-tag">E-Commerce</span>
-          </div>
-          <h3 class="client-name">Veda Wellness Organics</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Bangalore, Karnataka
-          </div>
-          <p class="client-scope-desc">
-            High-converting headless e-commerce storefront with multi-warehouse inventory synchronization, custom loyalty program, and Google Ads funnels.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">Next.js</span>
-            <span class="tech-chip">GraphQL</span>
-            <span class="tech-chip">Stripe</span>
-            <span class="tech-chip">SEO Suite</span>
-          </div>
+        <div class="swipe-nav-controls" id="swipe-controls-top">
+          <button class="swipe-arrow-btn" id="swipe-prev-btn" type="button" aria-label="Previous slide">
+            <i class="ph ph-caret-left"></i>
+          </button>
+          <span class="swipe-counter-text" id="swipe-counter">1 / 6</span>
+          <button class="swipe-arrow-btn" id="swipe-next-btn" type="button" aria-label="Next slide">
+            <i class="ph ph-caret-right"></i>
+          </button>
         </div>
-
-        <!-- Client 4 -->
-        <div class="client-card" data-sector="education">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #d97706; background: #fffbeb; border-color: #fde68a;">
-              <i class="ph ph-graduation-cap"></i>
-            </div>
-            <span class="client-tag">EdTech</span>
-          </div>
-          <h3 class="client-name">Kavya EdTech Academy</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Salem &amp; Coimbatore
-          </div>
-          <p class="client-scope-desc">
-            Enterprise Learning Management System (LMS) with interactive video classrooms, proctored examinations, student attendance, and payment gateways.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">WebRTC</span>
-            <span class="tech-chip">React</span>
-            <span class="tech-chip">Node.js</span>
-            <span class="tech-chip">MongoDB</span>
-          </div>
-        </div>
-
-        <!-- Client 5 -->
-        <div class="client-card" data-sector="healthcare">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #0891b2; background: #ecfeff; border-color: #a5f3fc;">
-              <i class="ph ph-heartbeat"></i>
-            </div>
-            <span class="client-tag">Healthcare</span>
-          </div>
-          <h3 class="client-name">Metro Care Diagnostics</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Trichy &amp; Salem
-          </div>
-          <p class="client-scope-desc">
-            HIPAA-compliant patient health records portal, automated SMS/WhatsApp test report delivery, doctor appointment scheduling, and telemedicine.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">Django</span>
-            <span class="tech-chip">React</span>
-            <span class="tech-chip">PostgreSQL</span>
-            <span class="tech-chip">Cloud KMS</span>
-          </div>
-        </div>
-
-        <!-- Client 6 -->
-        <div class="client-card" data-sector="manufacturing">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #4b5563; background: #f3f4f6; border-color: #e5e7eb;">
-              <i class="ph ph-gear-six"></i>
-            </div>
-            <span class="client-tag">Manufacturing</span>
-          </div>
-          <h3 class="client-name">Salem Precision Machining</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Salem Industrial Estate
-          </div>
-          <p class="client-scope-desc">
-            Shop-floor IoT telemetry dashboard, raw material inventory CRM, machine maintenance scheduler, and invoice reconciliation software.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">Express</span>
-            <span class="tech-chip">Angular</span>
-            <span class="tech-chip">MQTT</span>
-            <span class="tech-chip">MySQL</span>
-          </div>
-        </div>
-
-        <!-- Client 7 -->
-        <div class="client-card" data-sector="retail">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #dc2626; background: #fef2f2; border-color: #fecaca;">
-              <i class="ph ph-fork-knife"></i>
-            </div>
-            <span class="client-tag">Hospitality</span>
-          </div>
-          <h3 class="client-name">QuickBite Cloud Kitchens</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Hyderabad &amp; Bangalore
-          </div>
-          <p class="client-scope-desc">
-            Cross-platform mobile ordering application, Kitchen Display System (KDS), delivery partner dispatch, and real-time menu management.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">Flutter</span>
-            <span class="tech-chip">Firebase</span>
-            <span class="tech-chip">WebSockets</span>
-            <span class="tech-chip">iOS / Android</span>
-          </div>
-        </div>
-
-        <!-- Client 8 -->
-        <div class="client-card" data-sector="logistics">
-          <div class="client-card-top">
-            <div class="client-logo-icon" style="color: #2563eb; background: #eff6ff; border-color: #bfdbfe;">
-              <i class="ph ph-buildings"></i>
-            </div>
-            <span class="client-tag">Real Estate</span>
-          </div>
-          <h3 class="client-name">Horizon Urban Properties</h3>
-          <div class="client-location">
-            <i class="ph ph-map-pin"></i> Chennai, Tamil Nadu
-          </div>
-          <p class="client-scope-desc">
-            High-converting real estate lead capture system, virtual 3D unit walkthroughs, broker performance tracking CRM, and automated lead routing.
-          </p>
-          <div class="client-tech-chips">
-            <span class="tech-chip">React</span>
-            <span class="tech-chip">PHP / Laravel</span>
-            <span class="tech-chip">Maps Platform</span>
-            <span class="tech-chip">CRM Engine</span>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Swipe / Grid Track Container -->
+      <div class="clients-swipe-wrapper" id="clients-swipe-wrapper">
+        <div class="clients-swipe-track theme-animated" id="clients-grid">
+
+          <!-- ★ Project 1: AllenSha.com -->
+          <div class="client-card theme-animated" data-sector="healthcare" style="border: 2px solid #bae6fd; position: relative;">
+            <div class="client-card-banner">
+              <a href="project-allensha.html" style="display: block; width: 100%; height: 100%;" aria-label="View AllenSha.com Project Details">
+                <img src="assets/images/projects/allensha-website.png" alt="AllenSha.com Homeopathy Clinic Website" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+              </a>
+              <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 3;">
+                <span style="background: rgba(37, 99, 235, 0.95); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.25);">Featured Project</span>
+                <a href="https://allensha.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); color: #1d4ed8; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); text-decoration: none; border: 1.5px solid #2563eb; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff';" onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.color='#1d4ed8';">
+                  <i class="ph ph-arrow-square-out" style="font-size: 14px;"></i> allensha.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-avatar-brand">
+                <img src="assets/images/projects/allensha-logo.webp" alt="Allen Sha Logo" />
+              </div>
+              <span class="client-tag" style="background: #e0f2fe; color: #0369a1; font-weight: 700;">Healthcare</span>
+            </div>
+            <h3 class="client-name">
+              <a href="project-allensha.html" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--blue-600)'" onmouseout="this.style.color='inherit'">AllenSha.com</a>
+            </h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Salem, Tamil Nadu
+            </div>
+            <p class="client-scope-desc">
+              Modern telemedicine consultation website for Dr. M. Mohamed Shahid with online video booking, WhatsApp patient integration, and pan-India medicine delivery.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">Website Design</span>
+              <span class="tech-chip">Online Booking</span>
+              <span class="tech-chip">SEO Suite</span>
+              <span class="tech-chip">WhatsApp API</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="project-allensha.html" class="btn btn-primary" style="flex: 1.1; padding: 12px 14px; font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);">
+                View Case Study <i class="ph ph-arrow-right"></i>
+              </a>
+              <a href="https://allensha.com" target="_blank" rel="noopener noreferrer" class="btn" style="flex: 0.9; border: 2px solid #2563eb; color: #1d4ed8; background: #eff6ff; padding: 12px 14px; font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; transition: all 0.25s ease;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff';" onmouseout="this.style.background='#eff6ff'; this.style.color='#1d4ed8';">
+                <i class="ph ph-arrow-square-out" style="font-size: 16px;"></i> Live Site
+              </a>
+            </div>
+          </div>
+
+          <!-- ★ Project 2: KNCHKarur.com -->
+          <div class="client-card theme-animated" data-sector="healthcare" style="border: 2px solid #bbf7d0; position: relative;">
+            <div class="client-card-banner">
+              <a href="project-knch-karur.html" style="display: block; width: 100%; height: 100%;" aria-label="View Kumar Nature Cure Hospital Details">
+                <img src="assets/images/projects/knch-karur-website.png" alt="Kumar Nature Cure Hospital Website" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+              </a>
+              <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 3;">
+                <span style="background: rgba(22, 163, 74, 0.95); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.25);">Featured Project</span>
+                <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); color: #15803d; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); text-decoration: none; border: 1.5px solid #16a34a; transition: all 0.2s;" onmouseover="this.style.background='#16a34a'; this.style.color='#ffffff';" onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.color='#15803d';">
+                  <i class="ph ph-arrow-square-out" style="font-size: 14px;"></i> knchkarur.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-avatar-brand is-circle">
+                <img src="assets/images/projects/knch-logo.webp" alt="Kumar Nature Cure Hospital Logo" />
+              </div>
+              <span class="client-tag" style="background: #dcfce7; color: #15803d; font-weight: 700;">Healthcare</span>
+            </div>
+            <h3 class="client-name">
+              <a href="project-knch-karur.html" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#16a34a'" onmouseout="this.style.color='inherit'">Kumar Nature Cure Hospital</a>
+            </h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Karur, Tamil Nadu &bull; Since 2003
+            </div>
+            <p class="client-scope-desc">
+              Official hospital portal for premier naturopathy, yoga &amp; dental center with clinical treatment listings, doctor directory, and direct consultation booking.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip" style="background: #f0fdf4; color: #15803d;">Hospital Web Portal</span>
+              <span class="tech-chip" style="background: #f0fdf4; color: #15803d;">Appointment Booking</span>
+              <span class="tech-chip" style="background: #f0fdf4; color: #15803d;">SEO Suite</span>
+              <span class="tech-chip" style="background: #f0fdf4; color: #15803d;">Multilingual</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="project-knch-karur.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); flex: 1.1; padding: 12px 14px; font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.25);">
+                View Case Study <i class="ph ph-arrow-right"></i>
+              </a>
+              <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn" style="flex: 0.9; border: 2px solid #16a34a; color: #15803d; background: #f0fdf4; padding: 12px 14px; font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; transition: all 0.25s ease;" onmouseover="this.style.background='#16a34a'; this.style.color='#ffffff';" onmouseout="this.style.background='#f0fdf4'; this.style.color='#15803d';">
+                <i class="ph ph-arrow-square-out" style="font-size: 16px;"></i> Live Site
+              </a>
+            </div>
+          </div>
+
+          <!-- ★ Project 3: Kumar Hospital Billing Software -->
+          <div class="client-card theme-animated" data-sector="healthcare" style="border: 2px solid #fed7aa; position: relative;">
+            <div class="client-card-banner">
+              <a href="project-kumar-hospital-billing.html" style="display: block; width: 100%; height: 100%;" aria-label="View Kumar Hospital Billing Software Details">
+                <img src="assets/images/projects/kumar-billing-software.jpg" alt="Kumar Hospital Billing Software" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+              </a>
+              <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 3;">
+                <span style="background: rgba(234, 88, 12, 0.95); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.25);">Custom Software</span>
+                <span style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); color: #c2410c; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); border: 1.5px solid #ea580c;">
+                  <i class="ph ph-desktop" style="font-size: 14px;"></i> Enterprise System
+                </span>
+              </div>
+            </div>
+            
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-avatar-brand is-circle" style="border-color: #ea580c;">
+                <img src="assets/images/projects/knch-logo.webp" alt="Kumar Hospital Logo" />
+              </div>
+              <span class="client-tag" style="background: #ffedd5; color: #c2410c; font-weight: 700;">Hospital ERP</span>
+            </div>
+            <h3 class="client-name">
+              <a href="project-kumar-hospital-billing.html" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ea580c'" onmouseout="this.style.color='inherit'">Kumar Hospital Billing Software</a>
+            </h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Karur, Tamil Nadu &bull; Built for KNCH
+            </div>
+            <p class="client-scope-desc">
+              Custom desktop healthcare billing system with GST-compliant invoicing, patient records management, consultation scheduling, and financial analytics.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip" style="background: #fff7ed; color: #c2410c;">Custom Software</span>
+              <span class="tech-chip" style="background: #fff7ed; color: #c2410c;">GST Billing</span>
+              <span class="tech-chip" style="background: #fff7ed; color: #c2410c;">Patient Records</span>
+              <span class="tech-chip" style="background: #fff7ed; color: #c2410c;">Analytics</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="project-kumar-hospital-billing.html" class="btn btn-primary" style="background: linear-gradient(135deg, #ea580c, #c2410c); flex: 1.1; padding: 12px 14px; font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);">
+                Software Case Study <i class="ph ph-arrow-right"></i>
+              </a>
+              <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn" style="flex: 0.9; border: 2px solid #ea580c; color: #c2410c; background: #fff7ed; padding: 12px 14px; font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; transition: all 0.25s ease;" onmouseover="this.style.background='#ea580c'; this.style.color='#ffffff';" onmouseout="this.style.background='#fff7ed'; this.style.color='#c2410c';">
+                <i class="ph ph-arrow-square-out" style="font-size: 16px;"></i> Hospital Site
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 4: Apex Global Logistics -->
+          <div class="client-card theme-animated" data-sector="logistics">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #1e3a8a, #0284c7); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-truck" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">Cloud Telemetry</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Fleet Operations ERP</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">Real-time GPS dispatch &amp; billing</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon">
+                <i class="ph ph-truck"></i>
+              </div>
+              <span class="client-tag">Logistics</span>
+            </div>
+            <h3 class="client-name">Apex Global Logistics</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Chennai &amp; Singapore
+            </div>
+            <p class="client-scope-desc">
+              End-to-end cloud dispatch portal, real-time vehicle GPS telemetry, automated consignment tracking, and vendor billing automation.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Maps API</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire Logistics Project <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 5: Zenith Wealth & Capital -->
+          <div class="client-card theme-animated" data-sector="fintech">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #3b0764, #9333ea); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-chart-line-up" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">Sub-50ms Latency</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Algorithmic Trading Platform</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">Multi-broker execution engine</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #9333ea; background: #faf5ff; border-color: #e9d5ff;">
+                <i class="ph ph-chart-line-up"></i>
+              </div>
+              <span class="client-tag">FinTech</span>
+            </div>
+            <h3 class="client-name">Zenith Wealth &amp; Capital</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Mumbai, Maharashtra
+            </div>
+            <p class="client-scope-desc">
+              Ultra-fast algorithmic trading infrastructure, multi-broker order routing engine, live portfolio risk dashboard, and backtesting suite.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">WebSockets</span>
+              <span class="tech-chip">Redis</span>
+              <span class="tech-chip">Trading APIs</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire FinTech Project <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 6: Veda Wellness Organics -->
+          <div class="client-card theme-animated" data-sector="retail">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #064e3b, #10b981); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-shopping-bag" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">E-Commerce Engine</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Direct-to-Consumer Store</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">Multi-warehouse synced inventory</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #16a34a; background: #f0fdf4; border-color: #bbf7d0;">
+                <i class="ph ph-shopping-bag"></i>
+              </div>
+              <span class="client-tag">E-Commerce</span>
+            </div>
+            <h3 class="client-name">Veda Wellness Organics</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Bangalore, Karnataka
+            </div>
+            <p class="client-scope-desc">
+              High-converting headless e-commerce storefront with multi-warehouse inventory synchronization, custom loyalty program, and Google Ads funnels.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">GraphQL</span>
+              <span class="tech-chip">Stripe</span>
+              <span class="tech-chip">SEO Suite</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire E-Commerce Project <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 7: Kongu Precision Works -->
+          <div class="client-card theme-animated" data-sector="manufacturing">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #431407, #ea580c); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-factory" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">Industry 4.0</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Smart Factory ERP</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">Machine telemetry &amp; job cards</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #ea580c; background: #fff7ed; border-color: #fed7aa;">
+                <i class="ph ph-factory"></i>
+              </div>
+              <span class="client-tag">Manufacturing</span>
+            </div>
+            <h3 class="client-name">Kongu Precision Works</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Salem &amp; Coimbatore
+            </div>
+            <p class="client-scope-desc">
+              Custom Industry 4.0 ERP system with machine telemetry integration, raw material batch tracking, and automated job-card scheduling.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">Vue.js</span>
+              <span class="tech-chip">Python / FastAPI</span>
+              <span class="tech-chip">IoT MQTT</span>
+              <span class="tech-chip">MySQL</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire ERP Project <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 8: Vidyalaya Learning Systems -->
+          <div class="client-card theme-animated" data-sector="education">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #451a03, #d97706); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-graduation-cap" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">EdTech Cloud</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Enterprise LMS Platform</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">45,000+ active students</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #d97706; background: #fffbeb; border-color: #fde68a;">
+                <i class="ph ph-graduation-cap"></i>
+              </div>
+              <span class="client-tag">EdTech</span>
+            </div>
+            <h3 class="client-name">Vidyalaya Learning Systems</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Hyderabad, Telangana
+            </div>
+            <p class="client-scope-desc">
+              Cloud-hosted Learning Management System (LMS) serving 45,000+ active students with interactive quizzes, live streaming classes, and fee collection.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">AWS S3</span>
+              <span class="tech-chip">WebRTC</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire EdTech Project <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 9: Aura Healthcare Network -->
+          <div class="client-card theme-animated" data-sector="healthcare">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #134e4a, #0d9488); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-heartbeat" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">Health Cloud</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Multi-Clinic EHR Portal</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">HL7/FHIR compliant diagnostics</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #0d9488; background: #f0fdfa; border-color: #99f6e4;">
+                <i class="ph ph-heartbeat"></i>
+              </div>
+              <span class="client-tag">Healthcare</span>
+            </div>
+            <h3 class="client-name">Aura Healthcare Network</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Kochi, Kerala
+            </div>
+            <p class="client-scope-desc">
+              HIPAA-aligned electronic health records (EHR) platform connecting 8 specialty clinics with doctor scheduling, lab integrations, and telemedicine.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">React Native</span>
+              <span class="tech-chip">Spring Boot</span>
+              <span class="tech-chip">FHIR API</span>
+              <span class="tech-chip">AWS Cloud</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire Health Portal <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 10: Sri Annapoorna Supermarkets -->
+          <div class="client-card theme-animated" data-sector="retail">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #701a75, #c026d3); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-barcode" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">Retail Automation</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Multi-Branch POS System</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">Barcode scanners &amp; GST billing</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #c026d3; background: #fdf4ff; border-color: #f5d0fe;">
+                <i class="ph ph-storefront"></i>
+              </div>
+              <span class="client-tag">Retail POS</span>
+            </div>
+            <h3 class="client-name">Sri Annapoorna Supermarkets</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Salem &amp; Namakkal
+            </div>
+            <p class="client-scope-desc">
+              High-speed retail point-of-sale network across 6 supermarket branches with offline billing tolerance, barcode weight integration, and central supply replenishment.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">Electron</span>
+              <span class="tech-chip">SQLite Sync</span>
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">Hardware APIs</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire POS System <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Client 11: Horizon Urban Properties -->
+          <div class="client-card theme-animated" data-sector="manufacturing">
+            <div class="client-card-banner" style="background: linear-gradient(135deg, #0f172a, #334155); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="ph ph-buildings" style="font-size: 84px; color: rgba(255,255,255,0.18); position: absolute; right: 18px; bottom: 8px;"></i>
+              <div style="padding: 24px; color: #fff; width: 100%;">
+                <span style="background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase;">PropTech Cloud</span>
+                <h4 style="font-size: 20px; font-weight: 800; margin: 10px 0 4px; color: #fff;">Real Estate Sales CRM</h4>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.88); margin: 0;">Lead pipelines &amp; WhatsApp bots</p>
+              </div>
+            </div>
+            <div class="client-card-top" style="margin-top: 4px;">
+              <div class="client-logo-icon" style="color: #475569; background: #f8fafc; border-color: #cbd5e1;">
+                <i class="ph ph-buildings"></i>
+              </div>
+              <span class="client-tag">Real Estate</span>
+            </div>
+            <h3 class="client-name">Horizon Urban Properties</h3>
+            <div class="client-location">
+              <i class="ph ph-map-pin"></i> Coimbatore, Tamil Nadu
+            </div>
+            <p class="client-scope-desc">
+              Custom property CRM and buyer matching engine with automated lead routing, WhatsApp follow-up bots, site visit calendars, and commission tracking.
+            </p>
+            <div class="client-tech-chips" style="margin-bottom: 18px;">
+              <span class="tech-chip">Laravel</span>
+              <span class="tech-chip">Vue 3</span>
+              <span class="tech-chip">WhatsApp Bot</span>
+              <span class="tech-chip">MySQL</span>
+            </div>
+            <div class="client-card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width: 100%; padding: 12px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px;">
+                Inquire Real Estate CRM <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /#clients-grid -->
+
+        <!-- Swipe Navigation Dots -->
+        <div class="swipe-dots-container" id="swipe-dots" style="justify-content: center; margin-top: 24px;"></div>
+      </div><!-- /.clients-swipe-wrapper -->
+
 
       <!-- ═══════════════════════════════════════════
            FEATURED IN-DEPTH CASE STUDIES
@@ -741,26 +1013,194 @@
 
   <script src="script.js" defer></script>
 
-  <!-- Client Filter Logic -->
+  <!-- Client Filter & Swipe Slider Interactive Logic -->
   <script>
-    const filterBtns = document.querySelectorAll('.client-filter-btn');
-    const clientCards = document.querySelectorAll('.client-card');
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('clients-grid');
+      const filterBtns = document.querySelectorAll('.client-filter-btn');
+      const clientCards = document.querySelectorAll('.client-card');
+      const prevBtn = document.getElementById('swipe-prev-btn');
+      const nextBtn = document.getElementById('swipe-next-btn');
+      const counterText = document.getElementById('swipe-counter');
+      const dotsContainer = document.getElementById('swipe-dots');
+      const viewModeSwipeBtn = document.getElementById('view-mode-swipe');
+      const viewModeGridBtn = document.getElementById('view-mode-grid');
+      const swipeHint = document.getElementById('swipe-hint');
+      const swipeControlsTop = document.getElementById('swipe-controls-top');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
+      let currentMode = 'swipe'; // 'swipe' or 'grid'
 
-        clientCards.forEach(card => {
-          const sector = card.dataset.sector;
-          if (filter === 'all' || sector === filter) {
-            card.style.display = 'flex';
+      // Helper: get currently visible cards
+      function getVisibleCards() {
+        return Array.from(clientCards).filter(c => c.style.display !== 'none');
+      }
+
+      // Update Pagination & Controls
+      function updateSwipeControls() {
+        if (currentMode !== 'swipe') return;
+        
+        const visible = getVisibleCards();
+        if (visible.length === 0) {
+          if (counterText) counterText.textContent = '0 / 0';
+          if (dotsContainer) dotsContainer.innerHTML = '';
+          return;
+        }
+
+        const isMobile = window.innerWidth <= 768;
+        const cardsPerView = isMobile ? 1 : 2;
+        const totalSlides = Math.ceil(visible.length / cardsPerView);
+
+        // Calculate current slide based on scrollLeft
+        const cardWidth = visible[0] ? visible[0].offsetWidth + 28 : track.offsetWidth;
+        const scrollLeft = track.scrollLeft;
+        const currentSlide = Math.min(Math.max(1, Math.round(scrollLeft / (cardWidth * cardsPerView)) + 1), totalSlides);
+
+        if (counterText) {
+          counterText.textContent = `${currentSlide} / ${totalSlides}`;
+        }
+
+        // Render Dots
+        if (dotsContainer) {
+          dotsContainer.innerHTML = '';
+          for (let i = 1; i <= totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = `swipe-dot ${i === currentSlide ? 'active' : ''}`;
+            dot.setAttribute('title', `Go to slide ${i}`);
+            dot.addEventListener('click', () => {
+              const targetIndex = (i - 1) * cardsPerView;
+              if (visible[targetIndex]) {
+                track.scrollTo({
+                  left: visible[targetIndex].offsetLeft - track.offsetLeft,
+                  behavior: 'smooth'
+                });
+              }
+            });
+            dotsContainer.appendChild(dot);
+          }
+        }
+
+        if (prevBtn) prevBtn.disabled = track.scrollLeft <= 10;
+        if (nextBtn) nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 15;
+      }
+
+      // Next & Prev Button Handlers - Exact Card Alignment
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          const visible = getVisibleCards();
+          if (visible.length === 0) return;
+          const currentScroll = track.scrollLeft;
+          const nextCard = visible.find(c => (c.offsetLeft - track.offsetLeft) > currentScroll + 20);
+          if (nextCard) {
+            track.scrollTo({ left: nextCard.offsetLeft - track.offsetLeft, behavior: 'smooth' });
           } else {
-            card.style.display = 'none';
+            track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
           }
         });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          const visible = getVisibleCards();
+          if (visible.length === 0) return;
+          const currentScroll = track.scrollLeft;
+          const prevCards = visible.filter(c => (c.offsetLeft - track.offsetLeft) < currentScroll - 20);
+          if (prevCards.length > 0) {
+            const target = prevCards[prevCards.length - 1];
+            track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+          } else {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+        });
+      }
+
+      // Track scroll event
+      let scrollTimer = null;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(updateSwipeControls, 60);
       });
+
+      // Mouse drag to swipe on desktop/laptop
+      let isDown = false;
+      let startX = 0;
+      let scrollLeftPos = 0;
+
+      track.addEventListener('mousedown', (e) => {
+        if (currentMode !== 'swipe') return;
+        isDown = true;
+        startX = e.pageX - track.offsetLeft;
+        scrollLeftPos = track.scrollLeft;
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown || currentMode !== 'swipe') return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        track.scrollLeft = scrollLeftPos - walk;
+      });
+
+      // Sector Filtering
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          clientCards.forEach(card => {
+            const sector = card.dataset.sector;
+            if (filter === 'all' || sector === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+          setTimeout(updateSwipeControls, 80);
+        });
+      });
+
+      // Mode Switcher: Swipe View vs 2-Column Grid
+      function setMode(mode) {
+        currentMode = mode;
+        if (mode === 'swipe') {
+          viewModeSwipeBtn.classList.add('active');
+          viewModeGridBtn.classList.remove('active');
+          track.className = 'clients-swipe-track theme-animated';
+          if (swipeHint) swipeHint.style.display = 'inline-flex';
+          if (swipeControlsTop) swipeControlsTop.style.display = 'flex';
+          if (dotsContainer) dotsContainer.style.display = 'flex';
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+          setTimeout(updateSwipeControls, 100);
+        } else {
+          viewModeGridBtn.classList.add('active');
+          viewModeSwipeBtn.classList.remove('active');
+          track.className = 'clients-grid';
+          if (swipeHint) swipeHint.style.display = 'none';
+          if (swipeControlsTop) swipeControlsTop.style.display = 'none';
+          if (dotsContainer) dotsContainer.style.display = 'none';
+        }
+      }
+
+      if (viewModeSwipeBtn) {
+        viewModeSwipeBtn.addEventListener('click', () => setMode('swipe'));
+      }
+      if (viewModeGridBtn) {
+        viewModeGridBtn.addEventListener('click', () => setMode('grid'));
+      }
+
+      // Window Resize Listener
+      window.addEventListener('resize', () => {
+        updateSwipeControls();
+      });
+
+      // Initial Call
+      updateSwipeControls();
     });
   </script>
 </body>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KNCHKarur.com – Kumar Nature Cure Hospital Website | Project Case Study | I Info Vision Salem</title>
+  <meta name="description" content="KNCHKarur.com – Kumar Nature Cure Hospital & Dental website built by I Info Vision. Featuring nature cure treatments, doctor profiles, appointment booking, and multilingual support for Karur, Tamil Nadu." />
+  <meta name="keywords" content="knchkarur.com, kumar nature cure hospital, nature cure hospital website, hospital website development, healthcare website karur, naturopathy website, dental hospital website, I Info Vision Salem, hospital web design tamil nadu" />
+  <meta name="author" content="I Info Vision" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="Salem" />
+  <meta name="geo.position" content="11.6152;78.1636" />
+  <meta name="ICBM" content="11.6152, 78.1636" />
+  <link rel="canonical" href="https://www.iinfovision.com/project-knch-karur.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.iinfovision.com/project-knch-karur.html" />
+  <meta property="og:site_name" content="I Info Vision" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content="KNCHKarur.com – Kumar Nature Cure Hospital Website | I Info Vision Project" />
+  <meta property="og:description" content="See how I Info Vision designed and developed the official website for Kumar Nature Cure Hospital & Dental in Karur, TN – with treatment listings, doctor profiles, and online booking." />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/projects/knch-karur-website.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.iinfovision.com/project-knch-karur.html" />
+  <meta name="twitter:title" content="KNCHKarur.com – Kumar Nature Cure Hospital Website | I Info Vision Project" />
+  <meta name="twitter:description" content="See how I Info Vision designed and developed the official website for Kumar Nature Cure Hospital & Dental in Karur, TN – with treatment listings, doctor profiles, and online booking." />
+  <meta name="twitter:image" content="https://www.iinfovision.com/assets/images/projects/knch-karur-website.png" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.iinfovision.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Clients & Projects", "item": "https://www.iinfovision.com/clients.html" },
+          { "@type": "ListItem", "position": 3, "name": "Kumar Nature Cure Hospital", "item": "https://www.iinfovision.com/project-knch-karur.html" }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.iinfovision.com/project-knch-karur.html#project",
+        "name": "KNCHKarur.com – Kumar Nature Cure Hospital & Dental Website",
+        "description": "Full-featured healthcare website with nature cure treatments, doctor profiles, gallery, multilingual support, and online consultation booking for Kumar Nature Cure Hospital in Karur, Tamil Nadu.",
+        "url": "https://www.iinfovision.com/project-knch-karur.html",
+        "image": "https://www.iinfovision.com/assets/images/projects/knch-karur-website.png",
+        "creator": {
+          "@type": "Organization",
+          "name": "I Info Vision",
+          "url": "https://www.iinfovision.com/"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
+  <style>
+    .project-detail-section { padding: 40px 0 80px; }
+    .project-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+    }
+    .project-hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 520px;
+    }
+    .project-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      padding: 40px 32px 28px;
+    }
+    .project-hero-overlay h2 { color: #fff; font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    .project-hero-overlay p { color: rgba(255,255,255,0.85); font-size: 15px; }
+    .project-info-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 50px; }
+    .project-description h3 { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .project-description p { color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
+    .project-sidebar {
+      background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border-light);
+      padding: 28px; box-shadow: var(--shadow-sm); height: fit-content; position: sticky; top: 100px;
+    }
+    .project-sidebar h4 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--blue-100); }
+    .project-meta-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+    .project-meta-item i { font-size: 20px; color: var(--blue-600); margin-top: 2px; flex-shrink: 0; }
+    .project-meta-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 2px; }
+    .project-meta-value { font-size: 15px; font-weight: 500; color: var(--text-primary); }
+    .project-meta-value a { color: var(--blue-600); text-decoration: none; font-weight: 600; }
+    .project-meta-value a:hover { color: var(--blue-800); text-decoration: underline; }
+    .visit-website-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); color: #fff;
+      padding: 14px 24px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600;
+      text-decoration: none; margin-top: 24px; transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    .visit-website-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); color: #fff; }
+    .project-features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
+    .project-feature-card {
+      background: var(--white); border-radius: var(--radius-md); padding: 24px;
+      border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); transition: all 0.3s ease;
+    }
+    .project-feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .project-feature-card i { font-size: 28px; color: #16a34a; margin-bottom: 12px; }
+    .project-feature-card h4 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .project-feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .project-tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .project-tech-chip {
+      background: #f0fdf4; color: #15803d; padding: 6px 14px; border-radius: 20px;
+      font-size: 13px; font-weight: 600; border: 1px solid #bbf7d0;
+    }
+    .project-results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-bottom: 50px; }
+    .project-result-card {
+      background: linear-gradient(135deg, #f0fdf4, #ecfccb); border-radius: var(--radius-md);
+      padding: 28px; text-align: center; border: 1px solid #bbf7d0;
+    }
+    .project-result-num { font-size: 36px; font-weight: 800; color: #15803d; margin-bottom: 4px; }
+    .project-result-label { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+    @media (max-width: 768px) {
+      .project-info-grid { grid-template-columns: 1fr; }
+      .project-hero-overlay h2 { font-size: 22px; }
+      .project-sidebar { position: static; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+          <div class="logo-text-wrapper">
+            <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+            <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
+          </div>
+        </a>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="clients.html" class="nav-link active">Clients</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="contact.html" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <a href="clients.html">Clients &amp; Projects</a>
+          <i class="ph ph-caret-right"></i>
+          <span>Kumar Nature Cure Hospital</span>
+        </div>
+        <h1 class="page-hero-title">
+          KNCHKarur.com – <span class="highlight">Kumar Nature Cure Hospital &amp; Dental</span>
+        </h1>
+        <p class="page-hero-desc">
+          A comprehensive hospital website for Kumar Nature Cure Hospital in Karur – featuring 50+ drugless treatments, doctor profiles, multilingual support, gallery, and online consultation booking.
+        </p>
+        <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 22px;">
+          <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; font-size: 15px; font-weight: 700; border-radius: 12px; background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; box-shadow: 0 6px 20px rgba(22,163,74,0.4); text-decoration: none;">
+            <i class="ph ph-arrow-square-out" style="font-size: 18px;"></i> Visit Live Site (knchkarur.com)
+          </a>
+          <a href="#project-overview" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-size: 14.5px; font-weight: 600; border-radius: 12px; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); text-decoration: none;">
+            Explore Case Study <i class="ph ph-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAIL -->
+  <main class="page-content-section project-detail-section">
+    <div class="container">
+
+      <!-- Project Hero Banner -->
+      <div class="project-hero-banner" id="project-overview">
+        <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;" title="Click to open KNCHKarur.com in new tab">
+          <img src="assets/images/projects/knch-karur-website.png" alt="KNCHKarur.com – Kumar Nature Cure Hospital Website by I Info Vision" loading="eager" />
+        </a>
+        <div class="project-hero-overlay">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 72px; height: 72px; border-radius: 50%; background: #000000; padding: 3px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 2.5px solid #facc15; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <img src="assets/images/projects/knch-logo.webp" alt="Kumar Nature Cure Hospital Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+              </div>
+              <div>
+                <h2 style="margin: 0; line-height: 1.2;">Kumar Hospital – Nature Cure &amp; Dental</h2>
+                <p style="margin: 4px 0 0; color: rgba(255,255,255,0.9);">குமார் இயற்கை மற்றும் பல் மருத்துவமனை – Authentic Drugless Healing Since 2003</p>
+              </div>
+            </div>
+            <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: #15803d; padding: 12px 24px; border-radius: 30px; font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.35); transition: all 0.25s;" onmouseover="this.style.background='#f0fdf4'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'">
+              <i class="ph ph-arrow-square-out" style="font-size: 18px;"></i> Visit Live Site
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Grid -->
+      <div class="project-info-grid">
+        <div class="project-description">
+          <!-- Live Site Callout Box -->
+          <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #86efac; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: #16a34a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                <i class="ph ph-globe"></i>
+              </div>
+              <div>
+                <div style="font-size: 12px; font-weight: 700; color: #15803d; text-transform: uppercase; letter-spacing: 0.5px;">Live Hospital Web Portal</div>
+                <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" style="font-size: 17px; font-weight: 800; color: #14532d; text-decoration: underline;">https://knchkarur.com</a>
+              </div>
+            </div>
+            <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 11px 22px; font-size: 14px; font-weight: 700; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #16a34a; color: #fff;">
+              <i class="ph ph-arrow-square-out"></i> Open Live Site
+            </a>
+          </div>
+
+          <h3>Project Overview</h3>
+          <p>
+            <strong>KNCHKarur.com</strong> is the official website of <strong>Kumar Nature Cure Hospital &amp; Dental</strong>, a renowned naturopathy and dental care center established in 2003 in Karur, Tamil Nadu. I Info Vision was entrusted to design and develop a modern, professional website that showcases their 20+ years of expertise in drugless healing therapies.
+          </p>
+          <p>
+            The hospital specializes in 100% medicine-free nature cure treatments combining the 5 natural elements – earth, water, air, fire, and ether. Their holistic approach includes Naturopathy, Hydrotherapy, Yoga therapy, Acupuncture, Diet therapy, and over 50 modern treatment modalities. The website needed to reflect their commitment to natural healing while providing a seamless digital experience for patients.
+          </p>
+          <p>
+            We designed the website with a rich dark green and gold color palette inspired by nature, featuring lush imagery of natural healing elements. The site includes bilingual support (English &amp; Tamil), a comprehensive treatment catalog, detailed doctor profiles, a photo gallery, and WhatsApp-based consultation booking. The design emphasizes trust, authenticity, and the hospital's deep-rooted connection to traditional healing practices.
+          </p>
+
+          <h3 style="margin-top: 32px;">Key Deliverables</h3>
+          <div class="project-features-grid" style="margin-top: 16px;">
+            <div class="project-feature-card">
+              <i class="ph ph-leaf"></i>
+              <h4>Treatment Catalog</h4>
+              <p>Comprehensive showcase of 50+ nature cure treatments including Naturopathy, Hydrotherapy, Yoga, Acupuncture, and lifestyle care.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-translate"></i>
+              <h4>Multilingual Support</h4>
+              <p>English and Tamil language toggle enabling patients from rural and urban areas to navigate the site comfortably.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-user-circle"></i>
+              <h4>Doctor Profiles</h4>
+              <p>Detailed profiles of specialist doctors with qualifications, experience, and areas of expertise in naturopathy and dental care.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-images"></i>
+              <h4>Photo Gallery</h4>
+              <p>Rich visual gallery showcasing the hospital facilities, treatment rooms, therapy sessions, and patient care environment.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-phone-call"></i>
+              <h4>Appointment Booking</h4>
+              <p>Direct phone call and WhatsApp consultation booking integrated throughout the website for maximum patient conversions.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-device-mobile"></i>
+              <h4>Mobile-First Design</h4>
+              <p>Fully responsive layout optimized for mobile devices, ensuring patients can access information and book appointments on-the-go.</p>
+            </div>
+          </div>
+
+          <h3>Technology Stack</h3>
+          <div class="project-tech-stack">
+            <span class="project-tech-chip">HTML5</span>
+            <span class="project-tech-chip">CSS3</span>
+            <span class="project-tech-chip">JavaScript</span>
+            <span class="project-tech-chip">Responsive Design</span>
+            <span class="project-tech-chip">SEO Suite</span>
+            <span class="project-tech-chip">WhatsApp API</span>
+            <span class="project-tech-chip">Multilingual i18n</span>
+            <span class="project-tech-chip">Google Analytics</span>
+            <span class="project-tech-chip">Schema Markup</span>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="project-sidebar">
+          <div style="text-align: center; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border-light);">
+            <div style="width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 50%; background: #000000; padding: 3px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); border: 2.5px solid #facc15; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="assets/images/projects/knch-logo.webp" alt="Kumar Nature Cure Hospital Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+            </div>
+            <h4 style="margin-bottom: 4px; border: none; padding: 0; font-size: 18px;">Kumar Nature Cure Hospital</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); margin: 0; font-weight: 500;">Karur &bull; Since 2003</p>
+          </div>
+
+          <h4>Project Details</h4>
+
+          <div class="project-meta-item">
+            <i class="ph ph-hospital"></i>
+            <div>
+              <div class="project-meta-label">Client</div>
+              <div class="project-meta-value">Kumar Nature Cure Hospital &amp; Dental</div>
+            </div>
+          </div>
+
+          <div class="project-meta-item">
+            <i class="ph ph-map-pin"></i>
+            <div>
+              <div class="project-meta-label">Location</div>
+              <div class="project-meta-value">Karur, Tamil Nadu</div>
+            </div>
+          </div>
+
+          <div class="project-meta-item">
+            <i class="ph ph-briefcase"></i>
+            <div>
+              <div class="project-meta-label">Industry</div>
+              <div class="project-meta-value">Healthcare / Naturopathy &amp; Dental</div>
+            </div>
+          </div>
+
+          <div class="project-meta-item">
+            <i class="ph ph-calendar"></i>
+            <div>
+              <div class="project-meta-label">Established</div>
+              <div class="project-meta-value">Since 2003</div>
+            </div>
+          </div>
+
+          <div class="project-meta-item">
+            <i class="ph ph-code"></i>
+            <div>
+              <div class="project-meta-label">Service Provided</div>
+              <div class="project-meta-value">Website Design, Development, SEO &amp; Content</div>
+            </div>
+          </div>
+
+          <div class="project-meta-item">
+            <i class="ph ph-globe"></i>
+            <div>
+              <div class="project-meta-label">Website</div>
+              <div class="project-meta-value"><a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer">knchkarur.com</a></div>
+            </div>
+          </div>
+
+          <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="visit-website-btn" style="background: linear-gradient(135deg, #15803d, #166534); box-shadow: 0 4px 15px rgba(22,163,74,0.3);">
+            <i class="ph ph-arrow-square-out"></i> Visit Live Website
+          </a>
+
+          <a href="contact.html" class="visit-website-btn" style="margin-top: 12px;">
+            <i class="ph ph-chat-circle-dots"></i> Start Similar Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <h2 style="font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+          Impact &amp; Results
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">
+          The website elevated Kumar Nature Cure Hospital's digital presence across Tamil Nadu.
+        </p>
+      </div>
+
+      <div class="project-results-grid">
+        <div class="project-result-card">
+          <div class="project-result-num">20+</div>
+          <div class="project-result-label">Years of Experience</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">100%</div>
+          <div class="project-result-label">Medicine-Free Treatments</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">50+</div>
+          <div class="project-result-label">Modern Treatments</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">2</div>
+          <div class="project-result-label">Languages Supported</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="subpage-cta">
+    <div class="container">
+      <h2 class="subpage-cta-title">
+        Need a Professional Hospital Website Like KNCHKarur.com?
+      </h2>
+      <p class="subpage-cta-desc">
+        Let I Info Vision build a stunning, SEO-optimized website for your hospital, clinic, or healthcare practice. Attract more patients with a powerful digital presence.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary">
+          Get a Free Quote <span class="btn-arrow">→</span>
+        </a>
+        <a href="tel:+919894480585" class="btn btn-outline">
+          <i class="ph ph-phone" style="margin-right: 6px;"></i> Call +91 98944 80585
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+            <div class="logo-text-wrapper">
+              <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+              <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and excellence. Your trusted partner for end-to-end technology solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain;"></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Software as a Service (SaaS)</a></li>
+            <li><a href="services.html">Web Development &amp; Applications</a></li>
+            <li><a href="services.html">App Development</a></li>
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">CRM &amp; ERP Software</a></li>
+            <li><a href="services.html">Online Trading</a></li>
+            <li><a href="services.html">Education</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blogs.html">Blogs &amp; Insights</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Address</span>
+              <span>#9/136, No.1, First Floor, <br> Trichy Main Road,<br>Chinnaiyapuram,<br>Dasanaickenpatti,<br>Salem – 636201</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-phone"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Phone</span>
+              <a href="tel:+919894480585">+91 98944 80585</a><br />
+              <a href="tel:+917540059087">+91 75400 59087</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-envelope"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Email</span>
+              <a href="mailto:support@iinfovision.com">support@iinfovision.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-clock"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Business Hours</span>
+              <span>Monday – Saturday<br />9:30 AM – 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.<br>
+          <span style="display: block; margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Designed &amp; Developed by <a href="index.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">I Info Vision</a></span>
+        </p>
+        <div class="footer-bottom-links">
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="mobile-quick-actions" aria-label="Quick Actions">
+    <a href="tel:+919894480585" class="quick-action-btn quick-call-btn">
+      <i class="ph ph-phone-call"></i>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/919894480585" class="quick-action-btn quick-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <i class="ph ph-whatsapp-logo"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
