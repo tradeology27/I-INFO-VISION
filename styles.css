@@ -3131,19 +3131,80 @@ a.tech-card {
 
 /* Card Showcase Banner Styling */
 .client-card-banner {
-  margin: -32px -28px 24px -28px;
-  height: 250px;
+  margin: -32px -28px 22px -28px;
+  position: relative;
   overflow: hidden;
   border-radius: 23px 23px 0 0;
-  position: relative;
-  background: #f8fafc;
+  background: #0b1120;
+  aspect-ratio: 16 / 9.2;
+  height: auto;
+  min-height: 210px;
 }
 
 @media (max-width: 768px) {
   .client-card-banner {
-    margin: -22px -18px 20px -18px;
-    height: 220px;
+    margin: -22px -18px 18px -18px;
     border-radius: 19px 19px 0 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 190px;
+  }
+}
+
+.client-card-banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.client-card-banner img,
+.client-banner-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  transition: transform 0.4s ease;
+  background: #0b1120;
+}
+
+@media (max-width: 768px) {
+  .client-card-banner img,
+  .client-banner-img {
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #0b1120;
+  }
+}
+
+.client-banner-header {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.client-banner-header > * {
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .client-banner-header {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+  }
+  .client-banner-header span,
+  .client-banner-header a {
+    font-size: 10px !important;
+    padding: 3px 10px !important;
   }
 }
 

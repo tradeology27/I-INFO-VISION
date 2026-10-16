@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant QR & Barcode Scanner – High-Speed Mobile Camera Utility | I Info Vision Salem</title>
+  <meta name="description" content="A Flutter-powered camera utility for high-speed barcode and QR code decoding, format history, clipboard auto-copy, batch scanning, and optimized camera buffers." />
+  <meta name="keywords" content="Instant QR & Barcode Scanner – High-Speed Mobile Camera Utility, Mobile Computer Vision Utility, custom software development salem, app development salem, I Info Vision Salem, web application development, software engineering tamil nadu" />
+  <meta name="author" content="I Info Vision" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="Salem" />
+  <meta name="geo.position" content="11.6152;78.1636" />
+  <meta name="ICBM" content="11.6152, 78.1636" />
+  <link rel="canonical" href="https://www.iinfovision.com/project-qr-scanner.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.iinfovision.com/project-qr-scanner.html" />
+  <meta property="og:site_name" content="I Info Vision" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content="Instant QR & Barcode Scanner – High-Speed Mobile Camera Utility | I Info Vision Project" />
+  <meta property="og:description" content="A Flutter-powered camera utility for high-speed barcode and QR code decoding, format history, clipboard auto-copy, batch scanning, and optimized camera buffers." />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/projects/qr-scanner-preview.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.iinfovision.com/project-qr-scanner.html" />
+  <meta name="twitter:title" content="Instant QR & Barcode Scanner – High-Speed Mobile Camera Utility | I Info Vision Project" />
+  <meta name="twitter:description" content="A Flutter-powered camera utility for high-speed barcode and QR code decoding, format history, clipboard auto-copy, batch scanning, and optimized camera buffers." />
+  <meta name="twitter:image" content="https://www.iinfovision.com/assets/images/projects/qr-scanner-preview.jpg" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.iinfovision.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Clients & Projects", "item": "https://www.iinfovision.com/clients.html" },
+          { "@type": "ListItem", "position": 3, "name": "Instant QR & Barcode Scanner", "item": "https://www.iinfovision.com/project-qr-scanner.html" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.iinfovision.com/project-qr-scanner.html#project",
+        "name": "Instant QR & Barcode Scanner",
+        "description": "A Flutter-powered camera utility for high-speed barcode and QR code decoding, format history, clipboard auto-copy, batch scanning, and optimized camera buffers.",
+        "url": "https://www.iinfovision.com/project-qr-scanner.html",
+        "image": "https://www.iinfovision.com/assets/images/projects/qr-scanner-preview.jpg",
+        "applicationCategory": "Mobile Computer Vision Utility",
+        "operatingSystem": "Web, Android, iOS, Windows, Linux",
+        "creator": {
+          "@type": "Organization",
+          "name": "I Info Vision",
+          "url": "https://www.iinfovision.com/"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.2" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
+  <style>
+    .project-detail-section { padding: 40px 0 80px; }
+    .project-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+      background: #0b1120;
+    }
+    .project-hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      max-height: 580px;
+      margin: 0 auto;
+      background: #0b1120;
+    }
+    .project-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(11, 17, 32, 0.92));
+      padding: 40px 32px 28px;
+    }
+    .project-hero-overlay h2 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .project-hero-overlay p {
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+    }
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .project-description h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .project-description p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .project-sidebar {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .project-sidebar h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--blue-100);
+    }
+    .project-meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .project-meta-item i {
+      font-size: 20px;
+      color: var(--blue-600);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .project-meta-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 2px;
+    }
+    .project-meta-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .project-meta-value a {
+      color: var(--blue-600);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project-meta-value a:hover {
+      color: var(--blue-800);
+      text-decoration: underline;
+    }
+    .visit-website-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    .visit-website-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      color: #fff;
+    }
+    .project-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    .project-feature-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .project-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .project-feature-card i {
+      font-size: 28px;
+      color: var(--blue-600);
+      margin-bottom: 12px;
+    }
+    .project-feature-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .project-feature-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .project-tech-chip {
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--blue-200);
+    }
+    .project-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    .project-result-card {
+      background: linear-gradient(135deg, var(--blue-50), #f0f7ff);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+      border: 1px solid var(--blue-100);
+    }
+    .project-result-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--blue-700);
+      margin-bottom: 4px;
+    }
+    .project-result-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .project-info-grid { grid-template-columns: 1fr; }
+      .project-hero-overlay { position: static; background: #0b1120; padding: 20px; }
+      .project-hero-overlay h2 { font-size: 22px; }
+      .project-sidebar { position: static; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+          <div class="logo-text-wrapper">
+            <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+            <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
+          </div>
+        </a>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="clients.html" class="nav-link active">Clients</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="contact.html" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <a href="clients.html">Clients &amp; Projects</a>
+          <i class="ph ph-caret-right"></i>
+          <span>Instant QR & Barcode Scanner</span>
+        </div>
+        <h1 class="page-hero-title">
+          Instant QR & Barcode Scanner – <span class="highlight">Mobile Camera Utility</span>
+        </h1>
+        <p class="page-hero-desc">
+          A Flutter-powered camera utility for high-speed barcode and QR code decoding, format history, clipboard auto-copy, batch scanning, and optimized camera buffers.
+        </p>
+        <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 22px;">
+          <a href="contact.html?project=qr-scanner" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; font-size: 15px; font-weight: 700; border-radius: 12px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; box-shadow: 0 6px 20px rgba(37,99,235,0.4); text-decoration: none;">
+            <i class="ph ph-sparkle" style="font-size: 18px;"></i> Explore Scanner Utility
+          </a>
+          <a href="#project-overview" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-size: 14.5px; font-weight: 600; border-radius: 12px; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); text-decoration: none;">
+            Explore Case Study <i class="ph ph-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAIL -->
+  <main class="page-content-section project-detail-section">
+    <div class="container">
+
+      <!-- Project Hero Banner -->
+      <div class="project-hero-banner" id="project-overview">
+        <a href="contact.html?project=qr-scanner" style="display: block; width: 100%; height: 100%;" title="Instant QR & Barcode Scanner">
+          <img src="assets/images/projects/qr-scanner-preview.jpg" alt="Instant QR & Barcode Scanner by I Info Vision" loading="eager" />
+        </a>
+        <div class="project-hero-overlay">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 72px; height: 72px; border-radius: 16px; background: #ffffff; padding: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 2px solid #e9d5ff; flex-shrink: 0; display: flex; align-items: center; justify-content: center;"><img src="assets/images/projects/qr-icon.png" alt="QR Scanner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" /></div>
+              <div>
+                <h2 style="margin: 0; line-height: 1.2;">Instant QR & Barcode Scanner</h2>
+                <p style="margin: 4px 0 0; color: rgba(255,255,255,0.9);">Mobile Retail, Inventory & Event Check-In Crews &bull; Mobile Utilities &bull; Android & iOS Compilation</p>
+              </div>
+            </div>
+            <a href="contact.html?project=qr-scanner" class="btn btn-primary" style="background: #ffffff; color: #1d4ed8; font-weight: 800; font-size: 15px; padding: 12px 24px; border-radius: 30px; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.35);">
+              <i class="ph ph-arrow-square-out" style="font-size: 18px;"></i> Explore Scanner Utility
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Grid -->
+      <div class="project-info-grid">
+        <div class="project-description">
+          <!-- Live / Scope Callout Box -->
+          <div style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 2px solid #93c5fd; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: #2563eb; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                <i class="ph ph-check-circle"></i>
+              </div>
+              <div>
+                <div style="font-size: 12px; font-weight: 700; color: #1d4ed8; text-transform: uppercase; letter-spacing: 0.5px;">Production Engineered Solution</div>
+                <div style="font-size: 17px; font-weight: 800; color: #1e3a8a;">Instant QR & Barcode Scanner &bull; Mobile Camera Utility</div>
+              </div>
+            </div>
+            <a href="contact.html?project=project-qr-scanner" class="btn btn-primary" style="padding: 11px 22px; font-size: 14px; font-weight: 700; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff;">
+              <i class="ph ph-chat-circle-dots"></i> Request Demonstration
+            </a>
+          </div>
+
+          <h3>Project Overview</h3>
+          <p><strong>Instant QR & Barcode Scanner</strong> is a lightning-fast camera decoding utility built by I Info Vision using Flutter and native camera image stream pipelines. Designed for retail stock counts, parcel verification, ticket validation, and daily scanning, it decodes codes in under 80 milliseconds.</p>
+          <p>Utilizing Android CameraX and hardware-accelerated image analysis, the app features an animated holographic targeting reticle, instant audio/haptic feedback, flashlight toggle for low-light warehouses, and automatic clipboard synchronization.</p>
+          <p>It supports over 14 international 1D and 2D barcode formats including EAN-13, UPC, Code 128, DataMatrix, and Aztec, providing a full searchable local history database with one-tap CSV export.</p>
+
+          <h3 style="margin-top: 32px;">Key Engineering Deliverables</h3>
+          <div class="project-features-grid" style="margin-top: 16px;">
+            <div class="project-feature-card">
+              <i class="ph ph-camera"></i>
+              <h4>Sub-80ms Optical Decoding</h4>
+              <p>Hardware-accelerated native CameraX image stream decoder providing near-instant code recognition.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-barcode"></i>
+              <h4>14+ Supported Formats</h4>
+              <p>Full support for QR, EAN-13, EAN-8, UPC-A, Code 128, Code 39, DataMatrix, and PDF417 formats.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-stack"></i>
+              <h4>Continuous Batch Scan</h4>
+              <p>Rapid warehouse scanning mode that scans consecutive inventory items without closing the viewfinder.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-copy"></i>
+              <h4>Auto-Clipboard & Browser</h4>
+              <p>Instant one-tap URL navigation, Wi-Fi auto-connect configuration, and automated text copying.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-clock-counter-clockwise"></i>
+              <h4>Searchable Scan History</h4>
+              <p>Timestamped local archive of scanned items with categorization, search, and CSV/JSON export.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-flashlight"></i>
+              <h4>Low-Light Flash Toggle</h4>
+              <p>Integrated camera torch control, zoom magnification slider, and high-contrast inverted code reading.</p>
+            </div>
+
+          </div>
+
+          <h3>Technology &amp; Architecture Stack</h3>
+          <div class="project-tech-stack">
+            <span class="project-tech-chip">Flutter</span>
+            <span class="project-tech-chip">CameraX Engine</span>
+            <span class="project-tech-chip">Barcode Decoding</span>
+            <span class="project-tech-chip">Batch Scanning</span>
+            <span class="project-tech-chip">Format History</span>
+            <span class="project-tech-chip">Android Utility</span>
+            <span class="project-tech-chip">Dart</span>
+            <span class="project-tech-chip">Local Cache</span>
+
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="project-sidebar">
+          <div style="text-align: center; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border-light);">
+            <div style="width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 18px; background: #ffffff; padding: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 2px solid #bae6fd; display: flex; align-items: center; justify-content: center;">
+              <div style="width: 72px; height: 72px; border-radius: 16px; background: #ffffff; padding: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 2px solid #e9d5ff; flex-shrink: 0; display: flex; align-items: center; justify-content: center;"><img src="assets/images/projects/qr-icon.png" alt="QR Scanner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" /></div>
+            </div>
+            <h4 style="margin-bottom: 4px; border: none; padding: 0; font-size: 19px;">Instant QR & Barcode Scanner</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); margin: 0; font-weight: 500;">High-Speed Mobile Camera Utility</p>
+          </div>
+
+          <h4>Project Metadata</h4>
+          <div class="project-meta-item">
+            <i class="ph ph-camera"></i>
+            <div>
+              <div class="project-meta-label">Client Category</div>
+              <div class="project-meta-value">Mobile Utilities & Retail</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-lightning"></i>
+            <div>
+              <div class="project-meta-label">Decoding Speed</div>
+              <div class="project-meta-value"><80ms per Barcode</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-barcode"></i>
+            <div>
+              <div class="project-meta-label">Formats</div>
+              <div class="project-meta-value">14+ 1D/2D Symbologies</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-device-mobile"></i>
+            <div>
+              <div class="project-meta-label">Camera Engine</div>
+              <div class="project-meta-value">CameraX & AVFoundation</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-wifi-slash"></i>
+            <div>
+              <div class="project-meta-label">Offline Support</div>
+              <div class="project-meta-value">100% Offline Functional</div>
+            </div>
+          </div>
+
+
+          <a href="contact.html?project=qr-scanner" class="visit-website-btn">
+            <i class="ph ph-arrow-square-out"></i> Explore Scanner Utility
+          </a>
+
+          <a href="contact.html?project=qr-scanner" class="visit-website-btn" style="background: linear-gradient(135deg, #16a34a, #15803d); box-shadow: 0 4px 15px rgba(22,163,74,0.3); margin-top: 12px;">
+            <i class="ph ph-chat-circle-dots"></i> Inquire Camera SDK
+          </a>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <h2 style="font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+          Impact &amp; Performance Metrics
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">
+          Measurable efficiency gains, reliable scalability, and business impact delivered by I Info Vision.
+        </p>
+      </div>
+
+      <div class="project-results-grid">
+        <div class="project-result-card">
+          <div class="project-result-num"><80ms</div>
+          <div class="project-result-label">Decode Latency</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">14+</div>
+          <div class="project-result-label">Supported Symbologies</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">100%</div>
+          <div class="project-result-label">Offline Capability</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">0 MB</div>
+          <div class="project-result-label">Zero Cloud Dependency</div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="subpage-cta">
+    <div class="container">
+      <h2 class="subpage-cta-title">
+        Looking for a Custom Solution Like Instant QR & Barcode Scanner?
+      </h2>
+      <p class="subpage-cta-desc">
+        Partner with I Info Vision Salem to engineer robust web platforms, Flutter mobile apps, enterprise cloud ERPs, and specialized software systems.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html?project=project-qr-scanner" class="btn btn-primary">
+          Get a Free Consultation <span class="btn-arrow">→</span>
+        </a>
+        <a href="tel:+919894480585" class="btn btn-outline">
+          <i class="ph ph-phone" style="margin-right: 6px;"></i> Call +91 98944 80585
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+            <div class="logo-text-wrapper">
+              <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+              <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and excellence. Your trusted partner for end-to-end technology solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain;"></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Software as a Service (SaaS)</a></li>
+            <li><a href="services.html">Web Development &amp; Applications</a></li>
+            <li><a href="services.html">App Development</a></li>
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">CRM &amp; ERP Software</a></li>
+            <li><a href="services.html">Online Trading</a></li>
+            <li><a href="services.html">Education</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blogs.html">Blogs &amp; Insights</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Address</span>
+              <span>#9/136, No.1, First Floor, <br> Trichy Main Road,<br>Chinnaiyapuram,<br>Dasanaickenpatti,<br>Salem – 636201</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-phone"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Phone</span>
+              <a href="tel:+919894480585">+91 98944 80585</a><br />
+              <a href="tel:+917540059087">+91 75400 59087</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-envelope"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Email</span>
+              <a href="mailto:support@iinfovision.com">support@iinfovision.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-clock"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Business Hours</span>
+              <span>Monday – Saturday<br />9:30 AM – 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.<br>
+          <span style="display: block; margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Designed &amp; Developed by <a href="index.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">I Info Vision</a></span>
+        </p>
+        <div class="footer-bottom-links">
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Quick-Action Bar -->
+  <nav class="mobile-quick-actions" aria-label="Quick Actions">
+    <a href="tel:+919894480585" class="quick-action-btn quick-call-btn">
+      <i class="ph ph-phone-call"></i>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/919894480585" class="quick-action-btn quick-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <i class="ph ph-whatsapp-logo"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

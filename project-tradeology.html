@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRADEOLOGY – Algorithmic Trading Software Platform | I Info Vision Salem</title>
+  <meta name="description" content="A modern software selling platform for algorithmic trading strategies, custom indicators, automated execution bots, and live market subscription engines." />
+  <meta name="keywords" content="TRADEOLOGY – Algorithmic Trading Software Platform, FinTech & Algorithmic Trading Software, custom software development salem, app development salem, I Info Vision Salem, web application development, software engineering tamil nadu" />
+  <meta name="author" content="I Info Vision" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="Salem" />
+  <meta name="geo.position" content="11.6152;78.1636" />
+  <meta name="ICBM" content="11.6152, 78.1636" />
+  <link rel="canonical" href="https://www.iinfovision.com/project-tradeology.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.iinfovision.com/project-tradeology.html" />
+  <meta property="og:site_name" content="I Info Vision" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content="TRADEOLOGY – Algorithmic Trading Software Platform | I Info Vision Project" />
+  <meta property="og:description" content="A modern software selling platform for algorithmic trading strategies, custom indicators, automated execution bots, and live market subscription engines." />
+  <meta property="og:image" content="https://www.iinfovision.com/assets/images/projects/tradeology-platform.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.iinfovision.com/project-tradeology.html" />
+  <meta name="twitter:title" content="TRADEOLOGY – Algorithmic Trading Software Platform | I Info Vision Project" />
+  <meta name="twitter:description" content="A modern software selling platform for algorithmic trading strategies, custom indicators, automated execution bots, and live market subscription engines." />
+  <meta name="twitter:image" content="https://www.iinfovision.com/assets/images/projects/tradeology-platform.jpg" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.iinfovision.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Clients & Projects", "item": "https://www.iinfovision.com/clients.html" },
+          { "@type": "ListItem", "position": 3, "name": "TRADEOLOGY Platform", "item": "https://www.iinfovision.com/project-tradeology.html" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.iinfovision.com/project-tradeology.html#project",
+        "name": "TRADEOLOGY Platform",
+        "description": "A modern software selling platform for algorithmic trading strategies, custom indicators, automated execution bots, and live market subscription engines.",
+        "url": "https://www.iinfovision.com/project-tradeology.html",
+        "image": "https://www.iinfovision.com/assets/images/projects/tradeology-platform.jpg",
+        "applicationCategory": "FinTech & Algorithmic Trading Software",
+        "operatingSystem": "Web, Android, iOS, Windows, Linux",
+        "creator": {
+          "@type": "Organization",
+          "name": "I Info Vision",
+          "url": "https://www.iinfovision.com/"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2.2" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
+  <style>
+    .project-detail-section { padding: 40px 0 80px; }
+    .project-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+      background: #0b1120;
+    }
+    .project-hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      max-height: 580px;
+      margin: 0 auto;
+      background: #0b1120;
+    }
+    .project-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(11, 17, 32, 0.92));
+      padding: 40px 32px 28px;
+    }
+    .project-hero-overlay h2 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .project-hero-overlay p {
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+    }
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .project-description h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .project-description p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .project-sidebar {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .project-sidebar h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--blue-100);
+    }
+    .project-meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .project-meta-item i {
+      font-size: 20px;
+      color: var(--blue-600);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .project-meta-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 2px;
+    }
+    .project-meta-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .project-meta-value a {
+      color: var(--blue-600);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project-meta-value a:hover {
+      color: var(--blue-800);
+      text-decoration: underline;
+    }
+    .visit-website-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    .visit-website-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      color: #fff;
+    }
+    .project-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    .project-feature-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .project-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .project-feature-card i {
+      font-size: 28px;
+      color: var(--blue-600);
+      margin-bottom: 12px;
+    }
+    .project-feature-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .project-feature-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .project-tech-chip {
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--blue-200);
+    }
+    .project-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    .project-result-card {
+      background: linear-gradient(135deg, var(--blue-50), #f0f7ff);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+      border: 1px solid var(--blue-100);
+    }
+    .project-result-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--blue-700);
+      margin-bottom: 4px;
+    }
+    .project-result-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .project-info-grid { grid-template-columns: 1fr; }
+      .project-hero-overlay { position: static; background: #0b1120; padding: 20px; }
+      .project-hero-overlay h2 { font-size: 22px; }
+      .project-sidebar { position: static; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+          <div class="logo-text-wrapper">
+            <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+            <span class="logo-slogan">INNOVATE-INFORM-INSPIRE</span>
+          </div>
+        </a>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="clients.html" class="nav-link active">Clients</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="contact.html" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ph ph-caret-right"></i>
+          <a href="clients.html">Clients &amp; Projects</a>
+          <i class="ph ph-caret-right"></i>
+          <span>TRADEOLOGY Platform</span>
+        </div>
+        <h1 class="page-hero-title">
+          TRADEOLOGY Platform – <span class="highlight">Algo Trading Marketplace</span>
+        </h1>
+        <p class="page-hero-desc">
+          A modern software selling platform for algorithmic trading strategies, custom indicators, automated execution bots, and live market subscription engines.
+        </p>
+        <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 22px;">
+          <a href="contact.html?project=tradeology" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; font-size: 15px; font-weight: 700; border-radius: 12px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; box-shadow: 0 6px 20px rgba(37,99,235,0.4); text-decoration: none;">
+            <i class="ph ph-sparkle" style="font-size: 18px;"></i> Explore Algo Suite
+          </a>
+          <a href="#project-overview" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-size: 14.5px; font-weight: 600; border-radius: 12px; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); text-decoration: none;">
+            Explore Case Study <i class="ph ph-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAIL -->
+  <main class="page-content-section project-detail-section">
+    <div class="container">
+
+      <!-- Project Hero Banner -->
+      <div class="project-hero-banner" id="project-overview">
+        <a href="contact.html?project=tradeology" style="display: block; width: 100%; height: 100%;" title="TRADEOLOGY Platform">
+          <img src="assets/images/projects/tradeology-platform.jpg" alt="TRADEOLOGY Platform by I Info Vision" loading="eager" />
+        </a>
+        <div class="project-hero-overlay">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 72px; height: 72px; border-radius: 16px; background: #ecfdf5; padding: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 2px solid #a7f3d0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #059669;"><i class="ph ph-trend-up"></i></div>
+              <div>
+                <h2 style="margin: 0; line-height: 1.2;">TRADEOLOGY Platform</h2>
+                <p style="margin: 4px 0 0; color: rgba(255,255,255,0.9);">TRADEOLOGY Quantitative Traders &bull; Quantitative Trading Hub &bull; Pan-India Traders</p>
+              </div>
+            </div>
+            <a href="contact.html?project=tradeology" class="btn btn-primary" style="background: #ffffff; color: #1d4ed8; font-weight: 800; font-size: 15px; padding: 12px 24px; border-radius: 30px; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.35);">
+              <i class="ph ph-arrow-square-out" style="font-size: 18px;"></i> Explore Algo Suite
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Grid -->
+      <div class="project-info-grid">
+        <div class="project-description">
+          <!-- Live / Scope Callout Box -->
+          <div style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 2px solid #93c5fd; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: #2563eb; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                <i class="ph ph-check-circle"></i>
+              </div>
+              <div>
+                <div style="font-size: 12px; font-weight: 700; color: #1d4ed8; text-transform: uppercase; letter-spacing: 0.5px;">Production Engineered Solution</div>
+                <div style="font-size: 17px; font-weight: 800; color: #1e3a8a;">TRADEOLOGY Platform &bull; Algo Trading Marketplace</div>
+              </div>
+            </div>
+            <a href="contact.html?project=project-tradeology" class="btn btn-primary" style="padding: 11px 22px; font-size: 14px; font-weight: 700; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff;">
+              <i class="ph ph-chat-circle-dots"></i> Request Demonstration
+            </a>
+          </div>
+
+          <h3>Project Overview</h3>
+          <p><strong>TRADEOLOGY</strong> is an algorithmic trading software ecosystem and strategy marketplace built by I Info Vision. Designed for modern retail and institutional traders, TRADEOLOGY bridges TradingView charting strategies directly with automated broker execution bots.</p>
+          <p>The platform allows quantitative analysts and strategy developers to package their proprietary Pine Script indicators and execution bots, offering monthly and annual subscriptions to thousands of active market participants.</p>
+          <p>Featuring sub-85 millisecond webhook execution latency, the platform ingests TradingView alert payloads, evaluates risk filters, and submits buy/sell orders directly to exchange-approved broker APIs with real-time audit logging and risk guardrails.</p>
+
+          <h3 style="margin-top: 32px;">Key Engineering Deliverables</h3>
+          <div class="project-features-grid" style="margin-top: 16px;">
+            <div class="project-feature-card">
+              <i class="ph ph-chart-line-up"></i>
+              <h4>Pine Script v5 Indicators</h4>
+              <p>Custom institutional volume profiling, trend momentum oscillators, and multi-timeframe strategy indicators.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-cpu"></i>
+              <h4>Automated Webhook Bots</h4>
+              <p>Ultra-low latency webhook listeners receiving alert signals and executing broker trades in sub-100ms.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-shield-check"></i>
+              <h4>Risk Guard & Drawdown Stop</h4>
+              <p>Capital protection logic featuring maximum daily loss limits, trailing stop losses, and position sizing filters.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-credit-card"></i>
+              <h4>Subscription Marketplace</h4>
+              <p>Tiered access billing with automated license activation, invoice delivery, and member dashboard.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-bell-ringing"></i>
+              <h4>Telegram & Discord Signals</h4>
+              <p>Real-time automated signal broadcasting to private Telegram channels and Discord trading communities.</p>
+            </div>
+            <div class="project-feature-card">
+              <i class="ph ph-chart-bar"></i>
+              <h4>Backtesting Analytics</h4>
+              <p>Historical win-rate breakdown, maximum drawdown metrics, profit factor, and Sharpe ratio calculations.</p>
+            </div>
+
+          </div>
+
+          <h3>Technology &amp; Architecture Stack</h3>
+          <div class="project-tech-stack">
+            <span class="project-tech-chip">TradingView API</span>
+            <span class="project-tech-chip">Pine Script v5</span>
+            <span class="project-tech-chip">Automated Bots</span>
+            <span class="project-tech-chip">Firebase Cloud Functions</span>
+            <span class="project-tech-chip">Node.js</span>
+            <span class="project-tech-chip">Webhooks</span>
+            <span class="project-tech-chip">Python</span>
+            <span class="project-tech-chip">Payment Gateway</span>
+
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="project-sidebar">
+          <div style="text-align: center; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border-light);">
+            <div style="width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 18px; background: #ffffff; padding: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 2px solid #bae6fd; display: flex; align-items: center; justify-content: center;">
+              <div style="width: 72px; height: 72px; border-radius: 16px; background: #ecfdf5; padding: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 2px solid #a7f3d0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #059669;"><i class="ph ph-trend-up"></i></div>
+            </div>
+            <h4 style="margin-bottom: 4px; border: none; padding: 0; font-size: 19px;">TRADEOLOGY Platform</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); margin: 0; font-weight: 500;">Algorithmic Trading & Indicator Platform</p>
+          </div>
+
+          <h4>Project Metadata</h4>
+          <div class="project-meta-item">
+            <i class="ph ph-trend-up"></i>
+            <div>
+              <div class="project-meta-label">Client Category</div>
+              <div class="project-meta-value">Quantitative FinTech</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-users"></i>
+            <div>
+              <div class="project-meta-label">Audience</div>
+              <div class="project-meta-value">Pan-India Trading Community</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-code"></i>
+            <div>
+              <div class="project-meta-label">Trading Tech</div>
+              <div class="project-meta-value">Pine Script v5 + Webhooks</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-lightning"></i>
+            <div>
+              <div class="project-meta-label">Latency</div>
+              <div class="project-meta-value"><85ms Signal Routing</div>
+            </div>
+          </div>
+          <div class="project-meta-item">
+            <i class="ph ph-shield"></i>
+            <div>
+              <div class="project-meta-label">Execution</div>
+              <div class="project-meta-value">Automated Broker APIs</div>
+            </div>
+          </div>
+
+
+          <a href="contact.html?project=tradeology" class="visit-website-btn">
+            <i class="ph ph-arrow-square-out"></i> Explore Algo Suite
+          </a>
+
+          <a href="contact.html?project=tradeology" class="visit-website-btn" style="background: linear-gradient(135deg, #16a34a, #15803d); box-shadow: 0 4px 15px rgba(22,163,74,0.3); margin-top: 12px;">
+            <i class="ph ph-chat-circle-dots"></i> Inquire Trading Bots
+          </a>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <h2 style="font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+          Impact &amp; Performance Metrics
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">
+          Measurable efficiency gains, reliable scalability, and business impact delivered by I Info Vision.
+        </p>
+      </div>
+
+      <div class="project-results-grid">
+        <div class="project-result-card">
+          <div class="project-result-num"><85ms</div>
+          <div class="project-result-label">Webhook Execution Latency</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">68.4%</div>
+          <div class="project-result-label">Strategy Win Rate Benchmark</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">15,000+</div>
+          <div class="project-result-label">Automated Executions</div>
+        </div>
+        <div class="project-result-card">
+          <div class="project-result-num">2,400+</div>
+          <div class="project-result-label">Platform Subscribers</div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="subpage-cta">
+    <div class="container">
+      <h2 class="subpage-cta-title">
+        Looking for a Custom Solution Like TRADEOLOGY Platform?
+      </h2>
+      <p class="subpage-cta-desc">
+        Partner with I Info Vision Salem to engineer robust web platforms, Flutter mobile apps, enterprise cloud ERPs, and specialized software systems.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html?project=project-tradeology" class="btn btn-primary">
+          Get a Free Consultation <span class="btn-arrow">→</span>
+        </a>
+        <a href="tel:+919894480585" class="btn btn-outline">
+          <i class="ph ph-phone" style="margin-right: 6px;"></i> Call +91 98944 80585
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="I Info Vision Logo" class="logo-img" width="68" height="48" />
+            <div class="logo-text-wrapper">
+              <span class="logo-text">I Info<span class="logo-accent"> Vision</span></span>
+              <span class="logo-slogan">INNOVATE-INFORM-INSPIRE &bull; A Yasmeen Group Company</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            A proud Yasmeen Group Company transforming ideas into digital success through innovation, technology, and excellence. Your trusted partner for end-to-end technology solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/17PgrucmXN/" class="footer-social-link" aria-label="Facebook"><img src="assets/images/facebook-3d.webp" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.instagram.com/i_info_vision" class="footer-social-link" aria-label="Instagram"><img src="assets/images/instagram-3d.webp" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><img src="assets/images/linkedin-3d.webp" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></a>
+            <a href="https://www.youtube.com/@i_info_vision" class="footer-social-link" aria-label="YouTube"><img src="assets/images/youtube-3d.webp" alt="YouTube" style="width: 24px; height: 24px; object-fit: contain;"></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Software as a Service (SaaS)</a></li>
+            <li><a href="services.html">Web Development &amp; Applications</a></li>
+            <li><a href="services.html">App Development</a></li>
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">CRM &amp; ERP Software</a></li>
+            <li><a href="services.html">Online Trading</a></li>
+            <li><a href="services.html">Education</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blogs.html">Blogs &amp; Insights</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Address</span>
+              <span>#9/136, No.1, First Floor, <br> Trichy Main Road,<br>Chinnaiyapuram,<br>Dasanaickenpatti,<br>Salem – 636201</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-phone"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Phone</span>
+              <a href="tel:+919894480585">+91 98944 80585</a><br />
+              <a href="tel:+917540059087">+91 75400 59087</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-envelope"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Email</span>
+              <a href="mailto:support@iinfovision.com">support@iinfovision.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="ph ph-clock"></i></div>
+            <div class="footer-contact-text">
+              <span class="label">Business Hours</span>
+              <span>Monday – Saturday<br />9:30 AM – 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.<br>
+          <span style="display: block; margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Designed &amp; Developed by <a href="index.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">I Info Vision</a></span>
+        </p>
+        <div class="footer-bottom-links">
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Quick-Action Bar -->
+  <nav class="mobile-quick-actions" aria-label="Quick Actions">
+    <a href="tel:+919894480585" class="quick-action-btn quick-call-btn">
+      <i class="ph ph-phone-call"></i>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/919894480585" class="quick-action-btn quick-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <i class="ph ph-whatsapp-logo"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <a href="https://wa.me/919894480585" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
