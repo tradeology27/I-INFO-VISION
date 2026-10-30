@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Gradient SaaS UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Aurora Gradient theme created by I Info Vision. Atmospheric flowing gradients, radiant neon glows, and next-generation AI SaaS interfaces." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       AURORA GRADIENT SYSTEM
+       Cosmic Obsidian Canvas + Flowing Multi-Stop Lights
+       =================================================== */
+    :root {
+      --aurora-bg: #070913;
+      --aurora-surface: rgba(18, 22, 38, 0.75);
+      --aurora-teal: #00F2FE;
+      --aurora-blue: #4FACFE;
+      --aurora-purple: #7F00FF;
+      --aurora-emerald: #00F5A0;
+      --aurora-pink: #FF007F;
+      --aurora-text: #F8FAFC;
+      --aurora-muted: #94A3B8;
+      --aurora-border: rgba(255, 255, 255, 0.12);
+      --aurora-glow-1: rgba(0, 242, 254, 0.35);
+      --aurora-glow-2: rgba(127, 0, 255, 0.35);
+      --aurora-glow-3: rgba(0, 245, 160, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--aurora-bg);
+      color: var(--aurora-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Animated Aurora Background Mesh */
+    .aurora-mesh-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .aurora-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.65;
+      animation: auroraMorph 18s ease-in-out infinite alternate;
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .blob-1 {
+      width: 55vw;
+      height: 55vw;
+      top: -15vw;
+      left: -10vw;
+      background: radial-gradient(circle, var(--aurora-teal) 0%, transparent 70%);
+      animation-duration: 16s;
+    }
+
+    .blob-2 {
+      width: 60vw;
+      height: 60vw;
+      top: 20vh;
+      right: -15vw;
+      background: radial-gradient(circle, var(--aurora-purple) 0%, transparent 70%);
+      animation-duration: 22s;
+      animation-delay: -4s;
+    }
+
+    .blob-3 {
+      width: 50vw;
+      height: 50vw;
+      bottom: -15vw;
+      left: 20vw;
+      background: radial-gradient(circle, var(--aurora-emerald) 0%, transparent 70%);
+      animation-duration: 19s;
+      animation-delay: -8s;
+    }
+
+    @keyframes auroraMorph {
+      0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+      33% { transform: scale(1.15) translate(40px, -30px) rotate(45deg); }
+      66% { transform: scale(0.9) translate(-30px, 40px) rotate(-30deg); }
+      100% { transform: scale(1.08) translate(20px, 20px) rotate(20deg); }
+    }
+
+    .aurora-content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    .aurora-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Radiant Gradient Typography */
+    .aurora-gradient-text {
+      background: linear-gradient(135deg, var(--aurora-teal) 0%, var(--aurora-blue) 40%, var(--aurora-purple) 80%, var(--aurora-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Aurora Card with Radiant Border */
+    .aurora-card {
+      background: var(--aurora-surface);
+      border-radius: 24px;
+      border: 1px solid var(--aurora-border);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 32px;
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .aurora-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--aurora-teal), var(--aurora-purple), transparent);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .aurora-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -12px rgba(0, 242, 254, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Radiant Buttons */
+    .btn-aurora-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #070913;
+      background: linear-gradient(135deg, var(--aurora-teal) 0%, #38BDF8 50%, var(--aurora-emerald) 100%);
+      box-shadow: 0 8px 30px -4px var(--aurora-glow-1);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-aurora-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px 0 var(--aurora-glow-1);
+      filter: brightness(1.08);
+    }
+
+    .btn-aurora-glass {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #F8FAFC;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-aurora-glass:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Palette Switcher Pill Bar */
+    .spectrum-bar {
+      display: flex;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      width: fit-content;
+      backdrop-filter: blur(12px);
+    }
+
+    .spectrum-btn {
+      background: none;
+      border: none;
+      color: #94A3B8;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .spectrum-btn.active {
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .spectrum-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .aurora-hero-grid { grid-template-columns: 1fr !important; }
+      .aurora-feature-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIVERSAL STICKY TOP BAR -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-sparkle"></i>
+          Theme: Aurora Gradient
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Animated Background Canvas -->
+  <div class="aurora-mesh-container">
+    <div class="aurora-blob blob-1" id="auroraBlob1"></div>
+    <div class="aurora-blob blob-2" id="auroraBlob2"></div>
+    <div class="aurora-blob blob-3" id="auroraBlob3"></div>
+  </div>
+
+  <div class="aurora-content-wrapper">
+
+    <!-- HERO SECTION -->
+    <section style="padding: 72px 0 56px;">
+      <div class="aurora-container">
+        
+        <!-- Spectrum Preset Switcher -->
+        <div class="spectrum-bar">
+          <button class="spectrum-btn active" onclick="switchAuroraSpectrum('borealis', this)">
+            <span class="spectrum-dot" style="background: linear-gradient(135deg, #00F2FE, #00F5A0);"></span>
+            Northern Borealis
+          </button>
+          <button class="spectrum-btn" onclick="switchAuroraSpectrum('nebula', this)">
+            <span class="spectrum-dot" style="background: linear-gradient(135deg, #7F00FF, #FF007F);"></span>
+            Cosmic Nebula
+          </button>
+          <button class="spectrum-btn" onclick="switchAuroraSpectrum('solar', this)">
+            <span class="spectrum-dot" style="background: linear-gradient(135deg, #FFB800, #FF3366);"></span>
+            Solar Flare
+          </button>
+          <button class="spectrum-btn" onclick="switchAuroraSpectrum('arctic', this)">
+            <span class="spectrum-dot" style="background: linear-gradient(135deg, #38BDF8, #6366F1);"></span>
+            Deep Arctic
+          </button>
+        </div>
+
+        <div class="aurora-hero-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px; background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); font-size: 13px; font-weight: 700; color: #00F2FE; margin-bottom: 20px;">
+              <i class="ph ph-lightning"></i> NEXT-GEN AI ARCHITECTURE
+            </div>
+            <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(38px, 4.5vw, 56px); font-weight: 700; line-height: 1.15; margin-bottom: 20px;">
+              Luminous Intelligence with <span class="aurora-gradient-text">Atmospheric Aurora</span> Gradients.
+            </h1>
+            <p style="font-size: 17px; line-height: 1.7; color: var(--aurora-muted); margin-bottom: 32px; max-width: 580px;">
+              Transform complex cloud services into mesmerizing visual journeys. Seamless multi-stop color transitions, ambient backlit containers, and glowing micro-metrics engineered for high-conversion SaaS and AI platforms.
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="#demo" class="btn-aurora-primary">
+                <i class="ph ph-play-circle"></i> Try Aurora Engine
+              </a>
+              <button onclick="toggleThemeDrawer()" class="btn-aurora-glass">
+                <i class="ph ph-file-code"></i> Inspect Design Specs
+              </button>
+            </div>
+
+            <!-- Quick Telemetry Stats -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+              <div>
+                <div style="font-size: 28px; font-weight: 800; color: #00F2FE;">99.98%</div>
+                <div style="font-size: 12px; color: #94A3B8; text-transform: uppercase; margin-top: 4px;">Vector Precision</div>
+              </div>
+              <div>
+                <div style="font-size: 28px; font-weight: 800; color: #7F00FF;">8.4ms</div>
+                <div style="font-size: 12px; color: #94A3B8; text-transform: uppercase; margin-top: 4px;">P99 Latency</div>
+              </div>
+              <div>
+                <div style="font-size: 28px; font-weight: 800; color: #00F5A0;">4.8M/s</div>
+                <div style="font-size: 12px; color: #94A3B8; text-transform: uppercase; margin-top: 4px;">Streaming Tokens</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Interactive Card Deck -->
+          <div>
+            <div class="aurora-card" id="demo">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="width: 14px; height: 14px; border-radius: 50%; background: #00F5A0; box-shadow: 0 0 12px #00F5A0;"></div>
+                  <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.5px;">AURORA-70B INFERENCE RADAR</span>
+                </div>
+                <span style="font-size: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(0, 242, 254, 0.15); color: #00F2FE; font-weight: 600;">STREAMING ACTIVE</span>
+              </div>
+
+              <!-- Interactive Prompt Stream Box -->
+              <div style="background: rgba(10, 14, 26, 0.85); border-radius: 16px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 20px;">
+                <div style="font-size: 12px; color: #64748B; margin-bottom: 8px;">USER PROMPT // CLOUD DISPATCH</div>
+                <div id="auroraPromptText" style="font-family: monospace; font-size: 13.5px; color: #E2E8F0; line-height: 1.6;">
+                  "Synthesize multi-region latency graphs into an adaptive Aurora gradient overlay with sub-10ms telemetry."
+                </div>
+              </div>
+
+              <!-- Live Model Response Card -->
+              <div style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.08), rgba(127, 0, 255, 0.08)); border-radius: 16px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.12); margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 12px;">
+                  <span style="color: #00F2FE; font-weight: 700;"><i class="ph ph-cpu"></i> Aurora Neural Node</span>
+                  <span style="color: #94A3B8;">312 tokens processed</span>
+                </div>
+                <!-- Dynamic Wave Visualizer -->
+                <div style="display: flex; gap: 4px; align-items: flex-end; height: 38px;">
+                  <span class="wave-bar" style="flex:1; background: #00F2FE; border-radius: 4px; height: 70%; animation: pulseWave 1.2s infinite ease-in-out;"></span>
+                  <span class="wave-bar" style="flex:1; background: #38BDF8; border-radius: 4px; height: 95%; animation: pulseWave 1.2s infinite ease-in-out 0.2s;"></span>
+                  <span class="wave-bar" style="flex:1; background: #60A5FA; border-radius: 4px; height: 45%; animation: pulseWave 1.2s infinite ease-in-out 0.4s;"></span>
+                  <span class="wave-bar" style="flex:1; background: #7F00FF; border-radius: 4px; height: 85%; animation: pulseWave 1.2s infinite ease-in-out 0.1s;"></span>
+                  <span class="wave-bar" style="flex:1; background: #A855F7; border-radius: 4px; height: 60%; animation: pulseWave 1.2s infinite ease-in-out 0.3s;"></span>
+                  <span class="wave-bar" style="flex:1; background: #EC4899; border-radius: 4px; height: 90%; animation: pulseWave 1.2s infinite ease-in-out 0.5s;"></span>
+                  <span class="wave-bar" style="flex:1; background: #00F5A0; border-radius: 4px; height: 75%; animation: pulseWave 1.2s infinite ease-in-out 0.25s;"></span>
+                </div>
+              </div>
+
+              <!-- Interactive Prompt Buttons -->
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button class="spectrum-btn" style="background: rgba(255,255,255,0.08); font-size: 12px;" onclick="loadAuroraSample(1)">Prompt A: Global Traffic</button>
+                <button class="spectrum-btn" style="background: rgba(255,255,255,0.08); font-size: 12px;" onclick="loadAuroraSample(2)">Prompt B: Neural Sharding</button>
+                <button class="spectrum-btn" style="background: rgba(255,255,255,0.08); font-size: 12px;" onclick="loadAuroraSample(3)">Prompt C: Edge Gateway</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE PILLARS GRID -->
+    <section style="padding: 64px 0;">
+      <div class="aurora-container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; margin-bottom: 16px;">
+            The Anatomy of an <span class="aurora-gradient-text">Aurora Interface</span>
+          </h2>
+          <p style="color: var(--aurora-muted); font-size: 16px; line-height: 1.6;">
+            Aurora Gradient design replaces harsh borders with luminous energy bands, providing a calm, organic focal flow that draws human eyes straight to key actions.
+          </p>
+        </div>
+
+        <div class="aurora-feature-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+          <!-- Card 1 -->
+          <div class="aurora-card">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(79, 172, 254, 0.2)); border: 1px solid rgba(0, 242, 254, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #00F2FE; margin-bottom: 24px;">
+              <i class="ph ph-drop-half-bottom"></i>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #FFFFFF;">Volumetric Depth</h3>
+            <p style="color: var(--aurora-muted); font-size: 14.5px; line-height: 1.6;">
+              Deep space canvas (`#070913`) paired with layered SVG/CSS multi-radius radial blur fields create a boundless sense of modern computing atmosphere.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="aurora-card">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: linear-gradient(135deg, rgba(127, 0, 255, 0.2), rgba(255, 0, 127, 0.2)); border: 1px solid rgba(127, 0, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #A855F7; margin-bottom: 24px;">
+              <i class="ph ph-paint-brush-broad"></i>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #FFFFFF;">Chromatic Specular Borders</h3>
+            <p style="color: var(--aurora-muted); font-size: 14.5px; line-height: 1.6;">
+              Borders are infused with 4-stop directional linear gradients. Instead of flat outlines, cards look like hand-polished titanium prisms refracting ambient light.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="aurora-card">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: linear-gradient(135deg, rgba(0, 245, 160, 0.2), rgba(56, 189, 248, 0.2)); border: 1px solid rgba(0, 245, 160, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #00F5A0; margin-bottom: 24px;">
+              <i class="ph ph-cpu"></i>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #FFFFFF;">AI SaaS Conversion Uplift</h3>
+            <p style="color: var(--aurora-muted); font-size: 14.5px; line-height: 1.6;">
+              Used by world-class foundation model labs and SaaS companies to highlight value metrics, API gateways, and frictionless self-service checkouts.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLIENT SHOWCASE LEAD GENERATION CTA -->
+    <section class="theme-lead-cta" style="margin: 40px auto 80px; max-width: 1240px; padding: 0 24px;">
+      <div style="background: linear-gradient(135deg, rgba(18, 22, 38, 0.95), rgba(8, 11, 22, 0.95)); border-radius: 28px; border: 1px solid rgba(0, 242, 254, 0.35); padding: 56px 40px; text-align: center; box-shadow: 0 24px 60px -10px rgba(0, 242, 254, 0.15); position: relative; overflow: hidden;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px; background: rgba(0, 242, 254, 0.15); color: #00F2FE; font-size: 13px; font-weight: 700; margin-bottom: 16px;">
+          <i class="ph ph-rocket-launch"></i> READY TO SHIP
+        </div>
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; margin-bottom: 16px; color: #FFFFFF;">
+          Bring Your Brand to Life with the <span class="aurora-gradient-text">Aurora Gradient Theme</span>
+        </h2>
+        <p style="color: var(--aurora-muted); font-size: 16px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6;">
+          Our creative technology engineering team builds tailor-made Aurora Gradient sites with custom shader meshes, responsive React/Vue/vanilla code, and lightning-fast SEO optimization.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="index.html#contact" class="btn-aurora-primary" style="padding: 16px 36px; font-size: 15px;">
+            <i class="ph ph-chat-circle-dots"></i> Hire Aurora UI Specialists
+          </a>
+          <a href="themes.html" class="btn-aurora-glass" style="padding: 16px 36px; font-size: 15px;">
+            <i class="ph ph-squares-four"></i> View All 20 Themes
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SLIDE-OUT THEME SPECS DRAWER -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Aurora Gradient Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Atmospheric Flowing Mesh &bull; Radiant Neon Glow &bull; AI SaaS</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Evokes the natural spectacle of the Aurora Borealis using high-def multi-stop radial and linear color transitions. Eliminates sterile monochrome boxes in favor of energetic, luminous depth.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#070913; border:2px solid #fff;" title="Canvas #070913"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#00F2FE; border:2px solid #fff;" title="Teal #00F2FE"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#7F00FF; border:2px solid #fff;" title="Purple #7F00FF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#00F5A0; border:2px solid #fff;" title="Emerald #00F5A0"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FF007F; border:2px solid #fff;" title="Pink #FF007F"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          AI landing pages, next-generation SaaS platforms, developer toolkits, high-throughput cloud dashboards, and high-impact hero sections.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Typography &amp; Elevation</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Space Grotesk + Plus Jakarta Sans. Elevation achieved with multi-tier ambient colored drop shadows and chromatic gradient borders.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function switchAuroraSpectrum(preset, btn) {
+      document.querySelectorAll('.spectrum-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const b1 = document.getElementById('auroraBlob1');
+      const b2 = document.getElementById('auroraBlob2');
+      const b3 = document.getElementById('auroraBlob3');
+
+      if (preset === 'borealis') {
+        b1.style.background = 'radial-gradient(circle, #00F2FE 0%, transparent 70%)';
+        b2.style.background = 'radial-gradient(circle, #7F00FF 0%, transparent 70%)';
+        b3.style.background = 'radial-gradient(circle, #00F5A0 0%, transparent 70%)';
+      } else if (preset === 'nebula') {
+        b1.style.background = 'radial-gradient(circle, #7F00FF 0%, transparent 70%)';
+        b2.style.background = 'radial-gradient(circle, #FF007F 0%, transparent 70%)';
+        b3.style.background = 'radial-gradient(circle, #38BDF8 0%, transparent 70%)';
+      } else if (preset === 'solar') {
+        b1.style.background = 'radial-gradient(circle, #FFB800 0%, transparent 70%)';
+        b2.style.background = 'radial-gradient(circle, #FF3366 0%, transparent 70%)';
+        b3.style.background = 'radial-gradient(circle, #7F00FF 0%, transparent 70%)';
+      } else if (preset === 'arctic') {
+        b1.style.background = 'radial-gradient(circle, #38BDF8 0%, transparent 70%)';
+        b2.style.background = 'radial-gradient(circle, #6366F1 0%, transparent 70%)';
+        b3.style.background = 'radial-gradient(circle, #00F2FE 0%, transparent 70%)';
+      }
+    }
+
+    function loadAuroraSample(id) {
+      const promptEl = document.getElementById('auroraPromptText');
+      if (id === 1) {
+        promptEl.textContent = '"Synthesize multi-region latency graphs into an adaptive Aurora gradient overlay with sub-10ms telemetry."';
+      } else if (id === 2) {
+        promptEl.textContent = '"Orchestrate 64 GPU shards across US-East and EU-West with real-time gradient memory balancing."';
+      } else if (id === 3) {
+        promptEl.textContent = '"Inspect edge gateway cache invalidations and broadcast quantum-safe cryptographic handshakes."';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberpunk 2077 HUD UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Cyberpunk 2077 HUD UI theme created by I Info Vision. High-voltage electric yellow, glitch typography, chamfered corner geometry, and sci-fi telemetry." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Orbitron & Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       CYBERPUNK 2077 HUD DESIGN SYSTEM
+       High Voltage Electric Yellow + Cyan + Hot Red
+       =================================================== */
+    :root {
+      --cyber-yellow: #FCEE0A;
+      --cyber-cyan: #00F0FF;
+      --cyber-red: #FF003C;
+      --cyber-black: #0B0A0D;
+      --cyber-card: #15131A;
+      --cyber-border: #FCEE0A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--cyber-black);
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px);
+    }
+
+    .font-hud {
+      font-family: 'Orbitron', monospace;
+    }
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    .cyber-container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Chamfered Cut Corner Cards */
+    .cyber-card {
+      background: var(--cyber-card);
+      border: 2px solid var(--cyber-border);
+      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+      padding: 28px;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .cyber-card:hover {
+      box-shadow: 0 0 25px rgba(252, 238, 10, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .cyber-card-red {
+      border-color: var(--cyber-red);
+    }
+    .cyber-card-red:hover {
+      box-shadow: 0 0 25px rgba(255, 0, 60, 0.4);
+    }
+
+    .cyber-card-cyan {
+      border-color: var(--cyber-cyan);
+    }
+    .cyber-card-cyan:hover {
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+    }
+
+    /* Action Buttons with 45-degree angle cuts */
+    .btn-cyber {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: var(--cyber-yellow);
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-cyber:hover {
+      background: var(--cyber-cyan);
+      box-shadow: 0 0 20px var(--cyber-cyan);
+    }
+
+    .btn-cyber-red {
+      background: var(--cyber-red);
+      color: #fff;
+    }
+    .btn-cyber-red:hover {
+      background: #ff3366;
+      box-shadow: 0 0 20px var(--cyber-red);
+    }
+
+    /* Glitch Tag */
+    .glitch-tag {
+      background: var(--cyber-red);
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .cyber-hero-grid { grid-template-columns: 1fr !important; }
+      .cyber-gear-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-cpu"></i> Theme: <strong>Cyberpunk 2077 HUD</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       CYBERPUNK HERO
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0 50px;">
+    <div class="cyber-container">
+      
+      <div class="cyber-hero-grid" style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center;">
+        <div>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+            <span class="glitch-tag">NIGHT_CITY // SECTOR 07</span>
+            <span class="font-mono" style="font-size: 11px; color: var(--cyber-yellow);">NEURAL OS v9.42</span>
+          </div>
+
+          <h1 class="font-hud" style="font-size: clamp(38px, 5vw, 62px); font-weight: 900; line-height: 1.05; margin-bottom: 24px; text-transform: uppercase;">
+            Cybernetic<br />
+            <span style="color: var(--cyber-yellow); text-shadow: 0 0 25px rgba(252, 238, 10, 0.6);">High Voltage.</span>
+          </h1>
+
+          <p style="font-size: 16px; color: #CBD5E1; line-height: 1.65; max-width: 520px; margin-bottom: 36px;">
+            Extreme high-contrast sci-fi interface with diagonal chamfers, scanline filters, HUD target telemetry, and uncompromising raw gaming energy.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#gear" class="btn-cyber">
+              <span>Equip Loadout</span>
+              <i class="ph ph-crosshair"></i>
+            </a>
+            <a href="#telemetry" class="btn-cyber btn-cyber-red">
+              <span>Overclock Core</span>
+              <i class="ph ph-fire"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Cyber Samurai Augmented Rig -->
+        <div class="cyber-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--cyber-yellow); padding-bottom: 12px; margin-bottom: 18px;">
+            <span class="font-hud" style="font-size: 14px; font-weight: 800; color: var(--cyber-yellow);">// ARASAKA SANDEVISTAN MK.V</span>
+            <span class="font-mono" style="font-size: 11px; color: var(--cyber-cyan);">SYNC: 100%</span>
+          </div>
+
+          <div style="height: 220px; border-radius: 4px; overflow: hidden; margin-bottom: 18px; position: relative;">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80" alt="Cyberpunk neon samurai character" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(130%) saturate(150%);" />
+            <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 4px 10px; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--cyber-yellow);">
+              TARGET ACQUIRED // 98.4M
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Space Mono', monospace; font-size: 12px;">
+            <div>REFLEXES: <strong style="color: var(--cyber-cyan);">+140%</strong></div>
+            <div>THERMAL: <strong style="color: var(--cyber-red);">38.2°C</strong></div>
+            <button class="btn-cyber" style="padding: 6px 14px; font-size: 11px;" onclick="showThemeToast('Cyberware Overdrive Engaged!')">Overdrive</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       INTERACTIVE CYBERWEAR LOADOUT CUSTOMIZER
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 50px 0 80px;" id="gear">
+    <div class="cyber-container">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 2px solid var(--cyber-yellow); padding-bottom: 14px;">
+        <h2 class="font-hud" style="font-size: 28px; text-transform: uppercase;">// CYBERNETIC INVENTORY LOADOUT</h2>
+        <span class="font-mono" style="font-size: 12px; color: var(--cyber-cyan);">SLOTS: 3/3 READY</span>
+      </div>
+
+      <div class="cyber-gear-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        
+        <!-- Slot 01 -->
+        <div class="cyber-card cyber-card-cyan">
+          <div style="display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 11px; margin-bottom: 12px;">
+            <span style="color: var(--cyber-cyan);">SLOT 01 // OPTICS</span>
+            <span>LEGENDARY</span>
+          </div>
+          <h3 class="font-hud" style="font-size: 20px; color: #fff; margin-bottom: 8px;">Kiroshi Optics V4</h3>
+          <p style="font-size: 13px; color: #94A3B8; margin-bottom: 16px; line-height: 1.5;">
+            Reveals enemy vision cones, highlights structural weakpoints, and decodes encrypted neural broadcasts.
+          </p>
+          <button class="btn-cyber" style="width: 100%; justify-content: center;" onclick="showThemeToast('Kiroshi Optics Calibrated!')">Calibrate Optics</button>
+        </div>
+
+        <!-- Slot 02 -->
+        <div class="cyber-card">
+          <div style="display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 11px; margin-bottom: 12px;">
+            <span style="color: var(--cyber-yellow);">SLOT 02 // SKELETAL</span>
+            <span>ICONIC</span>
+          </div>
+          <h3 class="font-hud" style="font-size: 20px; color: #fff; margin-bottom: 8px;">Titanium Reinforced Bones</h3>
+          <p style="font-size: 13px; color: #94A3B8; margin-bottom: 16px; line-height: 1.5;">
+            Absorbs catastrophic kinetic shocks and permits high-altitude tactical drop impacts without deceleration damage.
+          </p>
+          <button class="btn-cyber" style="width: 100%; justify-content: center; background: #fff; color: #000;" onclick="showThemeToast('Reinforced Bones Verified!')">Inspect Matrix</button>
+        </div>
+
+        <!-- Slot 03 -->
+        <div class="cyber-card cyber-card-red">
+          <div style="display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 11px; margin-bottom: 12px;">
+            <span style="color: var(--cyber-red);">SLOT 03 // ARMS</span>
+            <span>MIL-SPEC</span>
+          </div>
+          <h3 class="font-hud" style="font-size: 20px; color: #fff; margin-bottom: 8px;">Mantis Blades Thermal</h3>
+          <p style="font-size: 13px; color: #94A3B8; margin-bottom: 16px; line-height: 1.5;">
+            Concealed forearm blades deploy with 900°C plasma edge cuts that sever reinforced armored plating effortlessly.
+          </p>
+          <button class="btn-cyber btn-cyber-red" style="width: 100%; justify-content: center;" onclick="showThemeToast('Mantis Blades Deployed!')">Deploy Blades</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CLIENT SHOWCASE
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0; background: #110E17; border-top: 2px solid var(--cyber-yellow);">
+    <div class="cyber-container" style="text-align: center; max-width: 820px;">
+      <span class="glitch-tag" style="background: var(--cyber-yellow); color: #000; margin-bottom: 14px;">
+        COMMISSION FUTURE TECH
+      </span>
+      <h2 class="font-hud" style="font-size: 34px; margin: 12px 0 16px;">
+        Build a Cyberpunk Gaming or Tech Platform
+      </h2>
+      <p style="font-size: 15.5px; color: #CBD5E1; line-height: 1.6; margin-bottom: 32px;">
+        Dominate the gaming, crypto, and sci-fi entertainment industries with custom HUD interfaces engineered by I Info Vision.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html#contact" class="btn-cyber" style="padding: 14px 32px; font-size: 14px;">
+          <i class="ph ph-crosshair"></i> Hire Cyberpunk Designers
+        </a>
+        <a href="themes.html" class="btn-cyber btn-cyber-red" style="padding: 14px 32px; font-size: 14px;">
+          <i class="ph ph-squares-four"></i> View All 20 Themes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER
+       ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Cyberpunk Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">High-Voltage Cyberpunk &bull; HUD Chamfered Wireframe</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Aggressive angularity and high-voltage primaries. Cards utilize polygon clip-paths for diagonal cutouts, scanline background rasters, and terminal monospace accents.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#FCEE0A; border:2px solid #fff;" title="Electric Yellow #FCEE0A"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#00F0FF; border:2px solid #fff;" title="Cyan #00F0FF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FF003C; border:2px solid #fff;" title="Hot Red #FF003C"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#0B0A0D; border:2px solid #fff;" title="Carbon #0B0A0D"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Gaming peripherals, esports arenas, sci-fi media releases, NFT metaverse portals, and high-energy hardware brands.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
+

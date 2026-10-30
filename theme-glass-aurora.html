@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass + Aurora UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Glass + Aurora theme by I Info Vision. Frosted acrylic glass layered with luminous atmospheric aurora gradients for premium AI platforms." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       GLASS + AURORA HYBRID SYSTEM
+       Frosted Acrylic Crystal + Deep Spectral Luminance
+       =================================================== */
+    :root {
+      --ga-bg: #0A0D1B;
+      --ga-glass: rgba(255, 255, 255, 0.08);
+      --ga-glass-hover: rgba(255, 255, 255, 0.14);
+      --ga-glass-border: rgba(255, 255, 255, 0.22);
+      --ga-blur: 28px;
+      --ga-cyan: #00F0FF;
+      --ga-magenta: #D946EF;
+      --ga-violet: #8B5CF6;
+      --ga-emerald: #10B981;
+      --ga-text: #FFFFFF;
+      --ga-muted: #CBD5E1;
+      --ga-specular: inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.45), 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--ga-bg);
+      color: var(--ga-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Ambient Aurora Fluid Mesh Canvas */
+    .ga-aurora-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ga-fluid-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: 0.7;
+      animation: gaFloat 20s ease-in-out infinite alternate;
+      transition: all 0.6s ease;
+    }
+
+    .orb-cyan {
+      width: 50vw;
+      height: 50vw;
+      top: -10vw;
+      left: -5vw;
+      background: radial-gradient(circle, var(--ga-cyan) 0%, rgba(0,240,255,0) 70%);
+      animation-duration: 18s;
+    }
+
+    .orb-magenta {
+      width: 55vw;
+      height: 55vw;
+      top: 30vh;
+      right: -10vw;
+      background: radial-gradient(circle, var(--ga-magenta) 0%, rgba(217,70,239,0) 70%);
+      animation-duration: 24s;
+      animation-delay: -5s;
+    }
+
+    .orb-violet {
+      width: 45vw;
+      height: 45vw;
+      bottom: -10vw;
+      left: 25vw;
+      background: radial-gradient(circle, var(--ga-violet) 0%, rgba(139,92,246,0) 70%);
+      animation-duration: 21s;
+      animation-delay: -10s;
+    }
+
+    @keyframes gaFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, -40px) scale(1.12); }
+      100% { transform: translate(-40px, 50px) scale(0.92); }
+    }
+
+    .ga-main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ga-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Frosted Glass Acrylic Surface */
+    .ga-glass-card {
+      background: var(--ga-glass);
+      backdrop-filter: blur(var(--ga-blur)) saturate(190%);
+      -webkit-backdrop-filter: blur(var(--ga-blur)) saturate(190%);
+      border: 1px solid var(--ga-glass-border);
+      border-radius: 24px;
+      box-shadow: var(--ga-specular);
+      padding: 32px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .ga-glass-card:hover {
+      background: var(--ga-glass-hover);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.6), 0 28px 65px rgba(0, 240, 255, 0.2);
+    }
+
+    .ga-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .ga-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--ga-cyan) 60%, var(--ga-magenta) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Buttons */
+    .btn-ga-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #0A0D1B;
+      background: linear-gradient(135deg, var(--ga-cyan), #FFFFFF);
+      box-shadow: 0 8px 30px rgba(0, 240, 255, 0.4);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-ga-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 240, 255, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn-ga-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(16px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-ga-outline:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Live Studio Slider Control */
+    .ga-range {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+      margin: 8px 0;
+    }
+
+    .ga-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--ga-cyan);
+      box-shadow: 0 0 10px var(--ga-cyan);
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .ga-hero-grid { grid-template-columns: 1fr !important; }
+      .ga-trio-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIVERSAL STICKY TOP BAR -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-diamonds-four"></i>
+          Theme: Glass + Aurora
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ambient Aurora Fluid Mesh Canvas -->
+  <div class="ga-aurora-bg">
+    <div class="ga-fluid-orb orb-cyan" id="gaOrb1"></div>
+    <div class="ga-fluid-orb orb-magenta" id="gaOrb2"></div>
+    <div class="ga-fluid-orb orb-violet" id="gaOrb3"></div>
+  </div>
+
+  <div class="ga-main">
+
+    <!-- HERO SECTION -->
+    <section style="padding: 72px 0 56px;">
+      <div class="ga-container">
+        
+        <div class="ga-hero-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+          <div>
+            <div class="ga-pill" style="margin-bottom: 24px;">
+              <i class="ph ph-sparkle"></i> FROSTED GLASS &bull; LUMINOUS AURORA
+            </div>
+            <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(38px, 4.5vw, 56px); font-weight: 700; line-height: 1.15; margin-bottom: 20px;">
+              Tactile Clarity Meets <span class="ga-gradient-text">Spectral Radiance</span>.
+            </h1>
+            <p style="font-size: 17px; line-height: 1.7; color: var(--ga-muted); margin-bottom: 32px; max-width: 580px;">
+              When the frosted physical refraction of Apple-grade Glassmorphism fuses with the electric dynamism of atmospheric Aurora mesh, the result is the ultimate premier canvas for high-ticket AI platforms.
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="#studio" class="btn-ga-primary">
+                <i class="ph ph-faders"></i> Tune Glass &amp; Optics
+              </a>
+              <button onclick="toggleThemeDrawer()" class="btn-ga-outline">
+                <i class="ph ph-info"></i> View Design System Specs
+              </button>
+            </div>
+
+            <!-- Stats Bar -->
+            <div style="display: flex; gap: 28px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+              <div>
+                <div style="font-size: 28px; font-weight: 800; color: #FFFFFF;">32px</div>
+                <div style="font-size: 12px; color: var(--ga-cyan); text-transform: uppercase;">Aero Blur Radius</div>
+              </div>
+              <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+              <div>
+                <div style="font-size: 28px; font-weight: 800; color: #FFFFFF;">190%</div>
+                <div style="font-size: 12px; color: var(--ga-magenta); text-transform: uppercase;">Color Saturation</div>
+              </div>
+              <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+              <div>
+                <div style="font-size: 28px; font-weight: 800; color: #FFFFFF;">4-Tier</div>
+                <div style="font-size: 12px; color: #10B981; text-transform: uppercase;">Ambient Light Map</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Glass Deck & Real-Time Optic Tuner -->
+          <div id="studio">
+            <div class="ga-glass-card" id="interactiveGlassCard">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <i class="ph ph-sliders" style="font-size: 22px; color: var(--ga-cyan);"></i>
+                  <span style="font-weight: 700; font-size: 15px; letter-spacing: 0.5px;">LIVE GLASS OPTIC CONTROLLER</span>
+                </div>
+                <span class="ga-pill" style="font-size: 11px; padding: 3px 10px;">INTERACTIVE</span>
+              </div>
+
+              <!-- Slider 1: Blur Intensity -->
+              <div style="margin-bottom: 18px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px;">
+                  <span>Frosted Backdrop Blur</span>
+                  <span id="blurVal" style="color: var(--ga-cyan);">28px</span>
+                </div>
+                <input type="range" class="ga-range" min="8" max="60" value="28" oninput="updateBlur(this.value)" />
+              </div>
+
+              <!-- Slider 2: Glass Card Opacity -->
+              <div style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px;">
+                  <span>Acrylic Surface Alpha</span>
+                  <span id="opacityVal" style="color: var(--ga-magenta);">0.08</span>
+                </div>
+                <input type="range" class="ga-range" min="0.02" max="0.30" step="0.01" value="0.08" oninput="updateAlpha(this.value)" />
+              </div>
+
+              <!-- Sub Card: Dynamic AI Output Preview -->
+              <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 16px; padding: 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 12px; color: var(--ga-cyan);">
+                  <span><i class="ph ph-cube"></i> SYNTHETIC VECTOR EMBEDDING</span>
+                  <span>LATENCY: 4.2ms</span>
+                </div>
+                <div style="font-family: monospace; font-size: 13px; line-height: 1.6; color: #E2E8F0;">
+                  { "cluster": "aurora-node-alpha", "specular_reflection": "0.45", "prism_depth": "active", "encryption": "AES-256-GCM" }
+                </div>
+              </div>
+
+              <!-- Color Wave Mode Buttons -->
+              <div style="display: flex; gap: 8px; margin-top: 20px;">
+                <button class="ga-pill" style="cursor: pointer; flex: 1; justify-content: center;" onclick="setAuroraAtmosphere('cyan-magenta')">
+                  Cyan/Magenta
+                </button>
+                <button class="ga-pill" style="cursor: pointer; flex: 1; justify-content: center;" onclick="setAuroraAtmosphere('emerald-sapphire')">
+                  Emerald/Sapphire
+                </button>
+                <button class="ga-pill" style="cursor: pointer; flex: 1; justify-content: center;" onclick="setAuroraAtmosphere('amber-violet')">
+                  Amber/Violet
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3-COLUMN FEATURE SUITE -->
+    <section style="padding: 64px 0;">
+      <div class="ga-container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 48px;">
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; margin-bottom: 16px;">
+            The Pinnacle of Modern <span class="ga-gradient-text">Web Polish</span>
+          </h2>
+          <p style="color: var(--ga-muted); font-size: 16px; line-height: 1.6;">
+            By decoupling the fluid organic movement in the background from the crisp, readable frosted glass panels in the foreground, we achieve high-fashion elegance without compromising readability.
+          </p>
+        </div>
+
+        <div class="ga-trio-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+          <div class="ga-glass-card">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(0, 240, 255, 0.15); border: 1px solid rgba(0, 240, 255, 0.35); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--ga-cyan); margin-bottom: 24px;">
+              <i class="ph ph-shield-check"></i>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Zero Legibility Loss</h3>
+            <p style="color: var(--ga-muted); font-size: 14.5px; line-height: 1.6;">
+              Heavy backdrop saturation and calibrated alpha levels ensure dark and light text remains 100% WCAG AAA compliant regardless of background color movement.
+            </p>
+          </div>
+
+          <div class="ga-glass-card">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(217, 70, 239, 0.15); border: 1px solid rgba(217, 70, 239, 0.35); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--ga-magenta); margin-bottom: 24px;">
+              <i class="ph ph-lightning"></i>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">GPU-Accelerated CSS</h3>
+            <p style="color: var(--ga-muted); font-size: 14.5px; line-height: 1.6;">
+              Engineered with `will-change: transform` and CSS 3D transforms for silky smooth 60fps rendering even on mid-tier mobile smartphones and iPads.
+            </p>
+          </div>
+
+          <div class="ga-glass-card">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #10B981; margin-bottom: 24px;">
+              <i class="ph ph-magic-wand"></i>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Specular Highlighting</h3>
+            <p style="color: var(--ga-muted); font-size: 14.5px; line-height: 1.6;">
+              Custom `inset 0 1.5px 1px 0 rgba(255,255,255,0.45)` delivers the delicate physical sheen of high-end optical crystal lenses.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLIENT SHOWCASE LEAD GENERATION CTA -->
+    <section class="theme-lead-cta" style="margin: 40px auto 80px; max-width: 1240px; padding: 0 24px;">
+      <div style="background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(32px); border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.25); padding: 56px 40px; text-align: center; box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.5), inset 0 1.5px 1px rgba(255, 255, 255, 0.4); position: relative; overflow: hidden;">
+        <div class="ga-pill" style="margin-bottom: 16px;">
+          <i class="ph ph-sparkle"></i> ENTERPRISE READY
+        </div>
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; margin-bottom: 16px; color: #FFFFFF;">
+          Launch Your Flagship Platform with <span class="ga-gradient-text">Glass + Aurora</span>
+        </h2>
+        <p style="color: var(--ga-muted); font-size: 16px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6;">
+          Our design engineering squad crafts bespoke Glass + Aurora architectures for global AI, Web3, and Enterprise clients seeking unmatched digital prestige.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="index.html#contact" class="btn-ga-primary" style="padding: 16px 36px; font-size: 15px;">
+            <i class="ph ph-chat-circle-dots"></i> Hire Glass &amp; Aurora Team
+          </a>
+          <a href="themes.html" class="btn-ga-outline" style="padding: 16px 36px; font-size: 15px;">
+            <i class="ph ph-squares-four"></i> Explore All 20 Themes
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SLIDE-OUT THEME SPECS DRAWER -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Glass + Aurora Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Frosted Glass Surface &bull; Atmospheric Aurora Glow &bull; Premium AI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Fuses the tactile optical depth of heavy frosted glass (`backdrop-filter: blur(28px)`) with the electric luminous energy of multi-color aurora fluids. Maximizes aesthetic value for luxury tech.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#0A0D1B; border:2px solid #fff;" title="Canvas #0A0D1B"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#00F0FF; border:2px solid #fff;" title="Cyan #00F0FF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#D946EF; border:2px solid #fff;" title="Magenta #D946EF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#8B5CF6; border:2px solid #fff;" title="Violet #8B5CF6"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#10B981; border:2px solid #fff;" title="Emerald #10B981"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Next-gen AI products, Web3 platforms, high-end creative tech portals, financial dashboards, and visionary corporate flagships.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Key CSS Techniques</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          `backdrop-filter: blur(28px) saturate(190%)`, `inset 0 1.5px 1px 0 rgba(255,255,255,0.45)`, and multi-stop ambient radial gradients.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function updateBlur(val) {
+      document.getElementById('blurVal').textContent = val + 'px';
+      document.documentElement.style.setProperty('--ga-blur', val + 'px');
+    }
+
+    function updateAlpha(val) {
+      document.getElementById('opacityVal').textContent = val;
+      document.documentElement.style.setProperty('--ga-glass', `rgba(255, 255, 255, ${val})`);
+    }
+
+    function setAuroraAtmosphere(scheme) {
+      const o1 = document.getElementById('gaOrb1');
+      const o2 = document.getElementById('gaOrb2');
+      const o3 = document.getElementById('gaOrb3');
+
+      if (scheme === 'cyan-magenta') {
+        o1.style.background = 'radial-gradient(circle, #00F0FF 0%, transparent 70%)';
+        o2.style.background = 'radial-gradient(circle, #D946EF 0%, transparent 70%)';
+        o3.style.background = 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)';
+      } else if (scheme === 'emerald-sapphire') {
+        o1.style.background = 'radial-gradient(circle, #10B981 0%, transparent 70%)';
+        o2.style.background = 'radial-gradient(circle, #3B82F6 0%, transparent 70%)';
+        o3.style.background = 'radial-gradient(circle, #06B6D4 0%, transparent 70%)';
+      } else if (scheme === 'amber-violet') {
+        o1.style.background = 'radial-gradient(circle, #F59E0B 0%, transparent 70%)';
+        o2.style.background = 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)';
+        o3.style.background = 'radial-gradient(circle, #EF4444 0%, transparent 70%)';
+      }
+    }
+  </script>
+</body>
+</html>

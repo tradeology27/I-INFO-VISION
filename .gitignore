@@ -1,0 +1,29 @@
+# Backups and recovery directories
+.seopilot_backups/
+*.bak
+*.tmp
+*.swp
+*~
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Temporary test and diagnostic outputs
+test_*.png
+temp_*.png
+temp_*.html
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & editor configurations
+.vscode/
+.idea/

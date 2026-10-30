@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liquid Flow &amp; Telemetry — Glassmorphic 2.0 Theme | I Info Vision</title>
+  <meta name="description" content="Glassmorphic 2.0 (c. 2020) living UI design theme — multi-color flow mesh gradient, frosted glass cards, live trading telemetry charts, and iridescent liquid bubbles." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       GLASSMORPHIC 2.0 UI THEME (c. 2020)
+       Liquid Flow Mesh Gradient, Specular Frost & Iridescent Drops
+       =================================================== */
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-bg-hover: rgba(255, 255, 255, 0.16);
+      --glass-border: rgba(255, 255, 255, 0.22);
+      --glass-border-glow: rgba(255, 255, 255, 0.55);
+      --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --glass-inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      --neon-cyan: #38bdf8;
+      --neon-magenta: #f43f5e;
+      --neon-violet: #a855f7;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #090616;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── FLOW MESH GRADIENT CANVAS ── */
+    .mesh-gradient-bg {
+      flex: 1;
+      padding: 40px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      background:
+        radial-gradient(circle at 15% 25%, #7928ca 0%, transparent 45%),
+        radial-gradient(circle at 85% 20%, #0070f3 0%, transparent 50%),
+        radial-gradient(circle at 50% 60%, #ff0080 0%, transparent 55%),
+        radial-gradient(circle at 80% 85%, #00dfd8 0%, transparent 45%),
+        radial-gradient(circle at 20% 85%, #7928ca 0%, transparent 50%),
+        #090616;
+      background-size: 150% 150%;
+      animation: meshPulse 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes meshPulse {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 50% 100%; }
+    }
+
+    /* ── MASTER GLASS CONTAINER ── */
+    .glass-viewport {
+      width: 100%;
+      max-width: 1180px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .glass-app-window {
+      background: rgba(18, 14, 38, 0.45);
+      backdrop-filter: blur(40px) saturate(190%);
+      -webkit-backdrop-filter: blur(40px) saturate(190%);
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      border-radius: 32px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 200px 1.35fr 1fr;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+      animation: glassFade 0.8s ease-out;
+    }
+
+    @keyframes glassFade {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── 1. LEFT GLASS SIDEBAR ── */
+    .glass-sidebar {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--glass-inner-glow);
+    }
+
+    .glass-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-brand-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .glass-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .glass-nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .glass-nav-item.active a,
+    .glass-nav-item a:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), var(--glass-inner-glow);
+    }
+
+    .glass-sidebar-bottom a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .glass-sidebar-bottom a:hover { color: #fff; }
+
+    /* ── 2. CENTER HERO GLASS CARD ── */
+    .glass-hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(28px);
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      border-radius: 26px;
+      padding: 34px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), var(--glass-inner-glow);
+      overflow: hidden;
+    }
+
+    .glass-hero-card::before {
+      content: "";
+      position: absolute;
+      top: -50px; left: -50px;
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 24px;
+    }
+
+    .hero-main-title {
+      font-size: clamp(28px, 3.2vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 28px;
+      max-width: 320px;
+    }
+
+    .btn-glass-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.25s ease;
+      width: fit-content;
+      cursor: pointer;
+    }
+    .btn-glass-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 38px rgba(255, 255, 255, 0.5);
+      background: #ffffff;
+    }
+
+    /* ── 3D IRIDESCENT LIQUID DROPLETS ── */
+    .liquid-drop-1 {
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95) 0%, rgba(168,85,247,0.7) 35%, rgba(56,189,248,0.8) 70%, rgba(244,63,94,0.6) 100%);
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.4),
+        inset 0 -6px 12px rgba(0,0,0,0.5),
+        inset 0 4px 8px rgba(255,255,255,0.9);
+      animation: floatDrop 6s ease-in-out infinite alternate;
+      cursor: pointer;
+    }
+
+    .liquid-drop-2 {
+      position: absolute;
+      right: 45px;
+      top: 155px;
+      width: 120px; height: 110px;
+      border-radius: 48% 52% 58% 42% / 46% 54% 46% 54%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 0%, rgba(56,189,248,0.75) 35%, rgba(236,72,153,0.8) 65%, rgba(139,92,246,0.6) 100%);
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.45),
+        inset 0 -8px 16px rgba(0,0,0,0.5),
+        inset 0 6px 12px rgba(255,255,255,0.95);
+      animation: morphDrop 8s ease-in-out infinite alternate;
+      cursor: pointer;
+    }
+
+    @keyframes floatDrop {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-12px) rotate(10deg); }
+    }
+
+    @keyframes morphDrop {
+      0% { border-radius: 48% 52% 58% 42% / 46% 54% 46% 54%; transform: translateY(0); }
+      100% { border-radius: 56% 44% 42% 58% / 54% 46% 54% 46%; transform: translateY(-16px) scale(1.04); }
+    }
+
+    /* ── 3. RIGHT GLASS PANELS ── */
+    .glass-right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .glass-telemetry-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), var(--glass-inner-glow);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .rings-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+
+    .glass-circle-ring {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 16px rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--neon-cyan);
+    }
+    .glass-circle-ring.ring-large {
+      width: 68px; height: 68px;
+      border: 3px solid rgba(56, 189, 248, 0.8);
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.5), inset 0 2px 6px rgba(255,255,255,0.4);
+      font-size: 22px;
+    }
+
+    .glass-prism-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), var(--glass-inner-glow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .prism-mockup {
+      width: 80px; height: 80px;
+      position: relative;
+    }
+    .prism-box-1 {
+      position: absolute;
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(168,85,247,0.3) 100%);
+      border: 1.5px solid rgba(255,255,255,0.7);
+      box-shadow: 0 8px 24px rgba(168,85,247,0.5), inset 0 2px 4px #fff;
+      transform: rotate(25deg) skewX(10deg);
+      backdrop-filter: blur(8px);
+    }
+    .prism-box-2 {
+      position: absolute;
+      top: 20px; left: 24px;
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.5) 0%, rgba(244,63,94,0.3) 100%);
+      border: 1.5px solid rgba(255,255,255,0.8);
+      box-shadow: 0 12px 28px rgba(56,189,248,0.6), inset 0 2px 6px #fff;
+      transform: rotate(-15deg);
+      backdrop-filter: blur(8px);
+    }
+
+    /* ── SECTION 2: LIVE ANALYTICS & TELEMETRY GLASS DECK ── */
+    .glass-analytics-section {
+      width: 100%;
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    .glass-chart-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .chart-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .time-pills {
+      display: flex;
+      gap: 6px;
+      background: rgba(255,255,255,0.06);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .time-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .time-pill.active {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Glowing Vector Chart */
+    .svg-chart-wrap {
+      width: 100%;
+      height: 180px;
+      position: relative;
+    }
+
+    .glass-metrics-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .glass-metric-box {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+    .glass-metric-box:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    /* ── SECTION 3: RECENT TRANSACTIONS GLASS TABLE ── */
+    .glass-table-section {
+      width: 100%;
+      max-width: 1180px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(28px);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .tx-row {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1fr 1fr;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      font-size: 13.5px;
+      transition: background 0.2s;
+      border-radius: 12px;
+    }
+    .tx-row:hover { background: rgba(255,255,255,0.06); }
+    .tx-badge-confirmed {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .glass-app-window { grid-template-columns: 1fr; }
+      .glass-sidebar { display: none; }
+      .liquid-drop-1, .liquid-drop-2 { display: none; }
+      .glass-analytics-section { grid-template-columns: 1fr; }
+      .tx-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+  ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-drop"></i> Theme: <strong>Glassmorphic 2.0 (c. 2020)</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       FLOW MESH GRADIENT & GLASS DASHBOARD SUITE
+  ═══════════════════════════════════════════════ -->
+  <main class="mesh-gradient-bg">
+
+    <!-- 1. MASTER GLASS APP WINDOW -->
+    <div class="glass-viewport">
+
+      <div class="glass-app-window">
+
+        <!-- 1. LEFT GLASS SIDEBAR -->
+        <aside class="glass-sidebar">
+          <div class="glass-sidebar-top">
+            <div class="glass-brand-row">
+              <span class="glass-brand-title">Planestino</span>
+              <i class="ph ph-magnifying-glass" style="color:rgba(255,255,255,0.6); cursor:pointer;"></i>
+            </div>
+
+            <ul class="glass-nav-list">
+              <li class="glass-nav-item active"><a href="#"><i class="ph ph-browsers"></i> Backdrop</a></li>
+              <li class="glass-nav-item"><a href="#"><i class="ph ph-article"></i> Articles</a></li>
+              <li class="glass-nav-item"><a href="#"><i class="ph ph-chart-bar"></i> Reports</a></li>
+              <li class="glass-nav-item"><a href="#"><i class="ph ph-bookmark-simple"></i> Bookmarks</a></li>
+              <li class="glass-nav-item"><a href="#"><i class="ph ph-briefcase"></i> Careers</a></li>
+              <li class="glass-nav-item"><a href="#"><i class="ph ph-buildings"></i> Centers</a></li>
+            </ul>
+          </div>
+
+          <div class="glass-sidebar-bottom">
+            <a href="#"><i class="ph ph-gear"></i> Settings</a>
+          </div>
+        </aside>
+
+        <!-- 2. CENTER HERO GLASS CARD -->
+        <section class="glass-hero-card">
+          <!-- Floating Iridescent Liquid Droplets -->
+          <div class="liquid-drop-1" title="Click to pulse bubble" onclick="pulseBubble(this)"></div>
+          <div class="liquid-drop-2" title="Click to morph bubble" onclick="pulseBubble(this)"></div>
+
+          <!-- 3D Flow Mesh Gradient Liquid Render (Matching Reference Image 5) -->
+          <div style="position: absolute; right: 26px; top: 32px; width: 175px; height: 175px; border-radius: 50%; overflow: hidden; pointer-events: none; opacity: 0.88; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.5)); border: 2px solid rgba(255,255,255,0.45);">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" alt="Iridescent glass mesh liquid" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+
+          <div>
+            <div class="hero-top-tag">Monaphere Ecosystem</div>
+            <h1 class="hero-main-title">Interesting flow mesh gradient</h1>
+            <p class="hero-desc">
+              Multi-stop chromatic wave dispersion with sub-surface optical scattering and specular highlight edge refraction.
+            </p>
+            <a href="#analytics" class="btn-glass-pill">
+              <span>Start now</span>
+              <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="hero-footer-row" style="margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; gap:6px;">
+              <span style="width:20px; height:6px; border-radius:4px; background:#fff; display:inline-block;"></span>
+              <span style="width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.3); display:inline-block;"></span>
+              <span style="width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.3); display:inline-block;"></span>
+            </div>
+            <div style="display:flex; gap:14px; font-size:18px; color:rgba(255,255,255,0.7);">
+              <i class="ph ph-copy" style="cursor:pointer;"></i>
+              <i class="ph ph-share-network" style="cursor:pointer;"></i>
+              <i class="ph ph-sparkle" style="cursor:pointer;"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. RIGHT GLASS CARDS -->
+        <div class="glass-right-col">
+
+          <div class="glass-telemetry-card">
+            <div style="display:flex; justify-content:space-between; font-weight:700; font-size:13.5px;">
+              <span>Flissdrop pbsets</span>
+              <i class="ph ph-caret-right"></i>
+            </div>
+
+            <div class="rings-row">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div class="glass-circle-ring"><i class="ph ph-circle-dashed"></i></div>
+                <span style="font-size:11px; color:rgba(255,255,255,0.6);">320</span>
+              </div>
+
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div class="glass-circle-ring"><i class="ph ph-drop"></i></div>
+                <span style="font-size:11px; color:rgba(255,255,255,0.6);">Senddry</span>
+              </div>
+
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div class="glass-circle-ring ring-large"><i class="ph ph-cpu"></i></div>
+                <span style="font-size:11px; font-weight:700; color:#38bdf8;">Press</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-prism-card">
+            <div>
+              <div style="font-size:13.5px; font-weight:700; margin-bottom:4px;">Volumic details</div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.65);">Minimalist design</div>
+              <span style="display: inline-block; margin-top: 6px; font-size: 11px; background: rgba(56,189,248,0.2); color: var(--neon-cyan); padding: 2px 8px; border-radius: 999px;">
+                Frosted Prism
+              </span>
+            </div>
+
+            <!-- 3D Refractive Glass Prism Render (Matching Reference Image 5) -->
+            <div style="width: 82px; height: 82px; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.3); box-shadow: 0 10px 24px rgba(0,0,0,0.35); flex-shrink: 0;">
+              <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=300&q=80" alt="Volumic glass prism crystal" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 2. LIVE TELEMETRY & BEZIER CHART SECTION -->
+    <section class="glass-analytics-section" id="analytics">
+      <!-- Main Glowing Wave Chart -->
+      <div class="glass-chart-card">
+        <div class="chart-header-row">
+          <div>
+            <span style="font-size:11px; color:var(--neon-cyan); font-weight:700; text-transform:uppercase; letter-spacing:1px;">Real-Time Liquidity</span>
+            <h3 style="font-size:24px; font-weight:800; margin-top:4px;">$14,290,400.00</h3>
+          </div>
+
+          <div class="time-pills">
+            <button class="time-pill active">1D</button>
+            <button class="time-pill">1W</button>
+            <button class="time-pill">1M</button>
+            <button class="time-pill">1Y</button>
+          </div>
+        </div>
+
+        <!-- SVG Flowing Wave with Neon Glow Filter -->
+        <div class="svg-chart-wrap">
+          <svg viewBox="0 0 700 180" style="width:100%; height:100%;" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,130 C120,40 220,160 350,70 C480,10 580,110 700,40 L700,180 L0,180 Z" fill="url(#chartGrad)"/>
+            <path d="M0,130 C120,40 220,160 350,70 C480,10 580,110 700,40" fill="none" stroke="#38bdf8" stroke-width="3.5" filter="drop-shadow(0 0 10px #38bdf8)"/>
+            <!-- Pulsing Data Points -->
+            <circle cx="350" cy="70" r="6" fill="#fff" stroke="#38bdf8" stroke-width="3"/>
+            <circle cx="700" cy="40" r="6" fill="#fff" stroke="#a855f7" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Quick Stats Stack -->
+      <div class="glass-metrics-sidebar">
+        <div class="glass-metric-box">
+          <div>
+            <div style="font-size:11px; color:rgba(255,255,255,0.6);">24h Refraction Rate</div>
+            <div style="font-size:20px; font-weight:800; color:#4ade80;">+24.8%</div>
+          </div>
+          <i class="ph ph-trend-up" style="font-size:28px; color:#4ade80;"></i>
+        </div>
+
+        <div class="glass-metric-box">
+          <div>
+            <div style="font-size:11px; color:rgba(255,255,255,0.6);">Sub-Surface Density</div>
+            <div style="font-size:20px; font-weight:800; color:var(--neon-cyan);">99.4%</div>
+          </div>
+          <i class="ph ph-shield-check" style="font-size:28px; color:var(--neon-cyan);"></i>
+        </div>
+
+        <div class="glass-metric-box">
+          <div>
+            <div style="font-size:11px; color:rgba(255,255,255,0.6);">Network Latency</div>
+            <div style="font-size:20px; font-weight:800; color:#f43f5e;">12ms</div>
+          </div>
+          <i class="ph ph-lightning" style="font-size:28px; color:#f43f5e;"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. RECENT ACTIVITY GLASS TABLE -->
+    <section class="glass-table-section">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:800;">Recent Specular Transactions</h3>
+        <span style="font-size:12px; color:rgba(255,255,255,0.6);"><i class="ph ph-circle-dashed"></i> Live Stream</span>
+      </div>
+
+      <div class="tx-row" style="font-weight:700; color:rgba(255,255,255,0.5); font-size:11px; text-transform:uppercase;">
+        <div>Asset Stream</div>
+        <div>Timestamp</div>
+        <div>Volume</div>
+        <div>Status</div>
+      </div>
+
+      <div class="tx-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i class="ph ph-currency-eth" style="font-size:20px; color:#a855f7;"></i>
+          <span>Ethereum Refraction Pool</span>
+        </div>
+        <div style="color:rgba(255,255,255,0.6);">Just now</div>
+        <div style="font-weight:700;">+4.82 ETH</div>
+        <div><span class="tx-badge-confirmed">Confirmed</span></div>
+      </div>
+
+      <div class="tx-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i class="ph ph-sparkle" style="font-size:20px; color:#38bdf8;"></i>
+          <span>Liquid Mesh Allocation #08</span>
+        </div>
+        <div style="color:rgba(255,255,255,0.6);">2 mins ago</div>
+        <div style="font-weight:700;">+1,400 USDC</div>
+        <div><span class="tx-badge-confirmed">Confirmed</span></div>
+      </div>
+
+      <div class="tx-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i class="ph ph-cube" style="font-size:20px; color:#f43f5e;"></i>
+          <span>Volumic Prism Mint #44</span>
+        </div>
+        <div style="color:rgba(255,255,255,0.6);">12 mins ago</div>
+        <div style="font-weight:700;">0.65 SOL</div>
+        <div><span class="tx-badge-confirmed">Confirmed</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+  ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Glassmorphic 2.0 Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Era &amp; Origin</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">c. 2020 — macOS Big Sur, Windows 11 Fluent Acrylic, Apple VisionOS</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Optical Physics DNA</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Deep background blurs (30px–40px), multi-stop radial flow mesh gradients, semi-translucent 1.5px specular borders, internal specular highlights, and iridescent refraction bubbles.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#7928ca; border:2px solid #fff;" title="Electric Violet #7928ca"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#0070f3; border:2px solid #fff;" title="Cyan Glow #0070f3"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#ff0080; border:2px solid #fff;" title="Neon Magenta #ff0080"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,0.25); border:2px solid #fff;" title="Specular Frost"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          AI Agent Dashboards, Crypto &amp; Web3 interfaces, spatial computing apps, high-end analytics monitors, and futuristic SaaS portals.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function pulseBubble(el) {
+      el.style.transform = 'scale(1.2) translateY(-20px)';
+      setTimeout(() => {
+        el.style.transform = '';
+      }, 350);
+    }
+  </script>
+
+</body>
+</html>

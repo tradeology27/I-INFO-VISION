@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro-Futurism &amp; Synthwave UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Retro-Futurism theme by I Info Vision. 1980s neon wireframe grids, CRT scanlines, cassette futurism, and high-energy synth aesthetics." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700&family=VT323&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       RETRO-FUTURISM & SYNTHWAVE OUTRUN SYSTEM
+       3D Wireframe Perspective Grid + CRT Scanline Bloom
+       =================================================== */
+    :root {
+      --rf-bg: #0B031A;
+      --rf-card: rgba(22, 10, 42, 0.85);
+      --rf-pink: #FF007F;
+      --rf-cyan: #00F0FF;
+      --rf-orange: #FF7700;
+      --rf-purple: #9D4EDD;
+      --rf-yellow: #FFE600;
+      --rf-text: #FFFFFF;
+      --rf-muted: #D8B4E2;
+      --rf-border: rgba(255, 0, 127, 0.35);
+      --rf-glow-pink: 0 0 15px rgba(255, 0, 127, 0.6);
+      --rf-glow-cyan: 0 0 15px rgba(0, 240, 255, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--rf-bg);
+      color: var(--rf-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* 3D Wireframe Perspective Grid Floor */
+    .synth-horizon-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .synth-sun {
+      position: absolute;
+      top: 15vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #FFE600 0%, #FF7700 40%, #FF007F 80%);
+      box-shadow: 0 0 80px rgba(255, 0, 127, 0.8);
+      opacity: 0.85;
+      mask-image: linear-gradient(to bottom, black 50%, transparent 50%, black 55%, transparent 55%, black 62%, transparent 62%, black 70%, transparent 70%, black 80%, transparent 80%, black 90%, transparent 90%);
+      -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 50%, black 55%, transparent 55%, black 62%, transparent 62%, black 70%, transparent 70%, black 80%, transparent 80%, black 90%, transparent 90%);
+    }
+
+    .synth-grid-floor {
+      position: absolute;
+      bottom: 0;
+      left: -50%;
+      right: -50%;
+      height: 48vh;
+      background: 
+        linear-gradient(rgba(0, 240, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 127, 0.3) 1px, transparent 1px);
+      background-size: 50px 50px;
+      transform: perspective(300px) rotateX(65deg);
+      animation: gridMove 2.5s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 50px; }
+    }
+
+    /* CRT Scanlines Overlay */
+    .crt-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+      z-index: 99998;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+
+    .crt-overlay.disabled {
+      opacity: 0;
+    }
+
+    .rf-main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rf-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .rf-font-retro {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Synth Neon Card */
+    .rf-card {
+      background: var(--rf-card);
+      border: 1px solid var(--rf-border);
+      border-radius: 14px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 0, 127, 0.1);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .rf-card:hover {
+      border-color: var(--rf-cyan);
+      box-shadow: 0 12px 40px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Neon Buttons */
+    .btn-rf-pink {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--rf-pink);
+      color: #FFFFFF;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      box-shadow: var(--rf-glow-pink);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-rf-pink:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px var(--rf-pink);
+      filter: brightness(1.15);
+    }
+
+    .btn-rf-cyan {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      background: transparent;
+      color: var(--rf-cyan);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: 2px solid var(--rf-cyan);
+      border-radius: 8px;
+      box-shadow: var(--rf-glow-cyan);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-rf-cyan:hover {
+      background: rgba(0, 240, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px var(--rf-cyan);
+      color: #FFFFFF;
+    }
+
+    /* Cassette Tape Spindle */
+    .cassette-spindle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 3px dashed var(--rf-yellow);
+      animation: spinTape 3s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes spinTape {
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 900px) {
+      .rf-grid-hero { grid-template-columns: 1fr !important; }
+      .rf-grid-trio { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIVERSAL STICKY TOP BAR -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-game-controller"></i>
+          Theme: Retro-Futurism
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CRT Scanlines Overlay -->
+  <div class="crt-overlay" id="crtOverlay"></div>
+
+  <!-- Perspective Horizon & Grid Floor -->
+  <div class="synth-horizon-wrapper">
+    <div class="synth-sun"></div>
+    <div class="synth-grid-floor"></div>
+  </div>
+
+  <div class="rf-main">
+
+    <!-- HERO SECTION -->
+    <section style="padding: 64px 0 56px;">
+      <div class="rf-container">
+        
+        <!-- CRT & Audio Controls Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-family: 'VT323', monospace; font-size: 20px; color: var(--rf-cyan); letter-spacing: 2px;">SYS.BOOT // YEAR 2088</span>
+            <span style="font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(255, 0, 127, 0.3); border: 1px solid var(--rf-pink); color: #fff;">TURBO ACTIVE</span>
+          </div>
+
+          <button onclick="toggleCRT()" class="btn-rf-cyan" style="padding: 6px 16px; font-size: 11px; border-radius: 999px;">
+            <i class="ph ph-television"></i> CRT SCANLINES: <span id="crtStatus">ENABLED</span>
+          </button>
+        </div>
+
+        <div class="rf-grid-hero" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 6px; background: rgba(255, 0, 127, 0.15); border: 1px solid var(--rf-pink); color: var(--rf-pink); font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; margin-bottom: 20px;">
+              <i class="ph ph-cassette-tape"></i> OUTRUN SYNTHESIS &bull; CASSETTE FUTURISM
+            </div>
+            <h1 class="rf-font-retro" style="font-size: clamp(38px, 4.8vw, 62px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 0 20px var(--rf-pink);">
+              Nostalgia from a <span style="color: var(--rf-cyan); text-shadow: 0 0 20px var(--rf-cyan);">Digital Tomorrow</span>.
+            </h1>
+            <p style="font-size: 17px; line-height: 1.7; color: var(--rf-muted); margin-bottom: 32px; max-width: 580px;">
+              Where 1980s analog nostalgia meets high-octane modern web technology. Infinite 3D vector wireframes, chrome metallics, CRT phosphors, and pulsing synthwave adrenaline.
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="#cassette" class="btn-rf-pink">
+                <i class="ph ph-play"></i> Play Cyber Synth
+              </a>
+              <button onclick="toggleThemeDrawer()" class="btn-rf-cyan">
+                <i class="ph ph-info"></i> Inspect Retro Specs
+              </button>
+            </div>
+
+            <!-- Arcade Spec Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255, 0, 127, 0.25);">
+              <div>
+                <div style="font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 800; color: var(--rf-yellow);">640 KB</div>
+                <div style="font-size: 11px; color: var(--rf-muted); text-transform: uppercase;">Extended Memory</div>
+              </div>
+              <div>
+                <div style="font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 800; color: var(--rf-cyan);">56.6K</div>
+                <div style="font-size: 11px; color: var(--rf-muted); text-transform: uppercase;">Baud Modem Rate</div>
+              </div>
+              <div>
+                <div style="font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 800; color: var(--rf-pink);">256 CLR</div>
+                <div style="font-size: 11px; color: var(--rf-muted); text-transform: uppercase;">VGA Mode Palette</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Synth Cassette Player -->
+          <div id="cassette">
+            <div class="rf-card" style="border: 2px solid var(--rf-pink); box-shadow: 0 0 30px rgba(255, 0, 127, 0.3);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <span class="rf-font-retro" style="font-size: 13px; color: var(--rf-yellow);">STEREO CASSETTE DECK // MK-IV</span>
+                <span style="font-family: 'VT323', monospace; font-size: 18px; color: var(--rf-cyan);">DOLBY B-NR</span>
+              </div>
+
+              <!-- Cassette Window Simulation -->
+              <div style="background: #110524; border: 2px solid var(--rf-purple); border-radius: 8px; padding: 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <span class="cassette-spindle"></span>
+                <div style="text-align: center;">
+                  <div id="synthTrackTitle" style="font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; color: var(--rf-pink);">MIDNIGHT HIGHWAY 1988</div>
+                  <div style="font-family: 'VT323', monospace; font-size: 16px; color: var(--rf-muted); margin-top: 4px;">CHROME TAPE // SIDE A</div>
+                </div>
+                <span class="cassette-spindle"></span>
+              </div>
+
+              <!-- Animated Equalizer Bars -->
+              <div style="display: flex; gap: 4px; align-items: flex-end; height: 38px; margin-bottom: 20px; background: rgba(0,0,0,0.4); padding: 6px; border-radius: 6px;">
+                <span style="flex:1; background: var(--rf-cyan); height: 70%; animation: pulseWave 1s infinite alternate;"></span>
+                <span style="flex:1; background: var(--rf-cyan); height: 90%; animation: pulseWave 0.8s infinite alternate 0.1s;"></span>
+                <span style="flex:1; background: var(--rf-pink); height: 40%; animation: pulseWave 1.1s infinite alternate 0.2s;"></span>
+                <span style="flex:1; background: var(--rf-pink); height: 100%; animation: pulseWave 0.7s infinite alternate 0.15s;"></span>
+                <span style="flex:1; background: var(--rf-yellow); height: 80%; animation: pulseWave 0.9s infinite alternate 0.3s;"></span>
+                <span style="flex:1; background: var(--rf-yellow); height: 60%; animation: pulseWave 1.2s infinite alternate 0.05s;"></span>
+              </div>
+
+              <!-- Track Switcher Buttons -->
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-rf-cyan" style="flex: 1; padding: 8px; font-size: 11px; justify-content: center;" onclick="loadTrack('MIDNIGHT HIGHWAY 1988')">Track 1</button>
+                <button class="btn-rf-cyan" style="flex: 1; padding: 8px; font-size: 11px; justify-content: center;" onclick="loadTrack('CYBERPUNK VECTOR 2088')">Track 2</button>
+                <button class="btn-rf-cyan" style="flex: 1; padding: 8px; font-size: 11px; justify-content: center;" onclick="loadTrack('NEON HORIZON CHRONICLES')">Track 3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3-PILLAR RETRO SUITE -->
+    <section style="padding: 56px 0;">
+      <div class="rf-container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+          <h2 class="rf-font-retro" style="font-size: 30px; margin-bottom: 12px;">The Pillars of Synth Culture</h2>
+          <p style="color: var(--rf-muted); font-size: 15.5px;">A celebration of vector gaming, VHS aesthetics, and neon-lit analog synthesizers.</p>
+        </div>
+
+        <div class="rf-grid-trio" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="rf-card">
+            <div style="font-size: 28px; color: var(--rf-pink); margin-bottom: 16px;"><i class="ph ph-cube-transparent"></i></div>
+            <h4 class="rf-font-retro" style="font-size: 17px; margin-bottom: 10px;">Infinite 3D Floor</h4>
+            <p style="font-size: 14px; color: var(--rf-muted); line-height: 1.6;">
+              Perspective rotated CSS linear gradients animating along the Z-axis produce the iconic Outrun horizon road.
+            </p>
+          </div>
+
+          <div class="rf-card">
+            <div style="font-size: 28px; color: var(--rf-cyan); margin-bottom: 16px;"><i class="ph ph-broadcast"></i></div>
+            <h4 class="rf-font-retro" style="font-size: 17px; margin-bottom: 10px;">Cathode Ray Bloom</h4>
+            <p style="font-size: 14px; color: var(--rf-muted); line-height: 1.6;">
+              Alternating horizontal black lines (scanlines) and subtle chromatic dispersion emulate warm arcade CRT glass monitors.
+            </p>
+          </div>
+
+          <div class="rf-card">
+            <div style="font-size: 28px; color: var(--rf-yellow); margin-bottom: 16px;"><i class="ph ph-trophy"></i></div>
+            <h4 class="rf-font-retro" style="font-size: 17px; margin-bottom: 10px;">Arcade Leaderboards</h4>
+            <p style="font-size: 14px; color: var(--rf-muted); line-height: 1.6;">
+              High-contrast tabular ranking tables designed for gaming communities, crypto launches, and creative portfolios.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT SHOWCASE LEAD GENERATION CTA -->
+    <section class="theme-lead-cta" style="margin: 40px auto 80px; max-width: 1240px; padding: 0 24px;">
+      <div class="rf-card" style="border: 2px solid var(--rf-cyan); text-align: center; padding: 56px 40px; box-shadow: 0 0 50px rgba(0, 240, 255, 0.25);">
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 4px; background: rgba(0, 240, 255, 0.15); color: var(--rf-cyan); font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 800; margin-bottom: 16px;">
+          <i class="ph ph-lightning"></i> ENTERTAINMENT &bull; GAMING &bull; PORTFOLIOS
+        </div>
+        <h2 class="rf-font-retro" style="font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; margin-bottom: 16px; color: #FFFFFF;">
+          Ignite Your Brand with <span style="color: var(--rf-pink);">Retro-Futurism</span>
+        </h2>
+        <p style="color: var(--rf-muted); font-size: 16px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6;">
+          Our creative technology studio architects high-impact synthwave portals, 3D interactive experiences, and cult entertainment websites.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="index.html#contact" class="btn-rf-pink" style="padding: 16px 36px; font-size: 15px;">
+            <i class="ph ph-chat-circle-dots"></i> Hire Retro-Futurism Team
+          </a>
+          <a href="themes.html" class="btn-rf-cyan" style="padding: 16px 36px; font-size: 15px;">
+            <i class="ph ph-squares-four"></i> View All 20 Themes
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SLIDE-OUT THEME SPECS DRAWER -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Retro-Futurism Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">1980s Synthwave &bull; Cassette Futurism &bull; CRT Scanlines</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Recreates the nostalgic sci-fi optimism of the 1980s: moving 3D vector wireframe planes, striped neon suns, cassette spools, and luminous neon glows on deep obsidian purple voids.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#0B031A; border:2px solid #fff;" title="Void #0B031A"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FF007F; border:2px solid #fff;" title="Neon Magenta #FF007F"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#00F0FF; border:2px solid #fff;" title="Cyber Cyan #00F0FF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FF7700; border:2px solid #fff;" title="Sunset Orange #FF7700"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FFE600; border:2px solid #fff;" title="Electric Yellow #FFE600"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Gaming studios, entertainment brands, music festivals, creative portfolios, indie game showcases, and high-energy product drops.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Typography &amp; Effects</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Orbitron / VT323 typography. CRT scanline filters, box-shadow neon blooms, and rotating cassette animations.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function toggleCRT() {
+      const crt = document.getElementById('crtOverlay');
+      const status = document.getElementById('crtStatus');
+      const isOff = crt.classList.contains('disabled');
+      if (isOff) {
+        crt.classList.remove('disabled');
+        status.textContent = 'ENABLED';
+      } else {
+        crt.classList.add('disabled');
+        status.textContent = 'DISABLED';
+      }
+    }
+
+    function loadTrack(name) {
+      document.getElementById('synthTrackTitle').textContent = name;
+    }
+  </script>
+</body>
+</html>

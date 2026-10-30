@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Y2K Neo-Brutalism | Vibrant, Bold &amp; Playful Web Theme</title>
+  <meta name="description" content="Experience the Y2K Neo-Brutalism UI theme created by I Info Vision. High-voltage cyber yellow, hard black drop-shadows, retro OS windows, and starburst sticker badges." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Syne (Ultra Heavy Display) & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800;900&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       Y2K NEO-BRUTALISM THEME SYSTEM (Vibrant, Bold, Playful)
+       =================================================== */
+    :root {
+      --y2k-yellow: #FFE600;
+      --y2k-pink: #FF2B85;
+      --y2k-blue: #1D55FF;
+      --y2k-black: #000000;
+      --y2k-white: #FFFFFF;
+      --y2k-border: 3.5px solid #000000;
+      --y2k-shadow: 6px 6px 0px #000000;
+      --y2k-shadow-lg: 10px 10px 0px #000000;
+      --y2k-shadow-sm: 4px 4px 0px #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--y2k-yellow);
+      color: var(--y2k-black);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.4;
+    }
+
+    .font-syne {
+      font-family: 'Syne', 'Archivo Black', sans-serif;
+    }
+
+    .y2k-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Retro Marquee Banner */
+    .y2k-marquee {
+      background: var(--y2k-black);
+      color: var(--y2k-yellow);
+      padding: 8px 0;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      border-bottom: var(--y2k-border);
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: marqueeAnim 18s linear infinite;
+    }
+
+    @keyframes marqueeAnim {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Retro OS Window Outer Shell (From Image 5) */
+    .y2k-window-shell {
+      background: var(--y2k-yellow);
+      border: var(--y2k-border);
+      box-shadow: var(--y2k-shadow-lg);
+      margin: 24px auto 60px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Window Top Titlebar / Nav */
+    .y2k-titlebar {
+      background: var(--y2k-yellow);
+      border-bottom: var(--y2k-border);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .y2k-window-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .win-square {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+
+    .win-sq-pink { background: var(--y2k-pink); }
+    .win-sq-yellow { background: var(--y2k-yellow); }
+    .win-sq-blue { background: var(--y2k-blue); }
+
+    .y2k-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .y2k-nav-links a {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: var(--y2k-black);
+      padding: 4px 8px;
+      transition: background 0.15s;
+    }
+
+    .y2k-nav-links a:hover {
+      background: var(--y2k-pink);
+      color: #fff;
+    }
+
+    .btn-y2k-pill {
+      background: var(--y2k-pink);
+      color: #ffffff;
+      border: 2.5px solid #000000;
+      box-shadow: 4px 4px 0px #000000;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .btn-y2k-pill:active, .btn-y2k-pill:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #000000;
+    }
+
+    /* Hero Canvas */
+    .y2k-hero-stage {
+      padding: 40px 30px;
+      position: relative;
+    }
+
+    /* Badges & Starbursts (Matching Image 5) */
+    .badge-oval-blue {
+      background: var(--y2k-blue);
+      color: #ffffff;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      display: inline-block;
+      transform: rotate(-6deg);
+    }
+
+    .badge-oval-yellow {
+      background: var(--y2k-yellow);
+      color: #000000;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      display: inline-block;
+      transform: rotate(4deg);
+    }
+
+    /* Starburst Sticker */
+    .starburst-blue {
+      background: var(--y2k-blue);
+      color: #ffffff;
+      border: 3px solid #000;
+      box-shadow: 5px 5px 0px #000;
+      padding: 12px 24px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      text-transform: uppercase;
+      clip-path: polygon(50% 0%, 61% 15%, 77% 6%, 81% 23%, 98% 22%, 93% 39%, 100% 50%, 93% 61%, 98% 78%, 81% 77%, 77% 94%, 61% 85%, 50% 100%, 39% 85%, 23% 94%, 19% 77%, 2% 78%, 7% 61%, 0% 50%, 7% 39%, 2% 22%, 19% 23%, 23% 6%, 39% 15%);
+      display: inline-block;
+      transform: rotate(6deg);
+      cursor: pointer;
+    }
+
+    .starburst-pink {
+      background: var(--y2k-pink);
+      color: #ffffff;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(50% 0%, 61% 15%, 77% 6%, 81% 23%, 98% 22%, 93% 39%, 100% 50%, 93% 61%, 98% 78%, 81% 77%, 77% 94%, 61% 85%, 50% 100%, 39% 85%, 23% 94%, 19% 77%, 2% 78%, 7% 61%, 0% 50%, 7% 39%, 2% 22%, 19% 23%, 23% 6%, 39% 15%);
+      position: absolute;
+      top: 20px;
+      right: 32%;
+      animation: spinSlow 12s linear infinite;
+    }
+
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Mega Title */
+    .y2k-mega-title {
+      font-family: 'Syne', 'Archivo Black', sans-serif;
+      font-size: clamp(42px, 7vw, 86px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.95;
+      margin: 16px 0 12px;
+      color: #000000;
+    }
+
+    .y2k-hero-sub {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 24px;
+    }
+
+    /* Giant Explore Button */
+    .btn-explore-giant {
+      background: var(--y2k-pink);
+      color: #ffffff;
+      border: 3.5px solid #000000;
+      box-shadow: 6px 6px 0px #000000;
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 14px 44px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s ease;
+      margin-bottom: 40px;
+    }
+
+    .btn-explore-giant:hover, .btn-explore-giant:active {
+      transform: translate(3px, 3px);
+      box-shadow: 3px 3px 0px #000000;
+      background: #e6146f;
+    }
+
+    /* Retro Pixel Hand Pointer */
+    .pixel-hand-cursor {
+      font-size: 32px;
+      display: inline-block;
+      animation: floatPoint 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatPoint {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* Layout Split: Left Mini Cards & Right Window Cards (From Image 5) */
+    .y2k-content-split {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .mini-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .y2k-mini-box {
+      border: var(--y2k-border);
+      box-shadow: var(--y2k-shadow);
+      padding: 18px 14px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+      transition: transform 0.2s;
+    }
+
+    .y2k-mini-box:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0px #000;
+    }
+
+    .mini-box-yellow {
+      background: var(--y2k-yellow);
+    }
+
+    .mini-box-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .mini-box-text {
+      font-size: 11.5px;
+      line-height: 1.4;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .mini-box-btn {
+      background: var(--y2k-black);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border: 2px solid #000;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    .mini-box-btn-pink {
+      background: var(--y2k-pink);
+    }
+
+    .mini-box-btn-blue {
+      background: var(--y2k-blue);
+    }
+
+    /* Right Stack: Window Cards with Close Buttons (Direct from Image 5) */
+    .y2k-window-card {
+      border: var(--y2k-border);
+      box-shadow: var(--y2k-shadow);
+      background: #ffffff;
+      margin-bottom: 24px;
+      transition: all 0.25s;
+    }
+
+    .window-card-header {
+      background: var(--y2k-pink);
+      color: #ffffff;
+      border-bottom: var(--y2k-border);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .window-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .window-card-close {
+      width: 20px;
+      height: 20px;
+      background: #ffffff;
+      color: #000000;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    .window-card-close:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px #000;
+    }
+
+    .window-card-body {
+      padding: 20px;
+    }
+
+    .window-card-yellow-body {
+      background: var(--y2k-yellow);
+    }
+
+    .window-card-blue-footer {
+      background: var(--y2k-blue);
+      height: 18px;
+      border-top: var(--y2k-border);
+    }
+
+    /* Animated Audio EQ Visualizer */
+    .eq-bar-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 24px;
+    }
+    .eq-bar {
+      width: 4px;
+      background: var(--y2k-pink);
+      border-radius: 2px;
+      height: 6px;
+      transition: height 0.1s;
+    }
+    .playing .eq-bar:nth-child(1) { animation: eqAnim 0.6s ease-in-out infinite alternate; }
+    .playing .eq-bar:nth-child(2) { animation: eqAnim 0.4s ease-in-out infinite 0.1s alternate; }
+    .playing .eq-bar:nth-child(3) { animation: eqAnim 0.7s ease-in-out infinite 0.2s alternate; }
+    .playing .eq-bar:nth-child(4) { animation: eqAnim 0.5s ease-in-out infinite 0.15s alternate; }
+    .playing .eq-bar:nth-child(5) { animation: eqAnim 0.8s ease-in-out infinite 0.05s alternate; }
+    .playing .eq-bar:nth-child(6) { animation: eqAnim 0.65s ease-in-out infinite 0.25s alternate; }
+    @keyframes eqAnim {
+      0% { height: 4px; }
+      100% { height: 22px; }
+    }
+
+    /* Cyber Merch Cards */
+    .merch-card {
+      background: #ffffff;
+      border: var(--y2k-border);
+      box-shadow: var(--y2k-shadow);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .merch-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 10px 10px 0px #000;
+    }
+    .merch-img-box {
+      border: var(--y2k-border);
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .merch-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .merch-card:hover .merch-img-box img {
+      transform: scale(1.05);
+    }
+
+    /* Sticker Stamp Canvas */
+    .sticker-canvas {
+      background: #ffffff;
+      border: var(--y2k-border);
+      box-shadow: var(--y2k-shadow-lg);
+      min-height: 240px;
+      position: relative;
+      overflow: hidden;
+      cursor: crosshair;
+      border-radius: 8px;
+    }
+    .stamped-sticker {
+      position: absolute;
+      user-select: none;
+      pointer-events: none;
+      animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 5;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0) rotate(-20deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+
+      .y2k-content-split {
+        grid-template-columns: 1fr;
+      }
+      .mini-cards-row {
+        grid-template-columns: 1fr;
+      }
+      .y2k-nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL THEME SWITCHER BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-paint-brush"></i> Theme: <strong>Y2K Neo-Brutalism</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" id="theme-inspect-btn">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       RETRO MARQUEE TICKER
+       ═══════════════════════════════════════════ -->
+  <div class="y2k-marquee">
+    <div class="marquee-track">
+      ★ Y2K NEO-BRUTALISM ★ ZERO BLUR SHADOWS ★ SOLID 3.5PX BORDERS ★ RETRO CYBER AESTHETIC ★ LOUD &amp; UNAPOLOGETIC ★ CLICKABLE OS WINDOWS ★ 100% INTERACTIVE ★ DESIGNED IN SALEM BY I INFO VISION ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ★ Y2K NEO-BRUTALISM ★ ZERO BLUR SHADOWS ★ SOLID 3.5PX BORDERS ★ RETRO CYBER AESTHETIC ★ LOUD &amp; UNAPOLOGETIC ★ CLICKABLE OS WINDOWS ★ 100% INTERACTIVE ★ DESIGNED IN SALEM BY I INFO VISION ★
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       RETRO OS WINDOW SHELL (Matching Image 5)
+       ═══════════════════════════════════════════ -->
+  <main class="y2k-container">
+    <div class="y2k-window-shell">
+
+      <!-- Titlebar Nav -->
+      <div class="y2k-titlebar">
+        <div class="y2k-window-controls">
+          <div class="win-square win-sq-pink" title="Pink Window Control"></div>
+          <div class="win-square win-sq-yellow" title="Yellow Window Control"></div>
+          <div class="win-square win-sq-blue" title="Blue Window Control"></div>
+        </div>
+
+        <ul class="y2k-nav-links">
+          <li><a href="#hero">HOME</a></li>
+          <li><a href="#windows">ABOUT</a></li>
+          <li><a href="#windows">CONSOLS</a></li>
+          <li><a href="#windows">DGRNS</a></li>
+        </ul>
+
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-y2k-pill" onclick="resetAllWindows()">
+            <i class="ph ph-arrows-clockwise"></i> RESET
+          </button>
+          <a href="#interactive-windows" class="btn-y2k-pill">
+            <span>CONTACT</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Stage -->
+      <div class="y2k-hero-stage" id="hero">
+
+        <!-- Floating Badges Top -->
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px; flex-wrap: wrap;">
+          <div class="badge-oval-blue">MRE GRUT DEWSNS</div>
+          <div class="badge-oval-yellow">HAND DRAWN BADGES</div>
+          <div class="starburst-blue" onclick="showThemeToast('★ NEW BODE! Sticker clicked ★')">NEW BODE!</div>
+        </div>
+
+        <!-- Rotating Starburst Pink -->
+        <div class="starburst-pink" title="Starburst Sticker">★</div>
+
+        <!-- Headline -->
+        <h1 class="y2k-mega-title">
+          Y2K NEO—BRUTALISM
+        </h1>
+        <p class="y2k-hero-sub">
+          High energy, raw art layout, bold typography, loud unapologetic web design.
+        </p>
+
+        <!-- Big Explore Button -->
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <button class="btn-explore-giant" onclick="showThemeToast('⚡ EXPLORE NOW pressed with hard offset shadow!')">
+            <span>EXPLORE NOW</span>
+            <i class="ph ph-lightning"></i>
+          </button>
+          <span class="pixel-hand-cursor">👆</span>
+        </div>
+
+        <!-- Split Layout (From Image 5) -->
+        <div class="y2k-content-split" id="interactive-windows">
+
+          <!-- Left Column: Mini Box Program -->
+          <div>
+            <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; text-transform: uppercase; margin-bottom: 12px;">
+              ⚡ COMPONENT CARDS
+            </div>
+
+            <div class="mini-cards-row">
+              <!-- Box 1 -->
+              <div class="y2k-mini-box mini-box-yellow">
+                <div>
+                  <div class="mini-box-title">NEW YORK COPY</div>
+                  <p class="mini-box-text">
+                    Electric yellow background with razor-sharp 3.5px solid black border.
+                  </p>
+                </div>
+                <button class="mini-box-btn" onclick="showThemeToast('Explore Box 01 clicked!')">EXPLORE NOW</button>
+              </div>
+
+              <!-- Box 2 -->
+              <div class="y2k-mini-box">
+                <div>
+                  <div class="mini-box-title">LAYERED STANDARDS</div>
+                  <p class="mini-box-text">
+                    Crisp white background with hot magenta call-to-action button.
+                  </p>
+                </div>
+                <button class="mini-box-btn mini-box-btn-pink" onclick="showThemeToast('Pink card clicked!')">ENTER NOW</button>
+              </div>
+
+              <!-- Box 3 -->
+              <div class="y2k-mini-box">
+                <div>
+                  <div class="mini-box-title">CONTENT PROGRAM</div>
+                  <p class="mini-box-text">
+                    Zero-blur hard shadows with instantaneous tactile reaction.
+                  </p>
+                </div>
+                <button class="mini-box-btn mini-box-btn-blue" onclick="showThemeToast('Blue card clicked!')">LAUNCH NOW</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive OS Windows (From Image 5) -->
+          <div id="windows">
+            <!-- Window Card 1: HOYLED GEOMETRY CARDS -->
+            <div class="y2k-window-card" id="win-card-1">
+              <div class="window-card-header">
+                <span class="window-card-title">HOYLED GEOMETRY CARDS</span>
+                <button class="window-card-close" onclick="closeWinCard('win-card-1')">✕</button>
+              </div>
+              <div class="window-card-body">
+                <!-- Y2K Aesthetic Photo (Matching Reference Design 5) -->
+                <div style="height: 110px; border: 2.5px solid #000; box-shadow: 3px 3px 0px #000; overflow: hidden; margin-bottom: 12px;">
+                  <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=80" alt="Y2K Neo-brutalist fashion aesthetic" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <p style="font-size: 13px; line-height: 1.5; font-weight: 600; margin-bottom: 14px;">
+                  Window popups with real [X] minimize/close actions, contrasting header bars, and bold solid fills. Click the [X] to close this window!
+                </p>
+                <button class="mini-box-btn mini-box-btn-pink" onclick="showThemeToast('Geometry verified!')">
+                  CONFIRM NOW →
+                </button>
+              </div>
+            </div>
+
+            <!-- Window Card 2: SAIRBY MODLLARDS -->
+            <div class="y2k-window-card" id="win-card-2">
+              <div class="window-card-header" style="background: var(--y2k-yellow); color: #000;">
+                <span class="window-card-title">SAIRBY MODLLARDS</span>
+                <button class="window-card-close" onclick="closeWinCard('win-card-2')">✕</button>
+              </div>
+              <div class="window-card-body window-card-yellow-body">
+                <!-- Cyberpunk Sticker Graphic -->
+                <div style="height: 100px; border: 2.5px solid #000; box-shadow: 3px 3px 0px #000; overflow: hidden; margin-bottom: 12px;">
+                  <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Cyberpunk neon style" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <p style="font-size: 13px; line-height: 1.5; font-weight: 700; color: #000; margin-bottom: 14px;">
+                  Neo-brutalism strips away gradients and artificial lighting in favor of high-contrast, unapologetic vector shapes.
+                </p>
+                <div style="font-size: 11px; font-weight: 800; font-family: monospace;">STATUS: 100% OPERATIONAL</div>
+              </div>
+              <div class="window-card-blue-footer"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       CYBER MIXTAPE & RETRO AUDIO PLAYER
+       ═══════════════════════════════════════════ -->
+  <section class="y2k-container" style="margin-bottom: 40px;">
+    <div style="background: #000000; border: var(--y2k-border); box-shadow: var(--y2k-shadow-lg); border-radius: 8px; padding: 24px; color: #ffffff;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; padding-bottom: 12px; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 14px; height: 14px; background: var(--y2k-pink); border-radius: 2px;"></div>
+          <span class="font-syne" style="font-size: 14px; font-weight: 800; letter-spacing: 1px; color: var(--y2k-yellow);">
+            CYBERAMP v2.00 // RETRO AUDIO PLAYER
+          </span>
+        </div>
+        <div class="font-mono" style="font-size: 11px; color: #888;">STEREO &bull; 44.1 kHz &bull; 128 KBPS MP3</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: center;" id="player-grid">
+        <div>
+          <div style="background: #111; border: 2px solid var(--y2k-yellow); padding: 12px 18px; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div class="eq-bar-wrap playing" id="eqVisualizer">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+              </div>
+              <span id="trackTitle" style="font-family: monospace; font-size: 13px; color: var(--y2k-yellow); font-weight: 700;">
+                ▶ 01. CYBERPUNK_DREAMSCAPE_2000.mp3
+              </span>
+            </div>
+            <span style="font-family: monospace; font-size: 12px; color: #888;" id="trackTimer">02:44</span>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button class="mini-box-btn mini-box-btn-pink" style="padding: 10px 20px; font-size: 13px;" onclick="togglePlayMusic()" id="btnPlay">
+              <i class="ph ph-pause-bold"></i> PAUSE
+            </button>
+            <button class="mini-box-btn mini-box-btn-yellow" style="padding: 10px 18px; font-size: 12px; color: #000;" onclick="nextTrack()">
+              NEXT TRACK ⏭
+            </button>
+            <button class="mini-box-btn" style="padding: 10px 18px; font-size: 12px;" onclick="showThemeToast('Bass Boost Active: +6dB!')">
+              ⚡ BASS BOOST
+            </button>
+          </div>
+        </div>
+
+        <div style="background: #111; border: 2px solid #333; padding: 16px; border-radius: 4px;">
+          <div style="font-size: 11px; font-family: monospace; color: #aaa; margin-bottom: 6px;">TRACK SELECTION:</div>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-family: monospace; font-size: 12px;">
+            <div style="color: var(--y2k-yellow); cursor: pointer;" onclick="setTrack(1)">01. CYBERPUNK_DREAMSCAPE.mp3</div>
+            <div style="color: #888; cursor: pointer;" onclick="setTrack(2)">02. ACID_GLITCH_HOP_140BPM.mp3</div>
+            <div style="color: #888; cursor: pointer;" onclick="setTrack(3)">03. NEON_TOKYO_DRIFT_Y2K.mp3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CYBER MERCH & DIGITAL DROP SHOWCASE
+       ═══════════════════════════════════════════ -->
+  <section class="y2k-container" style="margin-bottom: 50px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+      <div>
+        <div class="badge-oval-yellow" style="margin-bottom: 8px;">★ EXCLUSIVE DROP ★</div>
+        <h2 class="font-syne" style="font-size: 32px; font-weight: 900; text-transform: uppercase;">
+          CYBER DROP APPAREL &amp; GEAR
+        </h2>
+      </div>
+      <div class="font-syne" style="font-size: 13px; font-weight: 800; color: #000;">
+        LIMITED TO 100 PIECES PER RUN
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <!-- Merch 1 -->
+      <div class="merch-card">
+        <div>
+          <div class="merch-img-box">
+            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Acid Cyber Hoodie" />
+            <div style="position: absolute; top: 10px; right: 10px; background: var(--y2k-yellow); border: 2px solid #000; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 900; padding: 4px 8px; box-shadow: 2px 2px 0px #000;">
+              $68.00
+            </div>
+          </div>
+          <div class="font-syne" style="font-size: 16px; font-weight: 900; margin-bottom: 6px;">RETRO ACID OVERSIZED HOODIE</div>
+          <p style="font-size: 12px; color: #444; line-height: 1.5; margin-bottom: 16px;">
+            Heavy 460 GSM unbrushed cotton with neon flocking print and rubberized cuff badge.
+          </p>
+        </div>
+        <button class="btn-explore-giant" style="width: 100%; justify-content: center; padding: 10px; font-size: 13px; margin-bottom: 0;" onclick="showThemeToast('🛒 Cyber Hoodie added to checkout!')">
+          ADD TO CART ⚡
+        </button>
+      </div>
+
+      <!-- Merch 2 -->
+      <div class="merch-card">
+        <div>
+          <div class="merch-img-box">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="Holographic Sticker Sheet" />
+            <div style="position: absolute; top: 10px; right: 10px; background: var(--y2k-pink); color: #fff; border: 2px solid #000; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 900; padding: 4px 8px; box-shadow: 2px 2px 0px #000;">
+              $18.00
+            </div>
+          </div>
+          <div class="font-syne" style="font-size: 16px; font-weight: 900; margin-bottom: 6px;">25X HOLOGRAPHIC STICKER PACK</div>
+          <p style="font-size: 12px; color: #444; line-height: 1.5; margin-bottom: 16px;">
+            Prismatic chrome foil stickers waterproofed for laptops, skateboards, and phone cases.
+          </p>
+        </div>
+        <button class="btn-explore-giant" style="width: 100%; justify-content: center; padding: 10px; font-size: 13px; margin-bottom: 0;" onclick="showThemeToast('🛒 Sticker Pack added to checkout!')">
+          ADD TO CART ⚡
+        </button>
+      </div>
+
+      <!-- Merch 3 -->
+      <div class="merch-card">
+        <div>
+          <div class="merch-img-box">
+            <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=600&q=80" alt="Y2K Synth Soundbank" />
+            <div style="position: absolute; top: 10px; right: 10px; background: var(--y2k-blue); color: #fff; border: 2px solid #000; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 900; padding: 4px 8px; box-shadow: 2px 2px 0px #000;">
+              $29.00
+            </div>
+          </div>
+          <div class="font-syne" style="font-size: 16px; font-weight: 900; margin-bottom: 6px;">RETRO Y2K SYNTH CASSETTE BANK</div>
+          <p style="font-size: 12px; color: #444; line-height: 1.5; margin-bottom: 16px;">
+            Over 350+ analog synth presets, drum breaks, and retro modem wavetable files.
+          </p>
+        </div>
+        <button class="btn-explore-giant" style="width: 100%; justify-content: center; padding: 10px; font-size: 13px; margin-bottom: 0;" onclick="showThemeToast('🛒 Soundbank instant download initiated!')">
+          ADD TO CART ⚡
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE STAMPING PAD
+       ═══════════════════════════════════════════ -->
+  <section class="y2k-container" style="margin-bottom: 60px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+      <h3 class="font-syne" style="font-size: 20px; font-weight: 900; text-transform: uppercase;">
+        ⚡ CLICK ANYWHERE TO STAMP STICKERS!
+      </h3>
+      <button class="mini-box-btn mini-box-btn-pink" onclick="clearStickers()">CLEAR CANVAS ✕</button>
+    </div>
+    <div class="sticker-canvas" id="stickerCanvas" onclick="stampSticker(event)">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; text-align: center; color: #999; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; text-transform: uppercase;">
+        [ TAP ANYWHERE ON THIS PAD TO SLAM STICKERS ]
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       Y2K CYBER WEBRING FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: var(--y2k-black); color: var(--y2k-white); border-top: var(--y2k-border); padding: 50px 0 30px;">
+    <div class="y2k-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-bottom: 2px solid #333; padding-bottom: 30px;">
+        <div>
+          <div class="font-syne" style="font-size: 24px; font-weight: 900; color: var(--y2k-yellow); letter-spacing: 1px;">
+            Y2K NEO-BRUTALISM SYSTEM
+          </div>
+          <div class="font-mono" style="font-size: 12px; color: #aaa; margin-top: 6px;">
+            Zero Blur Shadows &bull; 3.5px Solid Strokes &bull; Loud Gen-Z Energy
+          </div>
+        </div>
+
+        <!-- Retro Webring Badge -->
+        <div style="background: #111; border: 2px solid var(--y2k-pink); padding: 8px 16px; border-radius: 4px; display: flex; align-items: center; gap: 12px;">
+          <span style="font-family: monospace; font-size: 11px; color: var(--y2k-pink); font-weight: 700;">CYBER WEBRING #042</span>
+          <button style="background: var(--y2k-yellow); border: 1px solid #000; font-family: monospace; font-size: 10px; font-weight: 900; padding: 2px 6px; cursor: pointer;" onclick="showThemeToast('Webring Prev: Loading...')">&lt; PREV</button>
+          <button style="background: var(--y2k-yellow); border: 1px solid #000; font-family: monospace; font-size: 10px; font-weight: 900; padding: 2px 6px; cursor: pointer;" onclick="showThemeToast('Webring Next: Loading...')">NEXT &gt;</button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-top: 24px; font-family: 'Space Grotesk', sans-serif; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 I Info Vision &bull; Y2K Neo-Brutalist Theme</span>
+        <a href="themes.html" style="color: var(--y2k-yellow); font-weight: 700; text-decoration: none;">View All 11 Design Themes &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS SLIDE-OUT DRAWER
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="theme-drawer-overlay"></div>
+  <aside class="theme-drawer" id="theme-drawer">
+    <div class="theme-drawer-header">
+      <div class="theme-drawer-title-wrap">
+        <span class="theme-drawer-badge">Theme DNA &amp; Architecture</span>
+        <h3 class="theme-drawer-title">Y2K Neo-Brutalism</h3>
+      </div>
+      <button class="theme-drawer-close" id="theme-drawer-close" aria-label="Close drawer">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <div class="theme-drawer-body">
+      <!-- CONCEPT -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-lightbulb"></i> Concept &amp; Vibe</div>
+        <p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.5;">
+          A joyful, high-voltage tribute to early 2000s cyber aesthetics re-engineered through modern neo-brutalist discipline. Uses unapologetic electric colors, hard drop shadows, window chrome, and playful sticker stickers.
+        </p>
+      </div>
+
+      <!-- COLOR PALETTE -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-palette"></i> Color Palette (Click to Copy)</div>
+        <div class="theme-swatches">
+          <div class="theme-swatch" data-hex="#FFE600">
+            <div class="theme-swatch-color" style="background:#FFE600;"></div>
+            <span class="theme-swatch-name">Cyber Yellow</span>
+            <span class="theme-swatch-hex">#FFE600</span>
+          </div>
+          <div class="theme-swatch" data-hex="#FF2B85">
+            <div class="theme-swatch-color" style="background:#FF2B85;"></div>
+            <span class="theme-swatch-name">Hot Magenta</span>
+            <span class="theme-swatch-hex">#FF2B85</span>
+          </div>
+          <div class="theme-swatch" data-hex="#1D55FF">
+            <div class="theme-swatch-color" style="background:#1D55FF;"></div>
+            <span class="theme-swatch-name">Electric Blue</span>
+            <span class="theme-swatch-hex">#1D55FF</span>
+          </div>
+          <div class="theme-swatch" data-hex="#000000">
+            <div class="theme-swatch-color" style="background:#000000;"></div>
+            <span class="theme-swatch-name">Stark Black</span>
+            <span class="theme-swatch-hex">#000000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPOGRAPHY -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-text-aa"></i> Typography Pairings</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-caret-right"></i> <strong>Mega Headlines:</strong> Syne (Ultra Heavy Display Grotesque, 900)</li>
+          <li><i class="ph ph-caret-right"></i> <strong>Subheads &amp; Body:</strong> Space Grotesk (Bold Geometric Sans, 700)</li>
+        </ul>
+      </div>
+
+      <!-- UI MECHANICS -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-paint-brush"></i> Signature UI Mechanics</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-check"></i> <strong>Solid Black Stroke:</strong> <code>3.5px solid #000000</code> on all elements</li>
+          <li><i class="ph ph-check"></i> <strong>Hard Offset Drop Shadow:</strong> <code>box-shadow: 6px 6px 0px #000</code> (Zero blur!)</li>
+          <li><i class="ph ph-check"></i> <strong>Physical Press Action:</strong> <code>translate(3px, 3px)</code> + reduced shadow</li>
+          <li><i class="ph ph-check"></i> <strong>Retro OS Windows:</strong> Colored titlebars with clickable [X] close actions</li>
+        </ul>
+      </div>
+
+      <!-- BEST FIT -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-buildings"></i> Ideal Project &amp; Industry Fit</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-check"></i> Gen-Z Consumer &amp; Lifestyle Brands</li>
+          <li><i class="ph ph-check"></i> Streetwear, Apparel &amp; Fashion Drops</li>
+          <li><i class="ph ph-check"></i> Gaming Studios &amp; Creator Economy Platforms</li>
+          <li><i class="ph ph-check"></i> Rebellious Tech Startups &amp; Music Festivals</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theme-drawer-footer">
+      <a href="themes.html" class="theme-drawer-btn theme-drawer-btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <i class="ph ph-arrow-left"></i> Back to Theme Selection
+      </a>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js" defer></script>
+  <script>
+    function closeWinCard(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.style.transform = 'scale(0.85) translateY(20px)';
+        card.style.opacity = '0';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 250);
+        if (window.showThemeToast) {
+          showThemeToast(`Window minimized! Click RESET in top-bar to restore.`);
+        }
+      }
+    }
+
+    function resetAllWindows() {
+      ['win-card-1', 'win-card-2'].forEach(id => {
+        const card = document.getElementById(id);
+        if (card) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.transform = '';
+            card.style.opacity = '1';
+          }, 50);
+        }
+      });
+      if (window.showThemeToast) {
+        showThemeToast('All OS windows restored!');
+      }
+    }
+  </script>
+
+  <script>
+    /* Audio Player Logic */
+    let isPlaying = true;
+    let currentTrackIdx = 1;
+    const tracks = {
+      1: { title: '▶ 01. CYBERPUNK_DREAMSCAPE_2000.mp3', time: '02:44' },
+      2: { title: '▶ 02. ACID_GLITCH_HOP_140BPM.mp3', time: '03:15' },
+      3: { title: '▶ 03. NEON_TOKYO_DRIFT_Y2K.mp3', time: '01:58' }
+    };
+
+    function togglePlayMusic() {
+      isPlaying = !isPlaying;
+      const eq = document.getElementById('eqVisualizer');
+      const btn = document.getElementById('btnPlay');
+      if (isPlaying) {
+        eq.classList.add('playing');
+        btn.innerHTML = '<i class="ph ph-pause-bold"></i> PAUSE';
+        if (window.showThemeToast) showThemeToast('Cyber Mixtape: Resumed Playing');
+      } else {
+        eq.classList.remove('playing');
+        btn.innerHTML = '<i class="ph ph-play-bold"></i> PLAY';
+        if (window.showThemeToast) showThemeToast('Cyber Mixtape: Paused');
+      }
+    }
+
+    function setTrack(idx) {
+      currentTrackIdx = idx;
+      document.getElementById('trackTitle').textContent = tracks[idx].title;
+      document.getElementById('trackTimer').textContent = tracks[idx].time;
+      if (!isPlaying) togglePlayMusic();
+      if (window.showThemeToast) showThemeToast(`Now Playing: Track 0${idx}`);
+    }
+
+    function nextTrack() {
+      currentTrackIdx = (currentTrackIdx % 3) + 1;
+      setTrack(currentTrackIdx);
+    }
+
+    /* Sticker Stamping */
+    const stickerPool = ['★', '⚡', '👾', '💾', '💿', '🛹', '🛸', '💣', '💖', '🍭'];
+    const colors = ['#FFE600', '#FF2B85', '#1D55FF', '#00FF66'];
+
+    function stampSticker(e) {
+      const canvas = document.getElementById('stickerCanvas');
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left - 24;
+      const y = e.clientY - rect.top - 24;
+
+      const sticker = document.createElement('div');
+      sticker.className = 'stamped-sticker';
+      const randomIcon = stickerPool[Math.floor(Math.random() * stickerPool.length)];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const randomRot = Math.floor(Math.random() * 50) - 25;
+
+      sticker.textContent = randomIcon;
+      sticker.style.left = `${x}px`;
+      sticker.style.top = `${y}px`;
+      sticker.style.fontSize = '36px';
+      sticker.style.transform = `rotate(${randomRot}deg)`;
+      sticker.style.textShadow = `3px 3px 0px #000, -1px -1px 0px #000`;
+      sticker.style.color = randomColor;
+
+      canvas.appendChild(sticker);
+    }
+
+    function clearStickers() {
+      const stickers = document.querySelectorAll('.stamped-sticker');
+      stickers.forEach(s => s.remove());
+      if (window.showThemeToast) showThemeToast('Sticker Canvas Cleared!');
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiss / International Style UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Swiss International Style UI theme created by I Info Vision. Mathematical 12-column grid systems, stark typographic hierarchy, and legendary modernist discipline." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       SWISS / INTERNATIONAL TYPOGRAPHIC STYLE
+       Mathematical Grid + Helvetica Archetype + Signal Red
+       =================================================== */
+    :root {
+      --swiss-bg: #F4F4F2;
+      --swiss-red: #E6281E;
+      --swiss-black: #111111;
+      --swiss-white: #FFFFFF;
+      --swiss-gray: #777777;
+      --swiss-border: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--swiss-bg);
+      color: var(--swiss-black);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .t-grotesk {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .t-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    .swiss-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      border-left: 2px solid var(--swiss-border);
+      border-right: 2px solid var(--swiss-border);
+    }
+
+    .swiss-grid-block {
+      border-bottom: 2px solid var(--swiss-border);
+      padding: 40px 0;
+    }
+
+    .btn-swiss {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 32px;
+      background: var(--swiss-black);
+      color: var(--swiss-white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border: 2px solid var(--swiss-black);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-swiss:hover {
+      background: var(--swiss-red);
+      border-color: var(--swiss-red);
+      color: #fff;
+    }
+
+    .btn-swiss-red {
+      background: var(--swiss-red);
+      border-color: var(--swiss-red);
+    }
+    .btn-swiss-red:hover {
+      background: var(--swiss-black);
+      border-color: var(--swiss-black);
+    }
+
+    @media (max-width: 900px) {
+      .swiss-hero-grid { grid-template-columns: 1fr !important; }
+      .swiss-3col-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-grid-four"></i> Theme: <strong>Swiss / International Style</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       SWISS GRID CONTAINER
+       ═══════════════════════════════════════════════ -->
+  <div class="swiss-container">
+
+    <!-- Top Mathematical Index Header -->
+    <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0; border-bottom: 2px solid var(--swiss-border);" class="t-mono">
+      <span style="font-weight: 700; font-size: 13px;">ZÜRICH // 47°22'N 8°32'E</span>
+      <span style="background: var(--swiss-red); color: #fff; padding: 2px 8px; font-weight: 700; font-size: 12px;">SYSTEM 12</span>
+      <span>EDITION 2026.04</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SWISS HERO
+         ═══════════════════════════════════════════════ -->
+    <section class="swiss-grid-block">
+      <div class="swiss-hero-grid" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start;">
+        
+        <div>
+          <div class="t-mono" style="font-size: 13px; color: var(--swiss-red); font-weight: 700; margin-bottom: 16px;">
+            [01] MATHEMATICAL CLARITY &bull; DIE NEUE GRAPHIK
+          </div>
+
+          <h1 class="t-grotesk" style="font-size: clamp(48px, 6.5vw, 84px); font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 28px;">
+            Design as<br />
+            an Objective<br />
+            <span style="color: var(--swiss-red);">Discipline.</span>
+          </h1>
+
+          <p style="font-size: 17px; font-weight: 500; color: #333; line-height: 1.6; max-width: 540px; margin-bottom: 36px;">
+            Born in 1950s Basel and Zürich. No decorative frivolities. Universal visual communication achieved through mathematical grids, asymmetric balance, and pure sans-serif typography.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#matrix" class="btn-swiss">
+              <span>Inspect Grid System</span>
+              <i class="ph ph-arrow-right"></i>
+            </a>
+            <a href="#manifesto" class="btn-swiss btn-swiss-red">
+              <span>Order and Form</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Stark Asymmetric Red Monolith -->
+        <div>
+          <div style="background: var(--swiss-red); color: #fff; padding: 40px; min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="t-mono" style="font-size: 14px; font-weight: 700;">// AXIS 01</div>
+            <div>
+              <span class="t-grotesk" style="font-size: 72px; font-weight: 900; line-height: 1; display: block; margin-bottom: 8px;">100%</span>
+              <p style="font-size: 15px; font-weight: 600; line-height: 1.4;">Uncompromising alignment to the baseline grid rhythm.</p>
+            </div>
+            <div class="t-mono" style="font-size: 11px; border-top: 1px solid rgba(255,255,255,0.4); padding-top: 12px;">
+              HELVETICA &bull; JOSEF MÜLLER-BROCKMANN
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         3-COLUMN ASYMMETRIC GRID PRINCIPLES
+         ═══════════════════════════════════════════════ -->
+    <section class="swiss-grid-block" id="matrix">
+      <div class="swiss-3col-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+        
+        <div style="border-right: 1px solid var(--swiss-border); padding-right: 24px;">
+          <div class="t-mono" style="font-size: 28px; font-weight: 700; color: var(--swiss-red); margin-bottom: 12px;">01</div>
+          <h3 class="t-grotesk" style="font-size: 24px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">The Grid</h3>
+          <p style="font-size: 14px; color: #444; line-height: 1.6;">
+            The grid divides the surface into structured horizontal and vertical fields. It enables rational, uniform arrangements of text and images.
+          </p>
+        </div>
+
+        <div style="border-right: 1px solid var(--swiss-border); padding-right: 24px;">
+          <div class="t-mono" style="font-size: 28px; font-weight: 700; color: var(--swiss-red); margin-bottom: 12px;">02</div>
+          <h3 class="t-grotesk" style="font-size: 24px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Typography</h3>
+          <p style="font-size: 14px; color: #444; line-height: 1.6;">
+            Legibility is supreme. Grotesque sans-serif fonts stripped of ornate serifs deliver information without national bias or emotional distortion.
+          </p>
+        </div>
+
+        <div>
+          <div class="t-mono" style="font-size: 28px; font-weight: 700; color: var(--swiss-red); margin-bottom: 12px;">03</div>
+          <h3 class="t-grotesk" style="font-size: 24px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Asymmetry</h3>
+          <p style="font-size: 14px; color: #444; line-height: 1.6;">
+            Dynamic contrast between white space, solid black mass, and signal red focal points guides the reader’s eye with mathematical certainty.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CLIENT SHOWCASE
+         ═══════════════════════════════════════════════ -->
+    <section style="padding: 70px 0; text-align: center;">
+      <span class="t-mono" style="font-size: 12px; font-weight: 700; color: var(--swiss-red); text-transform: uppercase; letter-spacing: 2px;">
+        RATIONAL CORPORATE ARCHITECTURE
+      </span>
+      <h2 class="t-grotesk" style="font-size: clamp(34px, 4.5vw, 52px); font-weight: 900; text-transform: uppercase; margin: 16px 0 20px;">
+        Build a Globally Recognized Swiss Style Website
+      </h2>
+      <p style="font-size: 16px; color: #555; max-width: 650px; margin: 0 auto 36px; line-height: 1.6;">
+        For corporate conglomerates, design agencies, scientific institutions, and global brands requiring authority, order, and international clarity.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html#contact" class="btn-swiss">
+          <span>Commission a Swiss System</span>
+          <i class="ph ph-arrow-right"></i>
+        </a>
+        <a href="themes.html" class="btn-swiss" style="background: transparent; color: var(--swiss-black);">
+          <span>All 20 Themes</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER
+       ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Swiss Style Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">International Typographic Style &bull; 12-Column Grid Discipline</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Developed in Switzerland in the 1950s. Champions objective presentation of information, asymmetric alignment, ragged-right text, and mathematical rhythm over arbitrary ornament.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#F4F4F2; border:2px solid #ccc;" title="Canvas #F4F4F2"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#E6281E; border:2px solid #fff;" title="Signal Red #E6281E"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#111111; border:2px solid #fff;" title="Pitch Black #111111"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Global corporate headquarters, architectural design studios, editorial monographs, international logistics firms, and museum archives.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
+

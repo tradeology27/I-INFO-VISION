@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claymorphic Soft 3D UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Claymorphic Soft 3D UI theme created by I Info Vision. Tactile pastel marshmallow depth, puffy 3D elements, and playful micro-interactions." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       CLAYMORPHIC SOFT 3D THEME SYSTEM
+       =================================================== */
+    :root {
+      --clay-bg: #E6EBF2;
+      --clay-white: #F1F4F9;
+      --clay-mint: #A8EDDF;
+      --clay-peach: #FFB396;
+      --clay-lavender: #CBB4F5;
+      --clay-dark: #2D3342;
+      --clay-text: #1E2533;
+      --clay-muted: #64748B;
+      
+      /* Clay Outer & Inner Shadows */
+      --clay-card-shadow: 14px 14px 28px rgba(166, 180, 200, 0.6),
+                          -14px -14px 28px rgba(255, 255, 255, 0.95),
+                          inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+                          inset -4px -4px 8px rgba(0, 0, 0, 0.06);
+
+      --clay-mint-shadow: 10px 10px 22px rgba(138, 213, 197, 0.7),
+                          -10px -10px 22px rgba(255, 255, 255, 0.8),
+                          inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+                          inset -4px -4px 8px rgba(90, 165, 149, 0.3);
+
+      --clay-peach-shadow: 10px 10px 22px rgba(234, 160, 130, 0.7),
+                           -10px -10px 22px rgba(255, 255, 255, 0.8),
+                           inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+                           inset -4px -4px 8px rgba(186, 112, 82, 0.3);
+
+      --clay-lavender-shadow: 10px 10px 22px rgba(179, 155, 224, 0.7),
+                              -10px -10px 22px rgba(255, 255, 255, 0.8),
+                              inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+                              inset -4px -4px 8px rgba(131, 107, 176, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--clay-bg);
+      color: var(--clay-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Font Utility */
+    .font-rounded {
+      font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .clay-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Clay App Header */
+    .clay-nav {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      padding: 16px 28px;
+      border-radius: 40px;
+      background: var(--clay-white);
+      box-shadow: var(--clay-card-shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .clay-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--clay-dark);
+      text-decoration: none;
+    }
+
+    .clay-brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--clay-peach), var(--clay-lavender));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.1), inset 2px 2px 4px #fff;
+    }
+
+    .clay-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .clay-nav-links a {
+      text-decoration: none;
+      color: var(--clay-muted);
+      font-weight: 700;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .clay-nav-links a:hover {
+      color: var(--clay-dark);
+    }
+
+    /* 3D Clay Action Buttons */
+    .btn-clay {
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+    }
+
+    .btn-clay:active {
+      transform: scale(0.95);
+    }
+
+    .btn-clay-mint {
+      background: var(--clay-mint);
+      color: #124d42;
+      box-shadow: var(--clay-mint-shadow);
+    }
+
+    .btn-clay-peach {
+      background: var(--clay-peach);
+      color: #63220b;
+      box-shadow: var(--clay-peach-shadow);
+    }
+
+    .btn-clay-lavender {
+      background: var(--clay-lavender);
+      color: #3b2068;
+      box-shadow: var(--clay-lavender-shadow);
+    }
+
+    .btn-clay-white {
+      background: var(--clay-white);
+      color: var(--clay-dark);
+      box-shadow: var(--clay-card-shadow);
+    }
+
+    /* Hero Section */
+    .clay-hero {
+      padding: 60px 0 80px;
+    }
+
+    .clay-hero-master-card {
+      background: var(--clay-white);
+      border-radius: 44px;
+      padding: 50px;
+      box-shadow: var(--clay-card-shadow);
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+
+    .clay-hero-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: var(--clay-mint);
+      color: #124d42;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: var(--clay-mint-shadow);
+      margin-bottom: 20px;
+    }
+
+    .clay-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--clay-dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .clay-hero-desc {
+      font-size: 15.5px;
+      color: var(--clay-muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    .clay-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* 3D Puffy Clay Floating Elements Display */
+    .clay-floating-stage {
+      background: #DEE4EE;
+      border-radius: 36px;
+      padding: 36px;
+      box-shadow: inset 8px 8px 16px rgba(166, 180, 200, 0.6), inset -8px -8px 16px rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+      position: relative;
+    }
+
+    /* Realistic 3D Soft Clay Heart */
+    .clay-heart-3d {
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, #FFB396 0%, #FF8F6B 100%);
+      border-radius: 50% 50% 10% 50%;
+      transform: rotate(-45deg);
+      box-shadow: 14px 14px 28px rgba(220, 130, 95, 0.6),
+                  -6px -6px 14px rgba(255, 255, 255, 0.7),
+                  inset 8px 8px 16px rgba(255, 255, 255, 0.8),
+                  inset -8px -8px 16px rgba(160, 60, 30, 0.4);
+      position: relative;
+      animation: heartBounce 3s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    .clay-heart-3d::after {
+      content: '';
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      background: inherit;
+      border-radius: 50%;
+      top: -55px;
+      left: 0;
+      box-shadow: inherit;
+    }
+
+    .clay-heart-3d::before {
+      content: '';
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      background: inherit;
+      border-radius: 50%;
+      top: 0;
+      right: -55px;
+      box-shadow: inherit;
+    }
+
+    @keyframes heartBounce {
+      0%, 100% { transform: rotate(-45deg) scale(1) translateY(0); }
+      50% { transform: rotate(-45deg) scale(1.08) translateY(-10px); }
+    }
+
+    /* 3D Thumbs-up badge */
+    .clay-thumb-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 28px;
+      padding: 14px 20px;
+      border-radius: 28px;
+      background: var(--clay-lavender);
+      box-shadow: var(--clay-lavender-shadow);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      color: #3b2068;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .clay-thumb-badge:hover {
+      transform: scale(1.05);
+    }
+
+    /* Interactive 3D Clay Switch */
+    .clay-switch-wrap {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .clay-toggle {
+      width: 74px;
+      height: 42px;
+      background: #CAD3DF;
+      border-radius: 999px;
+      box-shadow: inset 4px 4px 8px rgba(0,0,0,0.15), inset -4px -4px 8px #ffffff;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .clay-toggle.active {
+      background: var(--clay-mint);
+    }
+
+    .clay-toggle-knob {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.15), inset 2px 2px 4px #ffffff, inset -2px -2px 4px rgba(0,0,0,0.08);
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .clay-toggle.active .clay-toggle-knob {
+      transform: translateX(32px);
+    }
+
+    /* CONFTIIVITY Section (Matching Image 2) */
+    .conftiivity-section {
+      padding: 60px 0;
+    }
+
+    .section-title-rounded {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--clay-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .conftiivity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .clay-card-pill {
+      border-radius: 36px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .clay-card-pill:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-mint {
+      background: var(--clay-mint);
+      box-shadow: var(--clay-mint-shadow);
+      color: #124d42;
+    }
+
+    .card-peach {
+      background: var(--clay-peach);
+      box-shadow: var(--clay-peach-shadow);
+      color: #63220b;
+    }
+
+    .card-lavender {
+      background: var(--clay-lavender);
+      box-shadow: var(--clay-lavender-shadow);
+      color: #3b2068;
+    }
+
+    .clay-card-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .clay-card-text {
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .clay-card-bottom-pill {
+      align-self: flex-start;
+      padding: 8px 20px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.08), inset 2px 2px 4px #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* EVENTS Section (Matching Image 2) */
+    .events-section {
+      padding: 40px 0 90px;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .clay-quote-card {
+      border-radius: 36px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 240px;
+    }
+
+    .clay-quote-mark {
+      font-size: 40px;
+      font-family: 'Fredoka', sans-serif;
+      line-height: 1;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+
+    .clay-quote-text {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* Squash & Stretch Animation */
+    @keyframes clayPop {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.12) rotate(-2deg); }
+      70% { transform: scale(0.96) rotate(1deg); }
+      100% { transform: scale(1); }
+    }
+    .clay-pop-anim { animation: clayPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+    /* Interactive Clay Slider */
+    .clay-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 18px;
+      border-radius: 999px;
+      background: #D9DFEB;
+      box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1), inset -3px -3px 6px #ffffff;
+      outline: none;
+      cursor: pointer;
+    }
+    .clay-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--clay-peach);
+      box-shadow: 4px 4px 10px rgba(234, 160, 130, 0.8), inset 2px 2px 4px #ffffff;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .clay-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Clay Checkbox */
+    .clay-check-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      background: var(--clay-white);
+      border-radius: 20px;
+      box-shadow: var(--clay-card-shadow);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+    }
+    .clay-check-item:hover {
+      transform: translateY(-2px);
+    }
+    .clay-check-box {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: #E2E8F0;
+      box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1), inset -2px -2px 4px #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: transparent;
+      transition: all 0.2s;
+    }
+    .clay-check-item.done .clay-check-box {
+      background: var(--clay-mint);
+      box-shadow: var(--clay-mint-shadow);
+      color: #124d42;
+    }
+    .clay-check-item.done span {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+        .clay-interactive-grid {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+      .clay-hero-master-card, .events-grid {
+        grid-template-columns: 1fr;
+      }
+      .conftiivity-grid {
+        grid-template-columns: 1fr;
+      }
+      .clay-nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL THEME SWITCHER BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-paint-brush"></i> Theme: <strong>Claymorphic Soft 3D</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" id="theme-inspect-btn">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       CLAYMORPHIC NAVIGATION
+       ═══════════════════════════════════════════ -->
+  <nav class="clay-nav">
+    <a href="#" class="clay-brand">
+      <div class="clay-brand-icon"><i class="ph ph-shapes" style="color:#ffffff; font-size: 20px;"></i></div>
+      <span>CLAY3D</span>
+    </a>
+    <ul class="clay-nav-links">
+      <li><a href="#hero">Overview</a></li>
+      <li><a href="#conftiivity">Conftiivity</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#playground">3D Lab</a></li>
+      <li><a href="themes.html">All Themes</a></li>
+    </ul>
+    <div style="display: flex; gap: 10px;">
+      <button class="btn-clay btn-clay-white" style="padding: 8px 18px; font-size: 13px;">Login</button>
+      <button class="btn-clay btn-clay-mint" style="padding: 8px 18px; font-size: 13px;">Get Clay</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO: CLAYMORPHIC SOFT 3D
+       ═══════════════════════════════════════════ -->
+  <section class="clay-hero" id="hero">
+    <div class="clay-container">
+      <div class="clay-hero-master-card">
+        <div>
+          <div class="clay-hero-pill-badge">
+            <i class="ph ph-confetti"></i> NEOBRUTALISM / PLAYFUL
+          </div>
+          <h1 class="clay-hero-title">
+            Claymorphic<br />Soft 3D
+          </h1>
+          <p class="clay-hero-desc">
+            Tactile, touchable, pillowy depth. Engineered with layered dual-axis shadows, extruded marshmallow bevels, and cheerful micro-interactions that make every tap feel physically satisfying.
+          </p>
+
+          <div class="clay-actions-group">
+            <button class="btn-clay btn-clay-mint" onclick="showThemeToast('Mint explore activated!')">
+              <i class="ph ph-sparkle"></i> MINT EXPLORE
+            </button>
+            <button class="btn-clay btn-clay-peach" onclick="showThemeToast('Play now pressed!')">
+              <i class="ph ph-play-circle"></i> PLAY NOW
+            </button>
+            <button class="btn-clay btn-clay-lavender" onclick="showThemeToast('Shop now pressed!')">
+              <i class="ph ph-shopping-bag"></i> SHOP NOW
+            </button>
+          </div>
+        </div>
+
+        <div class="clay-floating-stage" id="playground">
+          <!-- 3D Soft Clay Art Render (Matching Reference Image 1 & 2) -->
+          <div style="position: relative; width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="3D Soft Clay Puffy Composition" style="width: 220px; height: 220px; object-fit: cover; border-radius: 40px; box-shadow: var(--clay-card-shadow);" />
+            
+            <!-- Floating 3D Tactile Heart Overlay -->
+            <div class="clay-heart-3d" id="clay-heart" onclick="popHeart()" style="position: absolute; right: 26px; top: 12px;" title="Tap to squish clay heart!"></div>
+          </div>
+
+          <!-- Bottom Row: 3D Thumb & Switches -->
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 12px;">
+            <div class="clay-thumb-badge" onclick="likeCounter()" style="position: static;">
+              <i class="ph ph-thumbs-up" style="font-size: 20px;"></i>
+              <span id="like-text">Like: 284</span>
+            </div>
+
+            <!-- Interactive Switches -->
+            <div class="clay-switch-wrap" style="position: static; flex-direction: row; gap: 10px;">
+              <div class="clay-toggle active" id="toggle-1" onclick="this.classList.toggle('active')">
+                <div class="clay-toggle-knob"></div>
+              </div>
+              <div class="clay-toggle" id="toggle-2" onclick="this.classList.toggle('active')">
+                <div class="clay-toggle-knob"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONFTIIVITY SECTION (From Image 2)
+       ═══════════════════════════════════════════ -->
+  <section class="conftiivity-section" id="conftiivity">
+    <div class="clay-container">
+      <h2 class="section-title-rounded">
+        <i class="ph ph-sparkle" style="color: #FFB396;"></i> CONFTIIVITY CARDS
+      </h2>
+
+      <div class="conftiivity-grid">
+        <!-- Mint Card -->
+        <div class="clay-card-pill card-mint" onclick="showClayToast('Opened Mint Clay Workspace!')">
+          <div style="height: 120px; border-radius: 24px; overflow: hidden; margin-bottom: 16px; box-shadow: inset 2px 2px 6px rgba(255,255,255,0.8), 4px 4px 12px rgba(0,0,0,0.08);">
+            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=500&q=80" alt="3D Mint Clay Composition" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <div>
+            <h4 class="font-rounded" style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #124d42;">OCESWWAL EGDING</h4>
+            <p style="font-size: 14px; color: #216d5f; line-height: 1.5;">Lonser ipsum doloire sit amet, crasstodis card adiplaring elit.</p>
+          </div>
+          <div style="display: flex; justify-content: flex-end; margin-top: 14px;">
+            <button class="btn-clay" style="padding: 8px 20px; font-size: 13px; background: #fff; color: #124d42; box-shadow: 4px 4px 10px rgba(0,0,0,0.1);">Stay new &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Peach Card -->
+        <div class="clay-card-pill card-peach" onclick="showClayToast('Opened Peach Clay Workshop!')">
+          <div style="height: 120px; border-radius: 24px; overflow: hidden; margin-bottom: 16px; box-shadow: inset 2px 2px 6px rgba(255,255,255,0.8), 4px 4px 12px rgba(0,0,0,0.08);">
+            <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=500&q=80" alt="3D Peach Clay Composition" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <div>
+            <h4 class="font-rounded" style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #662f1a;">CURSY CONTENT PARE</h4>
+            <p style="font-size: 14px; color: #844229; line-height: 1.5;">Lorem ipsum doloird amet consemur adipiscing soft marshmallow ui.</p>
+          </div>
+          <div style="display: flex; justify-content: flex-end; margin-top: 14px;">
+            <button class="btn-clay" style="padding: 8px 20px; font-size: 13px; background: #fff; color: #662f1a; box-shadow: 4px 4px 10px rgba(0,0,0,0.1);">Check view &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Lavender Card -->
+        <div class="clay-card-pill card-lavender" onclick="showClayToast('Opened Lavender Calendar!')">
+          <div style="height: 120px; border-radius: 24px; overflow: hidden; margin-bottom: 16px; box-shadow: inset 2px 2px 6px rgba(255,255,255,0.8), 4px 4px 12px rgba(0,0,0,0.08);">
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=500&q=80" alt="3D Lavender Clay Composition" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <div>
+            <h4 class="font-rounded" style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #3b2068;">LKG: DERAUST DATE</h4>
+            <p style="font-size: 14px; color: #52348a; line-height: 1.5;">Puffy date cards with tactile inner shadows and rounded edges.</p>
+          </div>
+          <div style="display: flex; justify-content: flex-end; margin-top: 14px;">
+            <button class="btn-clay" style="padding: 8px 20px; font-size: 13px; background: #fff; color: #3b2068; box-shadow: 4px 4px 10px rgba(0,0,0,0.1);">Check now &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EVENTS & QUOTES SECTION (From Image 2)
+       ═══════════════════════════════════════════ -->
+  <section class="events-section" id="events">
+    <div class="clay-container">
+      <h2 class="section-title-rounded">
+        <i class="ph ph-chats-circle" style="color: #CBB4F5;"></i> EVENTS &amp; STORIES
+      </h2>
+
+      <div class="events-grid">
+        <div class="clay-quote-card card-peach">
+          <div>
+            <div class="clay-quote-mark">“</div>
+            <p class="clay-quote-text">
+              “Claymorphism gave our gamified mobile application an irresistible tactile feel. Retention soared by 38% after redesigning buttons to pillowy 3D.”
+            </p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px;">LOREM IPSUM D POSTS</span>
+            <button class="btn-clay btn-clay-white" style="padding: 6px 18px; font-size: 12px;">Contact</button>
+          </div>
+        </div>
+
+        <div class="clay-quote-card card-lavender">
+          <div>
+            <div class="clay-quote-mark">“</div>
+            <p class="clay-quote-text">
+              “The combination of soft pastels and tactile bevels makes long dashboard sessions feel playful instead of exhausting.”
+            </p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px;">TAMESOM DOLOR DE AMET</span>
+            <button class="btn-clay btn-clay-white" style="padding: 6px 18px; font-size: 12px;">Next →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE CLAY LAB & HABIT SQUISH
+       ═══════════════════════════════════════════ -->
+  <section class="clay-lab-section" style="padding: 60px 0; background: #dfe5ee; border-top: 1px solid rgba(255,255,255,0.7); border-bottom: 1px solid rgba(166,180,200,0.4);">
+    <div class="clay-container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 36px;">
+        <div class="clay-hero-pill-badge" style="background: var(--clay-lavender); color: #3b2068; box-shadow: var(--clay-lavender-shadow);">
+          <i class="ph ph-hand-pointing"></i> SQUISH &amp; HAPTIC PLAYGROUND
+        </div>
+        <h2 class="font-rounded" style="font-size: 32px; font-weight: 700; color: var(--clay-dark); margin-top: 6px;">
+          Interactive Marshmallow Lab
+        </h2>
+        <p style="font-size: 14.5px; color: var(--clay-muted); margin-top: 8px;">
+          Tap the clay checkmarks to feel the tactile rebound and drag the depth slider to recalibrate the 3D surface physics.
+        </p>
+      </div>
+
+      <div class="clay-interactive-grid" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center;">
+        <!-- Left: Interactive Checklist -->
+        <div style="background: var(--clay-white); border-radius: 36px; padding: 36px; box-shadow: var(--clay-card-shadow);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h3 class="font-rounded" style="font-size: 20px; font-weight: 700; color: var(--clay-dark);">
+              3D Design Sprint Checklist
+            </h3>
+            <span id="clay-progress-pill" style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; background: var(--clay-mint); color: #124d42; padding: 4px 12px; border-radius: 999px;">
+              2 of 4 Completed
+            </span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;" id="clay-checklist">
+            <div class="clay-check-item done" onclick="toggleClayTask(this)">
+              <div class="clay-check-box"><i class="ph ph-check-bold"></i></div>
+              <span style="font-weight: 600; font-size: 14px;">Extrude dual-axis marshmallow bevel radius</span>
+            </div>
+            <div class="clay-check-item done" onclick="toggleClayTask(this)">
+              <div class="clay-check-box"><i class="ph ph-check-bold"></i></div>
+              <span style="font-weight: 600; font-size: 14px;">Tune soft ambient mint and peach shadows</span>
+            </div>
+            <div class="clay-check-item" onclick="toggleClayTask(this)">
+              <div class="clay-check-box"><i class="ph ph-check-bold"></i></div>
+              <span style="font-weight: 600; font-size: 14px;">Add tactile squash-and-stretch on click</span>
+            </div>
+            <div class="clay-check-item" onclick="toggleClayTask(this)">
+              <div class="clay-check-box"><i class="ph ph-check-bold"></i></div>
+              <span style="font-weight: 600; font-size: 14px;">Export component kit for iOS &amp; Web</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Depth & Light Slider -->
+        <div style="background: var(--clay-white); border-radius: 36px; padding: 36px; box-shadow: var(--clay-card-shadow); text-align: center;">
+          <div style="width: 100px; height: 100px; border-radius: 32px; background: var(--clay-peach); box-shadow: var(--clay-peach-shadow); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 42px; color: #fff; transition: transform 0.2s;" id="demo-clay-block">
+            🧁
+          </div>
+          <h4 class="font-rounded" style="font-size: 18px; font-weight: 700; color: var(--clay-dark); margin-bottom: 8px;">
+            Dynamic Marshmallow Depth
+          </h4>
+          <p style="font-size: 13px; color: var(--clay-muted); margin-bottom: 24px;">
+            Drag the slider to adjust extrusion height in real time:
+          </p>
+
+          <input type="range" min="1" max="5" value="3" class="clay-slider" id="depth-range" oninput="adjustClayDepth(this.value)" />
+
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--clay-muted); margin-top: 10px;">
+            <span>Subtle (1x)</span>
+            <span id="depth-label" style="color: var(--clay-dark);">Medium Depth (3x)</span>
+            <span>Ultra Puffy (5x)</span>
+          </div>
+
+          <button class="btn-clay btn-clay-peach" style="margin-top: 24px; width: 100%; justify-content: center;" onclick="popDemoBlock()">
+            <i class="ph ph-sparkle"></i> Squish Test Block
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CLAYMORPHIC PRICING TIERS
+       ═══════════════════════════════════════════ -->
+  <section class="clay-pricing-section" style="padding: 70px 0;">
+    <div class="clay-container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+        <h2 class="font-rounded" style="font-size: 32px; font-weight: 700; color: var(--clay-dark);">
+          Pick Your Clay Plan
+        </h2>
+        <p style="font-size: 14.5px; color: var(--clay-muted); margin-top: 6px;">
+          100% vector-based, tactile component libraries ready for production.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;">
+        <!-- Card 1: Starter -->
+        <div style="background: var(--clay-white); border-radius: 36px; padding: 36px 30px; box-shadow: var(--clay-card-shadow); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.25s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div>
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; background: var(--clay-mint); color: #124d42; padding: 4px 14px; border-radius: 999px;">STARTER</span>
+            <h3 class="font-rounded" style="font-size: 26px; font-weight: 700; margin: 16px 0 6px;">Free Forever</h3>
+            <p style="font-size: 13.5px; color: var(--clay-muted); margin-bottom: 20px;">Essential puffy buttons, badges, and soft cards for prototyping.</p>
+            <ul style="list-style: none; font-size: 13.5px; line-height: 2; color: var(--clay-text);">
+              <li><i class="ph ph-check-circle" style="color: #15803d;"></i> 12 Marshmallow UI components</li>
+              <li><i class="ph ph-check-circle" style="color: #15803d;"></i> 3 Pastel color tokens</li>
+              <li><i class="ph ph-check-circle" style="color: #15803d;"></i> Pure CSS drop-in code</li>
+            </ul>
+          </div>
+          <button class="btn-clay btn-clay-white" style="margin-top: 28px; width: 100%; justify-content: center;" onclick="showThemeToast('Free Starter Pack Downloaded!')">
+            Get Starter Pack
+          </button>
+        </div>
+
+        <!-- Card 2: Pro Creator (Featured) -->
+        <div style="background: var(--clay-peach); border-radius: 36px; padding: 36px 30px; box-shadow: var(--clay-peach-shadow); display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.25s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position: absolute; top: -14px; right: 28px; background: var(--clay-dark); color: #fff; font-family: 'Fredoka', sans-serif; font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 999px; text-transform: uppercase;">
+            Most Loved ✦
+          </div>
+          <div>
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.8); color: #63220b; padding: 4px 14px; border-radius: 999px;">PRO CREATOR</span>
+            <div style="display: flex; align-items: baseline; gap: 6px; margin: 16px 0 6px;">
+              <h3 class="font-rounded" style="font-size: 34px; font-weight: 700; color: #63220b;">$19</h3>
+              <span style="font-size: 14px; color: #63220b; font-weight: 600;">/ month</span>
+            </div>
+            <p style="font-size: 13.5px; color: #63220b; opacity: 0.9; margin-bottom: 20px;">For product designers and developers building tactile apps.</p>
+            <ul style="list-style: none; font-size: 13.5px; line-height: 2; color: #63220b;">
+              <li><i class="ph ph-check-circle"></i> 80+ Tactile 3D components</li>
+              <li><i class="ph ph-check-circle"></i> React &amp; Vue interactive components</li>
+              <li><i class="ph ph-check-circle"></i> Sound FX audio click kit</li>
+              <li><i class="ph ph-check-circle"></i> Commercial app license</li>
+            </ul>
+          </div>
+          <button class="btn-clay btn-clay-white" style="margin-top: 28px; width: 100%; justify-content: center; background: #fff;" onclick="showThemeToast('Pro Creator License Activated!')">
+            Start 14-Day Free Trial
+          </button>
+        </div>
+
+        <!-- Card 3: Enterprise Studio -->
+        <div style="background: var(--clay-lavender); border-radius: 36px; padding: 36px 30px; box-shadow: var(--clay-lavender-shadow); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.25s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div>
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.8); color: #3b2068; padding: 4px 14px; border-radius: 999px;">ENTERPRISE</span>
+            <div style="display: flex; align-items: baseline; gap: 6px; margin: 16px 0 6px;">
+              <h3 class="font-rounded" style="font-size: 34px; font-weight: 700; color: #3b2068;">$49</h3>
+              <span style="font-size: 14px; color: #3b2068; font-weight: 600;">/ month</span>
+            </div>
+            <p style="font-size: 13.5px; color: #3b2068; opacity: 0.9; margin-bottom: 20px;">Full design agency access with Figma auto-layout 3D plugin.</p>
+            <ul style="list-style: none; font-size: 13.5px; line-height: 2; color: #3b2068;">
+              <li><i class="ph ph-check-circle"></i> Unlimited team seats</li>
+              <li><i class="ph ph-check-circle"></i> Custom pastel palette generator</li>
+              <li><i class="ph ph-check-circle"></i> High-resolution 3D asset pipeline</li>
+              <li><i class="ph ph-check-circle"></i> Priority 24/7 engineering support</li>
+            </ul>
+          </div>
+          <button class="btn-clay btn-clay-white" style="margin-top: 28px; width: 100%; justify-content: center; background: #fff;" onclick="showThemeToast('Enterprise Inquiry Dispatched!')">
+            Contact Sales
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CLAYMORPHIC FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: var(--clay-white); border-top: 1px solid rgba(166,180,200,0.5); padding: 48px 0 32px; box-shadow: 0 -10px 30px rgba(166,180,200,0.2);">
+    <div class="clay-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid rgba(166,180,200,0.3);">
+        <a href="#" class="clay-brand">
+          <div class="clay-brand-icon"><i class="ph ph-shapes" style="color:#ffffff; font-size: 20px;"></i></div>
+          <span>CLAY3D SYSTEM</span>
+        </a>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <button class="btn-clay btn-clay-white" style="padding: 8px 18px; font-size: 13px;" onclick="showThemeToast('Documentation copied to clipboard!')">Docs</button>
+          <button class="btn-clay btn-clay-white" style="padding: 8px 18px; font-size: 13px;" onclick="showThemeToast('Figma file link opened!')">Figma UI Kit</button>
+          <a href="themes.html" class="btn-clay btn-clay-mint" style="padding: 8px 18px; font-size: 13px;">All 11 Themes &rarr;</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: var(--clay-muted); margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 Claymorphic Soft 3D &bull; Crafted by I Info Vision</span>
+        <span>Neobrutalism / Playful Living UI Archetype</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS SLIDE-OUT DRAWER
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="theme-drawer-overlay"></div>
+  <aside class="theme-drawer" id="theme-drawer">
+    <div class="theme-drawer-header">
+      <div class="theme-drawer-title-wrap">
+        <span class="theme-drawer-badge">Theme DNA &amp; Architecture</span>
+        <h3 class="theme-drawer-title">Claymorphic Soft 3D</h3>
+      </div>
+      <button class="theme-drawer-close" id="theme-drawer-close" aria-label="Close drawer">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <div class="theme-drawer-body">
+      <!-- CONCEPT -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-lightbulb"></i> Concept &amp; Vibe</div>
+        <p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.5;">
+          An evolution of neumorphism into soft 3D marshmallow tactile realism. High-radius rounded geometry paired with dual inner bevels and diffused drop-shadows create interactive depth that invites user touch.
+        </p>
+      </div>
+
+      <!-- COLOR PALETTE -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-palette"></i> Color Palette (Click to Copy)</div>
+        <div class="theme-swatches">
+          <div class="theme-swatch" data-hex="#E6EBF2">
+            <div class="theme-swatch-color" style="background:#E6EBF2;"></div>
+            <span class="theme-swatch-name">Clay Canvas</span>
+            <span class="theme-swatch-hex">#E6EBF2</span>
+          </div>
+          <div class="theme-swatch" data-hex="#A8EDDF">
+            <div class="theme-swatch-color" style="background:#A8EDDF;"></div>
+            <span class="theme-swatch-name">Clay Mint</span>
+            <span class="theme-swatch-hex">#A8EDDF</span>
+          </div>
+          <div class="theme-swatch" data-hex="#FFB396">
+            <div class="theme-swatch-color" style="background:#FFB396;"></div>
+            <span class="theme-swatch-name">Coral Peach</span>
+            <span class="theme-swatch-hex">#FFB396</span>
+          </div>
+          <div class="theme-swatch" data-hex="#CBB4F5">
+            <div class="theme-swatch-color" style="background:#CBB4F5;"></div>
+            <span class="theme-swatch-name">Lavender</span>
+            <span class="theme-swatch-hex">#CBB4F5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPOGRAPHY -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-text-aa"></i> Typography Pairings</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-caret-right"></i> <strong>Headings &amp; Buttons:</strong> Fredoka (Soft Rounded Sans, 600/700)</li>
+          <li><i class="ph ph-caret-right"></i> <strong>Body &amp; Data:</strong> Plus Jakarta Sans (Clean Modern Sans, 500/600)</li>
+        </ul>
+      </div>
+
+      <!-- UI MECHANICS -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-paint-brush"></i> Signature UI Mechanics</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-check"></i> <strong>Dual-Layer Inset Highlight:</strong> <code>inset 4px 4px 8px rgba(255,255,255,0.8)</code></li>
+          <li><i class="ph ph-check"></i> <strong>Diffused Ambient Drop Shadow:</strong> <code>14px 14px 28px rgba(166, 180, 200, 0.6)</code></li>
+          <li><i class="ph ph-check"></i> <strong>Extruded Border Radius:</strong> <code>border-radius: 36px to 44px</code></li>
+          <li><i class="ph ph-check"></i> <strong>Tactile Depress Interaction:</strong> <code>transform: scale(0.96)</code> on active</li>
+        </ul>
+      </div>
+
+      <!-- BEST FIT -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-buildings"></i> Ideal Project &amp; Industry Fit</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-check"></i> Modern SaaS &amp; Productivity Dashboards</li>
+          <li><i class="ph ph-check"></i> Gamified Educational Platforms (EdTech)</li>
+          <li><i class="ph ph-check"></i> Consumer Health, Habit Trackers &amp; FinTech</li>
+          <li><i class="ph ph-check"></i> Web3 Communities &amp; Playful Web Apps</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theme-drawer-footer">
+      <a href="themes.html" class="theme-drawer-btn theme-drawer-btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <i class="ph ph-arrow-left"></i> Back to Theme Selection
+      </a>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js" defer></script>
+  <script>
+    let likes = 284;
+    function likeCounter() {
+      likes++;
+      document.getElementById('like-text').textContent = `Like: ${likes}`;
+      if (window.showThemeToast) {
+        showThemeToast(`Puffy like added! Total: ${likes}`);
+      }
+    }
+
+    function popHeart() {
+      const heart = document.getElementById('clay-heart');
+      heart.style.transform = 'rotate(-45deg) scale(1.25)';
+      setTimeout(() => {
+        heart.style.transform = '';
+      }, 300);
+      if (window.showThemeToast) {
+        showThemeToast('💖 Tactile 3D Clay Heart popped!');
+      }
+    }
+
+    /* Clay Lab Task Toggler */
+    function toggleClayTask(el) {
+      el.classList.toggle('done');
+      el.classList.add('clay-pop-anim');
+      setTimeout(() => el.classList.remove('clay-pop-anim'), 350);
+      
+      const total = document.querySelectorAll('#clay-checklist .clay-check-item').length;
+      const done = document.querySelectorAll('#clay-checklist .clay-check-item.done').length;
+      const pill = document.getElementById('clay-progress-pill');
+      if (pill) {
+        pill.textContent = `${done} of ${total} Completed`;
+        if (done === total) {
+          pill.style.background = 'var(--clay-peach)';
+          pill.style.color = '#63220b';
+          if (window.showThemeToast) {
+            showThemeToast('🎉 100% Sprint Complete! Marshmallow Master Badge Unlocked!');
+          }
+        } else {
+          pill.style.background = 'var(--clay-mint)';
+          pill.style.color = '#124d42';
+        }
+      }
+    }
+
+    /* Dynamic Depth Slider */
+    function adjustClayDepth(val) {
+      const block = document.getElementById('demo-clay-block');
+      const label = document.getElementById('depth-label');
+      const scaleMap = { '1': '0.92', '2': '0.96', '3': '1.0', '4': '1.06', '5': '1.14' };
+      const labelMap = {
+        '1': 'Subtle Emboss (1x)',
+        '2': 'Soft Bevel (2x)',
+        '3': 'Medium Depth (3x)',
+        '4': 'Puffy 3D (4x)',
+        '5': 'Ultra Marshmallow (5x)'
+      };
+      if (block) {
+        block.style.transform = `scale(${scaleMap[val]})`;
+      }
+      if (label) {
+        label.textContent = labelMap[val];
+      }
+    }
+
+    function popDemoBlock() {
+      const block = document.getElementById('demo-clay-block');
+      if (block) {
+        block.classList.add('clay-pop-anim');
+        setTimeout(() => block.classList.remove('clay-pop-anim'), 350);
+      }
+      if (window.showThemeToast) {
+        showThemeToast('🧁 Squishy Marshmallow Block Compressed & Rebounded!');
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeCheck — Music Lovers UI Theme | I Info Vision</title>
+  <meta name="description" content="Music Lovers UI design theme by I Info Vision. Cozy midnight plum and sunset peach aesthetic, interactive turntable, cassette zines, listening party tickets, and community music threads." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       MUSIC LOVERS UI — VIBECHECK THEME SYSTEM
+       Colors: Midnight Dusky Plum, Sunset Peach & Warm Amber
+       =================================================== */
+    :root {
+      --music-bg: #14131E;
+      --music-card-bg: #1F1C2B;
+      --music-border: #2E2A40;
+      --music-peach: #FFAE85;
+      --music-peach-soft: #FFD4C2;
+      --music-cream: #FAF6ED;
+      --music-gold: #FFC043;
+      --music-text-muted: #9590A8;
+      --music-turntable-wood: #4A3324;
+      --music-vinyl-black: #111116;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--music-bg);
+      color: var(--music-cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .font-rounded { font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif; }
+
+    .music-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── PILL NAVIGATION (Matching Image 3) ── */
+    .vibe-nav-wrap {
+      padding: 22px 0 10px;
+    }
+    .vibe-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .vibe-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--music-cream);
+    }
+    .vibe-record-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--music-vinyl-black);
+      border: 2px solid var(--music-peach);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--music-peach);
+      font-size: 20px;
+      animation: spinRecord 8s linear infinite;
+    }
+    @keyframes spinRecord {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .vibe-pills-list {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .vibe-nav-pill {
+      background: var(--music-card-bg);
+      border: 1.5px solid var(--music-border);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--music-cream);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .vibe-nav-pill:hover {
+      background: var(--music-border);
+      color: var(--music-peach);
+      border-color: var(--music-peach);
+    }
+
+    .btn-vibe-session {
+      background: linear-gradient(135deg, #FFAE85, #E67E51);
+      color: #1A130F;
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0px #000;
+      border-radius: 999px;
+      padding: 9px 24px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-vibe-session:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #000;
+      background: #ffbe9b;
+    }
+
+    /* ── HERO: FOR THE LOVE OF SOUND (Matching Image 3) ── */
+    .vibe-hero {
+      padding: 40px 0 60px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .vibe-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(48px, 6.5vw, 84px);
+      font-weight: 800;
+      line-height: 1.0;
+      color: var(--music-cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .vibe-hero-desc {
+      font-size: 16px;
+      color: var(--music-text-muted);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 480px;
+    }
+
+    .btn-explore-vibe {
+      background: var(--music-peach);
+      color: #17110C;
+      border: 2.5px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 999px;
+      padding: 14px 34px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-explore-vibe:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+
+    /* Cloud Shaped Lofi Bedroom Art Frame (Matching Image 3) */
+    .vibe-cloud-frame {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+      animation: softBob 7s ease-in-out infinite alternate;
+    }
+    @keyframes softBob {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(1deg); }
+    }
+    .vibe-cloud-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 52% 48% 62% 38% / 44% 54% 46% 56%;
+      border: 4px solid var(--music-peach-soft);
+    }
+
+    /* ── ON THE TURNTABLE STATION (Matching Image 3) ── */
+    .turntable-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--music-border);
+      background: #181624;
+    }
+    .turntable-deck-card {
+      background: #FDF9F0;
+      color: #1E1A16;
+      border: 3px solid #000;
+      box-shadow: 8px 8px 0px #000;
+      border-radius: 24px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+    }
+
+    .turntable-platter {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: #111;
+      border: 6px solid #282828;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .vinyl-grooves {
+      width: 190px; height: 190px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #222 15%, #111 25%, #222 45%, #111 65%, #222 85%, #111 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .turntable-spinning .vinyl-grooves {
+      animation: spinRecord 4s linear infinite;
+    }
+    .vinyl-center-label {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #FFB088;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: 'Fredoka', sans-serif;
+      text-align: center;
+      color: #000;
+    }
+
+    /* Tonearm */
+    .turntable-tonearm {
+      position: absolute;
+      top: 10px; right: -10px;
+      width: 80px; height: 130px;
+      border-right: 4px solid #bbb;
+      border-top: 4px solid #bbb;
+      border-radius: 0 20px 0 0;
+      transform: rotate(25deg);
+      transform-origin: top right;
+      transition: transform 0.5s ease;
+      pointer-events: none;
+    }
+    .turntable-spinning .turntable-tonearm {
+      transform: rotate(38deg);
+    }
+
+    /* ── TICKET STUBS & VIBE DISCUSSIONS (From Image 3) ── */
+    .sessions-discussion-section {
+      padding: 60px 0;
+    }
+    .vibe-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    /* Perforated Tickets */
+    .vibe-ticket {
+      background: #FAF6ED;
+      color: #171827;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      margin-bottom: 18px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .vibe-ticket:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+    .ticket-num-badge {
+      background: #FFAE85;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      padding: 24px 20px;
+      border-right: 2px dashed #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .vibe-ticket-info {
+      padding: 16px 20px;
+    }
+    .vibe-ticket-barcode {
+      padding: 16px 14px;
+      border-left: 2px dashed #000;
+      font-family: monospace;
+      font-size: 16px;
+      letter-spacing: -2px;
+      opacity: 0.6;
+    }
+
+    /* Discussion Card */
+    .vibe-thread-card {
+      background: var(--music-card-bg);
+      border: 1.5px solid var(--music-border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    .vibe-thread-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: var(--music-peach);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* ── CASSETTE ZINES & MIXTAPES (From Image 3) ── */
+    .zines-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--music-border);
+    }
+    .zines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .cassette-card {
+      background: #FAF6ED;
+      color: #111;
+      border: 2px solid #000;
+      box-shadow: 5px 5px 0px #000;
+      border-radius: 16px;
+      padding: 16px;
+      transition: transform 0.2s;
+    }
+    .cassette-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 8px 8px 0px #000;
+    }
+    .cassette-illustration {
+      background: #E8E0D0;
+      border: 2px solid #000;
+      border-radius: 10px;
+      height: 140px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .tape-spool-hole {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    /* Starburst Comic Badge */
+    .comic-starburst-music {
+      background: #FFAE85;
+      color: #000000;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      clip-path: polygon(50% 0%, 63% 18%, 84% 7%, 86% 28%, 100% 38%, 91% 57%, 98% 78%, 79% 82%, 73% 100%, 53% 90%, 33% 98%, 26% 80%, 6% 79%, 13% 58%, 0% 41%, 15% 28%, 13% 8%, 34% 17%);
+      display: inline-block;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .vibe-hero { grid-template-columns: 1fr; }
+      .turntable-deck-card { grid-template-columns: 1fr; }
+      .vibe-grid-2 { grid-template-columns: 1fr; }
+      .vibe-cloud-frame { height: 260px; }
+      .vibe-pills-list { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-vinyl-record"></i> Theme: <strong>Music Lovers UI</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       VIBECHECK NAV (Matching Image 3)
+       ═══════════════════════════════════════════ -->
+  <div class="music-container vibe-nav-wrap">
+    <nav class="vibe-nav">
+      <a href="#" class="vibe-brand">
+        <div class="vibe-record-icon"><i class="ph ph-disc"></i></div>
+        <div>
+          <span class="font-rounded" style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px;">VIBECHECK</span>
+          <div style="font-size: 10px; font-family: monospace; color: var(--music-peach); letter-spacing: 1px;">MOTO COLLECTIVE</div>
+        </div>
+      </a>
+
+      <ul class="vibe-pills-list">
+        <li><a href="#sessions" class="vibe-nav-pill"><i class="ph ph-broadcast"></i> Live Rooms</a></li>
+        <li><a href="#turntable" class="vibe-nav-pill"><i class="ph ph-cassette-tape"></i> The Record Box</a></li>
+        <li><a href="#zines" class="vibe-nav-pill"><i class="ph ph-book-open"></i> Zines</a></li>
+        <li><a href="#sessions" class="vibe-nav-pill"><i class="ph ph-ticket"></i> Concerts</a></li>
+      </ul>
+
+      <button class="btn-vibe-session" onclick="showThemeToast('Joined Live Jam Session!')">
+        <span>JOIN THE SESSION</span> <i class="ph ph-headphones"></i>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO: FOR THE LOVE OF SOUND (Matching Image 3)
+       ═══════════════════════════════════════════ -->
+  <main class="music-container vibe-hero">
+    <div>
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+        <span class="comic-starburst-music">LIVE PARTY!</span>
+        <span style="font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 700; color: var(--music-peach);">
+          Analog Acoustics &bull; Lofi Beats &bull; Vinyl Digging
+        </span>
+      </div>
+
+      <h1 class="vibe-hero-title">
+        FOR THE<br />LOVE OF<br />SOUND.
+      </h1>
+
+      <p class="vibe-hero-desc">
+        Share your late-night soundtracks, discover forgotten crate-digger pressings, and vibe together in cozy virtual listening rooms.
+      </p>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <a href="#turntable" class="btn-explore-vibe">
+          <span>EXPLORE THE SECTIONS</span> <i class="ph ph-arrow-right-bold"></i>
+        </a>
+        <span style="font-family: 'Fredoka', sans-serif; font-size: 13px; color: var(--music-text-muted);">
+          🎧 1,280 Listening Right Now
+        </span>
+      </div>
+    </div>
+
+    <!-- Lofi Bedroom Sunset Art Frame -->
+    <div class="vibe-cloud-frame">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Cozy warm sunset music studio with guitars and vinyl records" class="vibe-cloud-img" />
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE ON THE TURNTABLE STATION (From Image 3)
+       ═══════════════════════════════════════════ -->
+  <section class="turntable-section" id="turntable">
+    <div class="music-container">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; color: var(--music-peach); text-transform: uppercase;">Analog Audio Deck</span>
+          <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; color: #fff;">ON THE TURNTABLE</h3>
+        </div>
+        <div style="font-family: 'Fredoka', sans-serif; font-size: 13px; color: var(--music-text-muted);">
+          Interactive Vinyl Player &bull; Tap Platter to Start/Stop
+        </div>
+      </div>
+
+      <div class="turntable-deck-card" id="turntableCard">
+        <!-- Turntable Mechanical Platter -->
+        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <div class="turntable-platter turntable-spinning" id="platter" onclick="toggleTurntable()">
+            <div class="vinyl-grooves">
+              <div class="vinyl-center-label">
+                VIBE<br />CHECK
+              </div>
+            </div>
+            <div class="turntable-tonearm"></div>
+          </div>
+
+          <!-- Album Jacket Cover Art -->
+          <div style="width: 140px; height: 140px; border-radius: 12px; overflow: hidden; border: 2px solid #000; box-shadow: 4px 4px 0px #000; position: relative; flex-shrink: 0;" title="Now Playing Vinyl Jacket">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80" alt="Vinyl album jacket art" style="width:100%; height:100%; object-fit:cover;" />
+            <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.7); color: #fff; font-size: 9px; font-weight: 700; padding: 2px 5px; border-radius: 4px;">VINYL LP</span>
+          </div>
+        </div>
+
+        <!-- Controls & Track Info -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; background: #FFAE85; color: #000; padding: 3px 12px; border-radius: 999px;">
+              33 ⅓ RPM &bull; HI-FI STEREO
+            </span>
+            <span style="font-family: monospace; font-size: 13px; font-weight: 700;" id="vibeTimer">02:35 / 04:18</span>
+          </div>
+
+          <h4 class="font-rounded" style="font-size: 24px; font-weight: 800; color: #1E1A16; margin-bottom: 4px;" id="currentVibeTitle">
+            Lost in the Groove (Sunset City Pop Mix)
+          </h4>
+          <p style="font-size: 13.5px; color: #555; margin-bottom: 20px;">
+            Artist: Anri &bull; Album: Timely!! (1983 Remastered) &bull; Yamaha NS-10M Monitored
+          </p>
+
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <button class="btn-explore-vibe" style="padding: 10px 24px; font-size: 13px;" onclick="toggleTurntable()" id="btnTurntable">
+              <i class="ph ph-pause-bold"></i> PAUSE TURNTABLE
+            </button>
+            <button class="vibe-nav-pill" style="background: #fff; color: #000; border-color: #000;" onclick="nextVibeTrack()">
+              Next Track ⏭
+            </button>
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; color: #777;">
+              Kawaii warmth: 94%
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       UPCOMING SESSIONS & VIBE DISCUSSIONS (From Image 3)
+       ═══════════════════════════════════════════ -->
+  <section class="sessions-discussion-section" id="sessions">
+    <div class="music-container">
+      <div class="vibe-grid-2">
+
+        <!-- Left: Paper Ticket Layout (From Image 3) -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+            <span class="comic-starburst-music">LIVE NOW</span>
+            <h3 class="font-rounded" style="font-size: 24px; font-weight: 800; color: #fff;">UPCOMING SESSIONS</h3>
+          </div>
+
+          <!-- Ticket 01 -->
+          <div class="vibe-ticket" onclick="showThemeToast('Entered: Online watch/listen Parties Room!')">
+            <div class="ticket-num-badge">01</div>
+            <div class="vibe-ticket-info">
+              <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; color: #171827;">Online Watch/Listen Parties</h4>
+              <p style="font-size: 13px; color: #666; margin-top: 2px;">Inside cozy paper-ticket room layouts &bull; 52 min session</p>
+            </div>
+            <div class="vibe-ticket-barcode">||||| |||| ||</div>
+          </div>
+
+          <!-- Ticket 02 -->
+          <div class="vibe-ticket" onclick="showThemeToast('Entered: Midnight Shibuya City Pop Room!')">
+            <div class="ticket-num-badge" style="background: #FFD4C2;">02</div>
+            <div class="vibe-ticket-info">
+              <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; color: #171827;">Shibuya City Pop Vinyl Dig</h4>
+              <p style="font-size: 13px; color: #666; margin-top: 2px;">Crate digging stream with live audio chat &bull; 1.4k listening</p>
+            </div>
+            <div class="vibe-ticket-barcode">|||| ||||| ||</div>
+          </div>
+
+          <!-- Ticket 03 -->
+          <div class="vibe-ticket" onclick="showThemeToast('Entered: Acoustic Campfire Jam Room!')">
+            <div class="ticket-num-badge">03</div>
+            <div class="vibe-ticket-info">
+              <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; color: #171827;">Campfire Acoustic Jam</h4>
+              <p style="font-size: 13px; color: #666; margin-top: 2px;">Folk fingerpicking &amp; cozy ambient room &bull; Starts in 20 min</p>
+            </div>
+            <div class="vibe-ticket-barcode">||| |||||| ||</div>
+          </div>
+        </div>
+
+        <!-- Right: Vibe Discussions -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+            <i class="ph ph-chat-centered-text" style="color: var(--music-peach); font-size: 24px;"></i>
+            <h3 class="font-rounded" style="font-size: 24px; font-weight: 800; color: #fff;">VIBE DISCUSSION</h3>
+          </div>
+
+          <!-- Thread 1 -->
+          <div class="vibe-thread-card">
+            <div class="vibe-thread-header">
+              <span>COZY QUESTIONS #14</span>
+              <span>💬 312 Comments</span>
+            </div>
+            <h4 class="font-rounded" style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px;">
+              “What’s that one song that feels like a warm hug on a rainy Sunday evening?”
+            </h4>
+            <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 16px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px; border: 1px solid var(--music-border);">
+              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=120&q=80" alt="Aruarian Dance single cover" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover; border: 1.5px solid var(--music-peach);" />
+              <div>
+                <p style="font-size: 13.5px; color: #fff; margin-bottom: 4px;">
+                  Featured Pick: <strong>Nujabes — Aruarian Dance</strong>
+                </p>
+                <p style="font-size: 12px; color: var(--music-text-muted); margin: 0;">
+                  “Takes away every worry the second the acoustic guitar loop drops.”
+                </p>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Avatar" style="width: 26px; height: 26px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--music-peach);" />
+                <span style="font-size: 12px; color: var(--music-peach); font-weight: 700;">@heszy_music</span>
+              </div>
+              <button class="btn-explore-vibe" style="padding: 6px 16px; font-size: 12px;" onclick="showThemeToast('Reply posted to Cozy Thread!')">
+                Add Your Song 🎵
+              </button>
+            </div>
+          </div>
+
+          <!-- Thread 2 -->
+          <div class="vibe-thread-card">
+            <div class="vibe-thread-header">
+              <span>ALBUM CRITIQUE</span>
+              <span>💬 148 Comments</span>
+            </div>
+            <h4 class="font-rounded" style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px;">
+              Vinyl vs Cassette: The tactile tape hiss aesthetic that modern streaming forgot.
+            </h4>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Avatar" style="width: 26px; height: 26px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--music-peach);" />
+                <span style="font-size: 12px; color: var(--music-peach); font-weight: 700;">@tape_collector</span>
+              </div>
+              <button class="btn-explore-vibe" style="padding: 6px 16px; font-size: 12px;" onclick="showThemeToast('Joined Tape Hiss discussion!')">
+                Join Debate 💬
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WEEKLY ZINES & COMMUNITY MIXTAPES (From Image 3)
+       ═══════════════════════════════════════════ -->
+  <section class="zines-section" id="zines">
+    <div class="music-container">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700; color: var(--music-peach); text-transform: uppercase;">Tangible Sound Culture</span>
+          <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; color: #fff;">WEEKLY ZINES &amp; MIXTAPES</h3>
+        </div>
+        <span class="font-rounded" style="font-size: 13px; color: var(--music-text-muted);">Curated Cassette Drops</span>
+      </div>
+
+      <div class="zines-grid">
+        <!-- Cassette 1 -->
+        <div class="cassette-card">
+          <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #000; height: 150px; margin-bottom: 12px;">
+            <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?auto=format&fit=crop&w=500&q=80" alt="Rainy Window Beats tape" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; font-family: monospace; font-size: 10px; padding: 2px 6px; border-radius: 4px;">TAPE C-90</div>
+          </div>
+          <div style="font-size: 11px; text-transform: uppercase; color: #E67E51; font-weight: 700;">Weekly Zine Issue #48</div>
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin: 4px 0 8px;">Rainy Window Beats Vol. 4</h4>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700;">
+            <span style="color: #FFC043;">★★★★★</span>
+            <button style="background: none; border: none; font-weight: 800; color: #111; cursor: pointer;" onclick="showThemeToast('Mixtape added to queue!')">Listen &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Cassette 2 -->
+        <div class="cassette-card">
+          <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #000; height: 150px; margin-bottom: 12px;">
+            <img src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?auto=format&fit=crop&w=500&q=80" alt="Midnight Coffee Roasters jazz" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; font-family: monospace; font-size: 10px; padding: 2px 6px; border-radius: 4px;">VINYL 33 RPM</div>
+          </div>
+          <div style="font-size: 11px; text-transform: uppercase; color: #4A6E58; font-weight: 700;">Weekly Zine Issue #49</div>
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin: 4px 0 8px;">Midnight Coffee Roasters</h4>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700;">
+            <span style="color: #FFC043;">★★★★★</span>
+            <button style="background: none; border: none; font-weight: 800; color: #111; cursor: pointer;" onclick="showThemeToast('Mixtape added to queue!')">Listen &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Cassette 3 -->
+        <div class="cassette-card">
+          <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #000; height: 150px; margin-bottom: 12px;">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=80" alt="Sunset City Pop cassette" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; font-family: monospace; font-size: 10px; padding: 2px 6px; border-radius: 4px;">CITY POP 80s</div>
+          </div>
+          <div style="font-size: 11px; text-transform: uppercase; color: #9A5B8E; font-weight: 700;">Community Mixtape #12</div>
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin: 4px 0 8px;">Shibuya Sunset Cruise</h4>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700;">
+            <span style="color: #FFC043;">★★★★★</span>
+            <button style="background: none; border: none; font-weight: 800; color: #111; cursor: pointer;" onclick="showThemeToast('Mixtape added to queue!')">Listen &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MUSIC LOVERS FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: #0E0D16; border-top: 1px solid var(--music-border); padding: 50px 0 30px;">
+    <div class="music-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="vibe-brand">
+          <div class="vibe-record-icon"><i class="ph ph-disc"></i></div>
+          <span class="font-rounded" style="font-size: 22px; font-weight: 800;">VIBECHECK COLLECTIVE</span>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="themes.html" class="vibe-nav-pill" style="background: var(--music-peach); color: #000; border-color: #000;">
+            <i class="ph ph-arrow-left"></i> All 16 Design Themes
+          </a>
+          <button class="btn-vibe-session" onclick="showThemeToast('Broadcast Session Link Shared!')">Host a Room</button>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--music-text-muted); margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 VibeCheck &bull; Music Lovers UI Theme &bull; Crafted by I Info Vision</span>
+        <span>Midnight Plum + Sunset Peach Archetype</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Music Lovers UI Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Music Lovers, Vinyl Culture &amp; Cozy Audio Community UI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Warm analog intimacy. Inspired by lofi vinyl culture, sunset room lighting, tactile turntable physics, paper concert ticket stubs, and cassette zines.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#14131E; border:2px solid #fff;" title="Midnight Plum #14131E"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FFAE85; border:2px solid #fff;" title="Sunset Peach #FFAE85"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FAF6ED; border:2px solid #fff;" title="Warm Cream #FAF6ED"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FFC043; border:2px solid #fff;" title="Warm Amber #FFC043"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#111116; border:2px solid #fff;" title="Vinyl Black #111116"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Music streaming services, indie record labels, podcast platforms, lofi radio communities, and band merchandise stores.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    let isTurntablePlaying = true;
+    const tracksList = [
+      { title: 'Lost in the Groove (Sunset City Pop Mix)', artist: 'Anri &bull; Timely!! (1983)' },
+      { title: 'Aruarian Dance (Tokyo Lofi Study)', artist: 'Nujabes &bull; Modal Soul' },
+      { title: 'Plastic Love (Extended 12" Vinyl)', artist: 'Mariya Takeuchi &bull; Variety' }
+    ];
+    let currentIdx = 0;
+
+    function toggleTurntable() {
+      const platter = document.getElementById('platter');
+      const btn = document.getElementById('btnTurntable');
+      isTurntablePlaying = !isTurntablePlaying;
+      if (isTurntablePlaying) {
+        platter.classList.add('turntable-spinning');
+        btn.innerHTML = '<i class="ph ph-pause-bold"></i> PAUSE TURNTABLE';
+        if (window.showThemeToast) showThemeToast('▶ Needle Dropped: Vinyl Spooling at 33 ⅓ RPM!');
+      } else {
+        platter.classList.remove('turntable-spinning');
+        btn.innerHTML = '<i class="ph ph-play-bold"></i> PLAY TURNTABLE';
+        if (window.showThemeToast) showThemeToast('⏸ Tonearm Lifted: Turntable Paused.');
+      }
+    }
+
+    function nextVibeTrack() {
+      currentIdx = (currentIdx + 1) % tracksList.length;
+      document.getElementById('currentVibeTitle').innerHTML = tracksList[currentIdx].title;
+      if (!isTurntablePlaying) toggleTurntable();
+      if (window.showThemeToast) showThemeToast(`Switched Vinyl: ${tracksList[currentIdx].title}`);
+    }
+  </script>
+
+</body>
+</html>
+

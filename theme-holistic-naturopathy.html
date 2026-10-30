@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holistic Naturopathy — Natural Healthcare &amp; Restorative Hospital UI | I Info Vision</title>
+  <meta name="description" content="Holistic Naturopathy living UI design theme — nature cure therapies, healing emerald palette, mud packs, hydrotherapy, inpatient retreat cottages, and drugless healing." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       HOLISTIC NATUROPATHY — NATURE CURE & RESTORATIVE HOSPITAL UI
+       Inspired by drugless natural medicine & wellness retreats
+       =================================================== */
+    :root {
+      --emerald-dark: #14532d;
+      --emerald-primary: #15803d;
+      --emerald-light: #16a34a;
+      --mint-pale: #f0fdf4;
+      --mint-border: #bbf7d0;
+      --cream-warm: #fdfcf7;
+      --sage-muted: #57705c;
+      --earth-brown: #78350f;
+      --text-charcoal: #1c261e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream-warm);
+      color: var(--text-charcoal);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── RESTORATIVE SUB-NAV ── */
+    .hospital-sub-nav {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--mint-border);
+      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.06);
+      position: relative;
+      z-index: 20;
+    }
+
+    .hospital-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--emerald-dark);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .hospital-brand-leaf {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--mint-pale);
+      color: var(--emerald-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      border: 1px solid var(--mint-border);
+    }
+
+    .hospital-nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .hospital-nav-links a {
+      color: var(--sage-muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .hospital-nav-links a:hover { color: var(--emerald-primary); }
+
+    .btn-retreat-book {
+      padding: 8px 22px;
+      border-radius: 999px;
+      background: var(--emerald-primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-retreat-book:hover { background: var(--emerald-dark); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.04); }
+    }
+    .anim-float { animation: floatGentle 5s ease-in-out infinite; }
+
+    /* ── HERO RESTORATIVE SECTION ── */
+    .naturopathy-hero {
+      max-width: 1180px;
+      margin: 32px auto 60px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .naturopathy-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: var(--mint-pale);
+      border: 1px solid var(--mint-border);
+      color: var(--emerald-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .naturopathy-hero-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--emerald-dark);
+      margin-bottom: 16px;
+    }
+    .naturopathy-hero-title em {
+      font-style: italic;
+      color: var(--emerald-light);
+    }
+
+    .naturopathy-hero-desc {
+      font-size: 15px;
+      color: var(--sage-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* Hero Photo Frame */
+    .naturopathy-hero-photo-wrap {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(20, 83, 45, 0.15);
+      border: 3px solid #ffffff;
+      height: 380px;
+    }
+    .naturopathy-hero-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .floating-treatment-pill {
+      position: absolute;
+      bottom: 20px; left: 20px; right: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(21, 128, 61, 0.15);
+    }
+
+    /* ── NATURAL THERAPIES 6-CARD GRID ── */
+    .therapies-section {
+      background: #ffffff;
+      border-top: 1px solid var(--mint-border);
+      border-bottom: 1px solid var(--mint-border);
+      padding: 60px 20px;
+    }
+    .therapies-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .therapies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 36px;
+    }
+
+    .therapy-card {
+      background: var(--cream-warm);
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid rgba(21, 128, 61, 0.12);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .therapy-card:hover {
+      background: #ffffff;
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(21, 128, 61, 0.1);
+      border-color: var(--emerald-primary);
+    }
+
+    .therapy-icon-box {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--mint-pale);
+      color: var(--emerald-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+      border: 1px solid var(--mint-border);
+    }
+
+    .therapy-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--emerald-dark);
+      margin-bottom: 6px;
+    }
+
+    .therapy-desc {
+      font-size: 13px;
+      color: var(--sage-muted);
+      line-height: 1.55;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .naturopathy-hero { grid-template-columns: 1fr; }
+      .hospital-nav-links { display: none; }
+      .naturopathy-hero-photo-wrap { height: 260px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+  ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-plant"></i> Theme: <strong>Holistic Naturopathy</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       HOLISTIC NATUROPATHY DEMO VIEW
+  ═══════════════════════════════════════════════ -->
+  <nav class="hospital-sub-nav">
+    <a href="#" class="hospital-brand">
+      <div class="hospital-brand-leaf"><i class="ph ph-potted-plant"></i></div>
+      <span>Prakriti Nature Cure</span>
+    </a>
+
+    <ul class="hospital-nav-links">
+      <li><a href="#">Treatments</a></li>
+      <li><a href="#">Doctors</a></li>
+      <li><a href="#">Inpatient Cottages</a></li>
+      <li><a href="#">Healing Diet</a></li>
+      <li><a href="#">Daily Routine</a></li>
+    </ul>
+
+    <a href="#admission" class="btn-retreat-book">Book Admission</a>
+  </nav>
+
+  <!-- Naturopathy Hero -->
+  <main class="naturopathy-hero">
+
+    <!-- Left Content -->
+    <div>
+      <div class="naturopathy-tag">
+        <i class="ph ph-leaf"></i> 100% Drugless &bull; Ancient Naturopathy &amp; Yoga
+      </div>
+
+      <h1 class="naturopathy-hero-title">
+        Restore Your Health Through <em>Natural Healing &amp; Elements.</em>
+      </h1>
+
+      <p class="naturopathy-hero-desc">
+        Experience the profound restorative power of Earth, Water, Air, Sun, and Ether. Our residential nature cure sanctuary provides medically-supervised holistic therapies, organic raw nutrition, and tranquil green living.
+      </p>
+
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="#therapies" class="btn-retreat-book" style="padding:12px 28px; font-size:14px;">Explore Core Therapies</a>
+        <a href="#" style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:999px; border:1px solid var(--mint-border); background:#fff; color:var(--emerald-dark); font-size:14px; font-weight:700; text-decoration:none;">
+          <i class="ph ph-calendar-check"></i> View Daily Timetable
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Photo -->
+    <div class="naturopathy-hero-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Serene yoga meditation by natural pond" />
+
+      <div class="floating-treatment-pill">
+        <div>
+          <div style="font-weight:700; font-size:14px; color:var(--emerald-dark);">Residential Retreat Cottages</div>
+          <div style="font-size:12px; color:var(--sage-muted);">Lush herbal gardens &bull; Sattvic organic dining</div>
+        </div>
+        <div style="font-weight:800; font-size:16px; color:var(--emerald-primary);">4.9 ★</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 6-Card Therapies Grid -->
+  <section class="therapies-section" id="therapies">
+    <div class="therapies-inner">
+      <div style="text-align:center; max-width:640px; margin:0 auto;">
+        <span style="font-size:12px; font-weight:700; color:var(--emerald-primary); text-transform:uppercase; letter-spacing:0.8px;">The Five Elements</span>
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:36px; font-weight:700; color:var(--emerald-dark); margin-top:6px;">
+          Panchamahabhuta Healing Therapies
+        </h3>
+      </div>
+
+      <div class="therapies-grid">
+        <div class="therapy-card">
+          <div class="therapy-icon-box"><i class="ph ph-drop"></i></div>
+          <h4 class="therapy-title">Hydrotherapy &amp; Baths</h4>
+          <p class="therapy-desc">Hip baths, spinal sprays, and immersion baths stimulating peripheral circulation and detoxification.</p>
+        </div>
+
+        <div class="therapy-card">
+          <div class="therapy-icon-box"><i class="ph ph-globe-hemisphere-east"></i></div>
+          <h4 class="therapy-title">Mud Therapy &amp; Packs</h4>
+          <p class="therapy-desc">Pure mineral-rich anthill clay packs soothing inflammation and absorbing metabolic toxins from the gut.</p>
+        </div>
+
+        <div class="therapy-card">
+          <div class="therapy-icon-box"><i class="ph ph-carrot"></i></div>
+          <h4 class="therapy-title">Diet &amp; Fasting Therapy</h4>
+          <p class="therapy-desc">Eliminative fasting, live enzyme juice diets, and alkaline sattvic food tailored to cellular rejuvenation.</p>
+        </div>
+
+        <div class="therapy-card">
+          <div class="therapy-icon-box"><i class="ph ph-person-simple-tai-chi"></i></div>
+          <h4 class="therapy-title">Yoga &amp; Pranayama</h4>
+          <p class="therapy-desc">Therapeutic asanas and breathwork engineered to relieve chronic stress and balance autonomic nervous tone.</p>
+        </div>
+
+        <div class="therapy-card">
+          <div class="therapy-icon-box"><i class="ph ph-hand-heart"></i></div>
+          <h4 class="therapy-title">Acupuncture &amp; Massage</h4>
+          <p class="therapy-desc">Full-body restorative herbal oil massages and classical meridian stimulation for neuromuscular vitality.</p>
+        </div>
+
+        <div class="therapy-card">
+          <div class="therapy-icon-box"><i class="ph ph-sun"></i></div>
+          <h4 class="therapy-title">Heliotherapy (Sun Bath)</h4>
+          <p class="therapy-desc">Filtered morning chromo-therapy and sun exposure activating natural Vitamin D synthesis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       DAILY RESTORATIVE ROUTINE (CIRCADIAN TIMETABLE)
+  ═══════════════════════════════════════════════ -->
+  <section class="timetable-section" id="routine" style="padding: 70px 20px; background: var(--cream-warm); border-bottom: 1px solid var(--mint-border);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 36px;">
+        <span style="font-size: 12px; font-weight: 700; color: var(--emerald-primary); text-transform: uppercase; letter-spacing: 0.8px;">
+          Circadian Healing Schedule
+        </span>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--emerald-dark); margin-top: 6px;">
+          A Typical Day in the Healing Sanctuary
+        </h3>
+        <p style="font-size: 14.5px; color: var(--sage-muted); margin-top: 8px;">
+          Aligned with nature's biological rhythms from sunrise to starlight to awaken your body's intrinsic self-cleansing mechanisms.
+        </p>
+      </div>
+
+      <!-- Timetable Phase Tabs -->
+      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 32px; flex-wrap: wrap;" id="timeTabs">
+        <button onclick="switchTimeTab('morning')" class="time-tab-btn active" id="btn-tab-morning" style="padding: 10px 24px; border-radius: 999px; border: 1px solid var(--emerald-primary); background: var(--emerald-primary); color: #fff; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
+          <i class="ph ph-sun-horizon"></i> Morning Dawn (05:30 – 08:30)
+        </button>
+        <button onclick="switchTimeTab('midday')" class="time-tab-btn" id="btn-tab-midday" style="padding: 10px 24px; border-radius: 999px; border: 1px solid var(--mint-border); background: #fff; color: var(--emerald-dark); font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
+          <i class="ph ph-sun"></i> Mid-Day Healing (09:00 – 13:30)
+        </button>
+        <button onclick="switchTimeTab('afternoon')" class="time-tab-btn" id="btn-tab-afternoon" style="padding: 10px 24px; border-radius: 999px; border: 1px solid var(--mint-border); background: #fff; color: var(--emerald-dark); font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
+          <i class="ph ph-cloud-sun"></i> Afternoon Rest (14:30 – 17:00)
+        </button>
+        <button onclick="switchTimeTab('evening')" class="time-tab-btn" id="btn-tab-evening" style="padding: 10px 24px; border-radius: 999px; border: 1px solid var(--mint-border); background: #fff; color: var(--emerald-dark); font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
+          <i class="ph ph-moon-stars"></i> Twilight Peace (17:30 – 21:00)
+        </button>
+      </div>
+
+      <!-- Schedule Panels -->
+      <div id="timetable-content" style="background: #fff; border-radius: 24px; border: 1px solid var(--mint-border); box-shadow: 0 10px 30px rgba(21,128,61,0.06); padding: 32px;">
+        <!-- Morning Content (Default) -->
+        <div id="panel-morning" class="schedule-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">05:30 AM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Herbal Decoction &amp; Ushapan</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Freshly brewed warm Tulsi-ginger infusion stimulating the peristaltic gut awakening in the dawn breeze.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">06:15 AM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Yogic Shuddhi Kriyas &amp; Asanas</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Jalaneti nasal cleansing followed by gentle restorative spinal stretches in the open-air bamboo pavilion.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">07:30 AM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Heliotherapy &amp; Prana Walk</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Barefoot dew walk on medicinal Bermuda grass and filtered solar photon absorption for natural Vitamin D.</p>
+          </div>
+        </div>
+
+        <!-- Midday Content -->
+        <div id="panel-midday" class="schedule-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">09:30 AM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Prescribed Hydrotherapy Tub</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Cold spinal spray and hot hip bath alternating to stimulate lymphatic drainage and autonomic balance.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">11:00 AM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Anthill Mineral Mud Pack</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Sterilized earth mud applied to abdomen and eyes to cool hepatic heat and draw out visceral inflammation.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">12:30 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Sattvic Live-Enzyme Lunch</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Raw sprouted green gram, shredded ash gourd, steamed native greens, and hand-churned buttermilk.</p>
+          </div>
+        </div>
+
+        <!-- Afternoon Content -->
+        <div id="panel-afternoon" class="schedule-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">02:30 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Full-Body Reflexology &amp; Massage</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Traditional rhythmic strokes with cold-pressed sesame oil to soothe chronic muscular tensions.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">04:00 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Acupuncture &amp; Meridian Balance</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Sterile micro-needle therapy addressing pain pathways, neuropathy, and energy stagnation.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">04:45 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Wheatgrass &amp; Tender Coconut</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Chlorophyll-rich freshly pressed elixir accompanied by antioxidant herbal tea in the courtyard.</p>
+          </div>
+        </div>
+
+        <!-- Evening Content -->
+        <div id="panel-evening" class="schedule-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">05:30 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Trataka &amp; Yoga Nidra</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Ghee-lamp gazing for optic nerve strength followed by 45 minutes of guided psychic restorative sleep.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">07:00 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Light Healing Congee Supper</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Easily digestible red rice kanji, boiled vegetables, and digestive cumin soup under twilight lanterns.</p>
+          </div>
+          <div style="border-left: 3px solid var(--emerald-primary); padding-left: 18px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--emerald-primary);">09:00 PM</span>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--emerald-dark); margin: 4px 0;">Lights Out &amp; Cellular Repair</h4>
+            <p style="font-size: 13px; color: var(--sage-muted);">Digital disconnection in tranquil forest silence allowing peak nocturnal melatonin release.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       INPATIENT COTTAGES & LIVING SANCTUARY
+  ═══════════════════════════════════════════════ -->
+  <section class="cottages-section" style="padding: 70px 20px; background: #ffffff; border-bottom: 1px solid var(--mint-border);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; color: var(--emerald-primary); text-transform: uppercase; letter-spacing: 0.8px;">Inpatient Sanctuary</span>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--emerald-dark); margin-top: 6px;">
+            Residential Healing Cottages
+          </h3>
+        </div>
+        <div style="font-size: 14px; color: var(--sage-muted);">
+          All stays include Daily Treatments, Doctor Consultations, and Sattvic Meals.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+        <!-- Cottage 1 -->
+        <div style="border: 1px solid var(--mint-border); border-radius: 20px; overflow: hidden; background: var(--cream-warm); transition: transform 0.25s ease;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="height: 220px; overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=700&q=80" alt="Bamboo Serenity Cottage" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; top: 14px; right: 14px; background: rgba(20,83,45,0.9); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
+              ₹3,500 / Day
+            </div>
+          </div>
+          <div style="padding: 22px;">
+            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--emerald-dark);">Bamboo Serenity Cottage</h4>
+            <p style="font-size: 13.5px; color: var(--sage-muted); margin: 8px 0 16px;">Surrounded by natural bamboo groves. Private garden veranda, earthen clay ventilation, and quiet contemplative space.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+              <span style="font-size: 11.5px; background: #fff; border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-wind"></i> Cross-Ventilated</span>
+              <span style="font-size: 11.5px; background: #fff; border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-sun"></i> Solar Hot Water</span>
+              <span style="font-size: 11.5px; background: #fff; border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-fork-knife"></i> Sattvic Meal Plan</span>
+            </div>
+            <button onclick="selectCottagePlan('Bamboo Serenity Cottage', 3500)" style="width: 100%; padding: 10px; border-radius: 999px; border: 1px solid var(--emerald-primary); background: #fff; color: var(--emerald-primary); font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--emerald-primary)'; this.style.color='#fff';" onmouseout="this.style.background='#fff'; this.style.color='var(--emerald-primary)';">
+              Select This Suite
+            </button>
+          </div>
+        </div>
+
+        <!-- Cottage 2 -->
+        <div style="border: 1px solid var(--emerald-primary); border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 12px 30px rgba(21,128,61,0.1); position: relative; transition: transform 0.25s ease;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position: absolute; top: 12px; left: 12px; z-index: 10; background: var(--emerald-primary); color: #fff; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase;">
+            Most Popular
+          </div>
+          <div style="height: 220px; overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="Herbal Courtyard Suite" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; top: 14px; right: 14px; background: rgba(20,83,45,0.9); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
+              ₹4,800 / Day
+            </div>
+          </div>
+          <div style="padding: 22px;">
+            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--emerald-dark);">Herbal Courtyard Suite</h4>
+            <p style="font-size: 13.5px; color: var(--sage-muted); margin: 8px 0 16px;">Direct access to our therapeutic Tulsi and lemongrass gardens. Includes personal steam enclosure and copper water vessels.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+              <span style="font-size: 11.5px; background: var(--mint-pale); border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-drop"></i> Personal Steam</span>
+              <span style="font-size: 11.5px; background: var(--mint-pale); border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-potted-plant"></i> Garden Verandah</span>
+              <span style="font-size: 11.5px; background: var(--mint-pale); border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-user-circle"></i> Daily Attendant</span>
+            </div>
+            <button onclick="selectCottagePlan('Herbal Courtyard Suite', 4800)" style="width: 100%; padding: 10px; border-radius: 999px; border: none; background: var(--emerald-primary); color: #fff; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--emerald-dark)';" onmouseout="this.style.background='var(--emerald-primary)';">
+              Select This Suite
+            </button>
+          </div>
+        </div>
+
+        <!-- Cottage 3 -->
+        <div style="border: 1px solid var(--mint-border); border-radius: 20px; overflow: hidden; background: var(--cream-warm); transition: transform 0.25s ease;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="height: 220px; overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Lotus Sanctuary Villa" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; top: 14px; right: 14px; background: rgba(20,83,45,0.9); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
+              ₹6,500 / Day
+            </div>
+          </div>
+          <div style="padding: 22px;">
+            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--emerald-dark);">Lotus Sanctuary Villa</h4>
+            <p style="font-size: 13.5px; color: var(--sage-muted); margin: 8px 0 16px;">Private premium villa with open-air stone lotus courtyard, dedicated naturopath visit, and private mud-bath sun patio.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+              <span style="font-size: 11.5px; background: #fff; border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-shield-check"></i> Private Patio</span>
+              <span style="font-size: 11.5px; background: #fff; border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-heartbeat"></i> VIP Consultation</span>
+              <span style="font-size: 11.5px; background: #fff; border: 1px solid var(--mint-border); padding: 3px 10px; border-radius: 999px; color: var(--emerald-dark);"><i class="ph ph-sparkle"></i> Herbal Jacuzzi</span>
+            </div>
+            <button onclick="selectCottagePlan('Lotus Sanctuary Villa', 6500)" style="width: 100%; padding: 10px; border-radius: 999px; border: 1px solid var(--emerald-primary); background: #fff; color: var(--emerald-primary); font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--emerald-primary)'; this.style.color='#fff';" onmouseout="this.style.background='#fff'; this.style.color='var(--emerald-primary)';">
+              Select This Suite
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       INTERACTIVE HEALING ASSESSMENT & ESTIMATOR
+  ═══════════════════════════════════════════════ -->
+  <section class="admission-section" id="admission" style="padding: 70px 20px; background: var(--mint-pale); border-bottom: 1px solid var(--mint-border);">
+    <div style="max-width: 1000px; margin: 0 auto; background: #ffffff; border-radius: 28px; padding: 40px; border: 1px solid var(--mint-border); box-shadow: 0 16px 40px rgba(20,83,45,0.08);">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 32px;">
+        <span style="font-size: 12px; font-weight: 700; color: var(--emerald-primary); text-transform: uppercase; letter-spacing: 0.8px;">Personalized Nature Cure</span>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; color: var(--emerald-dark); margin-top: 6px;">
+          Calculate Your Inpatient Recovery Plan
+        </h3>
+        <p style="font-size: 14px; color: var(--sage-muted); margin-top: 6px;">
+          Select your primary condition and duration to calculate a custom drugless treatment protocol and admission quote.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;" id="calc-grid">
+        <!-- Input Form -->
+        <div>
+          <!-- Focus Ailment -->
+          <div style="margin-bottom: 20px;">
+            <label style="font-size: 13px; font-weight: 700; color: var(--emerald-dark); display: block; margin-bottom: 8px;">
+              Primary Healing Focus:
+            </label>
+            <select id="ailment-select" onchange="calculateHolisticPlan()" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--mint-border); background: var(--cream-warm); font-family: inherit; font-size: 14px; color: var(--text-charcoal); outline: none;">
+              <option value="metabolic">Metabolic Reset (Diabetes &amp; Weight Reversal)</option>
+              <option value="hypertension">Hypertension &amp; Cardiovascular Harmony</option>
+              <option value="spine">Cervical &amp; Lumbar Spondylosis (Spine / Joint Care)</option>
+              <option value="detox">Full Body Detoxification &amp; Chronic Fatigue Relief</option>
+            </select>
+          </div>
+
+          <!-- Duration -->
+          <div style="margin-bottom: 20px;">
+            <label style="font-size: 13px; font-weight: 700; color: var(--emerald-dark); display: block; margin-bottom: 8px;">
+              Healing Retreat Duration:
+            </label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <label style="border: 1px solid var(--mint-border); border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; background: var(--cream-warm); font-size: 13px; font-weight: 700;">
+                <input type="radio" name="duration" value="7" checked onchange="calculateHolisticPlan()" style="margin-right: 4px;" /> 7 Days
+              </label>
+              <label style="border: 1px solid var(--mint-border); border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; background: var(--cream-warm); font-size: 13px; font-weight: 700;">
+                <input type="radio" name="duration" value="14" onchange="calculateHolisticPlan()" style="margin-right: 4px;" /> 14 Days
+              </label>
+              <label style="border: 1px solid var(--mint-border); border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; background: var(--cream-warm); font-size: 13px; font-weight: 700;">
+                <input type="radio" name="duration" value="21" onchange="calculateHolisticPlan()" style="margin-right: 4px;" /> 21 Days
+              </label>
+            </div>
+          </div>
+
+          <!-- Room Tier -->
+          <div style="margin-bottom: 24px;">
+            <label style="font-size: 13px; font-weight: 700; color: var(--emerald-dark); display: block; margin-bottom: 8px;">
+              Accommodation Choice:
+            </label>
+            <select id="room-select" onchange="calculateHolisticPlan()" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--mint-border); background: var(--cream-warm); font-family: inherit; font-size: 14px; color: var(--text-charcoal); outline: none;">
+              <option value="3500">Bamboo Serenity Cottage (₹3,500/day)</option>
+              <option value="4800" selected>Herbal Courtyard Suite (₹4,800/day)</option>
+              <option value="6500">Lotus Sanctuary Villa (₹6,500/day)</option>
+            </select>
+          </div>
+
+          <div style="font-size: 12px; color: var(--sage-muted);">
+            <i class="ph ph-check-circle" style="color: var(--emerald-primary);"></i> Includes 3 daily doctor reviews, all naturopathy therapies, herbal juices, and sattvic diet.
+          </div>
+        </div>
+
+        <!-- Dynamic Summary Card -->
+        <div style="background: var(--cream-warm); border: 1px solid var(--mint-border); border-radius: 20px; padding: 28px;">
+          <span style="font-size: 11px; font-weight: 800; color: var(--emerald-primary); text-transform: uppercase; letter-spacing: 0.8px;">Recommended Protocol</span>
+          <h4 id="calc-plan-title" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--emerald-dark); margin: 6px 0 12px;">
+            14-Day Metabolic Reversal
+          </h4>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span style="color: var(--sage-muted);">Therapy Sessions:</span>
+              <strong id="calc-therapy-count" style="color: var(--emerald-dark);">28 Hydro &amp; Mud Therapies</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span style="color: var(--sage-muted);">Diet Protocol:</span>
+              <strong id="calc-diet-text" style="color: var(--emerald-dark);">Alkaline Sprout &amp; Juice Cleanse</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span style="color: var(--sage-muted);">Yoga / Breathwork:</span>
+              <strong style="color: var(--emerald-dark);">Daily 2 Sessions (Dawn &amp; Sunset)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; border-top: 1px solid var(--mint-border); padding-top: 10px;">
+              <span style="color: var(--sage-muted);">Duration:</span>
+              <strong id="calc-days-text" style="color: var(--emerald-dark);">14 Days (Residential)</strong>
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border-radius: 14px; padding: 16px; border: 1px solid var(--mint-border); display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <div style="font-size: 11px; text-transform: uppercase; color: var(--sage-muted); font-weight: 700;">Total All-Inclusive Cost</div>
+              <div style="font-size: 11px; color: var(--emerald-primary);">Zero Hidden Charges</div>
+            </div>
+            <div id="calc-total-price" style="font-size: 28px; font-weight: 800; color: var(--emerald-dark); font-family: 'Cormorant Garamond', serif;">
+              ₹67,200
+            </div>
+          </div>
+
+          <button onclick="confirmAdmissionBooking()" style="width: 100%; padding: 14px; border-radius: 999px; background: var(--emerald-primary); color: #fff; font-size: 14px; font-weight: 700; border: none; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--emerald-dark)';" onmouseout="this.style.background='var(--emerald-primary)';">
+            <i class="ph ph-calendar-check"></i> Book Admission Assessment
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       PATIENT RECOVERY STORIES & CLINICAL OUTCOMES
+  ═══════════════════════════════════════════════ -->
+  <section class="testimonials-section" style="padding: 70px 20px; background: #ffffff;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 36px;">
+        <span style="font-size: 12px; font-weight: 700; color: var(--emerald-primary); text-transform: uppercase; letter-spacing: 0.8px;">Documented Evidence</span>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--emerald-dark); margin-top: 6px;">
+          Patient Healing Journeys
+        </h3>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <!-- Testimonial 1 -->
+        <div style="background: var(--cream-warm); border-radius: 18px; padding: 24px; border: 1px solid var(--mint-border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="background: var(--mint-pale); color: var(--emerald-primary); font-size: 11.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px;">HbA1c: 9.4% → 6.3%</span>
+            <span style="color: #f59e0b; font-size: 14px;">★★★★★</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--sage-muted); line-height: 1.6; margin-bottom: 16px;">
+            “I suffered from type-2 diabetes and chronic lethargy for 9 years. After 21 days of continuous eliminative fasting and mud therapy, my fasting sugar normalized from 195 to 102 mg/dL.”
+          </p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--mint-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--emerald-dark);">
+              RK
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 14px; color: var(--emerald-dark);">R. Krishnaswamy</div>
+              <div style="font-size: 12px; color: var(--sage-muted);">21-Day Inpatient Guest, Chennai</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div style="background: var(--cream-warm); border-radius: 18px; padding: 24px; border: 1px solid var(--mint-border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="background: var(--mint-pale); color: var(--emerald-primary); font-size: 11.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px;">BP: 160/100 → 120/80</span>
+            <span style="color: #f59e0b; font-size: 14px;">★★★★★</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--sage-muted); line-height: 1.6; margin-bottom: 16px;">
+            “The serene sanctuary environment and cold spinal baths relieved my 12-year hypertensive tension. My blood pressure returned to textbook baseline without chemical medication.”
+          </p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--mint-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--emerald-dark);">
+              MN
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 14px; color: var(--emerald-dark);">Meenakshi Narayanan</div>
+              <div style="font-size: 12px; color: var(--sage-muted);">14-Day Inpatient Guest, Bangalore</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div style="background: var(--cream-warm); border-radius: 18px; padding: 24px; border: 1px solid var(--mint-border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="background: var(--mint-pale); color: var(--emerald-primary); font-size: 11.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px;">Spine Mobility Restored</span>
+            <span style="color: #f59e0b; font-size: 14px;">★★★★★</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--sage-muted); line-height: 1.6; margin-bottom: 16px;">
+            “Cervical spondylosis made sitting at work agonizing. The hot and cold fomentations combined with precise yogic traction gave me complete pain relief. A true blessing.”
+          </p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--mint-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--emerald-dark);">
+              SS
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 14px; color: var(--emerald-dark);">Senthil Saravanan</div>
+              <div style="font-size: 12px; color: var(--sage-muted);">14-Day Inpatient Guest, Coimbatore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER RESTORATIVE
+  ═══════════════════════════════════════════════ -->
+  <footer style="background: var(--emerald-dark); color: #fff; padding: 50px 20px 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;" id="footer-cols">
+      <div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; margin-bottom: 12px;">
+          Prakriti Nature Cure &amp; Restorative Hospital
+        </div>
+        <p style="font-size: 13.5px; color: #a7f3d0; line-height: 1.6; max-width: 380px;">
+          An accredited drugless inpatient wellness sanctuary empowering the human organism to heal itself through Earth, Water, Sun, Air, and Mind.
+        </p>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #86efac; margin-bottom: 14px;">Sanctuary Care</div>
+        <ul style="list-style: none; font-size: 13px; color: #d1fae5; line-height: 2;">
+          <li>Panchabhuta Hydrotherapy</li>
+          <li>Anthill Mud Therapeutics</li>
+          <li>Therapeutic Yoga &amp; Pranayama</li>
+          <li>Organic Raw Living Diet</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #86efac; margin-bottom: 14px;">Admission Helpline</div>
+        <p style="font-size: 13px; color: #d1fae5; line-height: 1.8;">
+          <strong>Phone:</strong> +91 (0427) 244-8900<br />
+          <strong>Email:</strong> care@prakritinature.org<br />
+          <strong>Location:</strong> Foothills of Yercaud, Salem, TN
+        </p>
+      </div>
+    </div>
+    <div style="max-width: 1180px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; font-size: 12px; color: #6ee7b7; flex-wrap: wrap; gap: 10px;">
+      <span>&copy; 2026 Prakriti Nature Cure Sanctuary &bull; Holistic Naturopathy UI Theme</span>
+      <a href="themes.html" style="color: #fff; text-decoration: none; font-weight: 700;">Explore All 11 Design Themes &rarr;</a>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+  ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Holistic Naturopathy Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Natural Healthcare, Naturopathy Hospital &amp; Restorative Medicine UI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Grounded in the restorative peace of nature. Combines deep healing emerald tones, warm linen paper backdrops, gentle rounded cards, and serene botanical balance to evoke wellness and recovery.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#14532d; border:2px solid #fff;" title="Emerald Dark #14532d"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#15803d; border:2px solid #fff;" title="Healing Green #15803d"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#f0fdf4; border:2px solid #fff;" title="Mint Pale #f0fdf4"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#fdfcf7; border:2px solid #fff;" title="Warm Cream #fdfcf7"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#78350f; border:2px solid #fff;" title="Earth Brown #78350f"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Naturopathy hospitals, Ayurvedic wellness retreats, herbal medicine centers, yoga therapy institutes, and drugless chronic recovery clinics.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    /* Timetable Switcher */
+    function switchTimeTab(phase) {
+      ['morning', 'midday', 'afternoon', 'evening'].forEach(p => {
+        const btn = document.getElementById(`btn-tab-${p}`);
+        const panel = document.getElementById(`panel-${p}`);
+        if (btn && panel) {
+          if (p === phase) {
+            btn.style.background = 'var(--emerald-primary)';
+            btn.style.color = '#fff';
+            btn.style.borderColor = 'var(--emerald-primary)';
+            panel.style.display = 'grid';
+          } else {
+            btn.style.background = '#fff';
+            btn.style.color = 'var(--emerald-dark)';
+            btn.style.borderColor = 'var(--mint-border)';
+            panel.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    /* Cottage Plan Quick Select */
+    function selectCottagePlan(name, price) {
+      const roomSelect = document.getElementById('room-select');
+      if (roomSelect) {
+        roomSelect.value = price;
+        calculateHolisticPlan();
+        const adm = document.getElementById('admission');
+        if (adm) adm.scrollIntoView({ behavior: 'smooth' });
+        if (window.showThemeToast) {
+          showThemeToast(`Selected ${name} (₹${price.toLocaleString()}/day)! Admission calculator updated.`);
+        }
+      }
+    }
+
+    /* Dynamic Admission Calculation */
+    function calculateHolisticPlan() {
+      const ailment = document.getElementById('ailment-select').value;
+      const days = parseInt(document.querySelector('input[name="duration"]:checked').value, 10);
+      const roomCostPerDay = parseInt(document.getElementById('room-select').value, 10);
+
+      const titleMap = {
+        metabolic: `${days}-Day Metabolic & Diabetes Reversal`,
+        hypertension: `${days}-Day Cardiovascular & Stress Harmony`,
+        spine: `${days}-Day Spine, Disc & Joint Pain Relief`,
+        detox: `${days}-Day Cellular Detox & Energy Reset`
+      };
+
+      const dietMap = {
+        metabolic: 'Low-Glycemic Raw Sprout & Bitter Ash Gourd Juices',
+        hypertension: 'Sodium-Restricted Potassium-Rich Tender Greens',
+        spine: 'Anti-Inflammatory Turmeric & Alkaline Calcitic Diet',
+        detox: '3-Stage Fasting: Lemon-Honey, Fruit Juices & Raw Greens'
+      };
+
+      const therapiesCount = days * 2;
+      const total = days * roomCostPerDay;
+
+      document.getElementById('calc-plan-title').textContent = titleMap[ailment];
+      document.getElementById('calc-therapy-count').textContent = `${therapiesCount} Prescribed Therapies`;
+      document.getElementById('calc-diet-text').textContent = dietMap[ailment];
+      document.getElementById('calc-days-text').textContent = `${days} Days (Inpatient)`;
+      document.getElementById('calc-total-price').textContent = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    function confirmAdmissionBooking() {
+      const planTitle = document.getElementById('calc-plan-title').textContent;
+      const price = document.getElementById('calc-total-price').textContent;
+      if (window.showThemeToast) {
+        showThemeToast(`🌿 Admission Intake Requested: ${planTitle} (${price}). Our Senior Resident Doctor will contact you within 2 hours!`);
+      } else {
+        alert(`Admission Intake Requested:\n\n${planTitle}\nTotal: ${price}\n\nOur Senior Resident Doctor will contact you for clinical intake evaluation.`);
+      }
+    }
+  </script>
+
+</body>
+</html>
+

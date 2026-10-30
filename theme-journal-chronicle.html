@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wilderness Chronicle &amp; Safari Glamping — Journal &amp; Chronicle Theme | I Info Vision</title>
+  <meta name="description" content="Journal &amp; Chronicle natural resort UI theme — deckled parchment paper, taped polaroids, compass rose illustrations, handwritten field notes, oceanfront safari tents, and wilderness dining." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       JOURNAL & CHRONICLE — NATURAL RESORT UI THEME
+       Aged Deckled Parchment, Pinned Polaroids & Field Notes
+       =================================================== */
+    :root {
+      --bg-desk: #2b2824;
+      --parchment: #f4ecdc;
+      --parchment-border: #d4c8af;
+      --ink: #201a14;
+      --ink-faded: #5a5043;
+      --tape-kraft: rgba(212, 185, 145, 0.75);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-desk);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chronicle-viewport {
+      flex: 1;
+      padding: 40px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      background: radial-gradient(circle at center, #3a352f 0%, #1c1a17 100%);
+    }
+
+    /* ── TWO-PAGE DISPATCH SPREAD ── */
+    .journal-spread {
+      width: 100%;
+      max-width: 1140px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      position: relative;
+    }
+
+    .parchment-page {
+      background: var(--parchment);
+      border-radius: 12px;
+      padding: 38px 32px;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 4px 12px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--parchment-border);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .kraft-tape {
+      position: absolute;
+      background: var(--tape-kraft);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+      border-left: 1px dashed rgba(160, 130, 90, 0.5);
+      border-right: 1px dashed rgba(160, 130, 90, 0.5);
+      z-index: 5;
+    }
+
+    .t-serif-head {
+      font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .nav-links-small {
+      display: flex;
+      gap: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ink-faded);
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .nav-links-small a { color: inherit; text-decoration: none; }
+    .nav-links-small a:hover { color: var(--ink); }
+
+    .compass-rose-icon {
+      width: 44px; height: 44px;
+      opacity: 0.65;
+    }
+
+    .polaroid-card {
+      background: #ffffff;
+      padding: 8px 8px 24px;
+      border-radius: 3px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border: 1px solid #d5cebe;
+      position: relative;
+      margin: 16px 0;
+      transition: transform 0.25s ease;
+      cursor: pointer;
+    }
+    .polaroid-card:hover {
+      transform: scale(1.05) rotate(-1deg);
+      z-index: 10;
+    }
+
+    .polaroid-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+      color: var(--ink);
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .field-notes-box {
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .field-notes-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 1.5px solid #222;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    .field-notes-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 0;
+      border-bottom: 1px solid #eee;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .field-notes-link:hover { color: #875b22; }
+
+    .polaroids-double-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .polaroids-double-row .polaroid-card { margin: 0; }
+
+    /* ── SECTION 2: WILDERNESS DINING & EXPEDITIONS ── */
+    .safari-experience-section {
+      width: 100%;
+      max-width: 1140px;
+      background: #1e1b18;
+      border-radius: 16px;
+      padding: 36px 30px;
+      border: 2px solid #4a3d31;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    }
+
+    .safari-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .safari-polaroid-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .journal-spread { grid-template-columns: 1fr; }
+      .safari-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+  ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-book-open"></i> Theme: <strong>Journal &amp; Chronicle</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       DISPATCH SPREAD
+  ═══════════════════════════════════════════════ -->
+  <main class="chronicle-viewport">
+
+    <div class="journal-spread">
+
+      <!-- PAGE 1: GATHERING GROUND -->
+      <article class="parchment-page">
+        <div class="kraft-tape" style="top:-10px; left:40px; width:70px; height:22px; transform:rotate(-3deg);"></div>
+
+        <div>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <svg class="compass-rose-icon" viewBox="0 0 100 100" fill="none" stroke="#201a14" stroke-width="2">
+              <circle cx="50" cy="50" r="44" />
+              <polygon points="50,12 55,45 88,50 55,55 50,88 45,55 12,50 45,45" fill="rgba(32,26,20,0.15)" />
+              <line x1="50" y1="6" x2="50" y2="94" />
+              <line x1="6" y1="50" x2="94" y2="50" />
+            </svg>
+
+            <nav class="nav-links-small">
+              <a href="#">Home</a> &bull;
+              <a href="#">News</a> &bull;
+              <a href="#">Contact</a>
+            </nav>
+          </div>
+
+          <h1 class="t-serif-head" style="font-size:38px; font-style:italic; margin-top:14px;">Gathering Ground</h1>
+
+          <div class="polaroid-card">
+            <div class="kraft-tape" style="top:-8px; left:20px; width:50px; height:18px; transform:rotate(-4deg);"></div>
+            <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=600&q=80" alt="Oceanfront safari tent" style="width:100%; height:160px; object-fit:cover; display:block;" />
+            <div class="polaroid-caption">Oceanfront safari</div>
+          </div>
+
+          <p style="font-size:12.5px; line-height:1.6; color:var(--ink-faded);">
+            Untouched coastal savannah meets luxury safari canvas tents. Savor the scent of sea salt and evening campfires beneath ancient stars.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:center; margin-top:20px;">
+          <div class="polaroid-card" style="margin:0;">
+            <div class="kraft-tape" style="top:-8px; right:12px; width:45px; height:18px; transform:rotate(5deg);"></div>
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=300&q=80" alt="Canopy bell tent" style="width:100%; height:110px; object-fit:cover; display:block;" />
+          </div>
+
+          <div class="field-notes-box">
+            <div class="kraft-tape" style="top:-8px; left:50%; transform:translateX(-50%); width:50px; height:16px;"></div>
+            <div class="field-notes-title">Field-notes</div>
+            <div style="font-size:11px; color:#666; line-height:1.7;">
+              &bull; Good Rhen<br>
+              &bull; Meadow Hallows<br>
+              &bull; Coastal Glamping
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PAGE 2: THE WILDERNESS CHRONICLE -->
+      <article class="parchment-page">
+        <div class="kraft-tape" style="top:-12px; left:50%; transform:translateX(-50%); width:100px; height:24px;"></div>
+
+        <div>
+          <h2 class="t-serif-head" style="font-size:36px; font-style:italic; text-align:center; margin-top:8px;">The Wilderness Chronicle</h2>
+
+          <div class="polaroids-double-row">
+            <div class="polaroid-card">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300&q=80" alt="Outdoor natural stone bathing" style="width:100%; height:130px; object-fit:cover; display:block;" />
+            </div>
+
+            <div class="polaroid-card">
+              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=300&q=80" alt="Jungle immersion bath" style="width:100%; height:130px; object-fit:cover; display:block;" />
+              <div class="polaroid-caption" style="font-size:14px;">natural outdoor bathing</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:end; margin-top:10px;">
+          <div class="polaroid-card" style="margin:0;">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=300&q=80" alt="Boutique lodge bath" style="width:100%; height:130px; object-fit:cover; display:block;" />
+          </div>
+
+          <div class="field-notes-box">
+            <div class="kraft-tape" style="top:-8px; left:50%; transform:translateX(-50%); width:50px; height:16px;"></div>
+            <div class="field-notes-title">Field-notes</div>
+            <a href="#" class="field-notes-link"><span>Menu</span> <i class="ph ph-caret-right"></i></a>
+            <a href="#" class="field-notes-link"><span>Retreats</span> <i class="ph ph-caret-right"></i></a>
+            <a href="#" class="field-notes-link"><span>Field-notes</span> <i class="ph ph-caret-right"></i></a>
+            <a href="#" class="field-notes-link"><span>Memorabilia</span> <i class="ph ph-caret-right"></i></a>
+          </div>
+        </div>
+
+        <div style="font-family:'Caveat', cursive; font-size:16px; color:var(--ink-faded); text-align:center; margin-top:16px;">
+          Personal handwritten entries &bull; recorded live on location
+        </div>
+      </article>
+
+    </div>
+
+    <!-- 2. WILDERNESS DINING & EXPEDITIONS (Section 2) -->
+    <section class="safari-experience-section">
+      <div class="safari-grid">
+        <div>
+          <span style="font-family:'Courier Prime',monospace; font-size:11px; color:#d4b991; text-transform:uppercase; letter-spacing:1px;">Culinary Chronicle &bull; Chapter IV</span>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:32px; font-style:italic; color:#f4ecdc; margin-top:8px; margin-bottom:12px;">
+            Stargazing Banquets &amp; Bush Fire Dinners
+          </h3>
+          <p style="font-size:13.5px; color:#c7bead; line-height:1.65; margin-bottom:20px;">
+            Every twilight, our chefs prepare open-fire coastal catch and wild herb roasts served at lantern-lit tables pitched right upon the dunes.
+          </p>
+          <a href="#" style="display:inline-block; padding:10px 24px; border-radius:4px; background:#d4b991; color:#201a14; font-family:'Courier Prime',monospace; font-size:12px; font-weight:700; text-decoration:none; text-transform:uppercase;">
+            Reserve Evening Table &bull; 7:30 PM
+          </a>
+        </div>
+
+        <div class="safari-polaroid-stack">
+          <div class="polaroid-card" style="margin:0;">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80" alt="Bush dinner table" style="width:100%; height:130px; object-fit:cover;" />
+            <div class="polaroid-caption" style="font-size:14px;">Twilight embers</div>
+          </div>
+          <div class="polaroid-card" style="margin:0;">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Ocean beach dunes" style="width:100%; height:130px; object-fit:cover;" />
+            <div class="polaroid-caption" style="font-size:14px;">Savannah shore</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+  ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Journal &amp; Chronicle Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Natural Resort Storytelling / Vintage Field Chronicle</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Core Material DNA</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Two-page aged parchment spread, kraft washi tape corner strips, pinned polaroid photo mounts, engraved compass rose navigation marks, and index card menu accordions.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#f4ecdc; border:2px solid #fff;" title="Parchment #f4ecdc"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#201a14; border:2px solid #fff;" title="Soot Inked #201a14"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#d4b991; border:2px solid #fff;" title="Kraft Tape #d4b991"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Safari lodges, glamping retreats, travel writing journals, historical expeditions, and boutique vineyard chronicles.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+  </script>
+
+</body>
+</html>

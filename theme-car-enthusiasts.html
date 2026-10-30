@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevHeads — Car Enthusiasts UI Theme | I Info Vision</title>
+  <meta name="description" content="Car Enthusiasts UI design theme by I Info Vision. Pitch carbon black aesthetic, tachometer telemetry, engine blueprints, track day timetables, and high-performance forums." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Syne, Space Mono & Italiana / Playfair -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       CAR ENTHUSIASTS UI — REVHEADS THEME SYSTEM
+       Colors: Carbon Pitch Black, Vintage Warm Cream & Track Orange
+       =================================================== */
+    :root {
+      --car-black: #0B0D11;
+      --car-card-bg: #141720;
+      --car-card-border: #232838;
+      --car-orange: #FF441A;
+      --car-orange-glow: rgba(255, 68, 26, 0.4);
+      --car-cream: #F5EFE0;
+      --car-cream-muted: #B8B2A4;
+      --car-gray: #7E869B;
+      --car-blueprint: #0E2439;
+      --car-blueprint-cyan: #00E5FF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--car-black);
+      color: var(--car-cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .font-mono  { font-family: 'Space Mono', monospace; }
+    .font-syne  { font-family: 'Syne', sans-serif; }
+
+    .car-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── REVHEADS NAV ── */
+    .rev-nav {
+      padding: 24px 0 16px;
+      border-bottom: 1px solid var(--car-card-border);
+    }
+    .rev-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .rev-brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--car-cream);
+    }
+    .rev-brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .rev-brand-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--car-gray);
+      margin-top: 4px;
+    }
+
+    .rev-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .rev-menu a {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--car-cream-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .rev-menu a:hover { color: var(--car-orange); }
+
+    .btn-clutch {
+      background: linear-gradient(135deg, #FF441A, #C72804);
+      color: #ffffff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px var(--car-orange-glow);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-clutch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 68, 26, 0.6);
+    }
+
+    /* ── MEGA HERO: CULT OF SPEED (Matching Image 2) ── */
+    .cult-hero {
+      padding: 40px 0 60px;
+      position: relative;
+    }
+    .cult-hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 9vw, 110px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--car-cream);
+      margin-bottom: 14px;
+    }
+    .cult-hero-sub {
+      font-size: 18px;
+      color: var(--car-cream-muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-car-stage {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--car-card-border);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.8);
+      margin-bottom: 36px;
+      height: 480px;
+      background: #000;
+    }
+    .hero-car-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: contrast(110%);
+    }
+
+    /* Spark / Smoke Particle Overlay */
+    .spark-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 70%, rgba(255, 68, 26, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ── THE DYNO SPEC GRID (From Image 2) ── */
+    .spec-grid-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    .spec-card {
+      background: var(--car-card-bg);
+      border: 1px solid var(--car-card-border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+    .spec-card:hover {
+      border-color: var(--car-orange);
+      transform: translateY(-3px);
+    }
+    .spec-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--car-cream);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .spec-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--car-gray);
+    }
+
+    /* ── DUAL COLUMN: LATEST BUILDS & BLUEPRINT SCHEMATIC ── */
+    .builds-blueprint-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--car-card-border);
+    }
+    .bb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* Taped Polaroids (Matching Image 2) */
+    .polaroid-car-box {
+      background: #fff;
+      color: #000;
+      padding: 12px 12px 18px;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    .polaroid-car-box:hover {
+      transform: scale(1.02) rotate(-1deg);
+      z-index: 10;
+    }
+    .washi-tape-top {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      width: 80px; height: 22px;
+      background: rgba(255, 230, 180, 0.7);
+      backdrop-filter: blur(2px);
+      border-left: 2px dashed rgba(0,0,0,0.2);
+      border-right: 2px dashed rgba(0,0,0,0.2);
+    }
+
+    /* Technical Engine Blueprint (Matching Image 2) */
+    .blueprint-card {
+      background: var(--car-blueprint);
+      border: 1px solid var(--car-blueprint-cyan);
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blueprint-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+    .telemetry-node {
+      position: absolute;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--car-orange);
+      box-shadow: 0 0 10px var(--car-orange);
+      cursor: pointer;
+      animation: pulseNode 1.5s infinite;
+    }
+    @keyframes pulseNode {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.7; }
+    }
+
+    /* ── TRACK DAYS TIMETABLE TABLE ── */
+    .track-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--car-card-border);
+    }
+    .track-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .track-table th {
+      text-align: left;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--car-gray);
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--car-card-border);
+    }
+    .track-table td {
+      padding: 18px;
+      border-bottom: 1px solid var(--car-card-border);
+      font-size: 14px;
+    }
+    .track-table tr:hover td {
+      background: rgba(255, 68, 26, 0.04);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .bb-grid { grid-template-columns: 1fr; }
+      .hero-car-stage { height: 280px; }
+      .rev-menu { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-gauge"></i> Theme: <strong>Car Enthusiasts UI</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       REVHEADS SUB-NAV (Matching Image 2)
+       ═══════════════════════════════════════════ -->
+  <div class="car-container">
+    <nav class="rev-nav">
+      <div class="rev-nav-inner">
+        <a href="#" class="rev-brand">
+          <span class="rev-brand-title">REVHEADS</span>
+          <span class="rev-brand-sub">EST. 2026 &bull; THE ENTHUSIAST HUB</span>
+        </a>
+
+        <ul class="rev-menu">
+          <li><a href="#garage">Garage</a></li>
+          <li><a href="#track-days">Track Days</a></li>
+          <li><a href="#builds">Mods</a></li>
+          <li><a href="#forums">Forums</a></li>
+        </ul>
+
+        <a href="#garage" class="btn-clutch">
+          <span>JOIN THE CLUTCH</span> <i class="ph ph-arrow-right-bold"></i>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CULT OF SPEED HERO (Matching Image 2)
+       ═══════════════════════════════════════════ -->
+  <main class="car-container cult-hero">
+    <div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; color: var(--car-orange); margin-bottom: 10px; font-weight: 700;">
+        // AERODYNAMICS &bull; APEX TELEMETRY &bull; MOTORSPORT
+      </div>
+
+      <h1 class="cult-hero-headline">
+        CULT OF<br />SPEED.
+      </h1>
+
+      <p class="cult-hero-sub">
+        Where high-compression horsepower meets analog automotive heritage.
+      </p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 36px; flex-wrap: wrap; align-items: center;">
+        <button class="btn-clutch" style="padding: 14px 36px; font-size: 15px;" onclick="revEngineSound()">
+          <i class="ph ph-speaker-high"></i> FUEL YOUR PASSION &gt;&gt;
+        </button>
+        <span class="font-mono" style="font-size: 12px; color: var(--car-gray);">
+          9,000 RPM REDLINE &bull; TWIN-TURBO FLAT-SIX
+        </span>
+      </div>
+    </div>
+
+    <!-- Drifting Supercar Hero Frame -->
+    <div class="hero-car-stage">
+      <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80" alt="Supercar drifting on wet tarmac with smoke and sparks" class="hero-car-img" />
+      <div class="spark-overlay"></div>
+    </div>
+
+    <!-- The Dyno Spec Grid (From Image 2) -->
+    <div class="spec-grid-wrap">
+      <div class="spec-card">
+        <div class="spec-value">9,000</div>
+        <div class="spec-label">RPM Redline</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">twin-turbo</div>
+        <div class="spec-label">Tech-Borson Boost</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">V8</div>
+        <div class="spec-label">Flat-Plane Crank</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">720 HP</div>
+        <div class="spec-label">Dyno Tested Power</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">3.30s</div>
+        <div class="spec-label">0-100 km/h Launch</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       DUAL SECTION: LATEST BUILDS & BLUEPRINT (From Image 2)
+       ═══════════════════════════════════════════ -->
+  <section class="builds-blueprint-section" id="builds">
+    <div class="car-container">
+      <div class="bb-grid">
+
+        <!-- Left: Latest Garage Builds (Taped Polaroids) -->
+        <div id="garage">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+            <div>
+              <span class="font-mono" style="font-size: 11px; text-transform: uppercase; color: var(--car-orange); font-weight: 700;">Community Garage</span>
+              <h3 class="font-serif" style="font-size: 32px; font-weight: 900; text-transform: uppercase;">LATEST BUILDS</h3>
+            </div>
+            <span class="font-mono" style="font-size: 12px; color: var(--car-gray);">4 Featured</span>
+          </div>
+
+          <!-- 4 Featured Taped Polaroids Grid (Matching Reference Design) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px;">
+            <!-- Build 01 -->
+            <div class="polaroid-car-box" onclick="showThemeToast('Build Specs: 1994 Mazda RX-7 Twin-Rotor!')" style="margin-bottom:0;">
+              <div class="washi-tape-top"></div>
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="1994 Mazda RX-7 FD3S" style="width: 100%; height: 135px; object-fit: cover;" />
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <span class="font-mono" style="font-weight: 700; font-size: 11.5px;">1994 Mazda RX-7 FD</span>
+                <span class="font-mono" style="font-size: 11.5px; color: #E03E1A; font-weight: 700;">520 HP</span>
+              </div>
+            </div>
+
+            <!-- Build 02 -->
+            <div class="polaroid-car-box" onclick="showThemeToast('Build Specs: Porsche 992 GT3 RS Track Spec!')" style="margin-bottom:0;">
+              <div class="washi-tape-top"></div>
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Porsche 992 GT3" style="width: 100%; height: 135px; object-fit: cover;" />
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <span class="font-mono" style="font-weight: 700; font-size: 11.5px;">Porsche 992 GT3</span>
+                <span class="font-mono" style="font-size: 11.5px; color: #E03E1A; font-weight: 700;">502 HP</span>
+              </div>
+            </div>
+
+            <!-- Build 03 -->
+            <div class="polaroid-car-box" onclick="showThemeToast('Build Specs: Nissan Skyline GT-R R34 V-Spec II!')" style="margin-bottom:0;">
+              <div class="washi-tape-top"></div>
+              <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Nissan Skyline GT-R R34" style="width: 100%; height: 135px; object-fit: cover;" />
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <span class="font-mono" style="font-weight: 700; font-size: 11.5px;">Skyline GT-R R34</span>
+                <span class="font-mono" style="font-size: 11.5px; color: #E03E1A; font-weight: 700;">680 HP</span>
+              </div>
+            </div>
+
+            <!-- Build 04 -->
+            <div class="polaroid-car-box" onclick="showThemeToast('Build Specs: BMW M3 E46 CSL Track Coupe!')" style="margin-bottom:0;">
+              <div class="washi-tape-top"></div>
+              <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="BMW M3 E46 CSL" style="width: 100%; height: 135px; object-fit: cover;" />
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <span class="font-mono" style="font-weight: 700; font-size: 11.5px;">BMW M3 E46 CSL</span>
+                <span class="font-mono" style="font-size: 11.5px; color: #E03E1A; font-weight: 700;">410 HP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Technical Engine Blueprint (From Image 2) -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+            <div>
+              <span class="font-mono" style="font-size: 11px; text-transform: uppercase; color: var(--car-blueprint-cyan); font-weight: 700;">Engineering Lab</span>
+              <h3 class="font-serif" style="font-size: 32px; font-weight: 900; text-transform: uppercase;">BUILD OF THE WEEK</h3>
+            </div>
+            <span class="font-mono" style="font-size: 11px; color: var(--car-blueprint-cyan);">// SCHEMATIC 042</span>
+          </div>
+
+          <div class="blueprint-card">
+            <div class="blueprint-grid-lines"></div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="font-mono" style="font-size: 12px; color: var(--car-blueprint-cyan); font-weight: 700;">
+                TWIN-TURBO FLAT-SIX EXPLODED TELEMETRY
+              </span>
+              <span class="font-mono" style="font-size: 11px; background: rgba(0,229,255,0.15); color: var(--car-blueprint-cyan); padding: 4px 10px; border-radius: 4px;">
+                ACTIVE CAD
+              </span>
+            </div>
+
+            <!-- Wireframe Schematic Graphic with clickable nodes -->
+            <div style="position: relative; height: 320px; border: 1px dashed rgba(0,229,255,0.3); border-radius: 8px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <!-- Engine CAD background render -->
+              <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Engine mechanical components" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: contrast(130%) grayscale(40%); pointer-events: none;" />
+              <svg width="280" height="220" viewBox="0 0 280 220" fill="none" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;">
+                <!-- Engine Block Outline -->
+                <rect x="40" y="40" width="200" height="140" rx="10" stroke-dasharray="4 2" />
+                <circle cx="90" cy="90" r="30" />
+                <circle cx="190" cy="90" r="30" />
+                <path d="M 90 60 L 90 120 M 60 90 L 120 90" />
+                <path d="M 190 60 L 190 120 M 160 90 L 220 90" />
+                <!-- Crankshaft -->
+                <path d="M 20 110 L 260 110" stroke-width="2.5" />
+                <!-- Turbos -->
+                <circle cx="30" cy="160" r="20" stroke="#FF441A" />
+                <circle cx="250" cy="160" r="20" stroke="#FF441A" />
+                <path d="M 50 160 L 90 120" stroke="#FF441A" stroke-dasharray="3 3" />
+                <path d="M 230 160 L 190 120" stroke="#FF441A" stroke-dasharray="3 3" />
+              </svg>
+
+              <!-- Interactive Hotspots -->
+              <div class="telemetry-node" style="top: 25%; left: 32%;" onclick="inspectComponent('Billet Titanium Connecting Rods', 'Forged 4340 chromoly steel, rated to 10,000 RPM')" title="Pistons"></div>
+              <div class="telemetry-node" style="top: 25%; left: 68%;" onclick="inspectComponent('Inconel Valves & Dual Springs', 'High-temp sodium filled exhaust valves with titanium retainers')" title="Valves"></div>
+              <div class="telemetry-node" style="bottom: 22%; left: 10%; background: #00E5FF; box-shadow: 0 0 10px #00E5FF;" onclick="inspectComponent('Garrett G35-900 Dual Ball Bearing Turbos', 'Ceramic ball bearings delivering 28 PSI continuous boost')" title="Left Turbo"></div>
+              <div class="telemetry-node" style="bottom: 22%; right: 10%; background: #00E5FF; box-shadow: 0 0 10px #00E5FF;" onclick="inspectComponent('Akrapovic Titanium Race Exhaust', 'Valved system saving 18.2 kg over stock manifold')" title="Right Turbo"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-family: 'Space Mono', monospace; font-size: 12px;">
+              <div>
+                <span style="color: var(--car-gray);">OIL TEMP:</span> <strong style="color: var(--car-cream);">98°C STABLE</strong>
+              </div>
+              <div>
+                <span style="color: var(--car-gray);">BOOST:</span> <strong style="color: var(--car-orange);">1.92 BAR PEAK</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TRACK DAYS & FORUM HOT TOPICS (From Image 2)
+       ═══════════════════════════════════════════ -->
+  <section class="track-section" id="track-days">
+    <div class="car-container">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start;">
+
+        <!-- Left: Track Day Schedule -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <span style="background: var(--car-orange); color: #fff; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;">CIRCUIT SESSIONS</span>
+            <span class="font-serif" style="font-size: 28px; font-weight: 900; text-transform: uppercase;">UPCOMING TRACK DAYS</span>
+          </div>
+
+          <table class="track-table font-mono">
+            <thead>
+              <tr>
+                <th>CIRCUIT &amp; DATE</th>
+                <th>SESSION</th>
+                <th>DISTANCE</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Nürburgring Nordschleife</strong><br /><span style="font-size: 12px; color: var(--car-gray);">Thu 21 May &bull; Open Pit</span></td>
+                <td>13:00 - 18:00</td>
+                <td>20.8 km</td>
+                <td><button class="btn-clutch" style="padding: 6px 14px; font-size: 11px;" onclick="showThemeToast('Booked Nürburgring Session Slot!')">TICKET</button></td>
+              </tr>
+              <tr>
+                <td><strong>Laguna Seca Corkscrew</strong><br /><span style="font-size: 12px; color: var(--car-gray);">Sat 06 June &bull; Time Attack</span></td>
+                <td>09:00 - 15:00</td>
+                <td>3.6 km</td>
+                <td><button class="btn-clutch" style="padding: 6px 14px; font-size: 11px;" onclick="showThemeToast('Booked Laguna Seca Slot!')">TICKET</button></td>
+              </tr>
+              <tr>
+                <td><strong>Suzuka Grand Prix Circuit</strong><br /><span style="font-size: 12px; color: var(--car-gray);">Sun 19 July &bull; GT Sprints</span></td>
+                <td>10:00 - 17:00</td>
+                <td>5.8 km</td>
+                <td><button class="btn-clutch" style="padding: 6px 14px; font-size: 11px;" onclick="showThemeToast('Booked Suzuka Slot!')">TICKET</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Right: Forum Hot Topics -->
+        <div id="forums">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 class="font-serif" style="font-size: 24px; font-weight: 900; text-transform: uppercase;">FORUM HOT TOPICS</h3>
+            <span style="background: var(--car-orange); color: #fff; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;">HOT THREAD</span>
+          </div>
+
+          <!-- Forum Topic 1 -->
+          <div style="background: var(--car-card-bg); border: 1px solid var(--car-card-border); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
+            <div class="font-mono" style="font-size: 11px; color: var(--car-orange); margin-bottom: 6px;">TRANSMISSION WARS</div>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--car-cream); margin-bottom: 10px;">
+              The ultimate manual gearbox debate: 6-Speed Gated vs Dog-Ring Sequential for track days?
+            </h4>
+            <div class="font-mono" style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--car-gray); margin-bottom: 14px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Avatar" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1px solid var(--car-orange);" />
+                <span>@porsche_purist</span>
+              </div>
+              <span>💬 156 replies</span>
+            </div>
+
+            <!-- Two Reference Photo Cards from Mockup -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--car-card-border); height: 110px;">
+                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80" alt="GT3 track attack drift" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span class="font-mono" style="position: absolute; bottom: 6px; left: 8px; font-size: 10px; background: rgba(0,0,0,0.75); padding: 2px 6px; border-radius: 4px; color: #fff;">GT3 APEX</span>
+              </div>
+              <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--car-card-border); height: 110px;">
+                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80" alt="Tachometer 9000 RPM redline" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span class="font-mono" style="position: absolute; bottom: 6px; left: 8px; font-size: 10px; background: rgba(0,0,0,0.75); padding: 2px 6px; border-radius: 4px; color: var(--car-orange);">9,000 RPM REDLINE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Forum Topic 2 -->
+          <div style="background: var(--car-card-bg); border: 1px solid var(--car-card-border); border-radius: 12px; padding: 20px;">
+            <div class="font-mono" style="font-size: 11px; color: var(--car-orange); margin-bottom: 6px;">BRAKING SYSTEMS</div>
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--car-cream); margin-bottom: 10px;">
+              Carbon Ceramic Rotors vs Grooved Cast Iron: Operating cost per track hour breakdown.
+            </h4>
+            <div class="font-mono" style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--car-gray);">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Avatar" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1px solid var(--car-orange);" />
+                <span>@apex_hunter</span>
+              </div>
+              <span>💬 89 replies</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       REVHEADS AUTOMOTIVE FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: #07090C; border-top: 1px solid var(--car-card-border); padding: 50px 0 30px;">
+    <div class="car-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid var(--car-card-border);">
+        <div class="rev-brand">
+          <span class="rev-brand-title">REVHEADS</span>
+          <span class="rev-brand-sub">EST. 2026 &bull; THE ENTHUSIAST HUB</span>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="themes.html" class="btn-clutch" style="background: transparent; border: 1px solid var(--car-card-border); color: var(--car-cream);">
+            <i class="ph ph-arrow-left"></i> All 16 Themes
+          </a>
+          <button class="btn-clutch" onclick="showThemeToast('VIP Paddock Club Pass Registered!')">Join Paddock Club</button>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 12px; font-family: 'Space Mono', monospace; color: var(--car-gray); margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 RevHeads Enthusiast Hub &bull; Car Enthusiasts UI Theme &bull; Crafted by I Info Vision</span>
+        <span>Asphalt Black + Racing Orange Archetype</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Car Enthusiasts UI Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Car Enthusiasts, Automotive Motorsport &amp; Dyno Telemetry UI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Raw mechanical adrenaline. Merges pitch carbon black with racing asphalt textures, technical blueprint schematics, high-contrast Playfair typography, and glowing tachometer orange accents.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#0B0D11; border:2px solid #fff;" title="Pitch Carbon Black #0B0D11"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FF441A; border:2px solid #fff;" title="Racing Orange #FF441A"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#F5EFE0; border:2px solid #fff;" title="Vintage Cream #F5EFE0"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#0E2439; border:2px solid #fff;" title="Blueprint Navy #0E2439"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#00E5FF; border:2px solid #fff;" title="Cyan Telemetry #00E5FF"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Automotive tuning shops, track day track-management platforms, supercar dealerships, performance parts marketplaces, and motorsport community forums.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function revEngineSound() {
+      if (window.showThemeToast) {
+        showThemeToast('🏎️ V8 FLAT-PLANE SCREAM: 9,000 RPM REDLINE HIT! Twin-Turbos Spooling at 28 PSI!');
+      } else {
+        alert('9,000 RPM REDLINE HIT!');
+      }
+    }
+
+    function inspectComponent(title, spec) {
+      if (window.showThemeToast) {
+        showThemeToast(`🔧 Component Telemetry: ${title} — ${spec}`);
+      } else {
+        alert(`${title}\n${spec}`);
+      }
+    }
+  </script>
+
+</body>
+</html>
+

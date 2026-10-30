@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELEVATE MODERNIST | Brutalist Fashion Editorial UI Theme</title>
+  <meta name="description" content="Experience the Brutalist Fashion UI theme created by I Info Vision. Avant-garde editorial layout, massive Didone typography, and high-fashion asymmetry." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Bodoni Moda (High-Contrast Didone Serif), Space Mono (Monospace Captions), Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       BRUTALIST FASHION THEME SYSTEM (Editorial Haute Couture)
+       =================================================== */
+    :root {
+      --brutal-black: #0B0B0B;
+      --brutal-white: #F8F8F6;
+      --brutal-rust: #CC4E2A;
+      --brutal-rust-dark: #A93B1B;
+      --brutal-gray-dark: #1E1E1E;
+      --brutal-gray-light: #E5E5E2;
+      --brutal-border: 1px solid #0B0B0B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--brutal-white);
+      color: var(--brutal-black);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    .font-bodoni {
+      font-family: 'Bodoni Moda', serif;
+    }
+
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    .brutal-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Minimal Brutalist Wireframe Nav */
+    .brutal-header {
+      border-bottom: var(--brutal-border);
+      padding: 20px 0;
+      position: sticky;
+      top: 50px;
+      background: var(--brutal-white);
+      z-index: 100;
+    }
+
+    .brutal-nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brutal-brand {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--brutal-black);
+    }
+
+    .brutal-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .brutal-nav-menu a {
+      text-decoration: none;
+      color: var(--brutal-black);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .brutal-nav-menu a:hover {
+      color: var(--brutal-rust);
+    }
+
+    /* Mega Typographic Hero Section (Matching Image 3) */
+    .brutal-hero {
+      padding: 40px 0 60px;
+      position: relative;
+    }
+
+    .hero-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: -10px;
+    }
+
+    .hero-editorial-sub {
+      font-size: 13px;
+      max-width: 320px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .hero-title-elevate {
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(64px, 14vw, 190px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.85;
+      text-transform: uppercase;
+      color: var(--brutal-black);
+      margin: 0;
+      user-select: none;
+    }
+
+    /* Asymmetric Photo Collage Grid */
+    .brutal-collage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 24px;
+      margin-top: 30px;
+      align-items: center;
+      position: relative;
+    }
+
+    .collage-img-wrap {
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .collage-img-wrap img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(120%);
+      display: block;
+      transition: all 0.5s ease;
+    }
+
+    .collage-img-wrap:hover img {
+      filter: grayscale(0%) contrast(105%);
+      transform: scale(1.03);
+    }
+
+    /* Floating Rust-Orange Card (From Image 3) */
+    .rust-card-float {
+      background: var(--brutal-rust);
+      color: #ffffff;
+      padding: 30px 26px;
+      border: 1px solid #000000;
+      box-shadow: 10px 10px 0px #000000;
+      position: relative;
+      z-index: 10;
+      transition: transform 0.2s;
+    }
+
+    .rust-card-float:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 13px 13px 0px #000000;
+    }
+
+    .rust-header-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 8px;
+    }
+
+    .rust-big-text {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .rust-caption {
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Second Editorial Title: MODERNIST */
+    .hero-title-modernist {
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(54px, 12vw, 160px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      text-transform: uppercase;
+      color: var(--brutal-black);
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .modernist-tag-card {
+      background: var(--brutal-rust);
+      color: #fff;
+      padding: 10px 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 4px 4px 0px #000;
+      cursor: pointer;
+    }
+
+    /* Editorial Lookbook Grid */
+    .editorial-section {
+      border-top: var(--brutal-border);
+      padding: 80px 0;
+    }
+
+    .editorial-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 40px;
+      border-bottom: var(--brutal-border);
+      padding-bottom: 16px;
+    }
+
+    .lookbook-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .lookbook-item {
+      border: var(--brutal-border);
+      background: #ffffff;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lookbook-img-box {
+      background: #000;
+      height: 380px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .lookbook-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: all 0.4s;
+    }
+
+    .lookbook-item:hover .lookbook-img-box img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    .lookbook-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #666;
+    }
+
+    .lookbook-title {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brutal-black);
+      margin-bottom: 14px;
+    }
+
+    .btn-brutal {
+      padding: 12px 24px;
+      background: var(--brutal-black);
+      color: var(--brutal-white);
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid #000;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+
+    .btn-brutal:hover {
+      background: var(--brutal-rust);
+      border-color: var(--brutal-rust);
+    }
+
+    /* Animated Running Marquee */
+    .brutal-marquee-ticker {
+      background: var(--brutal-black);
+      color: var(--brutal-white);
+      border-top: var(--brutal-border);
+      border-bottom: var(--brutal-border);
+      padding: 10px 0;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .brutal-marquee-track {
+      display: inline-block;
+      animation: brutalMarquee 22s linear infinite;
+    }
+    @keyframes brutalMarquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Atelier Manifesto Grid */
+    .manifesto-section {
+      border-top: var(--brutal-border);
+      background: #0B0B0B;
+      color: #F8F8F6;
+      padding: 90px 0;
+    }
+    .manifesto-quote {
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(38px, 6vw, 76px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+    .manifesto-quote em {
+      font-style: italic;
+      color: var(--brutal-rust);
+    }
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 36px;
+    }
+    .principle-box {
+      border-left: 2px solid var(--brutal-rust);
+      padding-left: 16px;
+    }
+    .principle-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--brutal-rust);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .principle-title {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .principle-desc {
+      font-size: 13px;
+      color: #A3A3A3;
+      line-height: 1.6;
+    }
+
+    /* Piece Modal / Detail Drawer */
+    .piece-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .piece-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .piece-modal-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 90%;
+      max-width: 840px;
+      background: var(--brutal-white);
+      border: 3px solid #000;
+      box-shadow: 16px 16px 0px #000;
+      z-index: 1001;
+      display: none;
+      grid-template-columns: 1fr 1.2fr;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .piece-modal-box.active {
+      display: grid;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+        .brutal-tri-hero {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+      .principles-grid { grid-template-columns: 1fr 1fr; }
+      .piece-modal-box { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+
+      .brutal-collage-grid {
+        grid-template-columns: 1fr;
+      }
+      .lookbook-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title-modernist {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .brutal-nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL THEME SWITCHER BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-paint-brush"></i> Theme: <strong>Brutalist Fashion</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" id="theme-inspect-btn">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       BRUTALIST FASHION NAVIGATION (From Image 3)
+       ═══════════════════════════════════════════ -->
+  <header class="brutal-header">
+    <div class="brutal-container">
+      <div class="brutal-nav-wrap">
+        <a href="#" class="brutal-brand">ELEVATE</a>
+        <ul class="brutal-nav-menu font-mono">
+          <li><a href="#hero" style="color: var(--brutal-rust);">Dashboard</a></li>
+          <li><a href="#collection">Fashion</a></li>
+          <li><a href="#editorial">Editorial</a></li>
+          <li><a href="themes.html">About</a></li>
+          <li><a href="#inquire">Contact</a></li>
+        </ul>
+        <a href="#collection" class="btn-brutal" style="padding: 8px 18px;">
+          <span>AW26 Runway</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- High-Contrast Editorial Marquee Ticker -->
+  <div class="brutal-marquee-ticker font-mono">
+    <div class="brutal-marquee-track">
+      ✦ AW26 HAUTE COUTURE RUNWAY ✦ PARIS • MILAN • TOKYO ✦ MONOLITH WOOL TAILORING ✦ DECONSTRUCTED SILHOUETTES ✦ 100% VIRGIN ITALIAN FIBERS ✦ ELEVATE MODERNIST EDITORIAL ✦ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ✦ AW26 HAUTE COUTURE RUNWAY ✦ PARIS • MILAN • TOKYO ✦ MONOLITH WOOL TAILORING ✦ DECONSTRUCTED SILHOUETTES ✦ 100% VIRGIN ITALIAN FIBERS ✦ ELEVATE MODERNIST EDITORIAL ✦
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TYPOGRAPHIC MEGA-HERO (Matching Image 3)
+       ═══════════════════════════════════════════ -->
+  <section class="brutal-hero" id="hero">
+    <div class="brutal-container">
+      <div class="hero-top-bar">
+        <p class="hero-editorial-sub font-mono">
+          A rigid tactile editorial and brutalist apparel website for the modern avant-garde.
+        </p>
+        <div class="font-mono" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">
+          Vol. IV / Issue No. 082
+        </div>
+      </div>
+
+      <!-- ELEVATE BIG TITLE -->
+      <h1 class="hero-title-elevate">ELEVATE</h1>
+
+      <!-- Asymmetric Collage -->
+      <div class="brutal-collage-grid">
+        <!-- Model Portrait Left -->
+        <div class="collage-img-wrap">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Avant-Garde Fashion Model Trench" />
+        </div>
+
+        <!-- Overlapping Rust Orange Card (Direct from Image 3) -->
+        <div class="rust-card-float" onclick="showThemeToast('Rust card selected - AW26 Lookbook')">
+          <div class="rust-header-link font-mono">
+            <span>Dapumatricss</span>
+            <span>→</span>
+          </div>
+          <div class="rust-big-text">ELEVATE</div>
+          <p class="rust-caption">
+            Massive, high-contrast serif display &amp; photography with asymmetric wireframe collage.
+          </p>
+          <div style="margin-top: 20px; font-size: 11px; text-transform: uppercase; font-family: 'Space Mono', monospace; opacity: 0.85;">
+            Avant-BKTb AVVEYNGH BADYRY
+          </div>
+        </div>
+
+        <!-- High-Fashion Sculpted Silhouette Right -->
+        <div class="collage-img-wrap">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Sculpted Black High-Fashion Silhouette" />
+        </div>
+      </div>
+
+      <!-- MODERNIST BIG TITLE -->
+      <div class="hero-title-modernist">
+        <span>MODERNIST</span>
+        <div class="modernist-tag-card" onclick="showThemeToast('Avant-garde collection launched!')">
+          <span>Lookbook 26</span>
+          <span>→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COLLECTION DECONSTRUCTED
+       ═══════════════════════════════════════════ -->
+  <section class="editorial-section" id="collection">
+    <div class="brutal-container">
+      <div class="editorial-header-row">
+        <div>
+          <span class="font-mono" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--brutal-rust); font-weight: 700;">Curated Runway</span>
+          <h2 class="font-bodoni" style="font-size: 38px; font-weight: 900; text-transform: uppercase;">Autumn/Winter Haute Couture</h2>
+        </div>
+        <div class="font-mono" style="font-size: 13px;">
+          Showing 03 Sculptural Looks
+        </div>
+      </div>
+
+      <div class="lookbook-grid">
+        <!-- Look 01 -->
+        <div class="lookbook-item">
+          <div>
+            <div class="lookbook-img-box">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="Monolith Wool Tailoring" />
+            </div>
+            <div class="lookbook-meta">
+              <span>Look 01</span>
+              <span>100% Raw Wool</span>
+            </div>
+            <h3 class="lookbook-title">Sculpted Monolith Trench</h3>
+          </div>
+          <button class="btn-brutal" onclick="openPieceModal(1)"><span>Inquire Piece</span><span>→</span></button>
+        </div>
+
+        <!-- Look 02 -->
+        <div class="lookbook-item">
+          <div>
+            <div class="lookbook-img-box">
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt="Architectural Pleats" />
+            </div>
+            <div class="lookbook-meta">
+              <span>Look 02</span>
+              <span>Japanese Twill</span>
+            </div>
+            <h3 class="lookbook-title">Deconstructed Pleated Cape</h3>
+          </div>
+          <button class="btn-brutal" onclick="openPieceModal(1)"><span>Inquire Piece</span><span>→</span></button>
+        </div>
+
+        <!-- Look 03 -->
+        <div class="lookbook-item">
+          <div>
+            <div class="lookbook-img-box">
+              <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80" alt="Avant-Garde Evening Dress" />
+            </div>
+            <div class="lookbook-meta">
+              <span>Look 03</span>
+              <span>Heavy Crepe Noir</span>
+            </div>
+            <h3 class="lookbook-title">Asymmetric Column Gown</h3>
+          </div>
+          <button class="btn-brutal" onclick="openPieceModal(1)"><span>Inquire Piece</span><span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THE ATELIER MANIFESTO
+       ═══════════════════════════════════════════ -->
+  <section class="manifesto-section" id="editorial">
+    <div class="brutal-container">
+      <div style="font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--brutal-rust); margin-bottom: 16px;">
+        // Manifesto Vol. IV &bull; Theoretical Basis
+      </div>
+      <h2 class="manifesto-quote">
+        “Form is not an ornament to soothe the eye. Form is a <em>monolithic architecture</em> carved against entropy.”
+      </h2>
+
+      <div class="principles-grid">
+        <div class="principle-box">
+          <span class="principle-num">01 / WEIGHT</span>
+          <h4 class="principle-title">Heavy Gauge Gravity</h4>
+          <p class="principle-desc">Dense textiles (850+ GSM) that drape with architectural authority rather than superficial fluidity.</p>
+        </div>
+        <div class="principle-box">
+          <span class="principle-num">02 / EDGES</span>
+          <h4 class="principle-title">Exposed Selvedge</h4>
+          <p class="principle-desc">Honoring raw construction lines. Overlocked seams and canvas stabilizers made visible as structural art.</p>
+        </div>
+        <div class="principle-box">
+          <span class="principle-num">03 / TONALITY</span>
+          <h4 class="principle-title">Stark Monochrome</h4>
+          <p class="principle-desc">Unforgiving high-contrast pitch blacks and chalk whites pierced only by industrial burnt terracotta rust.</p>
+        </div>
+        <div class="principle-box">
+          <span class="principle-num">04 / DISCIPLINE</span>
+          <h4 class="principle-title">Anti-Ornament</h4>
+          <p class="principle-desc">Zero decorative sequins, zero synthetic logos. Pure sculptural silhouette speaking at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BRUTALIST ATELIER FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: var(--brutal-white); border-top: var(--brutal-border); padding: 60px 0 36px;" id="inquire">
+    <div class="brutal-container">
+      <div class="brutal-tri-hero" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 48px;">
+        <div>
+          <div class="font-bodoni" style="font-size: 28px; font-weight: 900; letter-spacing: 2px; margin-bottom: 12px;">ELEVATE ATELIER</div>
+          <p class="font-mono" style="font-size: 13px; color: #555; line-height: 1.6; max-width: 420px;">
+            A brutalist high-fashion study in scale, Didone typographic tension, and tactile monochromatic editorial web design.
+          </p>
+          <div style="margin-top: 20px; display: flex; gap: 10px;">
+            <input type="email" placeholder="ENTER VIP ATELIER DISPATCH" style="padding: 12px 16px; border: var(--brutal-border); font-family: 'Space Mono', monospace; font-size: 12px; outline: none; width: 260px;" />
+            <button class="btn-brutal" onclick="showThemeToast('VIP Editorial Dispatch Registered!')">SUBSCRIBE</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-mono" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--brutal-rust); margin-bottom: 16px;">Runway Salons</div>
+          <ul class="font-mono" style="list-style: none; font-size: 13px; line-height: 2;">
+            <li>Paris // 14 Rue de Turenne, 75003</li>
+            <li>Milan // Via Montenapoleone 8</li>
+            <li>Tokyo // 5-7-22 Minamiaoyama</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-mono" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--brutal-rust); margin-bottom: 16px;">Specifications</div>
+          <ul class="font-mono" style="list-style: none; font-size: 13px; line-height: 2;">
+            <li>Bodoni Moda + Space Mono</li>
+            <li>1px Solid Black Borders</li>
+            <li>High-Contrast Black &amp; White</li>
+            <li><a href="themes.html" style="color: var(--brutal-rust); font-weight: 700;">Explore All 11 Themes &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-size: 12px; font-family: 'Space Mono', monospace; border-top: var(--brutal-border); padding-top: 24px; color: #666; flex-wrap: wrap; gap: 12px;">
+        <span>&copy; 2026 ELEVATE MODERNIST &bull; Brutalist Fashion UI Theme</span>
+        <span>Designed by I Info Vision</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE PIECE DETAIL MODAL
+       ═══════════════════════════════════════════ -->
+  <div class="piece-modal-overlay" id="pieceModalOverlay" onclick="closePieceModal()"></div>
+  <div class="piece-modal-box" id="pieceModalBox">
+    <div style="background: #000; height: 100%; min-height: 380px;">
+      <img id="modalImg" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%);" />
+    </div>
+    <div style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <span class="font-mono" style="font-size: 11px; text-transform: uppercase; color: var(--brutal-rust); font-weight: 700;" id="modalLookTag">LOOK 01 // AW26</span>
+          <button onclick="closePieceModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; font-weight: 700;">✕</button>
+        </div>
+        <h3 class="font-bodoni" style="font-size: 28px; font-weight: 900; text-transform: uppercase; margin-bottom: 10px;" id="modalPieceTitle">Sculpted Monolith Trench</h3>
+        <p class="font-mono" style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px;" id="modalPieceDesc">
+          Crafted from 850 GSM Italian virgin wool. Features razor-sharp deconstructed peak lapels, storm flap concealment, and hand-finished raw horn buttons.
+        </p>
+
+        <div class="font-mono" style="border-top: var(--brutal-border); border-bottom: var(--brutal-border); padding: 14px 0; margin-bottom: 20px; font-size: 12px; display: flex; justify-content: space-between;">
+          <span>ATELIER EDITION: <strong>LIMITED 25 PIECES</strong></span>
+          <span id="modalPiecePrice" style="color: var(--brutal-rust); font-weight: 700;">€2,850 EUR</span>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn-brutal" style="width: 100%; justify-content: center; padding: 14px;" onclick="requestPrivateFitting()">
+          <span>REQUEST PRIVATE ATELIER FITTING &rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS SLIDE-OUT DRAWER
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="theme-drawer-overlay"></div>
+  <aside class="theme-drawer" id="theme-drawer">
+    <div class="theme-drawer-header">
+      <div class="theme-drawer-title-wrap">
+        <span class="theme-drawer-badge">Theme DNA &amp; Architecture</span>
+        <h3 class="theme-drawer-title">Brutalist Fashion</h3>
+      </div>
+      <button class="theme-drawer-close" id="theme-drawer-close" aria-label="Close drawer">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <div class="theme-drawer-body">
+      <!-- CONCEPT -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-lightbulb"></i> Concept &amp; Vibe</div>
+        <p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.5;">
+          A bold editorial aesthetic merging modern brutalist wireframe discipline with luxury haute couture. Features edge-to-edge typography, stark monochrome contrast, and deliberate asymmetric tension with terracotta rust accents.
+        </p>
+      </div>
+
+      <!-- COLOR PALETTE -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-palette"></i> Color Palette (Click to Copy)</div>
+        <div class="theme-swatches">
+          <div class="theme-swatch" data-hex="#0B0B0B">
+            <div class="theme-swatch-color" style="background:#0B0B0B;"></div>
+            <span class="theme-swatch-name">Stark Black</span>
+            <span class="theme-swatch-hex">#0B0B0B</span>
+          </div>
+          <div class="theme-swatch" data-hex="#F8F8F6">
+            <div class="theme-swatch-color" style="background:#F8F8F6;"></div>
+            <span class="theme-swatch-name">Alabaster Bone</span>
+            <span class="theme-swatch-hex">#F8F8F6</span>
+          </div>
+          <div class="theme-swatch" data-hex="#CC4E2A">
+            <div class="theme-swatch-color" style="background:#CC4E2A;"></div>
+            <span class="theme-swatch-name">Burnt Rust</span>
+            <span class="theme-swatch-hex">#CC4E2A</span>
+          </div>
+          <div class="theme-swatch" data-hex="#707070">
+            <div class="theme-swatch-color" style="background:#707070;"></div>
+            <span class="theme-swatch-name">Steel Slate</span>
+            <span class="theme-swatch-hex">#707070</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPOGRAPHY -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-text-aa"></i> Typography Pairings</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-caret-right"></i> <strong>Massive Headlines:</strong> Bodoni Moda (Extreme contrast Didone, 900 weight)</li>
+          <li><i class="ph ph-caret-right"></i> <strong>Metadata &amp; Buttons:</strong> Space Mono (Technical monospace, 400/700)</li>
+          <li><i class="ph ph-caret-right"></i> <strong>Editorial Prose:</strong> Inter (Crisp minimal sans, 400)</li>
+        </ul>
+      </div>
+
+      <!-- UI MECHANICS -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-paint-brush"></i> Signature UI Mechanics</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-check"></i> <strong>Hairline Wireframes:</strong> <code>1px solid #0B0B0B</code> crisp boundaries</li>
+          <li><i class="ph ph-check"></i> <strong>Overlapping Rust Cards:</strong> <code>box-shadow: 10px 10px 0px #000</code></li>
+          <li><i class="ph ph-check"></i> <strong>Zero Border Radius:</strong> <code>border-radius: 0px</code> throughout</li>
+          <li><i class="ph ph-check"></i> <strong>Editorial Desaturation:</strong> 100% grayscale images with hover reveal</li>
+        </ul>
+      </div>
+
+      <!-- BEST FIT -->
+      <div class="theme-spec-card">
+        <div class="theme-spec-heading"><i class="ph ph-buildings"></i> Ideal Project &amp; Industry Fit</div>
+        <ul class="theme-drawer-list">
+          <li><i class="ph ph-check"></i> Luxury Fashion Houses &amp; Designer Apparel</li>
+          <li><i class="ph ph-check"></i> Contemporary Art Galleries &amp; Museum Exhibitions</li>
+          <li><i class="ph ph-check"></i> High-End Architecture &amp; Interior Design Practices</li>
+          <li><i class="ph ph-check"></i> Avant-Garde Magazines &amp; Cultural Publications</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theme-drawer-footer">
+      <a href="themes.html" class="theme-drawer-btn theme-drawer-btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <i class="ph ph-arrow-left"></i> Back to Theme Selection
+      </a>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js" defer></script>
+
+  <script>
+    const piecesData = {
+      1: {
+        tag: 'LOOK 01 // AW26 RUNWAY',
+        title: 'Sculpted Monolith Trench',
+        desc: 'Crafted from 850 GSM Italian virgin wool. Features razor-sharp deconstructed peak lapels, storm flap concealment, and hand-finished raw horn buttons.',
+        price: '€2,850 EUR',
+        img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80'
+      },
+      2: {
+        tag: 'LOOK 02 // AW26 RUNWAY',
+        title: 'Deconstructed Pleated Cape',
+        desc: 'Double-woven Japanese structured twill with micro-pleats that expand kinetically on motion. Unlined interior with contrast binding.',
+        price: '€1,980 EUR',
+        img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80'
+      },
+      3: {
+        tag: 'LOOK 03 // AW26 RUNWAY',
+        title: 'Asymmetric Column Gown',
+        desc: 'Heavyweight crepe noir draped on the bias. Features architectural geometric cut-outs and structured shoulder pads honoring brutalist form.',
+        price: '€2,400 EUR',
+        img: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80'
+      }
+    };
+
+    function openPieceModal(id) {
+      const p = piecesData[id] || piecesData[1];
+      document.getElementById('modalLookTag').textContent = p.tag;
+      document.getElementById('modalPieceTitle').textContent = p.title;
+      document.getElementById('modalPieceDesc').textContent = p.desc;
+      document.getElementById('modalPiecePrice').textContent = p.price;
+      document.getElementById('modalImg').src = p.img;
+
+      document.getElementById('pieceModalOverlay').classList.add('active');
+      document.getElementById('pieceModalBox').classList.add('active');
+    }
+
+    function closePieceModal() {
+      document.getElementById('pieceModalOverlay').classList.remove('active');
+      document.getElementById('pieceModalBox').classList.remove('active');
+    }
+
+    function requestPrivateFitting() {
+      const title = document.getElementById('modalPieceTitle').textContent;
+      closePieceModal();
+      if (window.showThemeToast) {
+        showThemeToast(`✦ Private Atelier Fitting requested for: ${title}. Our VIP Concierge in Paris will reach out.`);
+      } else {
+        alert(`Private Atelier Fitting Requested for: ${title}`);
+      }
+    }
+  </script>
+</body>
+</html>
+

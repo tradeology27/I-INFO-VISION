@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimalism Modern UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Minimalism Modern UI theme created by I Info Vision. Clean layouts, generous whitespace, disciplined typography, and serene corporate elegance." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       MINIMALISM DESIGN SYSTEM
+       Pure Monochromatic White & Charcoal Balance
+       =================================================== */
+    :root {
+      --min-bg: #FFFFFF;
+      --min-surface: #F9FAFB;
+      --min-border: #E5E7EB;
+      --min-text: #111827;
+      --min-text-muted: #6B7280;
+      --min-accent: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--min-bg);
+      color: var(--min-text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    .t-serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .min-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Minimalist Navigation */
+    .min-sub-nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--min-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .min-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--min-text);
+    }
+
+    .min-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .min-links a {
+      color: var(--min-text-muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .min-links a:hover {
+      color: var(--min-text);
+    }
+
+    /* Minimal Action Button */
+    .btn-minimal {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: var(--min-accent);
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      border-radius: 0px;
+      border: 1px solid var(--min-accent);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-minimal:hover {
+      background: #fff;
+      color: var(--min-accent);
+    }
+
+    .btn-minimal-outline {
+      background: transparent;
+      color: var(--min-text);
+      border-color: var(--min-border);
+    }
+
+    .btn-minimal-outline:hover {
+      border-color: var(--min-text);
+      background: transparent;
+    }
+
+    /* Grid Sections */
+    .min-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0 80px;
+    }
+
+    .min-editorial-card {
+      padding: 40px 0;
+      border-top: 1px solid var(--min-border);
+      display: grid;
+      grid-template-columns: 240px 1fr 180px;
+      gap: 32px;
+      align-items: baseline;
+      transition: border-color 0.2s;
+    }
+
+    .min-editorial-card:hover {
+      border-color: var(--min-text);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .min-hero-grid { grid-template-columns: 1fr; padding: 50px 0; }
+      .min-editorial-card { grid-template-columns: 1fr; gap: 12px; }
+      .min-links { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-minus"></i> Theme: <strong>Minimalism Modern</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Minimal Brand Sub-Nav -->
+  <div class="min-container">
+    <nav class="min-sub-nav">
+      <a href="#" class="min-brand">Aethelgard &amp; Co.</a>
+      <ul class="min-links">
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#projects">Selected Works</a></li>
+        <li><a href="#practice">The Practice</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-minimal btn-minimal-outline" style="padding: 8px 20px; font-size: 12px;">Inquire</a>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       MINIMALIST HERO
+       ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="min-container">
+      <div class="min-hero-grid">
+        
+        <!-- Left: Statement -->
+        <div>
+          <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--min-text-muted); display: block; margin-bottom: 20px;">
+            Architecture &bull; Spatial Discipline &bull; 01
+          </span>
+
+          <h1 class="t-serif" style="font-size: clamp(44px, 5.5vw, 68px); font-weight: 400; line-height: 1.1; margin-bottom: 28px; letter-spacing: -0.01em;">
+            Space is not emptiness.<br />
+            <em>It is the presence of clarity.</em>
+          </h1>
+
+          <p style="font-size: 16px; color: var(--min-text-muted); line-height: 1.8; max-width: 480px; margin-bottom: 40px;">
+            We design architectural spaces and digital systems by removing every distraction until only purpose, light, and enduring proportion remain.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#projects" class="btn-minimal">
+              <span>View Monograph</span>
+              <i class="ph ph-arrow-right"></i>
+            </a>
+            <a href="#philosophy" class="btn-minimal btn-minimal-outline">
+              <span>Read Manifesto</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Photographic Artwork -->
+        <div>
+          <div style="position: relative; overflow: hidden; height: 500px; border: 1px solid var(--min-border);">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Minimalist architectural facade" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(110%);" />
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: 'Space Mono', monospace; color: var(--min-text-muted); margin-top: 10px;">
+            <span>FIG 01. BRUTALIST CONCRETE PAVILION</span>
+            <span>OSLO, NORWAY</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SELECTED MONOGRAPHS / PROJECTS
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0;" id="projects">
+    <div class="min-container">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; border-bottom: 2px solid var(--min-text); padding-bottom: 16px;">
+        <h2 class="t-serif" style="font-size: 36px; font-weight: 400;">Selected Commissions</h2>
+        <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--min-text-muted);">2024 — 2026 ARCHIVE</span>
+      </div>
+
+      <!-- Item 01 -->
+      <div class="min-editorial-card">
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--min-text-muted);">01 / COMMERCIAL</div>
+        <div>
+          <h3 class="t-serif" style="font-size: 28px; font-weight: 600; margin-bottom: 6px;">Nordic Capital Advisory Headquarters</h3>
+          <p style="font-size: 14px; color: var(--min-text-muted); line-height: 1.6;">Monolithic limestone atrium with bespoke acoustic white-oak millwork.</p>
+        </div>
+        <div style="text-align: right;">
+          <a href="#" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--min-text); text-decoration: none;" onclick="showThemeToast('Opened Project 01 Case Study')">Explore &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 02 -->
+      <div class="min-editorial-card">
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--min-text-muted);">02 / RESIDENTIAL</div>
+        <div>
+          <h3 class="t-serif" style="font-size: 28px; font-weight: 600; margin-bottom: 6px;">The Glass Cliff House</h3>
+          <p style="font-size: 14px; color: var(--min-text-muted); line-height: 1.6;">Continuous floor-to-ceiling structural glazing facing the Arctic Fjord.</p>
+        </div>
+        <div style="text-align: right;">
+          <a href="#" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--min-text); text-decoration: none;" onclick="showThemeToast('Opened Project 02 Case Study')">Explore &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 03 -->
+      <div class="min-editorial-card">
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--min-text-muted);">03 / CIVIC</div>
+        <div>
+          <h3 class="t-serif" style="font-size: 28px; font-weight: 600; margin-bottom: 6px;">Kyoto Stone Garden Sanctuary</h3>
+          <p style="font-size: 14px; color: var(--min-text-muted); line-height: 1.6;">Raw poured concrete colonnade integrated with hundred-year-old moss gardens.</p>
+        </div>
+        <div style="text-align: right;">
+          <a href="#" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--min-text); text-decoration: none;" onclick="showThemeToast('Opened Project 03 Case Study')">Explore &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CLIENT SHOWCASE
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 80px 0; background: var(--min-surface); border-top: 1px solid var(--min-border);" id="contact">
+    <div class="min-container" style="text-align: center; max-width: 760px;">
+      <span style="font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--min-text-muted);">
+        CORPORATE DISTINCTION
+      </span>
+      <h2 class="t-serif" style="font-size: 42px; font-weight: 400; margin: 16px 0 20px;">
+        Build Your Website with Quiet Authority
+      </h2>
+      <p style="font-size: 15px; color: var(--min-text-muted); line-height: 1.7; margin-bottom: 36px;">
+        Minimalism conveys unmatched confidence. When you strip away gimmicks, visitors focus on your track record, your caliber, and your substance.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html#contact" class="btn-minimal" style="padding: 14px 36px;">
+          <span>Commission a Minimalist Website</span>
+          <i class="ph ph-arrow-right"></i>
+        </a>
+        <a href="themes.html" class="btn-minimal btn-minimal-outline" style="padding: 14px 36px;">
+          <span>All 20 Themes</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER
+       ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Minimalism Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Disciplined Negative Space &bull; Monochromatic Restraint</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Less but better (Dieter Rams). Uses spacious padding (80px+), thin 1px dividing lines, and classical editorial serif typography to convey institutional weight without clutter.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#FFFFFF; border:2px solid #ccc;" title="Pure White #FFFFFF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#F9FAFB; border:2px solid #ccc;" title="Subtle Gray #F9FAFB"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#6B7280; border:2px solid #fff;" title="Muted Gray #6B7280"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#111827; border:2px solid #fff;" title="Dark Charcoal #111827"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Architecture firms, legal practices, high-end private equity funds, luxury consulting brands, and art monograph publishers.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
+

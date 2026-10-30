@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editorial Luxury UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Editorial Luxury UI theme created by I Info Vision. High-fashion serif typography, champagne gold accents, magazine spreads, and haute couture elegance." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Bodoni Moda & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       EDITORIAL LUXURY DESIGN SYSTEM
+       Haute Couture Onyx & Champagne Gold Archetype
+       =================================================== */
+    :root {
+      --lux-bg: #110F0E;
+      --lux-card: #1A1715;
+      --lux-gold: #D4AF37;
+      --lux-gold-light: #F3E5AB;
+      --lux-text: #FDFBF7;
+      --lux-muted: #A39B94;
+      --lux-border: rgba(212, 175, 55, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--lux-bg);
+      color: var(--lux-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .t-bodoni {
+      font-family: 'Bodoni Moda', serif;
+    }
+
+    .lux-container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .lux-card {
+      background: var(--lux-card);
+      border: 1px solid var(--lux-border);
+      padding: 36px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .lux-card:hover {
+      border-color: var(--lux-gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .btn-lux {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 34px;
+      background: var(--lux-gold);
+      color: #110F0E;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--lux-gold);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-lux:hover {
+      background: transparent;
+      color: var(--lux-gold);
+    }
+
+    .btn-lux-outline {
+      background: transparent;
+      color: var(--lux-gold);
+      border-color: var(--lux-border);
+    }
+    .btn-lux-outline:hover {
+      border-color: var(--lux-gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    @media (max-width: 900px) {
+      .lux-hero-grid { grid-template-columns: 1fr !important; }
+      .lux-lookbook-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-crown"></i> Theme: <strong>Editorial Luxury</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       EDITORIAL LUXURY HERO
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 80px 0 50px;">
+    <div class="lux-container">
+      
+      <div class="lux-hero-grid" style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 50px; align-items: center;">
+        
+        <div>
+          <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--lux-gold); text-transform: uppercase; margin-bottom: 20px;">
+            MAISON DE HAUTE HORLOGERIE &bull; VOL. XXIV
+          </div>
+
+          <h1 class="t-bodoni" style="font-size: clamp(42px, 5.5vw, 68px); font-weight: 400; line-height: 1.1; margin-bottom: 24px;">
+            The Mastery of<br />
+            <em style="color: var(--lux-gold);">Unspoken Prestige.</em>
+          </h1>
+
+          <p style="font-size: 16px; color: var(--lux-muted); line-height: 1.8; max-width: 480px; margin-bottom: 36px;">
+            Rooted in classical editorial publication aesthetics. Dramatic typographic hierarchy, high-contrast imagery, and champagne gold borders crafted for the world’s most discerning luxury brands.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#collection" class="btn-lux">
+              <span>View Collection</span>
+              <i class="ph ph-arrow-right"></i>
+            </a>
+            <a href="#atelier" class="btn-lux btn-lux-outline">
+              <span>Private Atelier</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Haute Couture Photographic Spread -->
+        <div style="position: relative;">
+          <div style="border: 1px solid var(--lux-border); padding: 16px;">
+            <div style="height: 480px; overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80" alt="Haute couture editorial model" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(110%);" />
+              <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(17,15,14,0.85); padding: 8px 16px; border: 1px solid var(--lux-gold);">
+                <span class="t-bodoni" style="font-size: 14px; font-style: italic; color: var(--lux-gold);">Edition Limitée &bull; 04 / 50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       EDITORIAL LOOKBOOK (3 COMMISSION CARDS)
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 60px 0 80px;" id="collection">
+    <div class="lux-container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+        <span style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--lux-gold); text-transform: uppercase;">
+          ARCHIVAL COMMISSIONS
+        </span>
+        <h2 class="t-bodoni" style="font-size: 38px; font-weight: 400; margin-top: 8px;">The Private Portfolio</h2>
+      </div>
+
+      <div class="lux-lookbook-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+        
+        <div class="lux-card">
+          <div style="height: 220px; overflow: hidden; margin-bottom: 20px;">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="High luxury fashion piece" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: var(--lux-gold); letter-spacing: 1px;">HAUTE COUTURE</span>
+          <h3 class="t-bodoni" style="font-size: 22px; margin: 6px 0 10px;">Silk Damask Evening Coat</h3>
+          <p style="font-size: 13.5px; color: var(--lux-muted); line-height: 1.6; margin-bottom: 18px;">
+            Hand-woven Florentine jacquard with 24k gold filament embroidery.
+          </p>
+          <a href="#" style="font-family: 'Bodoni Moda', serif; font-size: 13px; color: var(--lux-gold); text-decoration: none; text-transform: uppercase; letter-spacing: 1px;" onclick="showThemeToast('Inquired about Silk Damask Coat')">Inquire Acquisition &rarr;</a>
+        </div>
+
+        <div class="lux-card">
+          <div style="height: 220px; overflow: hidden; margin-bottom: 20px;">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80" alt="Luxury jewelry collection" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: var(--lux-gold); letter-spacing: 1px;">HIGH JEWELRY</span>
+          <h3 class="t-bodoni" style="font-size: 22px; margin: 6px 0 10px;">Solaris Emerald Collier</h3>
+          <p style="font-size: 13.5px; color: var(--lux-muted); line-height: 1.6; margin-bottom: 18px;">
+            Uncut Colombian emerald solitaire set in hand-chiseled brushed platinum.
+          </p>
+          <a href="#" style="font-family: 'Bodoni Moda', serif; font-size: 13px; color: var(--lux-gold); text-decoration: none; text-transform: uppercase; letter-spacing: 1px;" onclick="showThemeToast('Inquired about Solaris Collier')">Inquire Acquisition &rarr;</a>
+        </div>
+
+        <div class="lux-card">
+          <div style="height: 220px; overflow: hidden; margin-bottom: 20px;">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=500&q=80" alt="Private architectural interior" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: var(--lux-gold); letter-spacing: 1px;">SANCTUARY ESTATE</span>
+          <h3 class="t-bodoni" style="font-size: 22px; margin: 6px 0 10px;">Villa Monticello Lake Como</h3>
+          <p style="font-size: 13.5px; color: var(--lux-muted); line-height: 1.6; margin-bottom: 18px;">
+            Historic 18th-century stone palazzo restored with private deep-water mooring.
+          </p>
+          <a href="#" style="font-family: 'Bodoni Moda', serif; font-size: 13px; color: var(--lux-gold); text-decoration: none; text-transform: uppercase; letter-spacing: 1px;" onclick="showThemeToast('Inquired about Villa Monticello')">Inquire Acquisition &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CLIENT SHOWCASE
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 80px 0; background: #0E0C0B; border-top: 1px solid var(--lux-border);">
+    <div class="lux-container" style="text-align: center; max-width: 780px;">
+      <span style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--lux-gold); text-transform: uppercase;">
+        DISCERNING ELEVATION
+      </span>
+      <h2 class="t-bodoni" style="font-size: 40px; font-weight: 400; margin: 16px 0 20px;">
+        Curate an Unforgettable Luxury Presence
+      </h2>
+      <p style="font-size: 15.5px; color: var(--lux-muted); line-height: 1.7; margin-bottom: 36px;">
+        I Info Vision transforms premium brands, private banks, high jewelry houses, and heritage labels into timeless digital monuments.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html#contact" class="btn-lux">
+          <span>Commission Atelier Consultation</span>
+          <i class="ph ph-crown"></i>
+        </a>
+        <a href="themes.html" class="btn-lux btn-lux-outline">
+          <span>All 20 Themes</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER
+       ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Editorial Luxury Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Haute Couture Editorial &bull; Bodoni Serif Typography</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Adopts high-end fashion magazine editorial principles: extreme contrast between bold headlines and delicate body text, gold hairline border trims, and spacious luxury margins.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#110F0E; border:2px solid #fff;" title="Onyx #110F0E"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#D4AF37; border:2px solid #fff;" title="Gold #D4AF37"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FDFBF7; border:2px solid #fff;" title="Alabaster #FDFBF7"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Haute couture fashion houses, fine jewelry, luxury real estate brokerages, private family offices, and bespoke concierge services.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
+

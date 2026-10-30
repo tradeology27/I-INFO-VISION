@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bauhaus Modernism | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the radical Bauhaus Modernism theme crafted by I Info Vision. Primary geometric forms, bold primary colors, functional asymmetry, and German modernist craft." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Archivo Black & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       BAUHAUS MODERNISM SYSTEM (DESSAU 1919-1933)
+       Primary Colors + Geometric Primitives + Asymmetric Grid
+       =================================================== */
+    :root {
+      --bh-red: #D62828;
+      --bh-blue: #003049;
+      --bh-yellow: #FCBF49;
+      --bh-black: #111418;
+      --bh-white: #FFFFFF;
+      --bh-linen: #F7F5F0;
+      --bh-gray: #E2DFD8;
+      --bh-border: 3px solid #111418;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bh-linen);
+      color: var(--bh-black);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .bh-container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .bh-title {
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      line-height: 0.95;
+    }
+
+    /* Asymmetric Geometric Cards */
+    .bh-card {
+      background: var(--bh-white);
+      border: var(--bh-border);
+      padding: 32px;
+      box-shadow: 8px 8px 0px #111418;
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bh-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px #111418;
+    }
+
+    /* Primary Geometric Shape Badges */
+    .bh-shape-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bh-red);
+      border: var(--bh-border);
+      display: inline-block;
+    }
+
+    .bh-shape-square {
+      width: 44px;
+      height: 44px;
+      background: var(--bh-blue);
+      border: var(--bh-border);
+      display: inline-block;
+    }
+
+    .bh-shape-triangle {
+      width: 0;
+      height: 0;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 40px solid var(--bh-yellow);
+      display: inline-block;
+    }
+
+    /* Bauhaus Button */
+    .btn-bh-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--bh-red);
+      color: #FFFFFF;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: var(--bh-border);
+      box-shadow: 5px 5px 0px #111418;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-bh-primary:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0px #111418;
+      background: #E63946;
+    }
+
+    .btn-bh-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--bh-white);
+      color: var(--bh-black);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: var(--bh-border);
+      box-shadow: 5px 5px 0px #111418;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-bh-outline:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0px #111418;
+      background: var(--bh-yellow);
+    }
+
+    @media (max-width: 900px) {
+      .bh-grid-hero { grid-template-columns: 1fr !important; }
+      .bh-grid-quad { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIVERSAL STICKY TOP BAR -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-shapes"></i>
+          Theme: Bauhaus Modernism
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN BAUHAUS ATELIER CANVAS -->
+  <main style="padding: 48px 0 72px;">
+    <div class="bh-container">
+
+      <!-- Form & Color Study Top Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: var(--bh-border); padding-bottom: 20px; margin-bottom: 48px; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span class="bh-shape-circle"></span>
+          <span class="bh-shape-square"></span>
+          <div style="display: flex; align-items: center;"><span class="bh-shape-triangle"></span></div>
+          <span style="font-family: 'Archivo Black', sans-serif; font-size: 15px; text-transform: uppercase;">DESSAU 1919 // FORM FOLLOWS FUNCTION</span>
+        </div>
+        <div style="font-size: 13px; font-weight: 800; background: var(--bh-yellow); border: var(--bh-border); padding: 6px 14px; box-shadow: 3px 3px 0px #111418;">
+          WEIMAR ATELIER 04
+        </div>
+      </div>
+
+      <!-- HERO SECTION -->
+      <div class="bh-grid-hero" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; margin-bottom: 64px;">
+        <div>
+          <div style="display: inline-block; background: var(--bh-blue); color: #FFFFFF; font-family: 'Archivo Black', sans-serif; font-size: 12px; padding: 6px 14px; text-transform: uppercase; margin-bottom: 20px; box-shadow: 4px 4px 0px #111418;">
+            RADICAL MODERNIST REVOLUTION
+          </div>
+          <h1 class="bh-title" style="font-size: clamp(44px, 5.5vw, 76px); margin-bottom: 24px;">
+            ART &amp; TECHNOLOGY:<br /><span style="color: var(--bh-red);">A NEW UNITY.</span>
+          </h1>
+          <p style="font-size: 17px; line-height: 1.7; color: #2B2D42; margin-bottom: 32px; max-width: 580px;">
+            Eliminating ornament in pursuit of pure functional truth. The Bauhaus philosophy strips away decorative clutter to celebrate primary geometric forms, structural asymmetry, and stark mechanical legibility.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn-bh-primary">
+              <i class="ph ph-paint-brush"></i> Commission Bauhaus Site
+            </a>
+            <button onclick="toggleThemeDrawer()" class="btn-bh-outline">
+              <i class="ph ph-info"></i> Design Tenets
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Form & Color Study Card -->
+        <div>
+          <div class="bh-card" style="background: var(--bh-yellow);">
+            <div style="border-bottom: var(--bh-border); padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 18px; text-transform: uppercase;">INTERACTIVE FORM STUDY</h3>
+              <span style="font-size: 12px; font-weight: 800;">SELECT SHAPE</span>
+            </div>
+
+            <p id="bhStudyText" style="font-size: 14.5px; line-height: 1.6; font-weight: 600; min-height: 80px; margin-bottom: 24px;">
+              Click below to test Wassily Kandinsky's famous 1923 form-color correlation questionnaire: Red Circle, Blue Square, or Yellow Triangle.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+              <button onclick="setBauhausStudy('circle')" style="background: var(--bh-white); border: var(--bh-border); padding: 14px; box-shadow: 4px 4px 0px #111418; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <span class="bh-shape-circle"></span>
+                <span style="font-size: 11px; font-weight: 800;">CIRCLE (RED)</span>
+              </button>
+
+              <button onclick="setBauhausStudy('square')" style="background: var(--bh-white); border: var(--bh-border); padding: 14px; box-shadow: 4px 4px 0px #111418; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <span class="bh-shape-square"></span>
+                <span style="font-size: 11px; font-weight: 800;">SQUARE (BLUE)</span>
+              </button>
+
+              <button onclick="setBauhausStudy('triangle')" style="background: var(--bh-white); border: var(--bh-border); padding: 14px; box-shadow: 4px 4px 0px #111418; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="display:flex; justify-content:center;"><span class="bh-shape-triangle"></span></div>
+                <span style="font-size: 11px; font-weight: 800;">TRIANGLE (YELLOW)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-PANEL MANIFESTO GRID -->
+      <section style="margin-bottom: 64px;">
+        <div style="border-top: var(--bh-border); padding-top: 48px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h2 class="bh-title" style="font-size: 34px;">FOUR PILLARS OF DESSAU</h2>
+            <p style="color: #4A4E69; font-size: 15px; margin-top: 6px;">The core axioms formulated by Walter Gropius and Johannes Itten.</p>
+          </div>
+          <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px; color: var(--bh-red);">// 1919-2026</span>
+        </div>
+
+        <div class="bh-grid-quad" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+          <div class="bh-card">
+            <div style="font-family: 'Archivo Black', sans-serif; font-size: 32px; color: var(--bh-red); margin-bottom: 12px;">01</div>
+            <h4 style="font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: uppercase; margin-bottom: 12px;">Form Follows Function</h4>
+            <p style="font-size: 13.5px; line-height: 1.6; color: #2B2D42;">
+              The appearance of any UI element must stem directly from its purpose. Every layout decision solves a human interaction problem.
+            </p>
+          </div>
+
+          <div class="bh-card">
+            <div style="font-family: 'Archivo Black', sans-serif; font-size: 32px; color: var(--bh-blue); margin-bottom: 12px;">02</div>
+            <h4 style="font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: uppercase; margin-bottom: 12px;">Asymmetrical Dynamic Balance</h4>
+            <p style="font-size: 13.5px; line-height: 1.6; color: #2B2D42;">
+              Rejecting rigid classical symmetry in favor of energetic offset axes that guide visual hierarchy with natural kinetic tension.
+            </p>
+          </div>
+
+          <div class="bh-card">
+            <div style="font-family: 'Archivo Black', sans-serif; font-size: 32px; color: var(--bh-yellow); margin-bottom: 12px;">03</div>
+            <h4 style="font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: uppercase; margin-bottom: 12px;">Primary Color Purity</h4>
+            <p style="font-size: 13.5px; line-height: 1.6; color: #2B2D42;">
+              Red, yellow, and blue create universal clarity without muted pastel deception. Instant cognitive recognition across cultures.
+            </p>
+          </div>
+
+          <div class="bh-card">
+            <div style="font-family: 'Archivo Black', sans-serif; font-size: 32px; color: var(--bh-black); margin-bottom: 12px;">04</div>
+            <h4 style="font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: uppercase; margin-bottom: 12px;">Honesty of Materials</h4>
+            <p style="font-size: 13.5px; line-height: 1.6; color: #2B2D42;">
+              Steel, glass, concrete, and unvarnished code. Digital components proudly display their structural borders and semantic roles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLIENT SHOWCASE LEAD GENERATION CTA -->
+      <section class="theme-lead-cta" style="margin: 40px auto; max-width: 1260px;">
+        <div class="bh-card" style="background: var(--bh-red); color: #FFFFFF; text-align: center; padding: 60px 40px; box-shadow: 12px 12px 0px #111418;">
+          <div style="display: inline-block; background: var(--bh-black); color: var(--bh-yellow); font-family: 'Archivo Black', sans-serif; font-size: 13px; padding: 6px 14px; text-transform: uppercase; margin-bottom: 18px;">
+            BOLD CREATIVE AGENCIES &bull; ARCHITECTURE MAISONS
+          </div>
+          <h2 class="bh-title" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; color: #FFFFFF;">
+            CREATE UNFORGETTABLE IMPACT WITH BAUHAUS
+          </h2>
+          <p style="color: #F8EDEB; font-size: 16px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6;">
+            We engineer bespoke Bauhaus identity sites that break the monotonous sea of generic SaaS templates. Bold, uncompromising, and instantly iconic.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn-bh-outline" style="background: var(--bh-yellow); color: var(--bh-black); padding: 16px 36px; font-size: 15px;">
+              <i class="ph ph-chat-circle-dots"></i> Hire Bauhaus Designers
+            </a>
+            <a href="themes.html" class="btn-bh-outline" style="background: var(--bh-white); color: var(--bh-black); padding: 16px 36px; font-size: 15px;">
+              <i class="ph ph-squares-four"></i> View All 20 Themes
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- SLIDE-OUT THEME SPECS DRAWER -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Bauhaus Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">German Modernism &bull; Geometric Primitives &bull; Functional Asymmetry</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Form follows function. Synthesizes art, craft, and technology. Employs stark 3px borders, solid drop shadows (no blur), unadorned primary shapes, and bold typography.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Primary Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#D62828; border:2px solid #fff;" title="Bauhaus Red #D62828"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#003049; border:2px solid #fff;" title="Prussian Blue #003049"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FCBF49; border:2px solid #fff;" title="Chrome Yellow #FCBF49"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#111418; border:2px solid #fff;" title="Jet Black #111418"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#F7F5F0; border:2px solid #ccc;" title="Warm Linen #F7F5F0"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Creative agencies, architectural ateliers, industrial design portfolios, avant-garde editorial publications, and museum retrospectives.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Typography &amp; Shadow</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Archivo Black / Futura sans-serif. Hard offset drop shadows (8px 8px 0px #111418) with zero Gaussian blur.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function setBauhausStudy(shape) {
+      const el = document.getElementById('bhStudyText');
+      if (shape === 'circle') {
+        el.textContent = 'Kandinsky Circle Study: "The red circle represents internal spiritual warmth and infinite enclosure. In modern UI, it commands the highest visual urgency and emotional focus."';
+      } else if (shape === 'square') {
+        el.textContent = 'Itten Square Study: "The blue square represents architectural stability, rational order, and gravity. In modern UI, it anchors foundational content cards and primary databases."';
+      } else if (shape === 'triangle') {
+        el.textContent = 'Klee Triangle Study: "The yellow triangle represents dynamic kinetic energy, piercing intellect, and direction. In modern UI, it sparks navigational velocity and call-to-action momentum."';
+      }
+    }
+  </script>
+</body>
+</html>

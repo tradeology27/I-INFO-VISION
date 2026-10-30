@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otaku Hub — Anime Lovers UI Theme | I Info Vision</title>
+  <meta name="description" content="Anime Lovers UI design theme by I Info Vision. Pastel pink and midnight blue aesthetic, manga cloud windows, watch party tickets, fan-art galleries, and anime discussion forums." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans & Kosugi Maru -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       ANIME LOVERS UI — OTAKU HUB THEME SYSTEM
+       Colors: Pastel Sakura Pink & Midnight Navy
+       =================================================== */
+    :root {
+      --anime-pink-light: #FEE8EC;
+      --anime-pink: #F8BBD0;
+      --anime-pink-dark: #F06292;
+      --anime-navy: #151728;
+      --anime-navy-card: #1D1F36;
+      --anime-navy-border: #2D3154;
+      --anime-gold: #FBC02D;
+      --anime-cream: #FFFDF9;
+      --anime-text-dark: #1F2233;
+      --anime-text-muted: #8E92B2;
+      --anime-text-light: #F5F6FF;
+      --anime-bubble: #FCE4EC;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--anime-navy);
+      color: var(--anime-text-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .font-rounded { font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif; }
+
+    /* Sakura Petals Animation */
+    .sakura-drift {
+      position: fixed;
+      top: -20px;
+      user-select: none;
+      pointer-events: none;
+      z-index: 999;
+      animation: sakuraFall linear infinite;
+    }
+    @keyframes sakuraFall {
+      0% { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0.9; }
+      100% { transform: translateY(105vh) rotate(360deg) translateX(120px); opacity: 0; }
+    }
+
+    /* Container */
+    .anime-container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── HEADER & HERO PINK ENCLOSURE (Matching Image 1) ── */
+    .anime-hero-outer {
+      background: linear-gradient(180deg, #FCE8ED 0%, #FAD4DF 75%, #F8C3D2 100%);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      padding-bottom: 60px;
+      position: relative;
+      color: var(--anime-text-dark);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Cute Pill Nav */
+    .anime-nav {
+      max-width: 1140px;
+      margin: 18px auto 0;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .anime-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--anime-text-dark);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .anime-mascot-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      overflow: hidden;
+    }
+
+    .anime-nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-pill {
+      background: #ffffff;
+      border: 1.5px solid #000000;
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #000000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0px #000000;
+      transition: all 0.15s ease;
+    }
+    .nav-pill:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px #000000;
+      background: #fff0f5;
+    }
+
+    .btn-guild {
+      background: #A375F5;
+      color: #ffffff;
+      border: 2px solid #000000;
+      border-radius: 999px;
+      padding: 8px 24px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 3px 3px 0px #000000;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-guild:hover {
+      background: #8e5de8;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #000;
+    }
+
+    /* Hero Section */
+    .anime-hero {
+      max-width: 1140px;
+      margin: 36px auto 0;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .anime-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(42px, 5.5vw, 68px);
+      font-weight: 800;
+      line-height: 1.05;
+      color: #171827;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .anime-hero-desc {
+      font-size: 16px;
+      font-weight: 600;
+      color: #4b4f69;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn-start-explore {
+      background: #FFB380;
+      color: #1F1915;
+      border: 2.5px solid #000000;
+      border-radius: 999px;
+      padding: 14px 36px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #000000;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-start-explore:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000000;
+      background: #ffa466;
+    }
+
+    /* Cloud Shaped Anime Art Frame (Direct from Image 1) */
+    .anime-cloud-frame {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.18));
+      animation: cloudFloat 6s ease-in-out infinite alternate;
+    }
+    @keyframes cloudFloat {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(1deg); }
+    }
+    .cloud-mask-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Custom Organic Manga Cloud SVG clip */
+      border-radius: 46% 54% 65% 35% / 40% 48% 52% 60%;
+      border: 4px solid #ffffff;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    /* Floating Sakura stickers */
+    .star-sparkle {
+      position: absolute;
+      color: var(--anime-gold);
+      font-size: 26px;
+      animation: spinTwinkle 3s ease-in-out infinite alternate;
+    }
+    @keyframes spinTwinkle {
+      0% { transform: scale(0.8) rotate(0deg); opacity: 0.6; }
+      100% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+    }
+
+    /* ── DARK NAVY SECTIONS (Upcoming Events & Hot Topics) ── */
+    .dark-showcase-section {
+      padding: 60px 0;
+    }
+
+    .dual-deck-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .section-headline-anime {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+      color: #ffffff;
+    }
+
+    /* Ticket Stubs (From Image 1) */
+    .ticket-stub {
+      background: #ffffff;
+      color: #171827;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .ticket-stub:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+    .ticket-main {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .ticket-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: #FEE8EC;
+      color: var(--anime-pink-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      border: 1px solid var(--anime-pink);
+      flex-shrink: 0;
+    }
+    .ticket-number-side {
+      background: #FCE4EC;
+      border-left: 2px dashed #000;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #000;
+    }
+
+    /* Forum Bubble Cards */
+    .forum-bubble-card {
+      background: var(--anime-navy-card);
+      border: 1.5px solid var(--anime-navy-border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+    }
+    .forum-bubble-card:hover {
+      border-color: var(--anime-pink-dark);
+      transform: translateY(-3px);
+    }
+    .forum-bubble-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .forum-question {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .forum-avatars {
+      display: flex;
+      align-items: center;
+      gap: -8px;
+    }
+    .avatar-sm {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--anime-navy-card);
+      object-fit: cover;
+      margin-left: -8px;
+    }
+    .avatar-sm:first-child { margin-left: 0; }
+
+    .forum-reply-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--anime-text-muted);
+    }
+
+    /* Starburst Comic Badge */
+    .comic-starburst {
+      background: var(--anime-gold);
+      color: #000000;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      clip-path: polygon(50% 0%, 63% 18%, 84% 7%, 86% 28%, 100% 38%, 91% 57%, 98% 78%, 79% 82%, 73% 100%, 53% 90%, 33% 98%, 26% 80%, 6% 79%, 13% 58%, 0% 41%, 15% 28%, 13% 8%, 34% 17%);
+      display: inline-block;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    /* ── SPIRAL NOTEBOOK: NOW TRENDING (From Image 1) ── */
+    .trending-notebook-section {
+      background: #191B30;
+      border-top: 1px solid var(--anime-navy-border);
+      border-bottom: 1px solid var(--anime-navy-border);
+      padding: 70px 0;
+    }
+
+    .notebook-spread {
+      background: #ffffff;
+      color: #171827;
+      border-radius: 24px;
+      border: 3px solid #000;
+      box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.4);
+      padding: 36px 40px;
+      position: relative;
+    }
+    .notebook-spiral-holes {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 30px;
+      background-image: radial-gradient(#151728 35%, transparent 35%);
+      background-size: 20px 28px;
+      opacity: 0.2;
+    }
+
+    .manga-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .manga-card {
+      border: 2px solid #000;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #FAF8F5;
+      box-shadow: 3px 3px 0px #000;
+      transition: transform 0.2s;
+    }
+    .manga-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 6px 6px 0px #000;
+    }
+    .manga-img-wrap {
+      height: 240px;
+      overflow: hidden;
+    }
+    .manga-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .manga-card:hover .manga-img-wrap img {
+      transform: scale(1.05);
+    }
+    .manga-card-info {
+      padding: 14px;
+    }
+
+    /* Kawaii Meter & Star Rating */
+    .kawaii-meter-bar {
+      height: 8px;
+      background: #E0E2EC;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 6px 0 10px;
+      border: 1px solid #000;
+    }
+    .kawaii-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #F06292, #A375F5);
+      border-radius: 999px;
+    }
+
+    /* ── FAN-ART POLAROID CORKBOARD ── */
+    .fanart-section {
+      padding: 70px 0;
+    }
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .anime-polaroid {
+      background: #ffffff;
+      color: #111;
+      padding: 14px 14px 22px;
+      border: 2px solid #000;
+      box-shadow: 6px 6px 0px #000;
+      transform: rotate(-1.5deg);
+      transition: all 0.2s;
+      position: relative;
+    }
+    .anime-polaroid:nth-child(2) { transform: rotate(2deg); }
+    .anime-polaroid:nth-child(3) { transform: rotate(-2.5deg); }
+    .anime-polaroid:nth-child(4) { transform: rotate(1deg); }
+    .anime-polaroid:hover {
+      transform: rotate(0deg) scale(1.03);
+      z-index: 10;
+      box-shadow: 10px 10px 0px #000;
+    }
+    .polaroid-pin {
+      position: absolute;
+      top: -10px; left: 50%;
+      transform: translateX(-50%);
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #F06292;
+      border: 2px solid #000;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* ── INTERACTIVE WATCH PARTY ROOM ── */
+    .watch-party-box {
+      background: var(--anime-navy-card);
+      border: 2px solid var(--anime-pink);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 12px 30px rgba(240, 98, 146, 0.15);
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .anime-hero { grid-template-columns: 1fr; }
+      .dual-deck-grid { grid-template-columns: 1fr; }
+      .anime-cloud-frame { height: 260px; }
+      .anime-nav-pills { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Sakura Petals -->
+  <div class="sakura-drift" style="left: 10%; animation-duration: 8s; font-size: 20px;">🌸</div>
+  <div class="sakura-drift" style="left: 30%; animation-duration: 11s; animation-delay: 2s; font-size: 16px;">🌸</div>
+  <div class="sakura-drift" style="left: 65%; animation-duration: 9s; animation-delay: 1s; font-size: 22px;">🌸</div>
+  <div class="sakura-drift" style="left: 85%; animation-duration: 12s; animation-delay: 3s; font-size: 18px;">🌸</div>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-sparkle"></i> Theme: <strong>Anime Lovers UI</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PASTEL PINK ENCLOSURE: HERO & NAV (Matching Image 1)
+       ═══════════════════════════════════════════ -->
+  <header class="anime-hero-outer">
+    <!-- Sub Nav -->
+    <nav class="anime-nav">
+      <a href="#" class="anime-brand">
+        <div class="anime-mascot-icon">👧</div>
+        <span>OTAKU HUB</span>
+      </a>
+
+      <ul class="anime-nav-pills">
+        <li><a href="#events" class="nav-pill"><i class="ph ph-popcorn"></i> Watch Party</a></li>
+        <li><a href="#forums" class="nav-pill"><i class="ph ph-chats-circle"></i> Community</a></li>
+        <li><a href="#fanart" class="nav-pill"><i class="ph ph-paint-brush"></i> Fan Art</a></li>
+        <li><a href="#trending" class="nav-pill"><i class="ph ph-cards"></i> Collectibles</a></li>
+      </ul>
+
+      <button class="btn-guild" onclick="joinGuildModal()">
+        <span>JOIN THE GUILD</span> <i class="ph ph-shield-check"></i>
+      </button>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="anime-hero">
+      <div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 14px;">
+          <span class="comic-starburst">NEW EPISODES!</span>
+          <span class="star-sparkle">✦</span>
+          <span style="font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 700; color: #6b4055;">Anime &bull; Manga &bull; Cosplay Collective</span>
+        </div>
+
+        <h1 class="anime-hero-title">
+          YOUR NEXT ADVENTURE AWAITS.
+        </h1>
+
+        <p class="anime-hero-desc">
+          Connecting fans, artists, voice-actors, and world-builders. Stream simulcast watch parties, debate seasonal tier-lists, and share your fan-made creations in a warm otaku sanctuary.
+        </p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+          <a href="#watch-party" class="btn-start-explore">
+            <span>START EXPLORING</span> <i class="ph ph-arrow-right-bold"></i>
+          </a>
+          <span style="font-family: 'Fredoka', sans-serif; font-size: 13.5px; font-weight: 600; color: #583e4a;">
+            🌸 42,800+ Active Guild Members
+          </span>
+        </div>
+      </div>
+
+      <!-- Cloud-Shaped Anime Landscape Illustration -->
+      <div class="anime-cloud-frame">
+        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" alt="Anime starry night sky over peaceful village with cherry blossoms" class="cloud-mask-img" />
+        <div class="star-sparkle" style="top: -15px; left: 20px;">★</div>
+        <div class="star-sparkle" style="bottom: 10px; right: 10px; font-size: 22px;">★</div>
+        <div class="star-sparkle" style="top: 40%; right: -15px; font-size: 18px;">✦</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       DARK NAVY SECTION: UPCOMING EVENTS & FORUM HOT TOPICS (From Image 1)
+       ═══════════════════════════════════════════ -->
+  <section class="dark-showcase-section" id="events">
+    <div class="anime-container">
+      <div class="dual-deck-grid">
+
+        <!-- Left: Upcoming Events (Ticket Stubs) -->
+        <div>
+          <div class="section-headline-anime">
+            <i class="ph ph-alarm" style="color: var(--anime-pink);"></i>
+            <span>UPCOMING EVENTS</span>
+          </div>
+
+          <!-- Ticket 01 -->
+          <div class="ticket-stub" onclick="showThemeToast('Joined Virtual Watch Party queue!')">
+            <div class="ticket-main">
+              <div class="ticket-icon"><i class="ph ph-clock"></i></div>
+              <div>
+                <h4 style="font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 700; color: #171827;">VIRTUAL WATCH PARTIES</h4>
+                <p style="font-size: 13px; color: #666; margin-top: 2px;">Synchronized stream with live voice chat &bull; Tonight 8:00 PM JST</p>
+              </div>
+            </div>
+            <div class="ticket-number-side">01</div>
+          </div>
+
+          <!-- Ticket 02 -->
+          <div class="ticket-stub" onclick="showThemeToast('Anime Con Pass checked!')">
+            <div class="ticket-main">
+              <div class="ticket-icon"><i class="ph ph-ticket"></i></div>
+              <div>
+                <h4 style="font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 700; color: #171827;">ANIME CONS &amp; COSPLAY MEET</h4>
+                <p style="font-size: 13px; color: #666; margin-top: 2px;">Tokyo &bull; Los Angeles &bull; Paris Guild Booth RSVP</p>
+              </div>
+            </div>
+            <div class="ticket-number-side">02</div>
+          </div>
+
+          <!-- Ticket 03 -->
+          <div class="ticket-stub" onclick="showThemeToast('Art challenge prompt saved!')">
+            <div class="ticket-main">
+              <div class="ticket-icon"><i class="ph ph-paint-brush"></i></div>
+              <div>
+                <h4 style="font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 700; color: #171827;">SAKURA ART SPRINT</h4>
+                <p style="font-size: 13px; color: #666; margin-top: 2px;">48-hour character design challenge with $500 Wacom prizes</p>
+              </div>
+            </div>
+            <div class="ticket-number-side">03</div>
+          </div>
+        </div>
+
+        <!-- Right: Forum Hot Topics -->
+        <div id="forums">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px;">
+            <div class="section-headline-anime" style="margin-bottom: 0;">
+              <i class="ph ph-flame" style="color: #FF5252;"></i>
+              <span>FORUM HOT TOPICS</span>
+            </div>
+            <span class="comic-starburst">NEW EVENT!</span>
+          </div>
+
+          <!-- Forum Card 1 -->
+          <div class="forum-bubble-card">
+            <div class="forum-bubble-header">
+              <span style="font-size: 11px; text-transform: uppercase; color: var(--anime-pink); font-weight: 700; letter-spacing: 0.5px;">ANIMATION STUDIOS</span>
+              <span style="font-size: 12px; color: var(--anime-gold);"><i class="ph ph-chat-teardrop"></i> 248 replies</span>
+            </div>
+            <h4 class="forum-question">Which studio animates fantasy better? Ufotable vs Wit Studio vs MAPPA?</h4>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="forum-avatars">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="avatar-sm" />
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" class="avatar-sm" />
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" class="avatar-sm" />
+              </div>
+              <button class="nav-pill" style="padding: 4px 12px; font-size: 12px;" onclick="replyForum('Studio debate')">
+                Reply 💬
+              </button>
+            </div>
+          </div>
+
+          <!-- Forum Card 2 -->
+          <div class="forum-bubble-card">
+            <div class="forum-bubble-header">
+              <span style="font-size: 11px; text-transform: uppercase; color: var(--anime-pink); font-weight: 700; letter-spacing: 0.5px;">SEASONAL PREVIEWS</span>
+              <span style="font-size: 12px; color: var(--anime-gold);"><i class="ph ph-chat-teardrop"></i> 182 replies</span>
+            </div>
+            <h4 class="forum-question">The most overlooked gems of Autumn 2026 that deserve a second season!</h4>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="forum-avatars">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80" class="avatar-sm" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="avatar-sm" />
+              </div>
+              <button class="nav-pill" style="padding: 4px 12px; font-size: 12px;" onclick="replyForum('Seasonal gems')">
+                Reply 💬
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SPIRAL NOTEBOOK: NOW TRENDING (From Image 1)
+       ═══════════════════════════════════════════ -->
+  <section class="trending-notebook-section" id="trending">
+    <div class="anime-container">
+      <div class="notebook-spread">
+        <div class="notebook-spiral-holes"></div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #ccc; padding-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <h3 class="font-rounded" style="font-size: 28px; font-weight: 800; color: #171827;">NOW TRENDING TITLES</h3>
+            <p style="font-size: 13.5px; color: #666;">Community weighted ratings &bull; Updated every Thursday</p>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <span style="color: var(--anime-gold); font-size: 20px;">★★★</span>
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 14px; font-weight: 700; background: #FCE4EC; padding: 4px 12px; border-radius: 999px; border: 1.5px solid #000;">
+              Top Rated 9.8/10
+            </span>
+          </div>
+        </div>
+
+        <div class="manga-cards-grid">
+          <!-- Card 1 -->
+          <div class="manga-card">
+            <div class="manga-img-wrap">
+              <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Chronicles of the Starry Grove" />
+            </div>
+            <div class="manga-card-info">
+              <div style="font-size: 11px; font-weight: 700; color: #F06292; text-transform: uppercase;">Fantasy &bull; Adventure</div>
+              <h4 style="font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 700; margin: 4px 0;">Starlight Alchemist</h4>
+              <div class="kawaii-meter-bar">
+                <div class="kawaii-fill" style="width: 88%;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700;">
+                <span>Kawaii Meter: 88%</span>
+                <span style="color: var(--anime-gold);">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="manga-card">
+            <div class="manga-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80" alt="Cyber Mecha Revolution" />
+            </div>
+            <div class="manga-card-info">
+              <div style="font-size: 11px; font-weight: 700; color: #A375F5; text-transform: uppercase;">Sci-Fi &bull; Mecha</div>
+              <h4 style="font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 700; margin: 4px 0;">Neo Tokyo 2099</h4>
+              <div class="kawaii-meter-bar">
+                <div class="kawaii-fill" style="width: 74%;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700;">
+                <span>Kawaii Meter: 74%</span>
+                <span style="color: var(--anime-gold);">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="manga-card">
+            <div class="manga-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80" alt="Spirit Shrine Keeper" />
+            </div>
+            <div class="manga-card-info">
+              <div style="font-size: 11px; font-weight: 700; color: #4CAF50; text-transform: uppercase;">Slice of Life &bull; Supernatural</div>
+              <h4 style="font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 700; margin: 4px 0;">Shrine of the Moon Fox</h4>
+              <div class="kawaii-meter-bar">
+                <div class="kawaii-fill" style="width: 95%;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700;">
+                <span>Kawaii Meter: 95%</span>
+                <span style="color: var(--anime-gold);">★ 5.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COMMUNITY BUILDS & FAN-ART (From Image 1)
+       ═══════════════════════════════════════════ -->
+  <section class="fanart-section" id="fanart">
+    <div class="anime-container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span class="comic-starburst">FAN-MADE ARTWORK</span>
+          <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; color: #ffffff; margin-top: 6px;">
+            COMMUNITY BUILDS &amp; FAN-ART
+          </h3>
+        </div>
+        <button class="btn-guild" onclick="showThemeToast('Upload Fan Art Modal Opened!')">
+          <i class="ph ph-upload-simple"></i> Submit Your Artwork
+        </button>
+      </div>
+
+      <div class="polaroid-grid">
+        <!-- Polaroid 1 -->
+        <div class="anime-polaroid">
+          <div class="polaroid-pin"></div>
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 220px; object-fit: cover; border: 1px solid #ddd;" />
+          <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px;">Sakura Swordswoman</div>
+            <span style="color: var(--anime-gold); font-size: 13px;">★★★★★</span>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-top: 4px;">By @yuki_art &bull; Clip Studio Paint</div>
+        </div>
+
+        <!-- Polaroid 2 -->
+        <div class="anime-polaroid">
+          <div class="polaroid-pin" style="background: #A375F5;"></div>
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 220px; object-fit: cover; border: 1px solid #ddd;" />
+          <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px;">Cozy Tea House Spirit</div>
+            <span style="color: var(--anime-gold); font-size: 13px;">★★★★★</span>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-top: 4px;">By @chibi_chan &bull; Procreate iPad</div>
+        </div>
+
+        <!-- Polaroid 3 -->
+        <div class="anime-polaroid">
+          <div class="polaroid-pin" style="background: #FFB380;"></div>
+          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 220px; object-fit: cover; border: 1px solid #ddd;" />
+          <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px;">Cyber Samurai Mech</div>
+            <span style="color: var(--anime-gold); font-size: 13px;">★★★★☆</span>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-top: 4px;">By @kenji_3d &bull; Blender + Photoshop</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE LIVE WATCH ROOM (Simulated)
+       ═══════════════════════════════════════════ -->
+  <section class="anime-container" id="watch-party" style="margin-bottom: 70px;">
+    <div class="watch-party-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--anime-navy-border); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: #FF5252; box-shadow: 0 0 10px #FF5252;"></div>
+          <h3 class="font-rounded" style="font-size: 20px; font-weight: 700; color: #fff;">LIVE WATCH PARTY #082: FRIEREN EPISODE 28</h3>
+        </div>
+        <div style="font-family: 'Fredoka', sans-serif; font-size: 13px; color: var(--anime-pink);">
+          <i class="ph ph-users"></i> 1,482 Otaku Streaming Together
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;" id="watch-grid">
+        <!-- Player Simulation -->
+        <div style="background: #000; border-radius: 16px; height: 320px; overflow: hidden; position: relative; border: 2px solid var(--anime-navy-border);">
+          <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" />
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+            <button style="width: 68px; height: 68px; border-radius: 50%; background: var(--anime-pink-dark); color: #fff; border: 3px solid #fff; font-size: 28px; cursor: pointer; box-shadow: 0 8px 24px rgba(240,98,146,0.6);" onclick="showThemeToast('Stream Synced to 1080p 60FPS!')">
+              ▶
+            </button>
+          </div>
+          <div style="position: absolute; bottom: 12px; left: 16px; right: 16px; display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; background: rgba(0,0,0,0.6); padding: 8px 14px; border-radius: 999px;">
+            <span>Episode 28: The Journey Continues (23:44 / 24:00)</span>
+            <span style="color: #4CAF50;">● Synchronized</span>
+          </div>
+        </div>
+
+        <!-- Live Reaction Chat -->
+        <div style="background: rgba(0,0,0,0.3); border-radius: 16px; padding: 16px; border: 1px solid var(--anime-navy-border); display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="overflow-y: auto; max-height: 220px; display: flex; flex-direction: column; gap: 8px; font-size: 13px;" id="animeChatFeed">
+            <div><strong style="color: var(--anime-pink);">@tanaka:</strong> That animation sequence was insane!! 😭✨</div>
+            <div><strong style="color: #64B5F6;">@chibi_fan:</strong> The soundtrack in the background gave me goosebumps!</div>
+            <div><strong style="color: var(--anime-gold);">@zoro_lost:</strong> Wait, did anyone notice the ring reflection?</div>
+            <div><strong style="color: #81C784;">@sakura_09:</strong> Studio cooked a 5-star meal with this episode 🔥</div>
+          </div>
+
+          <div style="margin-top: 14px; display: flex; gap: 6px;">
+            <button class="nav-pill" style="padding: 4px 10px; font-size: 12px;" onclick="sendReaction('✨')">✨</button>
+            <button class="nav-pill" style="padding: 4px 10px; font-size: 12px;" onclick="sendReaction('😭')">😭</button>
+            <button class="nav-pill" style="padding: 4px 10px; font-size: 12px;" onclick="sendReaction('🔥')">🔥</button>
+            <button class="nav-pill" style="padding: 4px 10px; font-size: 12px;" onclick="sendReaction('(≧◡≦)')">(≧◡≦)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ANIME OTAKU FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: #0E101D; border-top: 2px solid var(--anime-navy-border); padding: 50px 0 30px;">
+    <div class="anime-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="anime-brand" style="color: #fff;">
+          <div class="anime-mascot-icon">👧</div>
+          <span>OTAKU HUB COLLECTIVE</span>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="themes.html" class="nav-pill" style="background: var(--anime-pink); border-color: #000;">
+            <i class="ph ph-arrow-left"></i> All 16 Design Themes
+          </a>
+          <button class="btn-guild" onclick="showThemeToast('Guild Discord Link copied!')">Discord Guild</button>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: var(--anime-text-muted); margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 Otaku Hub &bull; Anime Lovers Living UI Theme &bull; Crafted by I Info Vision</span>
+        <span>Pastel Pink + Midnight Navy Archetype</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Anime Lovers UI Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Anime Lovers, Otaku Culture &amp; Fandom Community UI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Warm pastel pink cloud canopy paired with rich midnight navy depths. Employs perforated ticket stubs, spiral ring binder journals, starburst stickers, and kawaii meters to create a welcoming fan ecosystem.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#FCE4EC; border:2px solid #fff;" title="Sakura Pink #FCE4EC"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#F06292; border:2px solid #fff;" title="Deep Pink #F06292"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#151728; border:2px solid #fff;" title="Midnight Navy #151728"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FBC02D; border:2px solid #fff;" title="Anime Gold #FBC02D"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#A375F5; border:2px solid #fff;" title="Guild Violet #A375F5"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Manga &amp; anime streaming platforms, gaming guilds, cosplay convention apps, artist community galleries, and fan club websites.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function joinGuildModal() {
+      if (window.showThemeToast) {
+        showThemeToast('🌟 Otaku Hub Guild Invitation sent to your inbox! Welcome aboard!');
+      } else {
+        alert('Welcome to Otaku Hub Guild!');
+      }
+    }
+
+    function replyForum(topic) {
+      if (window.showThemeToast) {
+        showThemeToast(`💬 Forum Reply Box opened for "${topic}"!`);
+      }
+    }
+
+    function sendReaction(emoji) {
+      const chat = document.getElementById('animeChatFeed');
+      if (chat) {
+        const item = document.createElement('div');
+        item.innerHTML = `<strong style="color: #FF80AB;">@you:</strong> ${emoji}`;
+        chat.appendChild(item);
+        chat.scrollTop = chat.scrollHeight;
+      }
+      if (window.showThemeToast) {
+        showThemeToast(`Sent ${emoji} to live watch room!`);
+      }
+    }
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Material Design 3 (Material You) | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience Google's Material Design 3 system crafted by I Info Vision. Dynamic tonal color palettes, 5 elevation levels, adaptive navigation, and ergonomic components." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Roboto & Roboto Flex -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       GOOGLE MATERIAL DESIGN 3 (MATERIAL YOU) SYSTEM
+       Dynamic Tonal Color Schemes + 5-Level Elevation
+       =================================================== */
+    :root {
+      /* Baseline M3 Deep Violet Seed */
+      --md-sys-color-primary: #6750A4;
+      --md-sys-color-on-primary: #FFFFFF;
+      --md-sys-color-primary-container: #EADDFF;
+      --md-sys-color-on-primary-container: #21005D;
+      --md-sys-color-surface: #FEF7FF;
+      --md-sys-color-surface-dim: #DED8E1;
+      --md-sys-color-surface-container: #F3EDF7;
+      --md-sys-color-surface-container-high: #ECE6F0;
+      --md-sys-color-on-surface: #1D1B20;
+      --md-sys-color-on-surface-variant: #49454F;
+      --md-sys-color-outline: #79747E;
+      --md-sys-color-outline-variant: #CAC4D0;
+      --md-sys-color-secondary: #625B71;
+      --md-sys-color-secondary-container: #E8DEF8;
+
+      /* M3 Elevation Dual Shadows */
+      --md-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+      --md-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+      --md-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+      --md-elevation-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--md-sys-color-surface);
+      color: var(--md-sys-color-on-surface);
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .md-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* M3 Surface Cards */
+    .md-card {
+      background: var(--md-sys-color-surface-container);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--md-elevation-1);
+      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+      border: 1px solid transparent;
+      position: relative;
+    }
+
+    .md-card:hover {
+      box-shadow: var(--md-elevation-2);
+      transform: translateY(-2px);
+    }
+
+    .md-card-high {
+      background: var(--md-sys-color-surface-container-high);
+      box-shadow: var(--md-elevation-2);
+    }
+
+    /* M3 Filled Button */
+    .btn-md-filled {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      font-weight: 600;
+      font-size: 14.5px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--md-elevation-1);
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      text-decoration: none;
+    }
+
+    .btn-md-filled:hover {
+      box-shadow: var(--md-elevation-2);
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    /* M3 Tonal Button */
+    .btn-md-tonal {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: var(--md-sys-color-secondary-container);
+      color: var(--md-sys-color-primary);
+      font-weight: 600;
+      font-size: 14.5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-md-tonal:hover {
+      background: var(--md-sys-color-primary-container);
+      transform: translateY(-1px);
+    }
+
+    /* M3 Outlined Button */
+    .btn-md-outlined {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--md-sys-color-primary);
+      border: 1px solid var(--md-sys-color-outline);
+      font-weight: 600;
+      font-size: 14.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-md-outlined:hover {
+      background: rgba(103, 80, 164, 0.08);
+    }
+
+    /* M3 Floating Action Button (FAB) */
+    .md-fab {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 16px;
+      background: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      box-shadow: var(--md-elevation-3);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .md-fab:hover {
+      box-shadow: var(--md-elevation-4);
+      transform: translateY(-2px);
+    }
+
+    /* M3 Filter Chips */
+    .md-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      background: var(--md-sys-color-surface-container);
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: 13.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .md-chip.active {
+      background: var(--md-sys-color-secondary-container);
+      color: var(--md-sys-color-on-surface);
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    /* M3 Toggle Switch */
+    .md-switch {
+      position: relative;
+      width: 52px;
+      height: 32px;
+      display: inline-block;
+    }
+
+    .md-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .md-switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--md-sys-color-surface-container-high);
+      border: 2px solid var(--md-sys-color-outline);
+      border-radius: 999px;
+      transition: 0.3s;
+    }
+
+    .md-switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 6px;
+      bottom: 6px;
+      background-color: var(--md-sys-color-outline);
+      border-radius: 50%;
+      transition: 0.3s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .md-switch input:checked + .md-switch-slider {
+      background-color: var(--md-sys-color-primary);
+      border-color: var(--md-sys-color-primary);
+    }
+
+    .md-switch input:checked + .md-switch-slider:before {
+      transform: translateX(20px);
+      background-color: var(--md-sys-color-on-primary);
+      width: 20px;
+      height: 20px;
+      left: 4px;
+      bottom: 4px;
+    }
+
+    /* Seed Color Pill Buttons */
+    .color-seed-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      background: var(--md-sys-color-surface-container);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .color-seed-pill.active {
+      border-color: var(--md-sys-color-primary);
+      box-shadow: 0 0 0 2px var(--md-sys-color-primary);
+    }
+
+    .color-seed-circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 900px) {
+      .md-hero-grid { grid-template-columns: 1fr !important; }
+      .md-cards-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIVERSAL STICKY TOP BAR -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-circles-three"></i>
+          Theme: Material Design (M3)
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <div style="padding: 48px 0 72px;">
+    <div class="md-container">
+
+      <!-- Dynamic Seed Color Selector Bar -->
+      <div style="margin-bottom: 32px; background: var(--md-sys-color-surface-container); padding: 14px 20px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="ph ph-palette" style="color: var(--md-sys-color-primary); font-size: 20px;"></i>
+          <span style="font-weight: 700; font-size: 14px;">Material You Dynamic Color Seed:</span>
+        </div>
+
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="color-seed-pill active" onclick="setMaterialSeed('violet', this)">
+            <span class="color-seed-circle" style="background: #6750A4;"></span>
+            Deep Violet (Baseline)
+          </button>
+          <button class="color-seed-pill" onclick="setMaterialSeed('emerald', this)">
+            <span class="color-seed-circle" style="background: #006C4C;"></span>
+            Botanical Emerald
+          </button>
+          <button class="color-seed-pill" onclick="setMaterialSeed('amber', this)">
+            <span class="color-seed-circle" style="background: #825500;"></span>
+            Terracotta Ochre
+          </button>
+          <button class="color-seed-pill" onclick="setMaterialSeed('blue', this)">
+            <span class="color-seed-circle" style="background: #00629E;"></span>
+            Oceanic Cobalt
+          </button>
+        </div>
+      </div>
+
+      <!-- HERO SECTION -->
+      <div class="md-hero-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; margin-bottom: 64px;">
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 8px; background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); font-size: 13px; font-weight: 700; margin-bottom: 20px;">
+            <i class="ph ph-device-mobile"></i> GOOGLE DESIGN SYSTEM M3
+          </div>
+          <h1 style="font-size: clamp(36px, 4.2vw, 52px); font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: var(--md-sys-color-on-surface);">
+            Structured Elevation &amp; Adaptive <span style="color: var(--md-sys-color-primary);">Material You</span>.
+          </h1>
+          <p style="font-size: 17px; line-height: 1.7; color: var(--md-sys-color-on-surface-variant); margin-bottom: 32px; max-width: 560px;">
+            Google’s definitive design language built for responsive clarity, predictable elevation hierarchies, and dynamic user-driven tonal palettes that adapt to your personal preferences.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+            <a href="index.html#contact" class="btn-md-filled">
+              <i class="ph ph-sparkle"></i> Build Material App
+            </a>
+            <a href="#interactive-sandbox" class="btn-md-tonal">
+              <i class="ph ph-cube"></i> Explore Sandbox
+            </a>
+            <button onclick="toggleThemeDrawer()" class="btn-md-outlined">
+              <i class="ph ph-info"></i> Design Specs
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Material Component Stack -->
+        <div>
+          <div class="md-card md-card-high" style="border-radius: 24px; padding: 32px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); display: flex; align-items: center; justify-content: center; font-size: 22px;">
+                  <i class="ph ph-cloud-check"></i>
+                </div>
+                <div>
+                  <h4 style="font-size: 16px; font-weight: 700;">Google Cloud Run Tasks</h4>
+                  <p style="font-size: 12.5px; color: var(--md-sys-color-on-surface-variant);">US-Central1 &bull; Active Cluster</p>
+                </div>
+              </div>
+              <span style="font-size: 12px; font-weight: 700; color: var(--md-sys-color-primary); background: var(--md-sys-color-primary-container); padding: 4px 10px; border-radius: 999px;">LEVEL 2 ELEVATION</span>
+            </div>
+
+            <!-- Task Items -->
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+              <div style="background: var(--md-sys-color-surface); padding: 14px 18px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--md-elevation-1);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <i class="ph ph-check-circle" style="color: var(--md-sys-color-primary); font-size: 20px;"></i>
+                  <span style="font-size: 14px; font-weight: 500;">Dynamic Theme Token Ingestion</span>
+                </div>
+                <span style="font-size: 12px; color: var(--md-sys-color-outline);">Ready</span>
+              </div>
+
+              <div style="background: var(--md-sys-color-surface); padding: 14px 18px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--md-elevation-1);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <i class="ph ph-arrows-clockwise" style="color: var(--md-sys-color-primary); font-size: 20px;"></i>
+                  <span style="font-size: 14px; font-weight: 500;">Tonal Elevation Depth Shader</span>
+                </div>
+                <span style="font-size: 12px; color: var(--md-sys-color-outline);">Syncing</span>
+              </div>
+            </div>
+
+            <!-- Floating Action Button Demo -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="font-size: 13px; color: var(--md-sys-color-on-surface-variant);">FAB Micro-Action:</div>
+              <button class="md-fab" onclick="showFabNotice()">
+                <i class="ph ph-plus-circle" style="font-size: 22px;"></i>
+                <span>Add M3 Service</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE M3 COMPONENT SANDBOX -->
+      <section id="interactive-sandbox" style="margin-bottom: 64px;">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+          <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 12px;">Interactive M3 Component Sandbox</h2>
+          <p style="color: var(--md-sys-color-on-surface-variant); font-size: 15.5px;">
+            Touch and test the canonical building blocks of Google Material You: adaptive chips, tactile toggle switches, progressive sliders, and elevation planes.
+          </p>
+        </div>
+
+        <div class="md-cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <!-- Sandbox 1: Chips & Filters -->
+          <div class="md-card">
+            <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+              <i class="ph ph-tag" style="color: var(--md-sys-color-primary);"></i> Filter &amp; Action Chips
+            </h4>
+            <p style="font-size: 13.5px; color: var(--md-sys-color-on-surface-variant); margin-bottom: 20px;">
+              Filter chips allow users to refine content clusters with clear selected states.
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <div class="md-chip active" onclick="this.classList.toggle('active')">
+                <i class="ph ph-check"></i> Android 15
+              </div>
+              <div class="md-chip active" onclick="this.classList.toggle('active')">
+                <i class="ph ph-check"></i> Flutter SDK
+              </div>
+              <div class="md-chip" onclick="this.classList.toggle('active')">
+                <i class="ph ph-plus"></i> Web App
+              </div>
+              <div class="md-chip" onclick="this.classList.toggle('active')">
+                <i class="ph ph-plus"></i> Wear OS
+              </div>
+            </div>
+          </div>
+
+          <!-- Sandbox 2: Switch & State Layers -->
+          <div class="md-card">
+            <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+              <i class="ph ph-toggle-right" style="color: var(--md-sys-color-primary);"></i> State Layers &amp; Switches
+            </h4>
+            <p style="font-size: 13.5px; color: var(--md-sys-color-on-surface-variant); margin-bottom: 20px;">
+              Interactive toggle controls with icon thumb transitions and elevation responses.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 500;">Haptic Elevation</span>
+                <label class="md-switch">
+                  <input type="checkbox" checked />
+                  <span class="md-switch-slider"></span>
+                </label>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 500;">Dynamic Contrast</span>
+                <label class="md-switch">
+                  <input type="checkbox" />
+                  <span class="md-switch-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sandbox 3: 5-Level Elevation Hierarchy -->
+          <div class="md-card">
+            <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+              <i class="ph ph-stack" style="color: var(--md-sys-color-primary);"></i> 5 Elevation Planes
+            </h4>
+            <p style="font-size: 13.5px; color: var(--md-sys-color-on-surface-variant); margin-bottom: 16px;">
+              Dual-ambient shadow casting calibrated according to strict Google M3 specifications.
+            </p>
+            <div style="display: flex; gap: 10px; text-align: center;">
+              <div style="flex: 1; padding: 12px 6px; background: var(--md-sys-color-surface); border-radius: 8px; box-shadow: var(--md-elevation-1); font-size: 12px; font-weight: 700;">L1</div>
+              <div style="flex: 1; padding: 12px 6px; background: var(--md-sys-color-surface); border-radius: 8px; box-shadow: var(--md-elevation-2); font-size: 12px; font-weight: 700;">L2</div>
+              <div style="flex: 1; padding: 12px 6px; background: var(--md-sys-color-surface); border-radius: 8px; box-shadow: var(--md-elevation-3); font-size: 12px; font-weight: 700;">L3</div>
+              <div style="flex: 1; padding: 12px 6px; background: var(--md-sys-color-surface); border-radius: 8px; box-shadow: var(--md-elevation-4); font-size: 12px; font-weight: 700;">L4</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLIENT SHOWCASE LEAD GENERATION CTA -->
+      <section class="theme-lead-cta" style="margin: 40px auto; max-width: 1240px;">
+        <div style="background: var(--md-sys-color-primary-container); border-radius: 28px; padding: 56px 40px; text-align: center; box-shadow: var(--md-elevation-2);">
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 8px; background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); font-size: 13px; font-weight: 700; margin-bottom: 16px;">
+            <i class="ph ph-lightning"></i> SCALABLE &bull; ACCESSIBLE
+          </div>
+          <h2 style="font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; margin-bottom: 16px; color: var(--md-sys-color-on-primary-container);">
+            Engineer Your Product with Material Design 3
+          </h2>
+          <p style="color: var(--md-sys-color-on-surface-variant); font-size: 16px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6;">
+            We architect and deploy production web and mobile apps adhering strictly to Google Material Design guidelines, complete with dynamic token generation and seamless WCAG AAA accessibility.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn-md-filled" style="padding: 16px 36px; font-size: 15px;">
+              <i class="ph ph-chat-circle-dots"></i> Hire Material Specialists
+            </a>
+            <a href="themes.html" class="btn-md-outlined" style="padding: 16px 36px; font-size: 15px; border-color: var(--md-sys-color-primary);">
+              <i class="ph ph-squares-four"></i> View All 20 Themes
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- SLIDE-OUT THEME SPECS DRAWER -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Material Design Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Google Material You M3 &bull; Tonal Palettes &bull; Predictable Elevation</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Grounds every interactive surface in real-world tactile physics with dual-ambient drop shadows, standardized state layers (hover 8%, focus 12%, pressed 12%), and dynamic algorithmic color harmonization.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Dynamic Color Roles</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#6750A4; border:2px solid #fff;" title="Primary #6750A4"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#EADDFF; border:2px solid #fff;" title="Primary Container #EADDFF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#FEF7FF; border:2px solid #ccc;" title="Surface #FEF7FF"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#F3EDF7; border:2px solid #ccc;" title="Surface Container #F3EDF7"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#79747E; border:2px solid #fff;" title="Outline #79747E"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Android applications, high-density productivity tools, cross-platform Flutter/React Native software, enterprise admin panels, and Google Workspace integrations.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Key Standards</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Roboto typography, 4dp baseline grid, rounded 16px–24px containers, and tactile Floating Action Buttons (FAB).
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function setMaterialSeed(seed, btn) {
+      document.querySelectorAll('.color-seed-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const root = document.documentElement;
+      if (seed === 'violet') {
+        root.style.setProperty('--md-sys-color-primary', '#6750A4');
+        root.style.setProperty('--md-sys-color-primary-container', '#EADDFF');
+        root.style.setProperty('--md-sys-color-on-primary-container', '#21005D');
+        root.style.setProperty('--md-sys-color-surface', '#FEF7FF');
+        root.style.setProperty('--md-sys-color-surface-container', '#F3EDF7');
+        root.style.setProperty('--md-sys-color-surface-container-high', '#ECE6F0');
+      } else if (seed === 'emerald') {
+        root.style.setProperty('--md-sys-color-primary', '#006C4C');
+        root.style.setProperty('--md-sys-color-primary-container', '#8CF8C7');
+        root.style.setProperty('--md-sys-color-on-primary-container', '#002114');
+        root.style.setProperty('--md-sys-color-surface', '#F6FBF6');
+        root.style.setProperty('--md-sys-color-surface-container', '#EBEFEA');
+        root.style.setProperty('--md-sys-color-surface-container-high', '#E2E6E2');
+      } else if (seed === 'amber') {
+        root.style.setProperty('--md-sys-color-primary', '#825500');
+        root.style.setProperty('--md-sys-color-primary-container', '#FFDDAF');
+        root.style.setProperty('--md-sys-color-on-primary-container', '#2A1800');
+        root.style.setProperty('--md-sys-color-surface', '#FFF8F4');
+        root.style.setProperty('--md-sys-color-surface-container', '#F4ECE4');
+        root.style.setProperty('--md-sys-color-surface-container-high', '#EAE2DA');
+      } else if (seed === 'blue') {
+        root.style.setProperty('--md-sys-color-primary', '#00629E');
+        root.style.setProperty('--md-sys-color-primary-container', '#CFE5FF');
+        root.style.setProperty('--md-sys-color-on-primary-container', '#001D35');
+        root.style.setProperty('--md-sys-color-surface', '#F8F9FF');
+        root.style.setProperty('--md-sys-color-surface-container', '#ECEEF7');
+        root.style.setProperty('--md-sys-color-surface-container-high', '#E3E5EE');
+      }
+    }
+
+    function showFabNotice() {
+      alert("Material 3 FAB Action Triggered: New Cloud Microservice instantiated with dynamic tonal elevation!");
+    }
+  </script>
+</body>
+</html>

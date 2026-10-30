@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bento Grid System UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the Bento Grid System UI theme created by I Info Vision. Organized modular cards in varied aspect ratios, Apple-style product showcases, and interactive metric tiles." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       BENTO GRID DESIGN SYSTEM
+       Obsidian Canvas + Apple Ergonomic Rounded Tiles
+       =================================================== */
+    :root {
+      --bento-bg: #090B10;
+      --bento-card: #131722;
+      --bento-card-hover: #191E2C;
+      --bento-border: rgba(255, 255, 255, 0.08);
+      --bento-border-glow: rgba(59, 130, 246, 0.4);
+      --bento-text: #F8FAFC;
+      --bento-text-muted: #94A3B8;
+      --bento-blue: #3B82F6;
+      --bento-purple: #8B5CF6;
+      --bento-emerald: #10B981;
+      --bento-amber: #F59E0B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bento-bg);
+      color: var(--bento-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .bento-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── BENTO GRID MASTER ── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .bento-tile {
+      background: var(--bento-card);
+      border: 1px solid var(--bento-border);
+      border-radius: 24px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bento-tile:hover {
+      background: var(--bento-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Span Variations */
+    .col-span-8 { grid-column: span 8; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-3 { grid-column: span 3; }
+    .row-span-2 { grid-row: span 2; }
+
+    /* Glowing Edge Accents */
+    .bento-glow-top {
+      position: absolute;
+      top: 0; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+    }
+
+    /* Micro Buttons */
+    .btn-bento-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-bento-pill:hover {
+      background: #3B82F6;
+      border-color: #60A5FA;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .col-span-8, .col-span-6, .col-span-4, .col-span-3 {
+        grid-column: span 12 !important;
+      }
+      @media (max-width: 768px) {
+        .bento-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        .col-span-12, .col-span-8, .col-span-6, .col-span-4, .col-span-3 {
+          grid-column: 1 / -1 !important;
+        }
+        .bento-tile {
+          padding: 20px 16px !important;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-squares-four"></i> Theme: <strong>Bento Grid System</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO: BENTO HEADLINE
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0 40px; text-align: center;">
+    <div class="bento-container">
+      <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 999px; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.3); color: #60A5FA; font-size: 12.5px; font-weight: 700; margin-bottom: 20px;">
+        <i class="ph ph-sparkle"></i> APPLE-STYLE MODULAR ERGONOMICS
+      </div>
+
+      <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(38px, 5vw, 60px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 18px;">
+        Organized by Structure.<br />
+        <span style="background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Curated Like a Masterpiece.</span>
+      </h1>
+
+      <p style="font-size: 16.5px; color: var(--bento-text-muted); max-width: 680px; margin: 0 auto 36px; line-height: 1.6;">
+        Every card is an independent focal point with its own narrative, metric, or interactive tool. Inspired by Japanese bento boxes and modern Apple keynote hardware reveals.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THE BENTO SHOWCASE GRID
+       ═══════════════════════════════════════════════ -->
+  <section style="padding-bottom: 70px;">
+    <div class="bento-container">
+      <div class="bento-grid">
+
+        <!-- TILE 1: Massive 8-col Hero Product Showcase -->
+        <div class="bento-tile col-span-8" style="min-height: 380px;">
+          <div class="bento-glow-top"></div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--bento-blue); text-transform: uppercase; letter-spacing: 1px;">Flagship Engine</span>
+              <span style="font-size: 11px; background: rgba(16, 185, 129, 0.2); color: #34D399; padding: 3px 10px; border-radius: 999px; font-weight: 700;">LIVE TELEMETRY</span>
+            </div>
+            <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">Titan Neural Processor X1</h3>
+            <p style="font-size: 14.5px; color: var(--bento-text-muted); max-width: 500px;">
+              Accelerating 128 billion parameters per second with localized on-device cryptographic encryption and sub-millisecond tensor response.
+            </p>
+          </div>
+
+          <!-- Product Visualization / Telemetry Graph -->
+          <div style="position: relative; height: 160px; margin: 20px 0; border-radius: 16px; overflow: hidden; background: #07090D; border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center;">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Titan Processor Neural Mesh" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #131722 0%, transparent 50%, #131722 100%);"></div>
+            <div style="position: absolute; display: flex; gap: 24px; font-family: 'Space Mono', monospace; font-size: 13px;">
+              <div><strong style="color: #60A5FA;">128B</strong> <span style="color:#64748B;">PARAMS</span></div>
+              <div><strong style="color: #34D399;">0.42ms</strong> <span style="color:#64748B;">LATENCY</span></div>
+              <div><strong style="color: #F59E0B;">99.98%</strong> <span style="color:#64748B;">PRECISION</span></div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: var(--bento-text-muted);">Architected for next-gen artificial intelligence platforms</span>
+            <button class="btn-bento-pill" onclick="showThemeToast('Titan Neural X1 Benchmark Verified!')">Benchmark Specs &rarr;</button>
+          </div>
+        </div>
+
+        <!-- TILE 2: 4-col Vertical Speed Metric Tile -->
+        <div class="bento-tile col-span-4" style="background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15), transparent 70%), var(--bento-card);">
+          <div>
+            <div style="font-size: 12px; font-weight: 700; color: #A78BFA; text-transform: uppercase; margin-bottom: 8px;">Network Throughput</div>
+            <h4 style="font-size: 48px; font-weight: 900; line-height: 1; color: #fff; margin-bottom: 8px;">9.4 <span style="font-size: 22px; font-weight: 700; color: #A78BFA;">GB/s</span></h4>
+            <p style="font-size: 13px; color: var(--bento-text-muted);">Sustained optical bandwidth without packet throttles.</p>
+          </div>
+
+          <div style="height: 90px; border-radius: 12px; overflow: hidden; margin: 18px 0;">
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=400&q=80" alt="Bandwidth fiber crystal" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: monospace;">
+            <span style="color: #34D399;">● CONNECTED</span>
+            <span>PING: 3ms</span>
+          </div>
+        </div>
+
+        <!-- TILE 3: 4-col Security & Encryption -->
+        <div class="bento-tile col-span-4">
+          <div>
+            <i class="ph ph-shield-check" style="font-size: 32px; color: #34D399; margin-bottom: 12px;"></i>
+            <h4 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Zero-Trust Architecture</h4>
+            <p style="font-size: 13px; color: var(--bento-text-muted); line-height: 1.5;">
+              Military-grade post-quantum cryptographic primitives protecting every data packet at rest.
+            </p>
+          </div>
+          <div style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 700;">
+            <span style="color: #34D399;">AES-256-GCM Hardware</span>
+            <i class="ph ph-lock-key"></i>
+          </div>
+        </div>
+
+        <!-- TILE 4: 4-col Global Edge CDN Points -->
+        <div class="bento-tile col-span-4">
+          <div>
+            <i class="ph ph-globe-hemisphere-east" style="font-size: 32px; color: #60A5FA; margin-bottom: 12px;"></i>
+            <h4 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">340+ Global PoPs</h4>
+            <p style="font-size: 13px; color: var(--bento-text-muted); line-height: 1.5;">
+              Direct peer routes deployed across 6 continents ensuring your users experience sub-15ms TTFB.
+            </p>
+          </div>
+          <div style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 700;">
+            <span>Edge Mesh Active</span>
+            <button class="btn-bento-pill" style="padding: 4px 12px; font-size: 11px;" onclick="showThemeToast('Edge Nodes Pinged Successfully!')">View Map</button>
+          </div>
+        </div>
+
+        <!-- TILE 5: 4-col Interactive Code Snippet -->
+        <div class="bento-tile col-span-4" style="background: #0D1117;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #F59E0B;">API ENDPOINT</span>
+              <button style="background:none; border:none; color:#94A3B8; cursor:pointer;" onclick="showThemeToast('cURL Request Copied!')"><i class="ph ph-copy"></i></button>
+            </div>
+            <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: #E2E8F0; line-height: 1.6; background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;">
+              <span style="color:#F43F5E;">const</span> stream = <span style="color:#60A5FA;">await</span> bento.<span style="color:#34D399;">query</span>({<br />
+              &nbsp;&nbsp;model: <span style="color:#F59E0B;">"titan-v2"</span>,<br />
+              &nbsp;&nbsp;tokens: <span style="color:#A78BFA;">4096</span><br />
+              });
+            </div>
+          </div>
+          <div style="margin-top: 14px; font-size: 12px; color: #64748B;">TypeScript SDK v4.2</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CLIENT SHOWCASE BANNER
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0; background: #0E121B; border-top: 1px solid var(--bento-border);">
+    <div class="bento-container">
+      <div class="bento-tile col-span-12" style="text-align: center; max-width: 840px; margin: 0 auto; padding: 48px;">
+        <span style="font-size: 12px; font-weight: 800; color: #60A5FA; letter-spacing: 1px; text-transform: uppercase;">
+          DESIGN YOUR BENTO ECOSYSTEM
+        </span>
+        <h2 style="font-size: 36px; font-weight: 900; margin: 14px 0 16px;">
+          Build an Apple-Style Bento Portfolio or SaaS Landing
+        </h2>
+        <p style="font-size: 15.5px; color: var(--bento-text-muted); line-height: 1.6; max-width: 620px; margin: 0 auto 32px;">
+          I Info Vision specializes in turning complex software architectures into clean, compelling Bento grid layouts that convert visitors into enterprise leads.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="index.html#contact" class="btn-bento-pill" style="background: #3B82F6; padding: 14px 32px; font-size: 15px;">
+            <i class="ph ph-chats-circle"></i> Talk to Bento UI Architects
+          </a>
+          <a href="themes.html" class="btn-bento-pill" style="padding: 14px 32px; font-size: 15px;">
+            <i class="ph ph-squares-four"></i> View All 20 Themes
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER
+       ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Bento Grid Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Asymmetric Modular Bento Grid &bull; Apple Keynote Layouts</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Compartmentalizes multiple value propositions into bite-sized ergonomic cards. Enables complex products to be scanned effortlessly in under 5 seconds.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#090B10; border:2px solid #fff;" title="Obsidian #090B10"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#131722; border:2px solid #fff;" title="Card #131722"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#3B82F6; border:2px solid #fff;" title="Electric Blue #3B82F6"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#8B5CF6; border:2px solid #fff;" title="Purple Glow #8B5CF6"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Product launch pages, Apple-style feature walkthroughs, developer portfolios, and AI SaaS feature matrixes.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
+

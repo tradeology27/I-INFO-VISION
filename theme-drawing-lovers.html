@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sketchbook — Drawing Lovers UI Theme | I Info Vision</title>
+  <meta name="description" content="Drawing Lovers UI design theme by I Info Vision. Textured sketch paper aesthetic, interactive HTML5 canvas sketchpad, spiral ring journal prompts, graphite pencil gauges, and artist discussions." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Caveat, Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       DRAWING LOVERS UI — SKETCHBOOK THEME SYSTEM
+       Colors: Ivory Parchment Paper, Charcoal Graphite & Terracotta
+       =================================================== */
+    :root {
+      --sketch-bg: #FAF5EB;
+      --sketch-card-bg: #FFFFFF;
+      --sketch-border: #1E1A17;
+      --sketch-charcoal: #25211E;
+      --sketch-graphite: #4D4742;
+      --sketch-pencil-gray: #787068;
+      --sketch-peach: #EAA88A;
+      --sketch-terracotta: #D46949;
+      --sketch-gold: #F2AE32;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--sketch-bg);
+      color: var(--sketch-charcoal);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    .font-rounded { font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif; }
+    .font-hand    { font-family: 'Caveat', cursive; }
+
+    .sketch-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── SKETCHBOOK SUB-NAV (Matching Image 4) ── */
+    .sketch-nav-wrap {
+      padding: 24px 0 16px;
+    }
+    .sketch-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .sketch-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--sketch-charcoal);
+    }
+    .sketch-mascot {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .sketch-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .sketch-pill {
+      background: #ffffff;
+      border: 1.5px solid #000;
+      box-shadow: 2px 2px 0px #000;
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .sketch-pill:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px #000;
+      background: #FFFDF9;
+    }
+
+    .btn-start-sketch {
+      background: #EAA88A;
+      color: #1A120E;
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0px #000;
+      border-radius: 999px;
+      padding: 8px 24px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-start-sketch:hover {
+      background: #e29573;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #000;
+    }
+
+    /* ── HERO: FOR THE LOVE OF SKETCHING (Matching Image 4) ── */
+    .sketch-hero {
+      padding: 40px 0 60px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .sketch-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(48px, 6.5vw, 84px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .sketch-hero-desc {
+      font-size: 16px;
+      color: var(--sketch-graphite);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+
+    .btn-explore-galleries {
+      background: #25211E;
+      color: #FAF5EB;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 999px;
+      padding: 14px 34px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-explore-galleries:hover {
+      background: var(--sketch-terracotta);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+
+    /* Cloud-Shaped Studio Sketch Illustration (From Image 4) */
+    .sketch-cloud-frame {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.15));
+      animation: gentleSketchBob 6s ease-in-out infinite alternate;
+    }
+    @keyframes gentleSketchBob {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-6px) rotate(-1deg); }
+    }
+    .sketch-cloud-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 56% 44% 52% 48% / 46% 50% 50% 54%;
+      border: 4px solid #ffffff;
+    }
+
+    /* ── INTERACTIVE HTML5 SKETCHPAD SECTION ── */
+    .sketchpad-section {
+      background: #ffffff;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      padding: 60px 0;
+    }
+    .canvas-outer-box {
+      background: #FAF6ED;
+      border: 3px solid #000;
+      box-shadow: 8px 8px 0px #000;
+      border-radius: 20px;
+      padding: 24px;
+      position: relative;
+    }
+    .canvas-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tool-btn {
+      background: #ffffff;
+      border: 1.5px solid #000;
+      box-shadow: 2px 2px 0px #000;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-btn.active {
+      background: var(--sketch-peach);
+    }
+    #paintCanvas {
+      background: #ffffff;
+      border: 2px solid #000;
+      border-radius: 12px;
+      cursor: crosshair;
+      display: block;
+      width: 100%;
+      height: 340px;
+      touch-action: none;
+    }
+
+    /* ── SPIRAL RING JOURNAL: DAILY CHALLENGE (From Image 4) ── */
+    .challenge-section {
+      padding: 70px 0;
+    }
+    .spiral-journal-card {
+      background: #ffffff;
+      border: 2.5px solid #000;
+      box-shadow: 8px 8px 0px #000;
+      border-radius: 20px;
+      padding: 36px;
+      position: relative;
+    }
+    .spiral-holes-bar {
+      position: absolute;
+      top: 0; left: 30px;
+      height: 100%;
+      width: 24px;
+      background-image: radial-gradient(#25211E 30%, transparent 30%);
+      background-size: 18px 24px;
+      opacity: 0.15;
+    }
+
+    /* ── PINNED STUDIO SKETCHES & GAUGES (From Image 4) ── */
+    .pinned-sketches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .pinned-sketch-card {
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 5px 5px 0px #000;
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .pinned-sketch-card:hover {
+      transform: translateY(-4px) rotate(-1deg);
+      box-shadow: 8px 8px 0px #000;
+    }
+    .tape-corner {
+      position: absolute;
+      top: -10px; right: 20px;
+      width: 50px; height: 18px;
+      background: rgba(234, 168, 138, 0.6);
+      transform: rotate(4deg);
+      border: 1px dashed rgba(0,0,0,0.2);
+    }
+
+    /* Pencil Weight & Mood Gauges */
+    .gauge-pill {
+      background: #FAF5EB;
+      border: 1px solid #000;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Ticket Stubs */
+    .sketch-ticket {
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 14px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .sketch-ticket:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+    .sketch-ticket-num {
+      background: #FAF5EB;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      padding: 20px 18px;
+      border-right: 2px dashed #000;
+    }
+    .sketch-ticket-info {
+      padding: 14px 18px;
+    }
+
+    /* Starburst Comic Badge */
+    .comic-starburst-sketch {
+      background: #EAA88A;
+      color: #000000;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      clip-path: polygon(50% 0%, 63% 18%, 84% 7%, 86% 28%, 100% 38%, 91% 57%, 98% 78%, 79% 82%, 73% 100%, 53% 90%, 33% 98%, 26% 80%, 6% 79%, 13% 58%, 0% 41%, 15% 28%, 13% 8%, 34% 17%);
+      display: inline-block;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .drawing-studio-split {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .sketch-hero { grid-template-columns: 1fr; }
+      .sketch-cloud-frame { height: 260px; }
+      .sketch-pills { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-pencil-line"></i> Theme: <strong>Drawing Lovers UI</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       SKETCHBOOK SUB-NAV (Matching Image 4)
+       ═══════════════════════════════════════════ -->
+  <div class="sketch-container sketch-nav-wrap">
+    <nav class="sketch-nav">
+      <a href="#" class="sketch-brand">
+        <div class="sketch-mascot">✒️</div>
+        <div>
+          <span class="font-rounded" style="font-size: 24px; font-weight: 800;">SKETCHBOOK</span>
+        </div>
+      </a>
+
+      <ul class="sketch-pills">
+        <li><a href="#sketchpad" class="sketch-pill"><i class="ph ph-pencil"></i> Sketchpad</a></li>
+        <li><a href="#challenge" class="sketch-pill"><i class="ph ph-book-bookmark"></i> Art Challenges</a></li>
+        <li><a href="#journals" class="sketch-pill"><i class="ph ph-image"></i> Exhibitions</a></li>
+        <li><a href="#discussion" class="sketch-pill"><i class="ph ph-chats"></i> Community</a></li>
+      </ul>
+
+      <a href="#sketchpad" class="btn-start-sketch">
+        <span>START SKETCHING</span> <i class="ph ph-paint-brush-broad"></i>
+      </a>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO: FOR THE LOVE OF SKETCHING (Matching Image 4)
+       ═══════════════════════════════════════════ -->
+  <main class="sketch-container sketch-hero">
+    <div>
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+        <span class="comic-starburst-sketch">NEW CHALLENGE!</span>
+        <span class="font-hand" style="font-size: 24px; color: var(--sketch-terracotta);">
+          Share your drawing journal &bull; 2.4k artists online today
+        </span>
+      </div>
+
+      <h1 class="sketch-hero-title">
+        FOR THE<br />LOVE OF<br />SKETCHING.
+      </h1>
+
+      <p class="sketch-hero-desc">
+        Share your daily sketchbook journals, participate in daily observational prompts, and sharpen your hand-drawn visual storytelling.
+      </p>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <a href="#sketchpad" class="btn-explore-galleries">
+          <span>EXPLORE GALLERIES</span> <i class="ph ph-arrow-right-bold"></i>
+        </a>
+        <span style="font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 600; color: var(--sketch-graphite);">
+          ✏️ 18,400+ Sketch Journal Pages Shared
+        </span>
+      </div>
+    </div>
+
+    <!-- Art Studio Cloud Illustration Frame -->
+    <div class="sketch-cloud-frame">
+      <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="Two artists sketching together in sunlit studio surrounded by drawings" class="sketch-cloud-img" />
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE HTML5 SKETCHPAD MINI-APP
+       ═══════════════════════════════════════════ -->
+  <section class="sketchpad-section" id="sketchpad">
+    <div class="sketch-container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
+        <span class="comic-starburst-sketch">WORKING CANVAS</span>
+        <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; margin-top: 6px;">
+          Your Digital Sketchpad
+        </h3>
+        <p style="font-size: 14px; color: var(--sketch-graphite);">
+          Draw with your mouse or stylus directly onto this textured canvas!
+        </p>
+      </div>
+
+      <div class="canvas-outer-box">
+        <div class="canvas-toolbar">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="tool-btn active" id="btn-pencil" onclick="setDrawingTool('pencil', 2, '#25211E')">
+              ✏️ 2B Graphite
+            </button>
+            <button class="tool-btn" id="btn-charcoal" onclick="setDrawingTool('charcoal', 6, '#111111')">
+              ⬛ 6B Charcoal
+            </button>
+            <button class="tool-btn" id="btn-ink" onclick="setDrawingTool('ink', 3, '#0F1A30')">
+              ✒️ Indian Ink
+            </button>
+            <button class="tool-btn" id="btn-eraser" onclick="setDrawingTool('eraser', 20, '#ffffff')">
+              🧼 Kneaded Eraser
+            </button>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <button class="tool-btn" onclick="clearSketchpad()">Clear Canvas ✕</button>
+            <button class="tool-btn" style="background: var(--sketch-peach);" onclick="saveSketchImage()">Save Sketch 💾</button>
+          </div>
+        </div>
+
+        <canvas id="paintCanvas" width="1150" height="340"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DAILY CHALLENGE & SPIRAL RING JOURNAL (Matching Image 4)
+       ═══════════════════════════════════════════ -->
+  <section class="challenge-section" id="challenge">
+    <div class="sketch-container">
+      <div class="spiral-journal-card">
+        <div class="spiral-holes-bar"></div>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px dashed #000; padding-bottom: 20px; flex-wrap: wrap; gap: 12px; margin-left: 20px;">
+          <div>
+            <span class="font-hand" style="font-size: 26px; color: var(--sketch-terracotta); font-weight: 700;">// Day 142 of 365 Journal Prompts</span>
+            <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; color: #000;">
+              DAILY CHALLENGE: “WHISPER OF THE FOREST”
+            </h3>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <span class="gauge-pill">⏱ 14h 22m Remaining</span>
+            <span class="gauge-pill" style="background: #EAA88A;">2.4k Drawers Today</span>
+          </div>
+        </div>
+
+        <!-- 3 Pinned Challenge Guides -->
+        <div class="pinned-sketches-grid" style="margin-left: 20px;">
+          <div class="pinned-sketch-card">
+            <div class="tape-corner"></div>
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 200px; object-fit: cover; border: 1px solid #000;" />
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 700; margin: 10px 0 4px;">Bark Texture &amp; Moss</h4>
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span class="gauge-pill">Pencil: 4B</span>
+              <span style="color: var(--sketch-gold);">★★★★★</span>
+            </div>
+          </div>
+
+          <div class="pinned-sketch-card">
+            <div class="tape-corner" style="background: rgba(180,220,180,0.6);"></div>
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 200px; object-fit: cover; border: 1px solid #000;" />
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 700; margin: 10px 0 4px;">Canopy Light Filtering</h4>
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span class="gauge-pill">Charcoal Tint</span>
+              <span style="color: var(--sketch-gold);">★★★★☆</span>
+            </div>
+          </div>
+
+          <div class="pinned-sketch-card">
+            <div class="tape-corner" style="background: rgba(220,180,220,0.6);"></div>
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 200px; object-fit: cover; border: 1px solid #000;" />
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 700; margin: 10px 0 4px;">Forest Wildlife Silhouette</h4>
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span class="gauge-pill">Indian Ink</span>
+              <span style="color: var(--sketch-gold);">★★★★★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       UPCOMING SKETCH DAYS & DRAWERS DISCUSSION (From Image 4)
+       ═══════════════════════════════════════════ -->
+  <section class="sketch-container" id="discussion" style="padding-bottom: 70px;">
+    <div class="drawing-studio-split" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: start;">
+
+      <!-- Left: Ticket Stubs -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+          <span class="comic-starburst-sketch">LIVE SESSIONS</span>
+          <h3 class="font-rounded" style="font-size: 24px; font-weight: 800;">UPCOMING SKETCH DAYS</h3>
+        </div>
+
+        <div class="sketch-ticket" onclick="showThemeToast('Booked Paint-Along: Botanical Watercolors!')">
+          <div class="sketch-ticket-num">01</div>
+          <div class="sketch-ticket-info" style="display: flex; align-items: center; gap: 12px;">
+            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=120&q=80" alt="Watercolor palette" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover; border: 1px solid #000; flex-shrink: 0;" />
+            <div>
+              <h4 class="font-rounded" style="font-size: 15px; font-weight: 800;">Virtual Paint-Alongs inside Botanical Studio</h4>
+              <p style="font-size: 12px; color: var(--sketch-graphite); margin-top: 2px;">Observational botanicals &bull; 90 min guided masterclass</p>
+            </div>
+          </div>
+          <div style="padding-right: 16px; font-weight: 800; font-size: 12px; color: var(--sketch-terracotta);">TICKET &rarr;</div>
+        </div>
+
+        <div class="sketch-ticket" onclick="showThemeToast('Booked Session: Gesture Figure Drawing!')">
+          <div class="sketch-ticket-num" style="background: #EAA88A;">02</div>
+          <div class="sketch-ticket-info">
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800;">30-Second Quick Pose Gesture Marathon</h4>
+            <p style="font-size: 12.5px; color: var(--sketch-graphite); margin-top: 2px;">Dynamic balance &amp; anatomical rhythm &bull; Starts Sunday</p>
+          </div>
+          <div style="padding-right: 16px; font-weight: 800; font-size: 12px; color: var(--sketch-terracotta);">TICKET &rarr;</div>
+        </div>
+      </div>
+
+      <!-- Right: Drawers Discussion -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+          <i class="ph ph-chat-teardrop-dots" style="font-size: 24px; color: var(--sketch-terracotta);"></i>
+          <h3 class="font-rounded" style="font-size: 24px; font-weight: 800;">DRAWERS DISCUSSION</h3>
+        </div>
+
+        <div style="background: #ffffff; border: 2px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 16px; padding: 22px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--sketch-terracotta);">
+              TECHNIQUE CLINIC #88
+            </div>
+            <span style="font-size: 11px; font-weight: 700; background: var(--sketch-gold); padding: 2px 8px; border-radius: 4px;">FEATURED STUDY</span>
+          </div>
+
+          <!-- Featured Sketch Illustration Photo (Matching Reference Design 4) -->
+          <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #000; height: 140px; margin-bottom: 14px;">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="Graphite anatomy study sketch" style="width: 100%; height: 100%; object-fit: cover;" />
+            <span style="position: absolute; bottom: 6px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px;">
+              GRAPHITE 4B &bull; HATCHING STUDY
+            </span>
+          </div>
+
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin-bottom: 8px;">
+            “What’s your go-to pencil for quick architectural shading without smudging?”
+          </h4>
+          <p style="font-size: 13px; color: var(--sketch-graphite); line-height: 1.5; margin-bottom: 14px;">
+            Community Consensus: <em>Staedtler Mars Lumograph 3B</em> paired with a glassine sheet under the wrist for zero smudge lines.
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Artist Elena" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--sketch-terracotta);" />
+              <span style="font-size: 12px; font-weight: 700;">Elena Rostova &bull; 218 replies</span>
+            </div>
+            <button class="btn-start-sketch" style="padding: 6px 14px; font-size: 12px;" onclick="showThemeToast('Reply submitted to Artist Discussion!')">
+              Add Pick ✏️
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKETCHBOOK FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: #1F1B18; color: #FAF5EB; border-top: 2px solid #000; padding: 50px 0 30px;">
+    <div class="sketch-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="sketch-brand" style="color: #fff;">
+          <div class="sketch-mascot" style="background: #FAF5EB;">✒️</div>
+          <span class="font-rounded" style="font-size: 22px; font-weight: 800;">SKETCHBOOK COLLECTIVE</span>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="themes.html" class="sketch-pill" style="background: #EAA88A; color: #000;">
+            <i class="ph ph-arrow-left"></i> All 16 Design Themes
+          </a>
+          <button class="btn-start-sketch" onclick="showThemeToast('Downloaded Weekly Prompt PDF!')">Get Prompt PDF</button>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 12px; color: #A0988E; margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 Sketchbook &bull; Drawing Lovers UI Theme &bull; Crafted by I Info Vision</span>
+        <span>Ivory Parchment + Charcoal Graphite Archetype</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Drawing Lovers UI Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Drawing Lovers, Sketchbook Journal &amp; Fine Art Studio UI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Tactile drawing paper warmth. Features dot-grid parchment backdrops, spiral ring-binder challenge books, pinned studio polaroids, graphite weight gauges (HB to 8B), and working HTML5 sketchpads.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#FAF5EB; border:2px solid #fff;" title="Parchment Ivory #FAF5EB"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#25211E; border:2px solid #fff;" title="Charcoal Black #25211E"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#EAA88A; border:2px solid #fff;" title="Terracotta Peach #EAA88A"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#F2AE32; border:2px solid #fff;" title="Pencil Amber #F2AE32"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#4D4742; border:2px solid #fff;" title="Graphite Gray #4D4742"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Digital sketchpads, art academies, creator portfolio hubs, daily drawing habit apps, and illustration collectives.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    /* Working HTML5 Canvas Sketchpad */
+    const canvas = document.getElementById('paintCanvas');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    let currentColor = '#25211E';
+    let currentLineWidth = 2;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = 340;
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    window.addEventListener('load', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
+
+    function startDraw(e) {
+      isDrawing = true;
+      const rect = canvas.getBoundingClientRect();
+      ctx.beginPath();
+      ctx.moveTo((e.clientX || e.touches[0].clientX) - rect.left, (e.clientY || e.touches[0].clientY) - rect.top);
+    }
+
+    function doDraw(e) {
+      if (!isDrawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = (e.clientX || e.touches[0].clientX) - rect.left;
+      const y = (e.clientY || e.touches[0].clientY) - rect.top;
+      ctx.lineTo(x, y);
+      ctx.strokeStyle = currentColor;
+      ctx.lineWidth = currentLineWidth;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.stroke();
+    }
+
+    function stopDraw() {
+      isDrawing = false;
+      ctx.closePath();
+    }
+
+    canvas.addEventListener('mousedown', startDraw);
+    canvas.addEventListener('mousemove', doDraw);
+    canvas.addEventListener('mouseup', stopDraw);
+    canvas.addEventListener('mouseleave', stopDraw);
+
+    canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDraw(e); });
+    canvas.addEventListener('touchmove', (e) => { e.preventDefault(); doDraw(e); });
+    canvas.addEventListener('touchend', stopDraw);
+
+    function setDrawingTool(tool, size, color) {
+      currentColor = color;
+      currentLineWidth = size;
+      document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-${tool}`);
+      if (activeBtn) activeBtn.classList.add('active');
+      if (window.showThemeToast) showThemeToast(`Selected tool: ${tool.toUpperCase()} (Stroke: ${size}px)`);
+    }
+
+    function clearSketchpad() {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      if (window.showThemeToast) showThemeToast('Sketchpad Canvas Cleared!');
+    }
+
+    function saveSketchImage() {
+      if (window.showThemeToast) {
+        showThemeToast('💾 Drawing exported as PNG artwork to your gallery!');
+      }
+    }
+  </script>
+
+</body>
+</html>
+

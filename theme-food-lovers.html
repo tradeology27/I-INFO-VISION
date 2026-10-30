@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gusto — Food Lovers UI Theme | I Info Vision</title>
+  <meta name="description" content="Food Lovers UI design theme by I Info Vision. Warm butter cream and rustic tomato red aesthetic, interactive recipe cook-along timers, ingredient doodles, spice-level gauges, and feast tickets." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       FOOD LOVERS UI — GUSTO THEME SYSTEM
+       Colors: Warm Butter Cream, Ripe Tomato & Mustard Ochre
+       =================================================== */
+    :root {
+      --food-bg: #FAF3E6;
+      --food-card-bg: #FFFFFF;
+      --food-border: #211B16;
+      --food-red: #D3432B;
+      --food-red-dark: #A92E1A;
+      --food-mustard: #EAA034;
+      --food-mustard-soft: #FDE8C7;
+      --food-olive: #4E6E56;
+      --food-cream: #FFFDF9;
+      --food-text-dark: #211B16;
+      --food-text-muted: #6B6258;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--food-bg);
+      color: var(--food-text-dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .font-rounded { font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif; }
+    .font-hand    { font-family: 'Caveat', cursive; }
+
+    .food-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── GUSTO SUB-NAV (Matching Image 5) ── */
+    .gusto-nav-wrap {
+      padding: 24px 0 16px;
+    }
+    .gusto-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .gusto-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--food-text-dark);
+    }
+    .gusto-mascot {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .gusto-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .gusto-pill {
+      background: #ffffff;
+      border: 1.5px solid #000;
+      box-shadow: 2px 2px 0px #000;
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .gusto-pill:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px #000;
+      background: #FFFDF7;
+    }
+
+    .btn-join-feast {
+      background: linear-gradient(135deg, #D3432B, #BA2E17);
+      color: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0px #000;
+      border-radius: 999px;
+      padding: 8px 24px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-join-feast:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #000;
+      background: #e04830;
+    }
+
+    /* ── HERO: FOR THE LOVE OF FOOD (Matching Image 5) ── */
+    .gusto-hero {
+      padding: 40px 0 60px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .gusto-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(48px, 6.5vw, 84px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .gusto-hero-desc {
+      font-size: 16px;
+      color: var(--food-text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+
+    .btn-explore-kitchen {
+      background: var(--food-mustard);
+      color: #1F170D;
+      border: 2.5px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 999px;
+      padding: 14px 34px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-explore-kitchen:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+      background: #f0a73c;
+    }
+
+    /* Cloud Kitchen Art Frame (From Image 5) */
+    .gusto-cloud-frame {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.15));
+      animation: gentleKitchenSway 6s ease-in-out infinite alternate;
+    }
+    @keyframes gentleKitchenSway {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-7px) rotate(1deg); }
+    }
+    .gusto-cloud-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 54% 46% 60% 40% / 48% 52% 48% 52%;
+      border: 4px solid #ffffff;
+    }
+
+    /* ── DAILY CHALLENGE & INGREDIENT BOARD (Matching Image 5) ── */
+    .recipe-challenge-section {
+      background: #ffffff;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      padding: 70px 0;
+    }
+    .challenge-card-culinary {
+      background: #FAF3E6;
+      border: 3px solid #000;
+      box-shadow: 8px 8px 0px #000;
+      border-radius: 24px;
+      padding: 36px;
+      position: relative;
+    }
+
+    /* ── STEP-BY-STEP COOK-ALONG INTERACTIVE TIMER ── */
+    .timer-deck {
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .timer-display {
+      font-family: monospace;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--food-red);
+      background: #FDF3F1;
+      border: 2px solid #000;
+      padding: 6px 18px;
+      border-radius: 10px;
+    }
+
+    /* ── COMMUNITY FEASTS & POLAROIDS (From Image 5) ── */
+    .feasts-section {
+      padding: 70px 0;
+    }
+    .feasts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .feast-polaroid {
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 5px 5px 0px #000;
+      border-radius: 14px;
+      padding: 16px;
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .feast-polaroid:hover {
+      transform: translateY(-4px) rotate(-1deg);
+      box-shadow: 8px 8px 0px #000;
+    }
+    .washi-food-tape {
+      position: absolute;
+      top: -10px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 18px;
+      background: rgba(234, 160, 52, 0.7);
+      border: 1px dashed rgba(0,0,0,0.2);
+    }
+
+    /* Spice & Cooking Gauges */
+    .meter-gauge-pill {
+      background: #FAF3E6;
+      border: 1px solid #000;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Ticket Stubs */
+    .feast-ticket {
+      background: #ffffff;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .feast-ticket:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+    .feast-ticket-num {
+      background: var(--food-mustard-soft);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      padding: 20px 18px;
+      border-right: 2px dashed #000;
+    }
+    .feast-ticket-info {
+      padding: 14px 18px;
+    }
+
+    /* Comic Starburst */
+    .comic-starburst-food {
+      background: var(--food-red);
+      color: #ffffff;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      clip-path: polygon(50% 0%, 63% 18%, 84% 7%, 86% 28%, 100% 38%, 91% 57%, 98% 78%, 79% 82%, 73% 100%, 53% 90%, 33% 98%, 26% 80%, 6% 79%, 13% 58%, 0% 41%, 15% 28%, 13% 8%, 34% 17%);
+      display: inline-block;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gusto-hero { grid-template-columns: 1fr; }
+      .gusto-cloud-frame { height: 260px; }
+      .gusto-pills { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-fork-knife"></i> Theme: <strong>Food Lovers UI</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-info"></i> Theme Specs (Short &amp; Sweet)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       GUSTO SUB-NAV (Matching Image 5)
+       ═══════════════════════════════════════════ -->
+  <div class="food-container gusto-nav-wrap">
+    <nav class="gusto-nav">
+      <a href="#" class="gusto-brand">
+        <div class="gusto-mascot">🥟</div>
+        <div>
+          <span class="font-rounded" style="font-size: 26px; font-weight: 800;">GUSTO</span>
+        </div>
+      </a>
+
+      <ul class="gusto-pills">
+        <li><a href="#challenge" class="gusto-pill"><i class="ph ph-cookie"></i> Daily Bread</a></li>
+        <li><a href="#cook-along" class="gusto-pill"><i class="ph ph-book-open"></i> Recipes</a></li>
+        <li><a href="#feasts" class="gusto-pill"><i class="ph ph-newspaper"></i> Food Zines</a></li>
+        <li><a href="#discussion" class="gusto-pill"><i class="ph ph-campfire"></i> Feasts</a></li>
+      </ul>
+
+      <button class="btn-join-feast" onclick="showThemeToast('Table RSVP Confirmed for Tonight Feast!')">
+        <span>JOIN THE FEAST</span> <i class="ph ph-bowl-food"></i>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO: FOR THE LOVE OF FOOD (Matching Image 5)
+       ═══════════════════════════════════════════ -->
+  <main class="food-container gusto-hero">
+    <div>
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+        <span class="comic-starburst-food">NEW FEAST!</span>
+        <span class="font-hand" style="font-size: 24px; color: var(--food-red); font-weight: 700;">
+          Share your kitchen journal &bull; 3.8k cooks simmering today
+        </span>
+      </div>
+
+      <h1 class="gusto-hero-title">
+        FOR THE<br />LOVE OF<br />FOOD.
+      </h1>
+
+      <p class="gusto-hero-desc">
+        Share your home kitchen journal, master artisanal dough fermentation, and cook seasonal recipes alongside food lovers worldwide.
+      </p>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <a href="#cook-along" class="btn-explore-kitchen">
+          <span>EXPLORE THE KITCHEN</span> <i class="ph ph-arrow-right-bold"></i>
+        </a>
+        <span style="font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 600; color: var(--food-text-muted);">
+          🍳 24,000+ Verified Home Recipes
+        </span>
+      </div>
+    </div>
+
+    <!-- Kitchen Cloud Illustration Frame -->
+    <div class="gusto-cloud-frame">
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Two cooks happily chopping vegetables and cooking stew in sunny kitchen" class="gusto-cloud-img" />
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       DAILY CHALLENGE & STEP-BY-STEP COOK-ALONG (From Image 5)
+       ═══════════════════════════════════════════ -->
+  <section class="recipe-challenge-section" id="challenge">
+    <div class="food-container">
+      <div class="challenge-card-culinary">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px dashed #000; padding-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="font-hand" style="font-size: 26px; color: var(--food-red); font-weight: 700;">// Seasonal Harvest Challenge #64</span>
+            <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; color: #000;">
+              PROMPT: AUTUMN SPICED ROOT VEGETABLE STEW
+            </h3>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <span class="meter-gauge-pill">⏱ Prep: 25 mins</span>
+            <span class="meter-gauge-pill" style="background: var(--food-mustard);">3.8k Cooks Today</span>
+          </div>
+        </div>
+
+        <!-- 4 Step Interactive Recipe Visualizer -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 28px;">
+          <div style="background: #ffffff; border: 2px solid #000; border-radius: 14px; padding: 18px;">
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 800; background: var(--food-mustard-soft); padding: 2px 8px; border-radius: 4px;">STEP 1</span>
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800; margin: 8px 0 4px;">Mirepoix Sauté</h4>
+            <p style="font-size: 13px; color: var(--food-text-muted);">Gently caramelize shallots, diced carrots, and celery in cold-pressed olive oil.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 2px solid #000; border-radius: 14px; padding: 18px;">
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 800; background: var(--food-mustard-soft); padding: 2px 8px; border-radius: 4px;">STEP 2</span>
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800; margin: 8px 0 4px;">Aromatics &amp; Spices</h4>
+            <p style="font-size: 13px; color: var(--food-text-muted);">Bloom freshly cracked coriander seeds, smoked paprika, and bay laurel leaves.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 2px solid #000; border-radius: 14px; padding: 18px;">
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 800; background: var(--food-mustard-soft); padding: 2px 8px; border-radius: 4px;">STEP 3</span>
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800; margin: 8px 0 4px;">Slow Simmer</h4>
+            <p style="font-size: 13px; color: var(--food-text-muted);">Add roasted vegetable stock and heirloom potatoes. Cover and simmer on low heat.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 2px solid #000; border-radius: 14px; padding: 18px;">
+            <span style="font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 800; background: var(--food-mustard-soft); padding: 2px 8px; border-radius: 4px;">STEP 4</span>
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800; margin: 8px 0 4px;">Garnish &amp; Crust</h4>
+            <p style="font-size: 13px; color: var(--food-text-muted);">Finish with fresh parsley, lemon zest, and serve alongside warm sourdough boule.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Cooking Countdown Timer -->
+        <div class="timer-deck" id="cook-along">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--food-red); letter-spacing: 1px;">
+              INTERACTIVE SIMMER TIMER
+            </div>
+            <h4 class="font-rounded" style="font-size: 20px; font-weight: 800; margin-top: 4px;">
+              Step 3: Gentle Dutch Oven Simmer
+            </h4>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div class="timer-display" id="cookingTimer">15:00</div>
+            <button class="btn-explore-kitchen" style="padding: 10px 22px; font-size: 13px;" onclick="toggleCookTimer()" id="btnCookTimer">
+              <i class="ph ph-play-bold"></i> START TIMER
+            </button>
+            <button class="gusto-pill" onclick="resetCookTimer()">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COMMUNITY FEASTS & FOOD ZINES (Matching Image 5)
+       ═══════════════════════════════════════════ -->
+  <section class="feasts-section" id="feasts">
+    <div class="food-container">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span class="comic-starburst-food">COMMUNITY FEASTS</span>
+          <h3 class="font-rounded" style="font-size: 32px; font-weight: 800; margin-top: 6px;">
+            WEEKLY ZINES &amp; DISH REVIEWS
+          </h3>
+        </div>
+        <button class="btn-join-feast" onclick="showThemeToast('Recipe upload modal opened!')">
+          <i class="ph ph-camera"></i> Share Your Dish
+        </button>
+      </div>
+
+      <div class="feasts-grid">
+        <!-- Dish 1 -->
+        <div class="feast-polaroid">
+          <div class="washi-food-tape"></div>
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 200px; object-fit: cover; border: 1px solid #000; border-radius: 6px;" />
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin: 12px 0 4px;">Shakshuka with Feta</h4>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px;">
+            <span class="meter-gauge-pill">🌶️ Spice: Medium (2/5)</span>
+            <span class="meter-gauge-pill">⏱ 20 min</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700;">
+            <span style="color: var(--food-mustard);">★★★★★</span>
+            <span style="color: var(--food-red); cursor: pointer;" onclick="showThemeToast('Shakshuka Recipe Saved!')">View Recipe &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="feast-polaroid">
+          <div class="washi-food-tape" style="background: rgba(211,67,43,0.6);"></div>
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 200px; object-fit: cover; border: 1px solid #000; border-radius: 6px;" />
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin: 12px 0 4px;">Handmade Truffle Tagliatelle</h4>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px;">
+            <span class="meter-gauge-pill">🌿 Rich Umami</span>
+            <span class="meter-gauge-pill">⏱ 35 min</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700;">
+            <span style="color: var(--food-mustard);">★★★★★</span>
+            <span style="color: var(--food-red); cursor: pointer;" onclick="showThemeToast('Tagliatelle Recipe Saved!')">View Recipe &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="feast-polaroid">
+          <div class="washi-food-tape" style="background: rgba(78,110,86,0.6);"></div>
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" style="width: 100%; height: 200px; object-fit: cover; border: 1px solid #000; border-radius: 6px;" />
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin: 12px 0 4px;">Wood-Fired Margherita</h4>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px;">
+            <span class="meter-gauge-pill">🍕 San Marzano D.O.P.</span>
+            <span class="meter-gauge-pill">⏱ 90 sec bake</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700;">
+            <span style="color: var(--food-mustard);">★★★★★</span>
+            <span style="color: var(--food-red); cursor: pointer;" onclick="showThemeToast('Margherita Pizza Recipe Saved!')">View Recipe &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       UPCOMING FEAST DAYS & COOKS DISCUSSION (Matching Image 5)
+       ═══════════════════════════════════════════ -->
+  <section class="food-container" id="discussion" style="padding-bottom: 70px;">
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px; align-items: start;">
+
+      <!-- Left: Ticket Stubs -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+          <span class="comic-starburst-food">LIVE COOK-ALONGS</span>
+          <h3 class="font-rounded" style="font-size: 24px; font-weight: 800;">UPCOMING FEAST DAYS</h3>
+        </div>
+
+        <div class="feast-ticket" onclick="showThemeToast('Booked Sourdough Masterclass Seat!')">
+          <div class="feast-ticket-num">01</div>
+          <div class="feast-ticket-info">
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800;">Virtual Cook-Alongs: Sourdough Fermentation</h4>
+            <p style="font-size: 12.5px; color: var(--food-text-muted); margin-top: 2px;">Inside the coil fold cook-along layout &bull; Live with Chef Marco</p>
+          </div>
+          <div style="padding-right: 18px; font-weight: 800; font-size: 12px; color: var(--food-red);">TICKET &rarr;</div>
+        </div>
+
+        <div class="feast-ticket" onclick="showThemeToast('Booked Pasta Rolling Workshop Seat!')">
+          <div class="feast-ticket-num" style="background: var(--food-mustard);">02</div>
+          <div class="feast-ticket-info">
+            <h4 class="font-rounded" style="font-size: 16px; font-weight: 800;">Hand-Rolled Gnocchi &amp; Sage Butter Masterclass</h4>
+            <p style="font-size: 12.5px; color: var(--food-text-muted); margin-top: 2px;">Interactive camera feed &bull; Sunday 6:00 PM CET</p>
+          </div>
+          <div style="padding-right: 18px; font-weight: 800; font-size: 12px; color: var(--food-red);">TICKET &rarr;</div>
+        </div>
+      </div>
+
+      <!-- Right: Cooks Discussion -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+          <i class="ph ph-chat-centered-dots" style="font-size: 24px; color: var(--food-red);"></i>
+          <h3 class="font-rounded" style="font-size: 24px; font-weight: 800;">COOKS DISCUSSION</h3>
+        </div>
+
+        <div style="background: #ffffff; border: 2px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 16px; padding: 22px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--food-red);">
+              KITCHEN EXPERIMENT #42
+            </div>
+            <span style="font-size: 11px; font-weight: 700; background: var(--food-mustard); padding: 2px 8px; border-radius: 4px;">TOP THREAD</span>
+          </div>
+
+          <!-- Featured Dish Photo Thumbnail (Matching Reference Image 5) -->
+          <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #000; height: 140px; margin-bottom: 14px;">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80" alt="Slow-simmered winter stew" style="width: 100%; height: 100%; object-fit: cover;" />
+            <span style="position: absolute; bottom: 6px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px;">
+              BEEF BOURGUIGNON
+            </span>
+          </div>
+
+          <h4 class="font-rounded" style="font-size: 17px; font-weight: 800; margin-bottom: 8px;">
+            “What’s your secret herb or acid for elevating a rich winter stew?”
+          </h4>
+          <p style="font-size: 13px; color: var(--food-text-muted); line-height: 1.5; margin-bottom: 14px;">
+            Top Chef Tip: <em>A tablespoon of aged Worcestershire + grated raw apple</em> added in the last 15 minutes balances deep savory umami with bright acidity.
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=80&q=80" alt="Chef Marco" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--food-red);" />
+              <span style="font-size: 12px; font-weight: 700;">Chef Marco &bull; 284 replies</span>
+            </div>
+            <button class="btn-join-feast" style="padding: 6px 14px; font-size: 12px;" onclick="showThemeToast('Reply submitted to Kitchen Discussion!')">
+              Reply 🥄
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       GUSTO CULINARY FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer style="background: #1C1611; color: #FFFDF9; border-top: 2px solid #000; padding: 50px 0 30px;">
+    <div class="food-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="gusto-brand" style="color: #fff;">
+          <div class="gusto-mascot" style="background: #FFFDF9;">🥟</div>
+          <span class="font-rounded" style="font-size: 24px; font-weight: 800;">GUSTO CULINARY GUILD</span>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="themes.html" class="gusto-pill" style="background: var(--food-mustard); color: #000;">
+            <i class="ph ph-arrow-left"></i> All 16 Design Themes
+          </a>
+          <button class="btn-join-feast" onclick="showThemeToast('Weekly Recipe Newsletter Dispatched!')">Get Recipe Zine</button>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 12px; color: #9B9185; margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <span>&copy; 2026 Gusto &bull; Food Lovers UI Theme &bull; Crafted by I Info Vision</span>
+        <span>Butter Cream + Ripe Tomato Red Archetype</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+       ═══════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Food Lovers UI Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Food Lovers, Recipe Zines &amp; Culinary Feast Community UI</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Warm culinary comfort. Uses butter cream paper backdrops, ripe tomato red accents, mustard ochre pills, washi-taped recipe polaroids, spice-level meters, and interactive cook-along timers.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#FAF3E6; border:2px solid #fff;" title="Butter Cream #FAF3E6"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#D3432B; border:2px solid #fff;" title="Tomato Red #D3432B"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#EAA034; border:2px solid #fff;" title="Mustard Ochre #EAA034"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#4E6E56; border:2px solid #fff;" title="Rosemary Olive #4E6E56"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#211B16; border:2px solid #fff;" title="Cast Iron #211B16"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Recipe sharing platforms, artisan bakery stores, culinary academies, meal kit subscriptions, and food review communities.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    /* Cooking Countdown Timer */
+    let timerSeconds = 900; // 15:00
+    let timerInterval = null;
+    let isTimerRunning = false;
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(timerSeconds / 60);
+      const secs = timerSeconds % 60;
+      document.getElementById('cookingTimer').textContent = 
+        `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function toggleCookTimer() {
+      const btn = document.getElementById('btnCookTimer');
+      isTimerRunning = !isTimerRunning;
+      if (isTimerRunning) {
+        btn.innerHTML = '<i class="ph ph-pause-bold"></i> PAUSE TIMER';
+        timerInterval = setInterval(() => {
+          if (timerSeconds > 0) {
+            timerSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            btn.innerHTML = '<i class="ph ph-play-bold"></i> START TIMER';
+            if (window.showThemeToast) showThemeToast('🍲 Ding! Simmer Step Finished! Ready for Step 4 Garnish.');
+          }
+        }, 1000);
+        if (window.showThemeToast) showThemeToast('⏱ Simmer countdown started (15 mins)!');
+      } else {
+        clearInterval(timerInterval);
+        btn.innerHTML = '<i class="ph ph-play-bold"></i> START TIMER';
+        if (window.showThemeToast) showThemeToast('⏱ Timer paused.');
+      }
+    }
+
+    function resetCookTimer() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      timerSeconds = 900;
+      updateTimerDisplay();
+      document.getElementById('btnCookTimer').innerHTML = '<i class="ph ph-play-bold"></i> START TIMER';
+      if (window.showThemeToast) showThemeToast('Timer reset to 15:00');
+    }
+  </script>
+
+</body>
+</html>
+

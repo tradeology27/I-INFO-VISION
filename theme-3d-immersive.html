@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Immersive Spatial UI | I Info Vision Design Themes</title>
+  <meta name="description" content="Experience the 3D Immersive Spatial UI theme created by I Info Vision. Volumetric perspective, spatial cards, interactive 360 product exploration, and modern lighting." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       3D IMMERSIVE SPATIAL DESIGN SYSTEM
+       Deep Perspective + Volumetric Lighting + Tilt Physics
+       =================================================== */
+    :root {
+      --spatial-bg: #0C0F17;
+      --spatial-card: rgba(22, 28, 45, 0.7);
+      --spatial-border: rgba(99, 102, 241, 0.3);
+      --spatial-accent: #6366F1;
+      --spatial-cyan: #38BDF8;
+      --spatial-text: #F8FAFC;
+      --spatial-text-muted: #94A3B8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--spatial-bg);
+      color: var(--spatial-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      perspective: 1200px;
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 10% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+    }
+
+    .spatial-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 3D Tilt Card */
+    .spatial-card {
+      background: var(--spatial-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--spatial-border);
+      border-radius: 28px;
+      padding: 32px;
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .spatial-card:hover {
+      border-color: rgba(99, 102, 241, 0.7);
+      box-shadow: 0 40px 80px rgba(99, 102, 241, 0.25);
+    }
+
+    .btn-spatial {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--spatial-accent), var(--spatial-cyan));
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-spatial:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.6);
+    }
+
+    @media (max-width: 900px) {
+      .td-hero-split {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .spatial-hero-grid { grid-template-columns: 1fr !important; }
+      .spatial-features-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-cube"></i> Theme: <strong>3D Immersive Spatial</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs (Short &amp; Sweet)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       SPATIAL 3D HERO
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0 50px;">
+    <div class="spatial-container">
+      
+      <div class="spatial-hero-grid" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;">
+        
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 999px; background: rgba(99, 102, 241, 0.15); border: 1px solid var(--spatial-border); color: var(--spatial-cyan); font-size: 12.5px; font-weight: 700; margin-bottom: 24px;">
+            <i class="ph ph-cube"></i> THREE-DIMENSIONAL SPATIAL UI
+          </div>
+
+          <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(38px, 4.8vw, 58px); font-weight: 700; line-height: 1.1; margin-bottom: 22px;">
+            Beyond Flat Screens.<br />
+            <span style="background: linear-gradient(135deg, #6366F1, #38BDF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Volumetric Immersion.</span>
+          </h1>
+
+          <p style="font-size: 16px; color: var(--spatial-text-muted); line-height: 1.65; max-width: 500px; margin-bottom: 36px;">
+            Cards tilt in real-time response to cursor coordinates, light refracts through spatial planes, and physical products rotate in full 360-degree freedom.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#showcase" class="btn-spatial">
+              <span>Inspect 3D Product</span>
+              <i class="ph ph-cube"></i>
+            </a>
+            <button class="btn-spatial" style="background: rgba(255,255,255,0.08); box-shadow: none; border: 1px solid rgba(255,255,255,0.15);" onclick="recalibrateTilt()">
+              <span>Reset 3D Horizon</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Interactive 3D Holographic Stage -->
+        <div class="spatial-card" id="tiltStage" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--spatial-cyan);">HOLOGRAPHIC CHASSIS</span>
+            <span style="font-size: 11px; background: rgba(99,102,241,0.2); color: #fff; padding: 3px 10px; border-radius: 999px;">INTERACTIVE TILT</span>
+          </div>
+
+          <!-- Product Visualization -->
+          <div style="height: 240px; border-radius: 18px; overflow: hidden; position: relative; margin-bottom: 20px;">
+            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=700&q=80" alt="Supercar volumetric 3d" style="width: 100%; height: 100%; object-fit: cover;" id="carImg" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(12,15,23,0.9) 100%);"></div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h4 style="font-size: 18px; font-weight: 800;">Apex GT Aero Dynamic</h4>
+              <p style="font-size: 13px; color: var(--spatial-text-muted);">Volumetric Carbon Weave</p>
+            </div>
+            <button class="btn-spatial" style="padding: 8px 18px; font-size: 12px;" onclick="rotateAngle()">Rotate 45° ↻</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SPATIAL PRODUCT SHOWCASE (3 CARDS)
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 60px 0 80px;" id="showcase">
+    <div class="spatial-container">
+      <div style="text-align: center; max-width: 620px; margin: 0 auto 40px;">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700;">Spatial Feature Architecture</h2>
+        <p style="font-size: 14.5px; color: var(--spatial-text-muted); margin-top: 8px;">
+          Best for automotive configuration, architectural digital twins, luxury watch showrooms, and hardware engineering.
+        </p>
+      </div>
+
+      <div class="spatial-features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        
+        <div class="spatial-card" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+          <div style="font-size: 32px; color: var(--spatial-cyan); margin-bottom: 12px;"><i class="ph ph-cube-transparent"></i></div>
+          <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Mesh Wireframe</h3>
+          <p style="font-size: 13.5px; color: var(--spatial-text-muted); line-height: 1.6;">
+            Inspect low-level polygon topologies with customizable lighting environments and specular reflections.
+          </p>
+        </div>
+
+        <div class="spatial-card" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+          <div style="font-size: 32px; color: var(--spatial-accent); margin-bottom: 12px;"><i class="ph ph-compass"></i></div>
+          <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Gyroscope Parallax</h3>
+          <p style="font-size: 13.5px; color: var(--spatial-text-muted); line-height: 1.6;">
+            Mobile-first physical motion sensors tilt cards dynamically as users physically tilt their phone or tablet.
+          </p>
+        </div>
+
+        <div class="spatial-card" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+          <div style="font-size: 32px; color: #34D399; margin-bottom: 12px;"><i class="ph ph-sun"></i></div>
+          <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Ray-Traced Ambient</h3>
+          <p style="font-size: 13.5px; color: var(--spatial-text-muted); line-height: 1.6;">
+            Dynamic multi-point light sources calculate sub-surface occlusion shadows in real-time WebGL.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CLIENT SHOWCASE
+       ═══════════════════════════════════════════════ -->
+  <section style="padding: 70px 0; background: #080A10; border-top: 1px solid var(--spatial-border);">
+    <div class="spatial-container" style="text-align: center; max-width: 800px;">
+      <span style="font-size: 11px; font-weight: 800; color: var(--spatial-cyan); letter-spacing: 2px; text-transform: uppercase;">
+        IMMERSIVE WEB APPS
+      </span>
+      <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 800; margin: 14px 0 16px;">
+        Showcase Your Products in 3D Space
+      </h2>
+      <p style="font-size: 15.5px; color: var(--spatial-text-muted); line-height: 1.6; margin-bottom: 32px;">
+        I Info Vision builds WebGL and Three.js spatial digital showrooms, automotive configurators, and 3D landing experiences.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html#contact" class="btn-spatial">
+          <i class="ph ph-chat-circle-dots"></i> Commission a 3D Experience
+        </a>
+        <a href="themes.html" class="btn-spatial" style="background: rgba(255,255,255,0.08); box-shadow: none;">
+          <i class="ph ph-squares-four"></i> All 20 Themes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER
+       ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">3D Immersive Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Spatial Parallax &bull; Volumetric Lighting &bull; 3D Stage</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Design Philosophy</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Breaks 2D viewport boundaries with CSS perspective, gyro tilt transforms, and multi-plane z-index depth. Turns product inspection into an tactile virtual reality preview.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#0C0F17; border:2px solid #fff;" title="Dark Void #0C0F17"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#6366F1; border:2px solid #fff;" title="Indigo #6366F1"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#38BDF8; border:2px solid #fff;" title="Sky Cyan #38BDF8"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best For</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Automotive configurators, luxury watches, hardware electronics, architecture digital twins, and virtual reality web apps.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function handleTilt(e, card) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const tiltX = (y / rect.height) * -16;
+      const tiltY = (x / rect.width) * 16;
+      card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+    }
+
+    function resetTilt(card) {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    }
+
+    function recalibrateTilt() {
+      document.querySelectorAll('.spatial-card').forEach(resetTilt);
+      if (window.showThemeToast) showThemeToast('Spatial Horizon Recalibrated!');
+    }
+
+    let angles = [
+      'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=700&q=80',
+      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80',
+      'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80'
+    ];
+    let angleIdx = 0;
+    function rotateAngle() {
+      angleIdx = (angleIdx + 1) % angles.length;
+      document.getElementById('carImg').src = angles[angleIdx];
+      if (window.showThemeToast) showThemeToast(`3D Camera Rotated: Viewpoint 0${angleIdx + 1}`);
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nature Connected &amp; Architectural Retreats — Raw Landscape Grid Theme | I Info Vision</title>
+  <meta name="description" content="Raw Landscape Grid natural resort UI theme — dry-stacked stone masonry frame, timber beam borders, carved wooden tab bar, architectural eco-lodges, and villa suite gallery." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600;700&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="assets/css/theme-shared.css" />
+
+  <style>
+    /* ===================================================
+       RAW LANDSCAPE GRID — NATURAL RESORT UI THEME
+       Stone Masonry, Timber Mullions & Carved Wood Tabs
+       =================================================== */
+    :root {
+      --stone-wall: #4a453f;
+      --timber-beam: #543922;
+      --timber-light: #7a5332;
+      --nature-green: #485c40;
+      --nature-green-dark: #2f3d2a;
+      --ochre-wood: #b8863f;
+      --bg-cream: #e7e2d6;
+      --bg-panel: #d5cfbf;
+      --text-dark: #222222;
+      --text-muted: #534c44;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #2b2825;
+      color: var(--text-dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .masonry-viewport {
+      flex: 1;
+      padding: 30px 16px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+
+    /* ── STONE MASONRY OUTER SURROUND ── */
+    .stone-frame-container {
+      width: 100%;
+      max-width: 1140px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%),
+        repeating-linear-gradient(45deg, #3d3731 0px, #4a433b 15px, #36302a 30px);
+      border: 14px solid #524a42;
+      outline: 4px solid #231f1c;
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(0,0,0,0.6);
+      padding: 16px;
+      position: relative;
+    }
+
+    /* ── CARVED WOODEN TABS BAR ── */
+    .wood-tabs-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      border-bottom: 4px solid var(--timber-beam);
+      padding-bottom: 2px;
+    }
+
+    .wood-tab {
+      padding: 8px 24px;
+      background: linear-gradient(180deg, #876241 0%, #5d3f25 100%);
+      color: #f1e4d3;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 6px 6px 0 0;
+      border: 1px solid #4a301a;
+      border-bottom: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .wood-tab:hover,
+    .wood-tab.active {
+      background: linear-gradient(180deg, #b8863f 0%, #875b22 100%);
+      color: #ffffff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* ── TIMBER GRID FRAMEWORK ── */
+    .timber-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 12px;
+      background: var(--timber-beam);
+      padding: 12px;
+      border-radius: 8px;
+      border: 3px solid #3c2715;
+      box-shadow: inset 0 0 14px rgba(0,0,0,0.8);
+    }
+
+    .timber-cell {
+      background: var(--bg-cream);
+      border: 2px solid #3d2817;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* CELL 1: HERO RETREAT */
+    .hero-cell {
+      padding: 24px 22px;
+      background: var(--bg-cream);
+    }
+
+    .timber-title-green {
+      font-family: 'Oswald', 'Bebas Neue', sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1px;
+      color: var(--nature-green);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .timber-subtext {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      max-width: 480px;
+    }
+
+    .hero-photo-wrap {
+      width: 100%;
+      height: 270px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid #4a3421;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    .hero-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .hero-photo-wrap:hover img { transform: scale(1.04); }
+
+    /* CELL 2: ECO & SPACES */
+    .eco-cell {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eco-photo-wrap {
+      flex: 1;
+      min-height: 290px;
+      overflow: hidden;
+      border-bottom: 3px solid var(--timber-beam);
+    }
+    .eco-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .eco-photo-wrap:hover img { transform: scale(1.04); }
+
+    .eco-text-box {
+      padding: 24px 20px;
+      background: var(--bg-panel);
+    }
+
+    .timber-title-ochre {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(34px, 4vw, 54px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: 1px;
+      color: var(--ochre-wood);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    /* ── SECTION 2: ARCHITECTURAL VILLA PAVILIONS ── */
+    .villas-section {
+      width: 100%;
+      max-width: 1140px;
+      background: #38332d;
+      border-radius: 18px;
+      border: 4px solid #5a4b3d;
+      padding: 36px 30px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    }
+
+    .villas-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .villas-header h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      color: #e7e2d6;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .villas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .villa-card {
+      background: var(--bg-cream);
+      border-radius: 6px;
+      border: 3px solid #543922;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s;
+    }
+    .villa-card:hover { transform: translateY(-6px); }
+
+    .villa-thumb {
+      height: 190px;
+      overflow: hidden;
+      border-bottom: 2px solid #543922;
+    }
+    .villa-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .villa-card:hover .villa-thumb img { transform: scale(1.05); }
+
+    .villa-body {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .villa-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--nature-green);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .btn-wood-reserve {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 20px;
+      background: linear-gradient(180deg, #b8863f 0%, #875b22 100%);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+      border: 1px solid #543922;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .timber-grid { grid-template-columns: 1fr; }
+      .villas-grid { grid-template-columns: 1fr; }
+      .stone-frame-container { border-width: 6px; padding: 8px; }
+      .wood-tabs-bar { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       UNIVERSAL TOP BAR
+  ═══════════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
+    <div class="theme-bar-container">
+      <div class="theme-bar-left">
+        <a href="themes.html" class="theme-bar-back-btn">
+          <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-squares-four"></i> Theme: <strong>Raw Landscape Grid</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <button class="theme-inspect-btn" onclick="toggleThemeDrawer()">
+          <i class="ph ph-sliders"></i>
+          <span>Theme Specs</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       RAW LANDSCAPE GRID WORKSPACE
+  ═══════════════════════════════════════════════ -->
+  <main class="masonry-viewport">
+
+    <!-- 1. STONE MASONRY MASTER GRID -->
+    <div class="stone-frame-container">
+
+      <!-- Carved Wood Tabs Bar -->
+      <nav class="wood-tabs-bar">
+        <button class="wood-tab active" onclick="selectWoodTab(this)">Nature</button>
+        <button class="wood-tab" onclick="selectWoodTab(this)">Nature Tabs</button>
+        <button class="wood-tab" onclick="selectWoodTab(this)">Menu Tabs</button>
+        <button class="wood-tab" onclick="selectWoodTab(this)">Menu</button>
+      </nav>
+
+      <!-- Timber Beam Grid Framework -->
+      <div class="timber-grid">
+
+        <!-- 1. HERO RETREAT CELL (Top Left) -->
+        <div class="timber-cell hero-cell">
+          <h1 class="timber-title-green">Nature-Connected</h1>
+          <p class="timber-subtext">
+            Immerse in rugged timber pavilions and dry-stacked slate stone masonry nestled beneath high canopy cloud forests.
+          </p>
+
+          <div class="hero-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=900&q=80" alt="Cliffside eco resort with thatched roof" />
+          </div>
+        </div>
+
+        <!-- 2. ECO & SPACES CELL (Right Column) -->
+        <div class="timber-cell eco-cell">
+          <div class="eco-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&q=80" alt="Modern glass cabin in forest canopy" />
+          </div>
+
+          <div class="eco-text-box">
+            <h2 class="timber-title-green" style="font-size:38px; line-height:0.95;">Eco</h2>
+            <h2 class="timber-title-ochre">&amp; Spaces</h2>
+            <p style="font-size:12.5px; color:var(--text-muted); line-height:1.5; margin-top:8px;">
+              Raw stone masonry meets glass pavilions nestled in deep forest wilderness. Sustainable architecture built in harmony with nature.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. LIVING SPACES (Bottom Left Grid) -->
+        <div class="timber-cell" style="padding:18px;">
+          <div style="display:grid; grid-template-columns: 120px 1fr; gap:14px; align-items:center;">
+            <div style="height:110px; border-radius:4px; overflow:hidden; border:2px solid #4a3421;">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&q=80" alt="Misty mountain valley" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+
+            <div>
+              <h3 style="font-family:'Oswald', sans-serif; font-size:32px; font-weight:700; color:var(--ochre-wood); text-transform:uppercase;">Living Spaces</h3>
+              <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">
+                Handcrafted timber architecture, wood-burning hearths, and panoramic mountain ridge views.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. TIMBER BEDROOM DETAIL (Bottom Right) -->
+        <div class="timber-cell" style="padding:18px;">
+          <div style="display:flex; gap:14px; align-items:center;">
+            <div style="width:90px; height:80px; border-radius:4px; overflow:hidden; border:2px solid #4a3421; flex-shrink:0;">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=300&q=80" alt="Timber bedroom" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <div>
+              <div style="font-family:'Oswald',sans-serif; font-size:18px; font-weight:700; color:var(--nature-green);">Lodge Suites</div>
+              <p style="font-size:11.5px; color:var(--text-muted); margin-top:3px;">
+                Unobstructed forest canopy vistas, private timber sun-decks, and natural cedar wood finish.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 2. ARCHITECTURAL VILLA SUITES (Section 2) -->
+    <section class="villas-section">
+      <div class="villas-header">
+        <h2>Architectural Sanctuary Pavilions</h2>
+        <p style="font-size:13.5px; color:#d5cfbf; margin-top:4px;">Handcrafted luxury lodges integrated into untouched forest topography</p>
+      </div>
+
+      <div class="villas-grid">
+        <div class="villa-card">
+          <div class="villa-thumb">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&q=80" alt="Ridge timber pavilion" />
+          </div>
+          <div class="villa-body">
+            <div>
+              <h3 class="villa-name">The Ridge Pavilion</h3>
+              <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">Floor-to-ceiling glass mullions with private outdoor timber deck and valley plunge pool.</p>
+            </div>
+            <a href="#" class="btn-wood-reserve">Reserve &bull; $420 / night</a>
+          </div>
+        </div>
+
+        <div class="villa-card">
+          <div class="villa-thumb">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80" alt="Canopy stone suite" />
+          </div>
+          <div class="villa-body">
+            <div>
+              <h3 class="villa-name">Stone Hearth Lodge</h3>
+              <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">Natural dry-stacked fireplace, locally sourced timber beams, and rainwater hot tub.</p>
+            </div>
+            <a href="#" class="btn-wood-reserve">Reserve &bull; $510 / night</a>
+          </div>
+        </div>
+
+        <div class="villa-card">
+          <div class="villa-thumb">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80" alt="Forest bath villa" />
+          </div>
+          <div class="villa-body">
+            <div>
+              <h3 class="villa-name">Cedar Canopy Loft</h3>
+              <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">Suspended elevated living quarters amidst old-growth redwood and fir trees.</p>
+            </div>
+            <a href="#" class="btn-wood-reserve">Reserve &bull; $380 / night</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       THEME SPECS DRAWER (SLIDE-OUT)
+  ═══════════════════════════════════════════════ -->
+  <div class="theme-drawer-overlay" id="themeDrawerOverlay" onclick="toggleThemeDrawer()"></div>
+
+  <aside class="theme-drawer" id="themeDrawer">
+    <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+      <h3 style="font-size:18px; font-weight:800; color:#fff;">Raw Landscape Grid Specs</h3>
+      <button onclick="toggleThemeDrawer()" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding: 24px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Theme Archetype</h5>
+        <p style="font-size:14px; color:#f8fafc; font-weight:600; margin-top:4px;">Natural Resort Architectural UI / Raw Earth &amp; Timber</p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Architectural Materials</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Outer dry-stacked stone masonry surround, dark walnut timber beam dividers (mullions), carved wood tab bar, condensed poster typography, and sandstone backdrop cards.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Color Palette</h5>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <div style="width:34px; height:34px; border-radius:50%; background:#4a453f; border:2px solid #fff;" title="Masonry Stone #4a453f"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#543922; border:2px solid #fff;" title="Timber Beam #543922"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#485c40; border:2px solid #fff;" title="Nature Green #485c40"></div>
+          <div style="width:34px; height:34px; border-radius:50%; background:#b8863f; border:2px solid #fff;" title="Ochre Wood #b8863f"></div>
+        </div>
+      </div>
+
+      <div>
+        <h5 style="font-size:11px; text-transform:uppercase; color:#94a3b8; letter-spacing:0.5px;">Best Use Cases</h5>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-top:4px;">
+          Architectural lodge websites, cliffside safari retreats, timber cabin rentals, luxury mountain resorts, and rugged outdoor travel agencies.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/theme-switcher.js"></script>
+  <script>
+    function toggleThemeDrawer() {
+      const drawer = document.getElementById('themeDrawer');
+      const overlay = document.getElementById('themeDrawerOverlay');
+      const isOpen = drawer.style.right === '0px';
+      drawer.style.right = isOpen ? '-480px' : '0px';
+      overlay.classList.toggle('open', !isOpen);
+    }
+
+    function selectWoodTab(btn) {
+      document.querySelectorAll('.wood-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
