@@ -229,16 +229,34 @@
       border-color: var(--emerald-primary);
     }
 
+    .therapy-img-wrap {
+      height: 155px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1px solid rgba(21, 128, 61, 0.1);
+    }
+    .therapy-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+      display: block;
+    }
+    .therapy-card:hover .therapy-img-wrap img {
+      transform: scale(1.05);
+    }
+
     .therapy-icon-box {
-      width: 48px; height: 48px;
-      border-radius: 14px;
+      width: 44px; height: 44px;
+      border-radius: 12px;
       background: var(--mint-pale);
       color: var(--emerald-primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      margin-bottom: 14px;
+      font-size: 22px;
+      margin-bottom: 12px;
       border: 1px solid var(--mint-border);
     }
 
@@ -261,6 +279,65 @@
       .naturopathy-hero { grid-template-columns: 1fr; }
       .hospital-nav-links { display: none; }
       .naturopathy-hero-photo-wrap { height: 260px; }
+    }
+
+    @media (max-width: 768px) {
+      .hospital-sub-nav {
+        margin: 12px 14px 0;
+        padding: 10px 16px;
+        border-radius: 16px;
+      }
+      .hospital-brand {
+        font-size: 18px;
+      }
+      .hospital-brand-leaf {
+        width: 30px; height: 30px;
+        font-size: 16px;
+      }
+      .btn-retreat-book {
+        padding: 7px 16px;
+        font-size: 12px;
+      }
+      .naturopathy-hero {
+        margin: 20px auto 40px;
+        padding: 0 16px;
+        gap: 28px;
+      }
+      .naturopathy-hero-title {
+        font-size: 34px;
+      }
+      .therapies-section {
+        padding: 40px 16px;
+      }
+      .therapies-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .floating-treatment-pill {
+        position: static;
+        margin-top: 14px;
+        border-radius: 14px;
+      }
+      .cottages-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .timetable-section {
+        padding: 40px 16px !important;
+      }
+      .calculator-section {
+        padding: 40px 16px !important;
+      }
+      #calc-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      #footer-cols {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .schedule-panel {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
@@ -371,36 +448,54 @@
 
       <div class="therapies-grid">
         <div class="therapy-card">
+          <div class="therapy-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80" alt="Hydrotherapy &amp; Baths" />
+          </div>
           <div class="therapy-icon-box"><i class="ph ph-drop"></i></div>
           <h4 class="therapy-title">Hydrotherapy &amp; Baths</h4>
           <p class="therapy-desc">Hip baths, spinal sprays, and immersion baths stimulating peripheral circulation and detoxification.</p>
         </div>
 
         <div class="therapy-card">
+          <div class="therapy-img-wrap">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&q=80" alt="Mud Therapy &amp; Packs" />
+          </div>
           <div class="therapy-icon-box"><i class="ph ph-globe-hemisphere-east"></i></div>
           <h4 class="therapy-title">Mud Therapy &amp; Packs</h4>
           <p class="therapy-desc">Pure mineral-rich anthill clay packs soothing inflammation and absorbing metabolic toxins from the gut.</p>
         </div>
 
         <div class="therapy-card">
+          <div class="therapy-img-wrap">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500&q=80" alt="Diet &amp; Fasting Therapy" />
+          </div>
           <div class="therapy-icon-box"><i class="ph ph-carrot"></i></div>
           <h4 class="therapy-title">Diet &amp; Fasting Therapy</h4>
           <p class="therapy-desc">Eliminative fasting, live enzyme juice diets, and alkaline sattvic food tailored to cellular rejuvenation.</p>
         </div>
 
         <div class="therapy-card">
+          <div class="therapy-img-wrap">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Yoga &amp; Pranayama" />
+          </div>
           <div class="therapy-icon-box"><i class="ph ph-person-simple-tai-chi"></i></div>
           <h4 class="therapy-title">Yoga &amp; Pranayama</h4>
           <p class="therapy-desc">Therapeutic asanas and breathwork engineered to relieve chronic stress and balance autonomic nervous tone.</p>
         </div>
 
         <div class="therapy-card">
+          <div class="therapy-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80" alt="Acupuncture &amp; Massage" />
+          </div>
           <div class="therapy-icon-box"><i class="ph ph-hand-heart"></i></div>
           <h4 class="therapy-title">Acupuncture &amp; Massage</h4>
           <p class="therapy-desc">Full-body restorative herbal oil massages and classical meridian stimulation for neuromuscular vitality.</p>
         </div>
 
         <div class="therapy-card">
+          <div class="therapy-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=80" alt="Heliotherapy (Sun Bath)" />
+          </div>
           <div class="therapy-icon-box"><i class="ph ph-sun"></i></div>
           <h4 class="therapy-title">Heliotherapy (Sun Bath)</h4>
           <p class="therapy-desc">Filtered morning chromo-therapy and sun exposure activating natural Vitamin D synthesis.</p>
@@ -540,7 +635,7 @@
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+      <div class="cottages-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px;">
         <!-- Cottage 1 -->
         <div style="border: 1px solid var(--mint-border); border-radius: 20px; overflow: hidden; background: var(--cream-warm); transition: transform 0.25s ease;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
           <div style="height: 220px; overflow: hidden; position: relative;">

@@ -519,7 +519,6 @@
 
     /* Responsive */
     @media (max-width: 991px) {
-
       .y2k-content-split {
         grid-template-columns: 1fr;
       }
@@ -528,6 +527,41 @@
       }
       .y2k-nav-links {
         display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .y2k-container {
+        padding: 0 10px;
+      }
+      .y2k-window-shell {
+        margin: 14px auto 36px;
+        box-shadow: 5px 5px 0px #000;
+      }
+      .y2k-titlebar {
+        padding: 10px 12px;
+      }
+      .y2k-hero-stage {
+        padding: 24px 14px;
+      }
+      .y2k-mega-title {
+        font-size: clamp(30px, 9vw, 46px);
+        word-break: break-word;
+      }
+      .btn-explore-giant {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+      .starburst-pink {
+        display: none;
+      }
+      #player-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .y2k-card-window {
+        box-shadow: 4px 4px 0px #000 !important;
       }
     }
   </style>

@@ -558,7 +558,7 @@
   div[style*="grid-template-columns: 1fr 1fr"],
   div[style*="grid-template-columns: 1fr 1fr 1fr"],
   div[style*="grid-template-columns: repeat(12, 1fr)"],
-  div[style*="grid-template-columns: repeat(4, 1fr)"],
+  div[style*="grid-template-columns: repeat(4, 1fr)"]:not(.neu-calc-keypad):not([class*="calc"]),
   div[style*="grid-template-columns: repeat(3, 1fr)"] {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
