@@ -252,6 +252,7 @@
       align-items: center;
       justify-content: center;
       width: 100% !important;
+      min-width: 0 !important;
       box-sizing: border-box;
       line-height: 1;
     }
@@ -273,14 +274,16 @@
     @media (max-width: 480px) {
       .calculator-device-card {
         max-width: 100% !important;
-        padding: 20px 14px !important;
+        padding: 18px 12px !important;
         border-radius: 20px !important;
       }
       .neu-calc-keypad {
-        gap: 10px !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
       }
       .neu-calc-keypad .neu-btn {
         height: 48px;
+        min-width: 0 !important;
         font-size: 16px;
         border-radius: 12px;
       }
