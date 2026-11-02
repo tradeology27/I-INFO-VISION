@@ -149,7 +149,7 @@
     <!-- Navbar -->
     <nav class="bg-white shadow-md sticky top-0 z-40">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-orange-600 font-playfair">Spice &amp; Slice</h1>
+            <h1 class="text-2xl font-bold text-orange-600 font-playfair flex items-center gap-2.5"><span class="text-2xl">🍕</span> Spice &amp; Slice</h1>
             <div class="hidden md:flex space-x-6 text-gray-600 font-medium">
                 <a href="#menu" class="hover:text-orange-600">Menu</a>
                 <a href="#delivery" class="hover:text-orange-600">Delivery</a>
@@ -281,7 +281,7 @@
     <!-- JavaScript -->
     <script>
         const menuItems = [
-            { id: 1, name: "Crispy Chicken Wings", category: "starters", price: 250, desc: "Spicy, crunchy, and tossed in our secret sauce.", img: "https://images.unsplash.com/photo-1527477396000-e27163b4bff7?w=400" },
+            { id: 1, name: "Crispy Chicken Wings", category: "starters", price: 250, desc: "Spicy, crunchy, and tossed in our secret sauce.", img: "assets/images/themes/crispy-chicken-wings.jpg" },
             { id: 2, name: "Paneer Tikka", category: "starters", price: 220, desc: "Marinated cottage cheese grilled to perfection.", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400" },
             { id: 3, name: "Chicken Biryani", category: "mains", price: 350, desc: "Aromatic basmati rice layered with tender chicken.", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" },
             { id: 4, name: "Margherita Pizza", category: "mains", price: 300, desc: "Classic delight with mozzarella and fresh basil.", img: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=400" },
@@ -299,7 +299,7 @@
             filtered.forEach(item => {
                 menuGrid.innerHTML += `
                     <div class="menu-card bg-white rounded-xl shadow-md overflow-hidden">
-                        <img src="${item.img}" alt="${item.name}" class="w-full h-48 object-cover">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=600&q=80';">
                         <div class="p-5">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-xl font-semibold">${item.name}</h3>
