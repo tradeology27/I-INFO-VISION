@@ -127,34 +127,47 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- TOP FLOATING THEME NAVIGATION BAR -->
-  <div class="theme-top-bar">
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
     <div class="theme-bar-container">
       <div class="theme-bar-left">
         <a href="themes.html" class="theme-bar-back-btn">
           <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-fork-knife"></i> Theme: <strong>Spice &amp; Slice</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <a href="themes.html" class="theme-inspect-btn" style="text-decoration: none;">
+          <i class="ph ph-squares-four"></i>
           <span>All Themes</span>
         </a>
-        <span class="theme-bar-divider">/</span>
-        <span class="theme-bar-current">Spice &amp; Slice &mdash; Cafe &amp; Restaurant</span>
-      </div>
-      <div class="theme-bar-right">
-        <a href="clients.html" class="theme-bar-btn"><i class="ph ph-briefcase"></i> View in Case Studies</a>
-        <a href="index.html" class="theme-bar-btn theme-bar-btn-primary"><i class="ph ph-house"></i> Home</a>
       </div>
     </div>
-  </div>
+  </header>
 
-
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-40">
+  <!-- Navbar -->
+    <nav class="bg-white shadow-md relative z-40">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-orange-600 font-playfair flex items-center gap-2.5"><span class="text-2xl">🍕</span> Spice &amp; Slice</h1>
-            <div class="hidden md:flex space-x-6 text-gray-600 font-medium">
-                <a href="#menu" class="hover:text-orange-600">Menu</a>
-                <a href="#delivery" class="hover:text-orange-600">Delivery</a>
-                <a href="#reservation" class="hover:text-orange-600">Book Table</a>
-                <a href="#qr" class="hover:text-orange-600">Scan QR</a>
+            <div class="hidden md:flex space-x-6 font-semibold" style="color: #1f2937;">
+                <a href="#menu" style="color: #1f2937;" class="hover:text-orange-600 transition font-semibold">Menu</a>
+                <a href="#delivery" style="color: #1f2937;" class="hover:text-orange-600 transition font-semibold">Delivery</a>
+                <a href="#reservation" style="color: #1f2937;" class="hover:text-orange-600 transition font-semibold">Book Table</a>
+                <a href="#qr" style="color: #1f2937;" class="hover:text-orange-600 transition font-semibold">Scan QR</a>
             </div>
             <div class="flex items-center space-x-4">
                 <button class="relative text-gray-600 hover:text-orange-600">

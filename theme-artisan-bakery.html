@@ -147,35 +147,49 @@
 </head>
 <body class="antialiased">
 
-  <!-- TOP FLOATING THEME NAVIGATION BAR -->
-  <div class="theme-top-bar">
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
     <div class="theme-bar-container">
       <div class="theme-bar-left">
         <a href="themes.html" class="theme-bar-back-btn">
           <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-cookie"></i> Theme: <strong>The Golden Crumb</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <a href="themes.html" class="theme-inspect-btn" style="text-decoration: none;">
+          <i class="ph ph-squares-four"></i>
           <span>All Themes</span>
         </a>
-        <span class="theme-bar-divider">/</span>
-        <span class="theme-bar-current">The Golden Crumb — Artisan Bakery &amp; Cafe</span>
-      </div>
-      <div class="theme-bar-right">
-        <a href="clients.html" class="theme-bar-btn"><i class="ph ph-briefcase"></i> View in Case Studies</a>
-        <a href="index.html" class="theme-bar-btn theme-bar-btn-primary"><i class="ph ph-house"></i> Home</a>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- HEADER / NAVIGATION -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <header class="bg-white shadow-sm relative z-40 border-b border-amber-100">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#home" class="text-3xl font-bold text-crust tracking-tight flex items-center gap-2">
         <span class="text-2xl">🥐</span> The Golden Crumb
       </a>
-      <nav class="hidden md:flex space-x-8 text-warmGray font-medium">
-        <a href="#home" class="hover:text-gold transition">Home</a>
-        <a href="#menu" class="hover:text-gold transition">Our Menu</a>
-        <a href="#about" class="hover:text-gold transition">Our Story</a>
-        <a href="#contact" class="hover:text-gold transition">Visit Us</a>
+      <nav class="hidden md:flex space-x-8 font-semibold" style="color: #4A4A4A;">
+        <a href="#home" style="color: #4A4A4A;" class="hover:text-gold transition font-semibold">Home</a>
+        <a href="#menu" style="color: #4A4A4A;" class="hover:text-gold transition font-semibold">Our Menu</a>
+        <a href="#about" style="color: #4A4A4A;" class="hover:text-gold transition font-semibold">Our Story</a>
+        <a href="#contact" style="color: #4A4A4A;" class="hover:text-gold transition font-semibold">Visit Us</a>
       </nav>
       <a href="#menu" class="bg-crust text-white px-6 py-2 rounded-full hover:bg-gold transition font-semibold text-sm shadow-md">Order Now</a>
     </div>

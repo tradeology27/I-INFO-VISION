@@ -150,34 +150,47 @@
 </head>
 <body class="antialiased">
 
-  <!-- TOP FLOATING THEME NAVIGATION BAR -->
-  <div class="theme-top-bar">
+  <!-- ═══════════════════════════════════════════
+       UNIVERSAL TOP BAR
+       ═══════════════════════════════════════════ -->
+  <header class="theme-universal-bar">
     <div class="theme-bar-container">
       <div class="theme-bar-left">
         <a href="themes.html" class="theme-bar-back-btn">
           <i class="ph ph-arrow-left"></i>
+          <span class="back-text-full">Back to Theme Selection</span><span class="back-text-short">Back</span>
+        </a>
+        <div class="theme-bar-divider"></div>
+        <a href="index.html" class="theme-bar-brand">
+          <i class="ph ph-house"></i>
+          <span>Main Site</span>
+        </a>
+      </div>
+
+      <div class="theme-bar-center">
+        <span class="theme-current-badge">
+          <i class="ph ph-paint-brush"></i> Theme: <strong>Studio Aura</strong>
+        </span>
+      </div>
+
+      <div class="theme-bar-right">
+        <a href="themes.html" class="theme-inspect-btn" style="text-decoration: none;">
+          <i class="ph ph-squares-four"></i>
           <span>All Themes</span>
         </a>
-        <span class="theme-bar-divider">/</span>
-        <span class="theme-bar-current">Studio Aura — Interior Design &amp; Architecture</span>
-      </div>
-      <div class="theme-bar-right">
-        <a href="clients.html" class="theme-bar-btn"><i class="ph ph-briefcase"></i> View in Case Studies</a>
-        <a href="index.html" class="theme-bar-btn theme-bar-btn-primary"><i class="ph ph-house"></i> Home</a>
       </div>
     </div>
-  </div>
+  </header>
 
-
-    <!-- NAVIGATION -->
-    <nav class="bg-cream/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200">
+  <!-- NAVIGATION -->
+    <nav class="bg-cream/90 backdrop-blur-md relative z-40 border-b border-gray-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-charcoal tracking-wider flex items-center gap-2.5"><span class="text-2xl">🏛️</span> STUDIO AURA</a>
-            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-warmGray font-medium">
-                <a href="#home" class="hover:text-brass transition">Home</a>
-                <a href="#transformations" class="hover:text-brass transition">Transformations</a>
-                <a href="#portfolio" class="hover:text-brass transition">Portfolio</a>
-                <a href="#contact" class="hover:text-brass transition">Contact</a>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold" style="color: #1A1A1A;">
+                <a href="#home" style="color: #1A1A1A;" class="hover:text-brass transition font-semibold">Home</a>
+                <a href="#transformations" style="color: #1A1A1A;" class="hover:text-brass transition font-semibold">Transformations</a>
+                <a href="#portfolio" style="color: #1A1A1A;" class="hover:text-brass transition font-semibold">Portfolio</a>
+                <a href="#contact" style="color: #1A1A1A;" class="hover:text-brass transition font-semibold">Contact</a>
             </div>
             <a href="#contact" class="bg-charcoal text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-brass transition">Book Consultation</a>
         </div>
