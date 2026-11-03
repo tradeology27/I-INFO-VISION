@@ -398,6 +398,7 @@
       document.body.appendChild(canvas);
     }
 
+    const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
@@ -409,6 +410,17 @@
 
     const rockets = [];
     const particles = [];
+
+    // Reactive wake function: canvas loop only runs when crackers/particles are alive
+    let isRunning = true;
+    let isLoopRunning = false;
+    let animFrameId = null;
+
+    function wakeFireworksLoop() {
+      if (!isRunning || isLoopRunning) return;
+      isLoopRunning = true;
+      animFrameId = requestAnimationFrame(animate);
+    }
 
     const COLOR_PALETTES = [
       ['#ffd700', '#fbbf24', '#f59e0b', '#ffffff'],
@@ -458,7 +470,6 @@
 
       draw() {
         if (this.alpha <= 0) return;
-        ctx.save();
         let currentAlpha = this.alpha;
         if (this.flicker && Math.random() > 0.45) currentAlpha *= 0.6;
         ctx.globalAlpha = Math.max(0, currentAlpha);
@@ -471,20 +482,26 @@
           }
           ctx.strokeStyle = this.color;
           ctx.lineWidth = Math.max(1, this.size * 0.7);
-          ctx.shadowBlur = 6;
-          ctx.shadowColor = this.color;
+          if (!isMobile) {
+            ctx.shadowBlur = 6;
+            ctx.shadowColor = this.color;
+          }
           ctx.stroke();
         }
 
         ctx.fillStyle = this.color;
-        if (!this.isSmoke) {
+        if (!isMobile && !this.isSmoke) {
           ctx.shadowBlur = 8;
           ctx.shadowColor = this.color;
         }
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
-        ctx.restore();
+
+        if (!isMobile) {
+          ctx.shadowBlur = 0;
+        }
+        ctx.globalAlpha = 1;
       }
     }
 
@@ -521,24 +538,25 @@
       explode() {
         if (this.isWillow) {
           // Kamuro Willow Golden Cascade
-          const count = 55;
+          const count = isMobile ? 22 : 55;
           const willowColors = ['#ffd700', '#fbbf24', '#fef08a', '#ffffff'];
           for (let i = 0; i < count; i++) {
             particles.push(new Particle(this.x, this.y, willowColors, {
-              speed: Math.random() * 4.2 + 1,
+              speed: Math.random() * (isMobile ? 3.2 : 4.2) + 1,
               drag: 0.985,
               gravity: 0.045,
-              decay: Math.random() * 0.008 + 0.005,
-              hasTrail: true,
+              decay: Math.random() * 0.01 + 0.006,
+              hasTrail: !isMobile,
               size: Math.random() * 2.2 + 1.2,
               flicker: true
             }));
           }
+          wakeFireworksLoop();
           return;
         }
 
         // Primary outer burst
-        const count = this.doubleBreak ? 42 : Math.floor(Math.random() * 25 + 35);
+        const count = isMobile ? 20 : (this.doubleBreak ? 42 : Math.floor(Math.random() * 25 + 35));
         for (let i = 0; i < count; i++) {
           particles.push(new Particle(this.x, this.y, this.palette));
         }
@@ -548,35 +566,52 @@
           setTimeout(() => {
             if (document.hidden) return;
             const corePalette = ['#ffffff', '#ffd700', '#f59e0b'];
-            for (let j = 0; j < 30; j++) {
+            const innerCount = isMobile ? 12 : 30;
+            for (let j = 0; j < innerCount; j++) {
               particles.push(new Particle(this.x, this.y, corePalette, {
-                speed: Math.random() * 5.5 + 2,
-                decay: 0.02,
-                size: Math.random() * 2.5 + 1.2
+                speed: Math.random() * 4.5 + 1.8,
+                decay: 0.024,
+                size: Math.random() * 2.2 + 1.1
               }));
             }
+            wakeFireworksLoop();
           }, 140);
         }
+        wakeFireworksLoop();
       }
 
       draw() {
-        ctx.save();
-        for (let i = 0; i < this.trail.length; i++) {
-          const pt = this.trail[i];
+        if (isMobile) {
+          for (let i = 0; i < this.trail.length; i++) {
+            const pt = this.trail[i];
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 1.8, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(251, 191, 36, ${(i + 1) / this.trail.length})`;
+            ctx.fill();
+          }
           ctx.beginPath();
-          ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(251, 191, 36, ${(i + 1) / this.trail.length})`;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = '#fbbf24';
+          ctx.arc(this.x, this.y, 2.2, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff';
           ctx.fill();
+        } else {
+          ctx.save();
+          for (let i = 0; i < this.trail.length; i++) {
+            const pt = this.trail[i];
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(251, 191, 36, ${(i + 1) / this.trail.length})`;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#fbbf24';
+            ctx.fill();
+          }
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.shadowBlur = 12;
+          ctx.shadowColor = '#ffd700';
+          ctx.fill();
+          ctx.restore();
         }
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#ffffff';
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = '#ffd700';
-        ctx.fill();
-        ctx.restore();
       }
     }
 
@@ -588,6 +623,7 @@
       const destX = targetX !== undefined ? targetX : (Math.random() * (width - 240) + 120);
       const destY = targetY !== undefined ? targetY : (Math.random() * (height * 0.25) + height * 0.12);
       rockets.push(new Rocket(destX, destY, { doubleBreak: true }));
+      wakeFireworksLoop();
     };
 
     // 2. Mega Flower Pot / Anar (பூந்தொட்டி)
@@ -596,20 +632,23 @@
       const ox = originX !== undefined ? originX : (Math.random() * (width - 200) + 100);
       const oy = originY !== undefined ? originY : (height * 0.78);
       const goldPalette = ['#ffd700', '#fbbf24', '#f59e0b', '#ffffff', '#fed7aa'];
-      for (let i = 0; i < 80; i++) {
+      const potCount = isMobile ? 28 : 80;
+      const step = isMobile ? 26 : 14;
+      for (let i = 0; i < potCount; i++) {
         setTimeout(() => {
           if (document.hidden) return;
           const angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.55;
           particles.push(new Particle(ox, oy, goldPalette, {
             angle: angle,
-            speed: Math.random() * 9 + 6,
+            speed: Math.random() * (isMobile ? 7 : 9) + 5,
             gravity: 0.22,
             drag: 0.98,
             decay: Math.random() * 0.02 + 0.015,
             size: Math.random() * 3.2 + 1.5,
             flicker: true
           }));
-        }, i * 14);
+          wakeFireworksLoop();
+        }, i * step);
       }
     };
     window.triggerDiwaliFountain = window.triggerFlowerPot;
@@ -619,13 +658,15 @@
       playCrackerAudio('chakkar');
       const cx = centerX !== undefined ? centerX : (Math.random() * (width - 200) + 100);
       const cy = centerY !== undefined ? centerY : (height * 0.74);
-      for (let i = 0; i < 90; i++) {
+      const count = isMobile ? 32 : 90;
+      const step = isMobile ? 28 : 16;
+      for (let i = 0; i < count; i++) {
         setTimeout(() => {
           if (document.hidden) return;
           const angle = (i * 0.42) % (Math.PI * 2);
           let color = '#ffd700';
-          if (i >= 30 && i < 60) color = '#00e5ff';
-          else if (i >= 60) color = '#ef4444';
+          if (i >= count * 0.33 && i < count * 0.66) color = '#00e5ff';
+          else if (i >= count * 0.66) color = '#ef4444';
 
           particles.push(new Particle(cx, cy, null, {
             color: color,
@@ -637,7 +678,8 @@
             size: Math.random() * 2.8 + 1.2,
             flicker: true
           }));
-        }, i * 16);
+          wakeFireworksLoop();
+        }, i * step);
       }
     };
     window.triggerDiwaliChakkar = window.triggerChakkar;
@@ -647,7 +689,8 @@
       const cx = centerX !== undefined ? centerX : (Math.random() * (width - 240) + 120);
       const cy = centerY !== undefined ? centerY : (height * 0.48);
       const palette = ['#ffffff', '#fef08a', '#ffd700', '#fbbf24'];
-      for (let i = 0; i < 75; i++) {
+      const count = isMobile ? 24 : 75;
+      for (let i = 0; i < count; i++) {
         setTimeout(() => {
           if (document.hidden) return;
           const branchAngle = Math.floor(Math.random() * 6) * (Math.PI / 3) + (Math.random() - 0.5) * 0.4;
@@ -661,7 +704,8 @@
             jitter: 0.35,
             flicker: true
           }));
-        }, i * 10);
+          wakeFireworksLoop();
+        }, i * (isMobile ? 18 : 10));
       }
     };
 
@@ -670,23 +714,24 @@
       playCrackerAudio('saravedi');
       const sx = startX !== undefined ? startX : (Math.random() * (width - 260) + 130);
       const sy = startY !== undefined ? startY : (height * 0.22);
-      const popCount = 20;
+      const popCount = isMobile ? 8 : 20;
+      const sparksPerPop = isMobile ? 6 : 14;
       for (let i = 0; i < popCount; i++) {
         setTimeout(() => {
           if (document.hidden) return;
           const curX = sx + Math.sin(i * 0.7) * 22;
-          const curY = sy + i * 16;
+          const curY = sy + i * (isMobile ? 12 : 16);
           // Mini flash
           particles.push(new Particle(curX, curY, null, {
             color: '#ffffff',
             speed: 0.1,
-            size: 8,
+            size: isMobile ? 5 : 8,
             decay: 0.25,
             gravity: 0
           }));
           // Spark bursts
           const popColors = ['#ef4444', '#f97316', '#ffd700', '#ffffff'];
-          for (let s = 0; s < 14; s++) {
+          for (let s = 0; s < sparksPerPop; s++) {
             particles.push(new Particle(curX, curY, popColors, {
               speed: Math.random() * 4.2 + 1.5,
               gravity: 0.12,
@@ -694,8 +739,8 @@
               size: Math.random() * 2.2 + 1
             }));
           }
-          // Smoke puff
-          if (i % 2 === 0) {
+          // Smoke puff (desktop only to save mobile compositing)
+          if (!isMobile && i % 2 === 0) {
             particles.push(new Particle(curX, curY, null, {
               color: 'rgba(200, 200, 200, 0.45)',
               speed: Math.random() * 0.8 + 0.3,
@@ -706,7 +751,8 @@
               isSmoke: true
             }));
           }
-        }, i * 65);
+          wakeFireworksLoop();
+        }, i * (isMobile ? 85 : 65));
       }
     };
 
@@ -724,15 +770,17 @@
         { angle: -Math.PI / 2 + 0.38, color: '#10b981' },
         { angle: -Math.PI / 2 + 0.55, color: '#a855f7' }
       ];
-      for (let wave = 0; wave < 3; wave++) {
+      const waves = isMobile ? 2 : 3;
+      const countPerStream = isMobile ? 2 : 4;
+      for (let wave = 0; wave < waves; wave++) {
         setTimeout(() => {
           peacockStreams.forEach(stream => {
-            for (let p = 0; p < 4; p++) {
+            for (let p = 0; p < countPerStream; p++) {
               const spread = (Math.random() - 0.5) * 0.08;
               particles.push(new Particle(ox, oy, null, {
                 color: stream.color,
                 angle: stream.angle + spread,
-                speed: Math.random() * 8 + 6,
+                speed: Math.random() * (isMobile ? 6 : 8) + 5,
                 gravity: 0.16,
                 decay: 0.022,
                 size: Math.random() * 3 + 1.5,
@@ -740,6 +788,7 @@
               }));
             }
           });
+          wakeFireworksLoop();
         }, wave * 140);
       }
     };
@@ -750,6 +799,7 @@
       const destX = targetX !== undefined ? targetX : (Math.random() * (width - 240) + 120);
       const destY = targetY !== undefined ? targetY : (Math.random() * (height * 0.22) + height * 0.12);
       rockets.push(new Rocket(destX, destY, { isWillow: true }));
+      wakeFireworksLoop();
     };
 
     // Unified Master Cracker Trigger
@@ -781,7 +831,8 @@
     // Rocket Exhaust sparks for Feature 1 (Rocket Back to Top)
     window.triggerRocketEngineSparks = function (x, y) {
       const palette = ['#ffd700', '#f59e0b', '#ea580c', '#ffffff'];
-      for (let i = 0; i < 35; i++) {
+      const count = isMobile ? 15 : 35;
+      for (let i = 0; i < count; i++) {
         const angle = Math.PI / 2 + (Math.random() - 0.5) * 0.8;
         particles.push(new Particle(x, y, palette, {
           angle: angle,
@@ -791,11 +842,12 @@
           size: Math.random() * 3 + 2
         }));
       }
+      wakeFireworksLoop();
     };
 
     
-    // Feature: ✨ Magical Sparkler Cursor Trail (Desktop fine pointer only)
-    if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+    // Feature: ✨ Magical Sparkler Cursor Trail (Desktop fine pointer only, disabled on touch/mobile)
+    if (!isMobile && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
       let lastSparkTime = 0;
       window.addEventListener('pointermove', (e) => {
         const now = performance.now();
@@ -827,10 +879,12 @@
       window.triggerDiwaliCracker(e.clientX, e.clientY);
     });
 
-    // ── ANIMATION LOOP (CAP TO SMOOTH 60 FPS) ──
-    let isRunning = true;
+    // ── ANIMATION LOOP (CAP TO SMOOTH 60 FPS WITH SMART IDLE SLEEP) ──
     function animate() {
-      if (!isRunning) return;
+      if (!isRunning) {
+        isLoopRunning = false;
+        return;
+      }
 
       ctx.clearRect(0, 0, width, height);
 
@@ -841,9 +895,10 @@
         if (r.dead) rockets.splice(i, 1);
       }
 
-      // Cap max particles to prevent any device lag
-      if (particles.length > 400) {
-        particles.splice(0, particles.length - 400);
+      // Cap max particles on mobile to guarantee smooth 60fps
+      const maxParticles = isMobile ? 75 : 350;
+      if (particles.length > maxParticles) {
+        particles.splice(0, particles.length - maxParticles);
       }
 
       for (let i = particles.length - 1; i >= 0; i--) {
@@ -853,9 +908,16 @@
         if (p.alpha <= 0) particles.splice(i, 1);
       }
 
-      requestAnimationFrame(animate);
+      // Smart Sleep Mode: When zero rockets and zero particles remain, stop calling rAF
+      if (rockets.length === 0 && particles.length === 0) {
+        ctx.clearRect(0, 0, width, height);
+        isLoopRunning = false;
+        return;
+      }
+
+      animFrameId = requestAnimationFrame(animate);
     }
-    animate();
+    wakeFireworksLoop();
 
     // ── CONTINUOUS AUTO MULTI-CRACKERS LOOP (CHOREOGRAPHED ROTATION OF ALL 7 TYPES) ──
     const AUTO_CRACKER_SEQUENCE = [
@@ -871,8 +933,20 @@
     let autoSequenceStep = 0;
     let autoLaunchTimer = null;
 
+    // Mobile scroll-awareness: yield 100% CPU to native momentum scroll
+    let isUserScrolling = false;
+    let scrollTimeout = null;
+    window.addEventListener('scroll', () => {
+      isUserScrolling = true;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isUserScrolling = false;
+      }, isMobile ? 1200 : 400);
+    }, { passive: true });
+
     function fireNextAutoCracker() {
       if (document.hidden) return;
+      if (isMobile && isUserScrolling) return; // Never fire while user is actively scrolling on mobile
 
       const cracker = AUTO_CRACKER_SEQUENCE[autoSequenceStep % AUTO_CRACKER_SEQUENCE.length];
       autoSequenceStep++;
@@ -922,8 +996,8 @@
     }
 
     function scheduleNextLaunch() {
-      // Elegant 2.2s to 2.8s timing between cracker types
-      const interval = Math.random() * 600 + 2200;
+      // Mobile: relaxed 5.5s to 7.0s timing for maximum performance & battery life; Desktop: 2.4s to 3.2s
+      const interval = isMobile ? (Math.random() * 1500 + 5500) : (Math.random() * 800 + 2400);
       autoLaunchTimer = setTimeout(() => {
         fireNextAutoCracker();
         scheduleNextLaunch();
@@ -942,10 +1016,12 @@
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         isRunning = false;
+        isLoopRunning = false;
+        if (animFrameId) cancelAnimationFrame(animFrameId);
         clearTimeout(autoLaunchTimer);
       } else {
         isRunning = true;
-        animate();
+        wakeFireworksLoop();
         scheduleNextLaunch();
       }
     });
@@ -1410,9 +1486,10 @@
       if (e.target === modal) closeModal();
     });
 
-    // 3. Gold Coin Shower Animation on Click
+    // 3. Hardware-Accelerated Gold Coin Shower Animation on Click (CSS compositor driven, 0ms JS timers)
     function triggerCoinShower() {
-      const coinCount = 35;
+      const isMobileDevice = window.innerWidth <= 768;
+      const coinCount = isMobileDevice ? 12 : 24;
       const symbols = ['🪙', '✨', '🪙', '🌟', '🪙'];
       for (let i = 0; i < coinCount; i++) {
         setTimeout(() => {
@@ -1421,32 +1498,22 @@
           coin.textContent = symbols[i % symbols.length];
 
           const startX = Math.random() * (window.innerWidth - 60) + 30;
-          const startY = -40;
-          const fallSpeed = Math.random() * 2.5 + 2.5;
-          const drift = (Math.random() - 0.5) * 1.5;
-          let curY = startY;
-          let curX = startX;
-          let rotation = 0;
-          const rotSpeed = (Math.random() - 0.5) * 10;
+          const driftX = (Math.random() - 0.5) * 80;
+          const duration = Math.random() * 1.2 + 2.2;
+          const rot = (Math.random() - 0.5) * 720;
 
-          coin.style.left = curX + 'px';
-          coin.style.top = curY + 'px';
+          coin.style.left = startX + 'px';
+          coin.style.top = '-40px';
+          coin.style.setProperty('--coin-drift', driftX + 'px');
+          coin.style.setProperty('--coin-rot', rot + 'deg');
+          coin.style.animation = `falling-coin-anim ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+
           document.body.appendChild(coin);
 
-          const anim = setInterval(() => {
-            curY += fallSpeed;
-            curX += drift;
-            rotation += rotSpeed;
-            coin.style.top = curY + 'px';
-            coin.style.left = curX + 'px';
-            coin.style.transform = `rotate(${rotation}deg)`;
-
-            if (curY > window.innerHeight + 40) {
-              clearInterval(anim);
-              if (coin.parentNode) coin.parentNode.removeChild(coin);
-            }
-          }, 16);
-        }, i * 45);
+          coin.addEventListener('animationend', () => {
+            if (coin.parentNode) coin.parentNode.removeChild(coin);
+          }, { once: true });
+        }, i * 50);
       }
     }
 

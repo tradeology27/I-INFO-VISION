@@ -306,6 +306,9 @@ body.has-diwali-banner .page-hero {
   pointer-events: none;
   z-index: 999;
   background: transparent;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* ═════════════════════════════════════════════════════════════
@@ -1814,17 +1817,31 @@ body.diwali-mode .slide-overlay {
   position: fixed;
   z-index: 100000;
   pointer-events: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #fff 0%, #fef08a 25%, #f59e0b 60%, #b45309 95%);
-  border: 1.5px solid #fef08a;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+  font-size: 24px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  transition: opacity 0.4s ease;
+  will-change: transform, opacity;
+}
+
+@keyframes falling-coin-anim {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(var(--coin-drift, 0px), 108vh, 0) rotate(var(--coin-rot, 360deg));
+    opacity: 0;
+  }
 }
 
 /* Fortune Blessing Modal */
@@ -2164,4 +2181,65 @@ body.diwali-mode .slide-overlay {
 
 .diwali-footer-wishes .wishes-diya {
   animation: diya-card-flame-flicker 1.4s ease-in-out infinite alternate;
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   MOBILE PERFORMANCE ACCELERATION (MAX-WIDTH: 768px)
+   Eliminates repaint bottlenecks, heavy drop-shadows & SVG loops
+   ═════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* 1. Simplify Fairy Lights on Mobile - pure opacity, no scale/filter */
+  .fairy-bulb {
+    animation: fairy-glow-mobile 2.4s ease-in-out infinite alternate !important;
+    box-shadow: 0 0 4px var(--bulb-glow) !important;
+  }
+
+  @keyframes fairy-glow-mobile {
+    0% { opacity: 0.45; }
+    100% { opacity: 1; }
+  }
+
+  /* 2. Freeze card diya flame/halo animation loops on mobile (prevents 40+ simultaneous SVG repaints during scroll) */
+  .card-diya-flame,
+  .card-diya-halo {
+    animation: none !important;
+    opacity: 0.9 !important;
+  }
+  .diwali-card-diya {
+    filter: none !important;
+  }
+
+  /* 3. Stop infinite 60s rotation of huge 600px Rangoli watermark on mobile */
+  .diwali-rangoli-bg {
+    animation: none !important;
+    transform: translate(-50%, -50%) !important;
+    opacity: 0.07 !important;
+  }
+
+  /* 4. Disable continuous toran breeze wobble on mobile */
+  .diwali-toran {
+    animation: none !important;
+  }
+
+  /* 5. Disable heavy drop-shadow and text filter on headings on mobile */
+  .diwali-gold-shimmer {
+    filter: none !important;
+    text-shadow: none !important;
+  }
+
+  /* 6. Clean up floating hero corner diyas on mobile to avoid touching/overlapping buttons */
+  .diwali-hero-diya {
+    display: none !important;
+  }
+
+  /* 7. Stop pulse animation on floating offer button on mobile to save CPU */
+  .diwali-floating-widget {
+    animation: none !important;
+  }
+
+  /* 8. Footer wishes diya static on mobile */
+  .diwali-footer-wishes .wishes-diya {
+    animation: none !important;
+  }
 }
