@@ -236,13 +236,43 @@
   <link rel="preload" as="image" href="assets/images/hero-slide-1.webp" fetchpriority="high" type="image/webp" />
   
   <link rel="stylesheet" href="styles.css?v=2.1" />
+  <link rel="stylesheet" href="assets/css/diwali.css" />
   
   <!-- Phosphor Icons (Non-render-blocking) -->
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
 </head>
 
-<body>
+<body class="has-diwali-banner diwali-mode">
+
+  <!-- ===============================================
+       DIWALI TOP FESTIVAL BANNER & OFFERS
+       =============================================== -->
+  <div class="diwali-top-banner" id="diwali-top-banner">
+    <div class="diwali-banner-container">
+      <div class="diwali-banner-left">
+        <span class="diwali-badge-pill">🪔 Diwali Dhamaka</span>
+        <div class="diwali-banner-text">
+          <span>Celebrate with I Info Vision: Flat <strong>25% OFF</strong> on Websites &amp; ERP Software + Free 1-Yr Domain &amp; SSL!</span>
+        </div>
+      </div>
+      <div class="diwali-banner-right">
+        <div class="diwali-countdown" title="Festive Offer Ends In">
+          <i class="ph ph-clock"></i>
+          <span id="diwali-days">00</span>d
+          <span id="diwali-hours">00</span>h
+          <span id="diwali-mins">00</span>m
+          <span id="diwali-secs">00</span>s
+        </div>
+        <button class="diwali-claim-btn" data-diwali-modal-open>
+          <span>Claim Offer</span> <i class="ph ph-sparkle"></i>
+        </button>
+        <button class="diwali-close-btn" aria-label="Dismiss banner" title="Dismiss announcement">
+          &times;
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        HEADER
@@ -272,7 +302,7 @@
           <li><a href="contact.html" class="nav-cta">Get Started <span class="btn-arrow">→</span></a></li>
         </ul>
 
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </nav>
@@ -283,7 +313,42 @@
   <!-- ═══════════════════════════════════════════
        HERO CAROUSEL
        ═══════════════════════════════════════════ -->
-  <section class="hero" id="hero">
+    <section class="hero" id="hero">
+    <!-- Festive Decorative Animated Diyas -->
+    <div class="diwali-hero-decor" aria-hidden="true">
+      <div class="diwali-hero-diya diya-left" title="Happy Diwali">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="diyaGlowL" cx="50%" cy="30%" r="50%">
+              <stop offset="0%" stop-color="#ffd700" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#ea580c" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="50" cy="35" r="30" fill="url(#diyaGlowL)" filter="blur(6px)"/>
+          <path class="diwali-toggle-flame" d="M50 15 C45 28 42 35 45 42 C47 48 53 48 55 42 C58 35 55 28 50 15 Z" fill="#fbbf24"/>
+          <path class="diwali-toggle-flame" d="M50 20 C47 28 45 33 47 38 C48 42 52 42 53 38 C55 33 53 28 50 20 Z" fill="#ffffff"/>
+          <path d="M20 52 C20 75 80 75 80 52 C70 57 30 57 20 52 Z" fill="#b45309" stroke="#fbbf24" stroke-width="2"/>
+          <ellipse cx="50" cy="52" rx="30" ry="7" fill="#9a3412"/>
+          <path d="M42 70 L35 85 L65 85 L58 70 Z" fill="#78350f" stroke="#fbbf24" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="diwali-hero-diya diya-right" title="Happy Diwali">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="diyaGlowR" cx="50%" cy="30%" r="50%">
+              <stop offset="0%" stop-color="#ffd700" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#ea580c" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="50" cy="35" r="30" fill="url(#diyaGlowR)" filter="blur(6px)"/>
+          <path class="diwali-toggle-flame" d="M50 15 C45 28 42 35 45 42 C47 48 53 48 55 42 C58 35 55 28 50 15 Z" fill="#fbbf24"/>
+          <path class="diwali-toggle-flame" d="M50 20 C47 28 45 33 47 38 C48 42 52 42 53 38 C55 33 53 28 50 20 Z" fill="#ffffff"/>
+          <path d="M20 52 C20 75 80 75 80 52 C70 57 30 57 20 52 Z" fill="#b45309" stroke="#fbbf24" stroke-width="2"/>
+          <ellipse cx="50" cy="52" rx="30" ry="7" fill="#9a3412"/>
+          <path d="M42 70 L35 85 L65 85 L58 70 Z" fill="#78350f" stroke="#fbbf24" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
     <div class="carousel" id="hero-carousel">
       <div class="carousel-track">
 
@@ -597,6 +662,97 @@
   <!-- ═══════════════════════════════════════════
        ABOUT & TECHNOLOGIES
        ═══════════════════════════════════════════ -->
+
+  <!-- ═══════════════════════════════════════════
+       OPTION 6: DIWALI HERITAGE & DIGITAL TRANSFORMATION
+       ═══════════════════════════════════════════ -->
+  <section class="section diwali-story-section" id="diwali-story">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="badge-pill diwali-story-pill">🪔 ஒளியின் திருவிழா &bull; 4 Pillars of Transformation &bull; புதிய தொடக்கம் 🪔</span>
+        <h2 class="section-title">
+          Timeless Traditions, <span class="highlight">Modern Digital Triumph</span>
+        </h2>
+        <p class="section-subtitle">
+          How the 4 sacred pillars of Deepavali inspire I Info Vision's mission to elevate your business into lasting prosperity.
+        </p>
+      </div>
+
+      <div class="diwali-story-grid">
+        <!-- Pillar 1: தீபங்கள் ஏற்றுதல் -->
+        <div class="diwali-story-card reveal">
+          <div class="story-card-top">
+            <div class="story-step-badge">Pillar 01</div>
+            <div class="story-icon-wrap">🪔</div>
+          </div>
+          <h3 class="story-card-title">தீபங்கள் ஏற்றுதல்</h3>
+          <span class="story-card-sub">Dispelling Darkness with Light</span>
+          <p class="story-card-desc">
+            Just as the earthen diya banishes shadows, we eradicate operational bottlenecks, slow workflows, and legacy downtime through automated, high-velocity cloud software.
+          </p>
+          <div class="story-card-tag"><i class="ph ph-check-circle"></i> Seamless Cloud &amp; Automation</div>
+        </div>
+
+        <!-- Pillar 2: வண்ணப் பட்டாசு -->
+        <div class="diwali-story-card reveal reveal-delay-1">
+          <div class="story-card-top">
+            <div class="story-step-badge">Pillar 02</div>
+            <div class="story-icon-wrap">🎆</div>
+          </div>
+          <h3 class="story-card-title">வண்ணப் பட்டாசு</h3>
+          <span class="story-card-sub">Celebrating Bold Milestones</span>
+          <p class="story-card-desc">
+            Crackers illuminate the night sky with energy and joy. We propel your brand to explosive market visibility with custom high-converting web apps and viral digital marketing campaigns.
+          </p>
+          <div class="story-card-tag"><i class="ph ph-check-circle"></i> High-Velocity Web &amp; App Launches</div>
+        </div>
+
+        <!-- Pillar 3: லக்ஷ்மி குபேர பூஜை -->
+        <div class="diwali-story-card reveal reveal-delay-2">
+          <div class="story-card-top">
+            <div class="story-step-badge">Pillar 03</div>
+            <div class="story-icon-wrap">🪙</div>
+          </div>
+          <h3 class="story-card-title">லக்ஷ்மி குபேர பூஜை</h3>
+          <span class="story-card-sub">Invoking Abundance &amp; Wealth</span>
+          <p class="story-card-desc">
+            Deepavali honors Goddess Lakshmi for sustainable wealth. We engineer precision ERP billing, multi-store retail platforms, and automated fintech that multiply your revenue.
+          </p>
+          <div class="story-card-tag"><i class="ph ph-check-circle"></i> Scalable ERP &amp; Revenue Engines</div>
+        </div>
+
+        <!-- Pillar 4: புதிய தொடக்கம் -->
+        <div class="diwali-story-card reveal reveal-delay-3">
+          <div class="story-card-top">
+            <div class="story-step-badge">Pillar 04</div>
+            <div class="story-icon-wrap">🚀</div>
+          </div>
+          <h3 class="story-card-title">புதிய தொடக்கம்</h3>
+          <span class="story-card-sub">Auspicious New Beginnings</span>
+          <p class="story-card-desc">
+            The festival signifies auspicious new ventures. Partner with I Info Vision this festive season to architect tailor-made digital solutions built to dominate your industry.
+          </p>
+          <div class="story-card-tag"><i class="ph ph-check-circle"></i> Dedicated Tech Partnership</div>
+        </div>
+      </div>
+
+      <!-- Festive Bottom Action Bar -->
+      <div class="diwali-story-footer reveal">
+        <div class="story-footer-text">
+          <strong>Ready to illuminate your enterprise?</strong> Claim your 25% Diwali discount today.
+        </div>
+        <div class="story-footer-actions">
+          <button class="btn btn-primary" data-diwali-modal-open>
+            <span>Claim 25% Festive Offer</span> <i class="ph ph-sparkle"></i>
+          </button>
+          <a href="https://wa.me/919894480585?text=Hello%20I%20Info%20Vision,%20I%20want%20to%20discuss%20a%20project%20for%20Diwali!" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="background: rgba(255,255,255,0.08); border-color: rgba(251,191,36,0.4); color: #fef08a;">
+            <i class="ph ph-whatsapp-logo"></i> Quick WhatsApp Chat
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section about-tech-section" id="about">
     <div class="container">
       <!-- New Two-Column About Story -->
@@ -792,11 +948,11 @@
               <span class="tech-chip">SEO Suite</span>
               <span class="tech-chip">WhatsApp API</span>
             </div>
-            <div style="display: flex; gap: 10px; margin-top: auto;">
-              <a href="project-allensha.html" class="btn btn-primary" style="flex: 1; padding: 10px 14px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;">
+            <div class="project-card-actions" style="display: flex; gap: 10px; margin-top: auto;">
+              <a href="project-allensha.html" class="btn btn-primary" style="flex: 1 1 0%; min-width: 0; padding: 10px 12px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;">
                 Case Study <i class="ph ph-arrow-right"></i>
               </a>
-              <a href="https://allensha.com" target="_blank" rel="noopener noreferrer" class="btn" style="border: 1.5px solid #2563eb; color: #1d4ed8; background: #eff6ff; padding: 10px 14px; font-size: 13px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 6px; transition: all 0.2s;">
+              <a href="https://allensha.com" target="_blank" rel="noopener noreferrer" class="btn" style="flex: 1 1 0%; min-width: 0; border: 1.5px solid #2563eb; color: #1d4ed8; background: #eff6ff; padding: 10px 12px; font-size: 13px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 6px; transition: all 0.2s;">
                 <i class="ph ph-arrow-square-out"></i> Live Site
               </a>
             </div>
@@ -831,11 +987,11 @@
               <span class="tech-chip" style="background: #f0fdf4; color: #15803d;">SEO Suite</span>
               <span class="tech-chip" style="background: #f0fdf4; color: #15803d;">Multilingual</span>
             </div>
-            <div style="display: flex; gap: 10px; margin-top: auto;">
-              <a href="project-knch-karur.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); flex: 1; padding: 10px 14px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;">
+            <div class="project-card-actions" style="display: flex; gap: 10px; margin-top: auto;">
+              <a href="project-knch-karur.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); flex: 1 1 0%; min-width: 0; padding: 10px 12px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;">
                 Case Study <i class="ph ph-arrow-right"></i>
               </a>
-              <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn" style="border: 1.5px solid #16a34a; color: #15803d; background: #f0fdf4; padding: 10px 14px; font-size: 13px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 6px; transition: all 0.2s;">
+              <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn" style="flex: 1 1 0%; min-width: 0; border: 1.5px solid #16a34a; color: #15803d; background: #f0fdf4; padding: 10px 12px; font-size: 13px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 6px; transition: all 0.2s;">
                 <i class="ph ph-arrow-square-out"></i> Live Site
               </a>
             </div>
@@ -870,11 +1026,11 @@
               <span class="tech-chip" style="background: #fff7ed; color: #c2410c;">Patient Records</span>
               <span class="tech-chip" style="background: #fff7ed; color: #c2410c;">Analytics</span>
             </div>
-            <div style="display: flex; gap: 10px; margin-top: auto;">
-              <a href="project-kumar-hospital-billing.html" class="btn btn-primary" style="background: linear-gradient(135deg, #ea580c, #c2410c); flex: 1; padding: 10px 14px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;">
+            <div class="project-card-actions" style="display: flex; gap: 10px; margin-top: auto;">
+              <a href="project-kumar-hospital-billing.html" class="btn btn-primary" style="background: linear-gradient(135deg, #ea580c, #c2410c); flex: 1 1 0%; min-width: 0; padding: 10px 12px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;">
                 Software Details <i class="ph ph-arrow-right"></i>
               </a>
-              <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn" style="border: 1.5px solid #ea580c; color: #c2410c; background: #fff7ed; padding: 10px 14px; font-size: 13px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 6px; transition: all 0.2s;">
+              <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" class="btn" style="flex: 1 1 0%; min-width: 0; border: 1.5px solid #ea580c; color: #c2410c; background: #fff7ed; padding: 10px 12px; font-size: 13px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 6px; transition: all 0.2s;">
                 <i class="ph ph-arrow-square-out"></i> Hospital Site
               </a>
             </div>
@@ -1061,6 +1217,7 @@
        FOOTER
        ═══════════════════════════════════════════ -->
   <footer class="site-footer">
+    <div class="diwali-footer-skyline" aria-hidden="true"></div>
     <div class="container">
       <div class="footer-top">
 
@@ -1159,6 +1316,9 @@
 
 
       <!-- Footer Bottom -->
+      <div class="diwali-footer-wishes">
+        <span class="wishes-diya">🪔</span> Celebrate the Festival of Lights with I Info Vision &bull; Wishing You Abundant Growth &amp; Prosperity! <span class="wishes-diya">🪔</span>
+      </div>
       <div class="footer-bottom">
         <p class="copyright">
           &copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.<br>
@@ -1199,7 +1359,69 @@
   </button>
 
 
+  <!-- Floating Festive Diwali Offer Button -->
+  <button class="diwali-floating-widget" id="diwali-floating-widget" data-diwali-modal-open aria-label="Open Diwali Festive Offers">
+    <span>🪔</span> <strong>Diwali Offer</strong> <span style="background: #fbbf24; color: #000; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 999px;">25% OFF</span>
+  </button>
+
+  <!-- Diwali Offer Modal -->
+  <div class="diwali-modal-backdrop" id="diwali-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="diwali-modal-card">
+      <div class="diwali-modal-header">
+        <button class="diwali-modal-close" aria-label="Close dialog">&times;</button>
+        <div class="diwali-modal-tag">✨ Happy Diwali Special</div>
+        <h3 class="diwali-modal-title">Light Up Your Business with <span>I Info Vision</span></h3>
+        <p class="diwali-modal-subtitle">Exclusive festival offers for businesses in Salem, Tamil Nadu &amp; across India.</p>
+      </div>
+      <div class="diwali-modal-body">
+        <div class="diwali-offers-list">
+          <div class="diwali-offer-item">
+            <div class="diwali-offer-icon"><i class="ph ph-percent"></i></div>
+            <div class="diwali-offer-text">
+              <h4>Flat 25% Off Custom Software &amp; ERP</h4>
+              <p>Billing Systems, Hospital ERP, Textile Software &amp; Mobile Apps.</p>
+            </div>
+          </div>
+          <div class="diwali-offer-item">
+            <div class="diwali-offer-icon"><i class="ph ph-globe"></i></div>
+            <div class="diwali-offer-text">
+              <h4>Free 1-Year Domain, Hosting &amp; SSL</h4>
+              <p>Included with all business website and e-commerce development packages.</p>
+            </div>
+          </div>
+          <div class="diwali-offer-item">
+            <div class="diwali-offer-icon"><i class="ph ph-rocket-launch"></i></div>
+            <div class="diwali-offer-text">
+              <h4>Free Google My Business &amp; Local SEO Setup</h4>
+              <p>Rank on page #1 of Google Maps in Salem and your target cities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="diwali-code-box">
+          <div class="diwali-code-info">
+            <span class="diwali-code-label">Special Coupon Code</span>
+            <span class="diwali-code-val" id="diwali-promo-code">DIWALI2026</span>
+          </div>
+          <button class="diwali-copy-btn" id="diwali-copy-btn">
+            <i class="ph ph-copy"></i> Copy Code
+          </button>
+        </div>
+
+        <div class="diwali-modal-actions">
+          <a href="https://wa.me/919894480585?text=Hello%20I%20Info%20Vision,%20I%20want%20to%20claim%20the%20Diwali%20Festival%20Offer%20with%20code%20DIWALI2026!" target="_blank" rel="noopener noreferrer" class="diwali-action-wa">
+            <i class="ph ph-whatsapp-logo" style="font-size: 19px;"></i> Claim via WhatsApp
+          </a>
+          <a href="tel:+919894480585" class="diwali-action-call">
+            <i class="ph ph-phone-call" style="font-size: 18px;"></i> Call Us Direct
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js" defer></script>
+  <script src="assets/js/diwali.js" defer></script>
 </body>
 
 </html>

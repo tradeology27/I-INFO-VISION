@@ -3333,6 +3333,48 @@ a.tech-card {
   border-color: var(--blue-500);
 }
 
+
+/* Featured project cards action buttons: ensure 50-50 equal split on mobile */
+.project-card-actions {
+  display: flex !important;
+  gap: 10px !important;
+  margin-top: auto !important;
+  width: 100% !important;
+}
+
+.project-card-actions .btn {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  width: auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+}
+
+@media (max-width: 480px) {
+  .project-card-actions {
+    gap: 8px !important;
+  }
+  .project-card-actions .btn {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    width: auto !important;
+    padding: 10px 6px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .project-card-actions {
+    flex-direction: column !important;
+  }
+  .project-card-actions .btn {
+    width: 100% !important;
+  }
+}
+
 .client-card-footer {
   display: flex;
   gap: 10px;
@@ -3342,13 +3384,34 @@ a.tech-card {
   width: 100%;
 }
 
+.client-card-footer .btn {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  width: auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
 @media (max-width: 480px) {
   .client-card-footer {
-    gap: 8px;
+    gap: 8px !important;
   }
   .client-card-footer .btn {
-    padding: 10px 8px !important;
-    font-size: 12.5px !important;
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    width: auto !important;
+    padding: 10px 6px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .client-card-footer {
+    flex-direction: column !important;
+  }
+  .client-card-footer .btn {
+    width: 100% !important;
   }
 }
 
@@ -3578,6 +3641,69 @@ a.tech-card {
   font-weight: 600;
   color: var(--gray-500);
   text-transform: uppercase;
+}
+
+/* Case Study Card Action Button - High contrast, always visible */
+.case-study-card .btn,
+.case-study-card .btn-primary,
+.case-study-card .btn-outline {
+  align-self: flex-start !important;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #1d4ed8 !important;
+  font-weight: 700 !important;
+  padding: 12px 24px !important;
+  font-size: 14px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+.case-study-card .btn .btn-arrow,
+.case-study-card .btn-primary .btn-arrow,
+.case-study-card .btn-outline .btn-arrow {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  transition: transform 0.25s ease;
+}
+
+.case-study-card .btn:hover,
+.case-study-card .btn-primary:hover,
+.case-study-card .btn-outline:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+  color: #ffffff !important;
+  border-color: #1e40af !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.45) !important;
+}
+
+.case-study-card .btn:hover .btn-arrow,
+.case-study-card .btn-primary:hover .btn-arrow,
+.case-study-card .btn-outline:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+body.diwali-mode .case-study-card .btn,
+body.diwali-mode .case-study-card .btn-primary,
+body.diwali-mode .case-study-card .btn-outline {
+  background: linear-gradient(135deg, #d97706, #b45309) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #f59e0b !important;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4) !important;
+}
+
+body.diwali-mode .case-study-card .btn:hover,
+body.diwali-mode .case-study-card .btn-primary:hover,
+body.diwali-mode .case-study-card .btn-outline:hover {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: #ffffff !important;
+  border-color: #d97706 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.55) !important;
 }
 
 /* Testimonials Grid */

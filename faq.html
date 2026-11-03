@@ -114,12 +114,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
   <link rel="stylesheet" href="styles.css?v=2.2" />
+  <link rel="stylesheet" href="assets/css/diwali.css" />
   <!-- Phosphor Icons (Non-render-blocking) -->
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" /></noscript>
 </head>
 
-<body>
+<body class="has-diwali-banner diwali-mode">
+
+  <!-- ===============================================
+       DIWALI TOP FESTIVAL BANNER & OFFERS
+       =============================================== -->
+  <div class="diwali-top-banner" id="diwali-top-banner">
+    <div class="diwali-banner-container">
+      <div class="diwali-banner-left">
+        <span class="diwali-badge-pill">🪔 Diwali Dhamaka</span>
+        <div class="diwali-banner-text">
+          <span>Celebrate with I Info Vision: Flat <strong>25% OFF</strong> on Websites &amp; ERP Software + Free 1-Yr Domain &amp; SSL!</span>
+        </div>
+      </div>
+      <div class="diwali-banner-right">
+        <div class="diwali-countdown" title="Festive Offer Ends In">
+          <i class="ph ph-clock"></i>
+          <span id="diwali-days">00</span>d
+          <span id="diwali-hours">00</span>h
+          <span id="diwali-mins">00</span>m
+          <span id="diwali-secs">00</span>s
+        </div>
+        <button class="diwali-claim-btn" data-diwali-modal-open>
+          <span>Claim Offer</span> <i class="ph ph-sparkle"></i>
+        </button>
+        <button class="diwali-close-btn" aria-label="Dismiss banner" title="Dismiss announcement">
+          &times;
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        HEADER
@@ -743,6 +773,7 @@
        FOOTER
        ═══════════════════════════════════════════ -->
   <footer class="site-footer">
+    <div class="diwali-footer-skyline" aria-hidden="true"></div>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-column footer-brand-col">
@@ -807,6 +838,9 @@
         </div>
       </div>
 
+      <div class="diwali-footer-wishes">
+        <span class="wishes-diya">🪔</span> Celebrate the Festival of Lights with I Info Vision &bull; Wishing You Abundant Growth &amp; Prosperity! <span class="wishes-diya">🪔</span>
+      </div>
       <div class="footer-bottom">
         <p class="copyright">&copy; 2026 I Info Vision (A Yasmeen Group Company). All rights reserved.</p>
         <div class="footer-bottom-links">
@@ -973,6 +1007,68 @@
       }
     });
   </script>
+  <!-- Floating Festive Diwali Offer Button -->
+  <button class="diwali-floating-widget" id="diwali-floating-widget" data-diwali-modal-open aria-label="Open Diwali Festive Offers">
+    <span>🪔</span> <strong>Diwali Offer</strong> <span style="background: #fbbf24; color: #000; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 999px;">25% OFF</span>
+  </button>
+
+  <!-- Diwali Offer Modal -->
+  <div class="diwali-modal-backdrop" id="diwali-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="diwali-modal-card">
+      <div class="diwali-modal-header">
+        <button class="diwali-modal-close" aria-label="Close dialog">&times;</button>
+        <div class="diwali-modal-tag">✨ Happy Diwali Special</div>
+        <h3 class="diwali-modal-title">Light Up Your Business with <span>I Info Vision</span></h3>
+        <p class="diwali-modal-subtitle">Exclusive festival offers for businesses in Salem, Tamil Nadu &amp; across India.</p>
+      </div>
+      <div class="diwali-modal-body">
+        <div class="diwali-offers-list">
+          <div class="diwali-offer-item">
+            <div class="diwali-offer-icon"><i class="ph ph-percent"></i></div>
+            <div class="diwali-offer-text">
+              <h4>Flat 25% Off Custom Software &amp; ERP</h4>
+              <p>Billing Systems, Hospital ERP, Textile Software &amp; Mobile Apps.</p>
+            </div>
+          </div>
+          <div class="diwali-offer-item">
+            <div class="diwali-offer-icon"><i class="ph ph-globe"></i></div>
+            <div class="diwali-offer-text">
+              <h4>Free 1-Year Domain, Hosting &amp; SSL</h4>
+              <p>Included with all business website and e-commerce development packages.</p>
+            </div>
+          </div>
+          <div class="diwali-offer-item">
+            <div class="diwali-offer-icon"><i class="ph ph-rocket-launch"></i></div>
+            <div class="diwali-offer-text">
+              <h4>Free Google My Business &amp; Local SEO Setup</h4>
+              <p>Rank on page #1 of Google Maps in Salem and your target cities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="diwali-code-box">
+          <div class="diwali-code-info">
+            <span class="diwali-code-label">Special Coupon Code</span>
+            <span class="diwali-code-val" id="diwali-promo-code">DIWALI2026</span>
+          </div>
+          <button class="diwali-copy-btn" id="diwali-copy-btn">
+            <i class="ph ph-copy"></i> Copy Code
+          </button>
+        </div>
+
+        <div class="diwali-modal-actions">
+          <a href="https://wa.me/919894480585?text=Hello%20I%20Info%20Vision,%20I%20want%20to%20claim%20the%20Diwali%20Festival%20Offer%20with%20code%20DIWALI2026!" target="_blank" rel="noopener noreferrer" class="diwali-action-wa">
+            <i class="ph ph-whatsapp-logo" style="font-size: 19px;"></i> Claim via WhatsApp
+          </a>
+          <a href="tel:+919894480585" class="diwali-action-call">
+            <i class="ph ph-phone-call" style="font-size: 18px;"></i> Call Us Direct
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/diwali.js" defer></script>
 </body>
 
 </html>
